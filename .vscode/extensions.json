@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "codezombiech.gitignore",
+    "editorconfig.editorconfig",
+    "github.copilot",
+    "github.copilot-chat",
+    "mermaidchart.vscode-mermaid-chart",
+    "ms-ceintl.vscode-language-pack-pt-br",
+    "pkief.material-icon-theme",
+    "shd101wyy.markdown-preview-enhanced",
+    "tomoki1207.pdf",
+    "yzhang.markdown-all-in-one"
+  ],
+  "unwantedRecommendations": []
+}
