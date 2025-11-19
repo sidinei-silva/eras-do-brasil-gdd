@@ -1,0 +1,30 @@
+{
+  "name": "Eras Do Brasil GDD - Container",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // Extensões que serão instaladas automaticamente no container
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "codezombiech.gitignore",
+        "editorconfig.editorconfig",
+        "github.copilot",
+        "github.copilot-chat",
+        "mermaidchart.vscode-mermaid-chart",
+        "ms-ceintl.vscode-language-pack-pt-br",
+        "pkief.material-icon-theme",
+        "shd101wyy.markdown-preview-enhanced",
+        "tomoki1207.pdf",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  
+  
+  // Features adicionais que podem ser úteis
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  }
+}
