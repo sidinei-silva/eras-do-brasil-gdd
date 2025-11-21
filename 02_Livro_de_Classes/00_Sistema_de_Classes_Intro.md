@@ -46,9 +46,25 @@ Antes de explorar cada classe, é importante lembrar:
 
 ---
 
+## ⚙️ Interação: Qualidade de Item vs. Habilidades
+
+(Seção Nova: Adicionada para resolver auditoria de integração)
+
+Para garantir que o crafting e o loot sejam relevantes para todas as classes, a **Qualidade** da arma ou foco equipado influencia diretamente a eficácia das Habilidades de Classe (CD e Dano).
+
+| Qualidade do Item Equipado | Bônus na Habilidade |
+| :--- | :--- |
+| **Muito Baixa / Baixa** | -1 na CD (Dificuldade para o inimigo resistir) |
+| **Média (Padrão)** | +0 (Valor base da habilidade) |
+| **Alta** | +1 na CD da Habilidade |
+| **Excelente** | +2 na CD e +1 no Dano/Cura base da habilidade |
+
+*Exemplo:* A habilidade "Provocação Tática" do Conquistador tem CD Base 13. Se ele estiver usando um Escudo de Qualidade Excelente, a CD sobe para 15.
+
+---
+
 ## 🔄 Atualizações Futuras
 
-(Seção recuperada da auditoria)
 Este livro será expandido com:
 
 - **Evoluções por Tier 2 e Tier 3** para cada classe.
@@ -59,12 +75,10 @@ Este livro será expandido com:
 
 ## 📚 Leitura Recomendada
 
-(Seção recuperada da auditoria)
 Para melhor aproveitamento deste livro, é recomendável ter lido:
 
 - [Capítulo 3 – Criação de Personagem](../01_Livro_de_Regras/03_Criacao_de_Personagem.md)
 - [Capítulo 6 – Economia, Itens e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
-- (Link futuro para Livro de Proficiências de Vida)
 
 Essas leituras oferecem a base completa para entender as interações entre atributos, equipamentos, progressão e ambientação de cada classe.
 
@@ -104,7 +118,6 @@ Este documento apresenta uma visão geral do funcionamento do sistema. Para deta
 
 ## 📘 Conteúdo Complementar
 
-(Seção recuperada da auditoria)
 Para aprofundar cada parte do sistema, acesse os seguintes arquivos:
 
 - [🧩 Tiers e Evolução](./01_Tiers_e_Evolucao.md): Como funcionam os Tiers de classe e suas regras de progressão.
@@ -123,10 +136,7 @@ Para aprofundar cada parte do sistema, acesse os seguintes arquivos:
 
 ## 🧠 Recomendado Ler Antes
 
-(Seção recuperada da auditoria)
 Para melhor compreensão, recomenda-se ler os seguintes capítulos do Livro de Regras:
 
 - [📘 Capítulo 3 – Criação de Personagem](../01_Livro_de_Regras/03_Criacao_de_Personagem.md)
 - [📘 Capítulo 6 – Economia, Itens e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
-
----

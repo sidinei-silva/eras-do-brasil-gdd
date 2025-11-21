@@ -65,10 +65,16 @@ O Encantador de Espíritos é um ser mágico cuja essência vibra entre os plano
 #### Habilidades Iniciais
 
 ##### Invocação Menor (Ativa)
-**Efeito:** Invoca um espírito auxiliar simbólico por até 2 turnos. Ele pode atacar, vigiar ou distrair (a critério do mestre)
+**Efeito:** Invoca um "Espírito Menor" em um espaço vazio a até 5m. A invocação dura 2 turnos ou até ser destruída. O espírito age imediatamente após o turno do jogador e possui as seguintes estatísticas fixas:
+* **PV:** 5 + (Nível do Jogador x 2)
+* **Ações (Escolha uma ao invocar):**
+    1.  **Atormentar:** Causa 1d4 de dano espiritual a um inimigo adjacente.
+    2.  **Distrair:** O próximo ataque contra o alvo inimigo tem Vantagem.
+    3.  **Vigiar:** Revela unidades invisíveis ou furtivas em um raio de 3m.
+
 **Recarga:** 3 turnos
-**Alcance:** Até 5 metros
-**Condição:** Precisa de foco espiritual (instrumento, cajado, amuleto)
+**Alcance:** Invocação a 5m
+**Condição:** Precisa de foco espiritual
 
 ##### Canal Espiritual (Passiva)
 **Efeito:** Detecta presenças sobrenaturais a até 10 metros e recebe +2 em testes de interação com planos espirituais
@@ -106,11 +112,10 @@ O Encantador de Espíritos é um ser mágico cuja essência vibra entre os plano
 
 #### 🧠 Estratégias de Uso
 
-(Seção recuperada da auditoria)
-- Utilize **Invocação Menor** para distrações estratégicas ou proteção temporária
-- Combine **Canal Espiritual** com exploração em locais assombrados ou mágicos
-- Coordene suas invocações com ações de aliados para controle de campo
-- Ideal para campanhas com foco em narrativa, planos espirituais e rituais
+- Utilize **Invocação Menor** (Modo Distrair) para garantir que o Mosqueteiro ou Arqueiro acerte seu tiro poderoso.
+- Combine **Canal Espiritual** com exploração em locais assombrados ou mágicos.
+- Coordene suas invocações com ações de aliados para controle de campo.
+- Ideal para campanhas com foco em narrativa, planos espirituais e rituais.
 
 ---
 
@@ -127,8 +132,6 @@ O Encantador de Espíritos atua como elo entre o mundo físico e o espiritual. S
 ---
 
 #### 🔍 Detalhamento Técnico
-
-(Seção recuperada da auditoria)
 
 ##### Armas Iniciais
 
