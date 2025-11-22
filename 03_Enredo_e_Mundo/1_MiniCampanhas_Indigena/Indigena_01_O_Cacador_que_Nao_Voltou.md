@@ -1,33 +1,47 @@
-# 🐆 O Caçador que Não Voltou
+# 🐆 O Caçador que Não Voltou (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Caçador de Feras ou Arqueiro Selvagem
+**Estilo de Missão:** Floresta, rastreamento, cronometrada
 
-**Estilo de Missão:** Floresta, rastreamento, pacto espiritual
+---
 
-**Resumo:**
+### 📝 Resumo Dinâmico
 
-Um jovem caçador partiu em busca de uma criatura lendária que devora sonhos — e nunca retornou. O personagem ou grupo deve seguir seus rastros, atravessando territórios proibidos e enfrentando espíritos protetores do véu entre os mundos.
+Um jovem caçador (NPC: Iaguarê) não retornou de sua rotina diária. Sua agenda dizia que ele voltaria ao meio-dia (Tick 50), mas o relógio do mundo já passou disso. O jogador deve refazer os passos dele antes que a noite caia e os predadores noturnos (Espíritos da Fome) surjam.
 
-**Motivo para Jogar:**
+**Gatilho de Início:**
+* **Passivo:** Falar com a mãe de Iaguarê (NPC: Jaci) após o Tick 50.
+* **Ativo (Fofoca):** Qualquer NPC com a tag `observador` na vila dirá: "Estranho, Iaguarê ainda não trouxe a caça de hoje."
 
-Explorar zonas selvagens, pactos espirituais e o equilíbrio da floresta.
+---
 
-**Recompensa:**
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
 
-- +1 em testes de rastreamento (permanente)
-- Possível desbloqueio antecipado da proficiência **Animalismo**
-- Espírito-falcão como ajudante narrativo em sessões futuras
+**1. A Investigação (Vila)**
+* O jogador pode usar **Rastreamento** (Proficiência) na saída da vila OU perguntar aos guardas.
+* **Guarda (IA):** Se afinidade > 10, revela: "Vi ele saindo pelo portão Norte ao amanhecer (Tick 0)."
+
+**2. O Rastro (Floresta)**
+* O rastro possui uma "Durabilidade de Tempo".
+* **Se Ticks < 80:** O rastro é fresco (CD 10).
+* **Se Ticks > 80:** Começou a chover/anoitecer. O rastro é difícil (CD 15).
+* **Se Ticks > 120 (Noite):** O rastro sumiu. O jogador deve buscar refúgio ou enfrentar penalidade de escuridão.
+
+**3. O Encontro (A Toca da Fera)**
+* Iaguarê está encurralado por uma **Criatura Devoradora de Sonhos**.
+* **Condição de Vitória A (Rápido):** Se chegar antes do Tick 100, Iaguarê está ferido mas luta ao seu lado.
+* **Condição de Vitória B (Lento):** Se chegar após o Tick 100, Iaguarê está inconsciente (Status: *Drenado*). O jogador luta sozinho e deve carregá-lo de volta (consome dobro de Ticks).
+
+---
+
+### 🎁 Recompensa
+
+- +1 em testes de rastreamento (permanente).
+- **Item Único:** *Dente da Fera dos Sonhos* (Qualidade: Alta, Raridade: Rara).
+- **Afinidade:** +20 com a facção da Aldeia e com Iaguarê (se salvo).
 
 ---
 
 ### 🔗 **Gancho Maior de Campanha:**
 
-A criatura devoradora de sonhos era, na verdade, um espírito guardião corrompido por rituais interrompidos durante a chegada dos colonizadores. Ela agora vagueia entre mundos, corrompendo o equilíbrio espiritual da floresta.
-
-A missão inicial torna-se o início de uma **série de expedições** para restaurar a conexão com os antigos guardiões.
-
-**Expansão possível:**
-
-- Descoberta de outros locais afetados por desequilíbrio espiritual.
-- Confrontos com tribos que perderam o vínculo com seus totens.
-- Possível libertação ou purificação do espírito ancestral, com impacto mundial.
+A criatura não era natural. Era um espírito guardião corrompido. Iaguarê, se salvo, revela que viu um "Homem de Preto" (Colonizador) fazendo um ritual na nascente do rio antes da fera enlouquecer. Isso abre a missão de facção: **"A Fonte Envenenada"**.

@@ -9,7 +9,6 @@ As mini-campanhas do *Eras do Brasil* foram criadas com **classes recomendadas**
 ### 🔧 Passo 1 – **Identifique o papel narrativo e mecânico da classe original**
 
 Exemplo:
-
 - Missão: *O Caçador que Não Voltou*
 - Classe sugerida: Caçador de Feras
 - Papel: Rastreador, especialista em selva, DPS furtivo
@@ -53,35 +52,25 @@ Exemplo:
 
 ---
 
-### 🧪 Exemplo prático de reescrita
+### 🧬 Injetando Vida: Usando Ticks e IA em Missões
 
-**Original:**
+Para que as missões funcionem no sistema de **Mundo Vivo** (Capítulo 8 do Livro de Regras), elas não podem ser estáticas. Use os seguintes gatilhos:
 
-> 🐾 Passos que não Deixam Pegadas
-> 
-> Requer furtividade e rastreamento.
->
+#### 1. Gatilhos de Rotina (IA de NPC)
+Não coloque o NPC "esperando no ponto X para sempre".
+* **Errado:** "Fale com o Ferreiro na Forja."
+* **Certo:** "O Ferreiro segue sua rotina. De manhã (Ticks 0-20) ele está na Forja. À tarde (Ticks 21-40), ele vai ao Mercado vender. À noite, está na Taverna." O jogador precisa interceptá-lo.
 
-**Adaptação para um **Missionário**: **
+#### 2. Pistas via "Fofoca" (KnowledgeBase)
+Se o jogador não sabe onde é a missão, ele deve perguntar.
+* Use a `knowledgeBase` dos NPCs: "Você não precisa achar as pegadas sozinho. Se perguntar ao Caçador (que tem a tag `viu_monstro`), ele marcará o local no seu mapa."
 
-- Missão vira: “O Caçador Sem Sombra não é só um espírito — é um demônio rebelde que deve ser exorcizado.”
-- Envolve **exorcismos, testes de fé, purificação e confronto moral**.
-
----
-
-### 🎁 Recompensas Alternativas por Função
-
-Ao adaptar, você também pode:
-
-- Manter a recompensa original, mas mudar a justificativa
-- Criar uma recompensa equivalente, compatível com o estilo da nova classe
-- Adicionar **variação de título ou reconhecimento social** de acordo com a abordagem adotada
+#### 3. Urgência Real (Ticks)
+Missões de resgate ou caça devem ter **contadores de Ticks**.
+* "O rastro do monstro esfria em 50 Ticks."
+* Se o jogador demorar (gastar Ticks descansando ou craftando), a missão muda: em vez de "Salvar o Refém", vira "Vingar o Refém" (ele morreu).
 
 ---
 
 > 🔄 **Conclusão:**
-> 
-> As mini-campanhas funcionam como **molde narrativo vivo**.
-> 
-> Adaptar para outra classe não só é possível, como **enriquece o mundo** e fortalece a imersão, mostrando que **o mundo responde ao estilo de cada personagem**.
->
+> As mini-campanhas funcionam como **molde narrativo vivo**. Adaptar para outra classe e para o tempo do mundo enriquece a imersão.
