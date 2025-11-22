@@ -12,3 +12,6 @@ Desktop.ini
 
 # Ignorar arquivos do Obsidian
 .obsidian/
+
+# Ignorar pasta de backup de arquivos markdown
+todos-arquivos/
