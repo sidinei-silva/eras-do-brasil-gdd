@@ -1,35 +1,47 @@
-# 🔥 Fé que Ilumina ou Queima
+# 🔥 Fé que Ilumina ou Queima (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Missionário ou Mosqueteiro
-
-**Estilo de Missão:** Dogma versus espiritualidade
-
-**Resumo:**
-
-Um “milagre” ocorreu em território sagrado. Colonos e indígenas o presenciaram, mas discordam em sua natureza. O personagem lidera a “interpretação oficial”.
+**Estilo de Missão:** Dogma, espiritualidade, debate social
 
 **Motivo para Jogar:**
-
-Fé, diplomacia espiritual, tensão mística.
-
-**Recompensa:**
-
-- Ritual de purificação antecipado
-- +1 em testes contra medo ou possessão
-- Ganha um **Seguidor Inquieto** (NPC ou espírito que observa)
+Fé, diplomacia espiritual e tensão mística em um ambiente social.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-O “milagre” não foi obra nem de santos nem de espíritos indígenas — foi uma **interferência do futuro** provocada por uma ruptura na Raiz do Mundo.
+Um "milagre" (uma luz que cura) apareceu no bosque. A Igreja quer canonizar o local, os Indígenas dizem que é um espírito perigoso. O evento só ocorre ao **meio-dia (Tick 50)**. O jogador deve estar lá para testemunhar e decidir a verdade.
 
-As visões divergentes não são apenas interpretações culturais, mas **fragmentos de diferentes linhas temporais tentando coexistir**.
+**Gatilhos de Início:**
+* **Ativo:** O Padre convoca voluntários para uma procissão até o local.
 
-A missão revela que a **verdade objetiva é impossível**, e que o personagem pode aprender a **navegar entre interpretações** — ou forçar uma versão única da realidade.
+---
 
-**Expansão possível:**
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
 
-- Acesso a um “Dom de Interpretação”, permitindo manipular crenças em áreas espirituais.
-- Campanha sobre influência religiosa: moldar dogmas ou desmontar instituições.
-- Decisão narrativa que determina **qual “realidade religiosa” prevalecerá** na colônia.
+**1. A Procissão**
+* Acompanhar o cortejo (Lento: 20 Ticks) ou ir na frente investigar (Rápido: 5 Ticks).
+* Se chegar antes: Pode falar com o Xamã local que está tentando conter a luz.
+* Se chegar com a procissão: O Padre tenta "exorcizar" a luz, o que pode causar uma explosão.
+
+**2. O Fenômeno (Tick 50)**
+* A luz se manifesta. É uma **Ruptura Temporal**.
+* O jogador deve fazer um teste de *Conhecimento* ou *Sabedoria* para entender o que está vendo antes que a multidão reaja.
+
+---
+
+### 🎁 Recompensa
+
+-   **Ritual:** Aprende **"Selo de Contenção"** ou **"Bênção da Luz"** (dependendo de quem apoiou).
+-   +1 em testes contra medo ou possessão.
+-   Ganha um **Seguidor Inquieto** (NPC que viu o jogador agir).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+O milagre era um fragmento do futuro. A Igreja agora tem uma relíquia instável.
+
+**Expansão Possível:**
+* **A Inquisição:** Investigadores chegam para interrogar quem estava lá.
+* **A Heresia:** O jogador começa a ter visões do futuro (efeito colateral da luz).

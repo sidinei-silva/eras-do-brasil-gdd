@@ -1,31 +1,45 @@
-# ⚰️ Onde Enterram os Segredos
+# ⚰️ Onde Enterram os Segredos (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Conquistador ou Missionário
-
-**Estilo de Missão:** Investigação oculta, moralidade religiosa
-
-**Resumo:**
-
-Uma capela colonial recém-construída apresenta infiltrações constantes, apesar do clima seco. Escavações revelam uma cripta abaixo do altar — **com ossos que não pertencem a nenhum humano conhecido**. A Igreja quer abafar o caso. O personagem é enviado para “resolver” o problema.
+**Estilo de Missão:** Investigação oculta, dungeon crawl
 
 **Motivo para Jogar:**
-
-Testa os limites entre fé institucional e verdades proibidas.
-
-**Recompensa:**
-
-- Pode escolher entre **absolvição ou excomunhão** (cada com bônus únicos)
-- Desbloqueia o ritual **“Selo da Redenção ou Ruína”**
-- Acesso ao “Livro do Quinto Véu”, um grimório proibido (opcional)
+Testa os limites entre fé institucional e verdades proibidas em um ambiente claustrofóbico.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A cripta pertence a uma ordem secreta que lutava contra a **Raiz do Mundo**, acreditando que ela era uma criação demoníaca. Seus últimos seguidores ainda existem e **querem erradicar a conexão espiritual do Brasil**.
+Uma cripta foi descoberta sob a capela. O Padre quer que você entre e "limpe" tudo antes da missa da manhã (Tick 0). A cripta está cheia de **Ghouls** que ficam mais fortes à medida que a noite avança.
 
-**Expansão possível:**
+**Gatilhos de Início:**
+* **NPC:** O Padre, nervoso, aborda o jogador na taverna à noite.
 
-- Caçada a templos ocultos dessa ordem pela colônia.
-- Dilema: unir-se a eles ou impedir que eliminem os vínculos mágicos do continente.
-- Um personagem pode ser tentado a **romper seu próprio Dom da Revivência** por fé ou trauma.
+---
+
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Descida**
+* Masmorra clássica. Recursos (tochas) são limitados por Ticks (uma tocha dura 50 Ticks).
+* Se a luz acabar, os monstros ganham Vantagem.
+
+**2. O Segredo**
+* No fundo, não há demônios, mas **ossos de criaturas folclóricas** torturadas por inquisidores antigos.
+* O jogador encontra o **Grimório do Quinto Véu**.
+
+---
+
+### 🎁 Recompensa
+
+-   **Item:** **Grimório do Quinto Véu** (Desbloqueia rituais proibidos de banimento).
+-   Escolha: **Absolvição** (Igreja apoia, ganha Ouro) ou **Chantagem** (Ganha influência sobre o Padre).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+A Igreja local tem uma ala secreta dedicada a exterminar o sobrenatural do Brasil.
+
+**Expansão Possível:**
+* **A Cruzada das Sombras:** O jogador entra na mira dos Inquisidores.
+* **Aliança Improvável:** Unir-se às criaturas folclóricas para sobreviver à purgação.

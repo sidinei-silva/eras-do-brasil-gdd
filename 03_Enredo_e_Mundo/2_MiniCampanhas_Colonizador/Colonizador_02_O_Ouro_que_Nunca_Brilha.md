@@ -1,35 +1,51 @@
-# 🧭 O Ouro que Nunca Brilha
+# 🧭 O Ouro que Nunca Brilha (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Explorador de Terras ou Mosqueteiro
-
-**Estilo de Missão:** Armadilhas, exploração e dilema ético
-
-**Resumo:**
-
-Um mapa revela uma jazida de ouro em terras sagradas. Para chegar até ela, é preciso desrespeitar pactos e desafiar espíritos protetores. Ganância ou respeito?
+**Estilo de Missão:** Armadilhas, exploração, dilema ético
 
 **Motivo para Jogar:**
-
-Ganância versus limites culturais. Teste de valores.
-
-**Recompensa:**
-
-- Ganha um **mapa especial** (atalhos em áreas selvagens)
-- Moeda rara antiga para desbloqueios futuros
-- Potencial desbloqueio da proficiência **Mineração e Geologia**
+Ganância versus limites culturais. Teste de valores em ambiente de dungeon.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A jazida escondida não é apenas ouro — é parte de um **sistema de selos mágicos soterrados** por tribos ancestrais para conter uma entidade conhecida como **A Garganta da Fome**.
+Um mapa comprado de um moribundo revela uma jazida de ouro. Porém, a mina só é acessível quando a maré do rio baixa (entre Ticks 40 e 80 do dia). Dentro, não há apenas ouro, mas um guardião antigo que foi acordado pela mineração.
 
-Os mapas antigos foram criados para enganar, redirecionando gananciosos ao selo para que servissem como **sacrifício inconsciente**.
+**Gatilhos de Início:**
+* **Item:** Encontrar o "Mapa Manchado de Lama" no inventário de um bandido ou comprá-lo no mercado.
 
-O personagem pode liberar o selo sem querer, ou tentar descobrir quem o desenhou — e **por que esses selos estão em locais de extração mineral em todo o continente**.
+---
 
-**Expansão possível:**
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
 
-- Campanha para impedir a abertura dos demais selos.
-- Introdução de um culto que deseja liberar a entidade para dominar o Brasil.
-- Escolha moral entre riqueza, poder ou manter o equilíbrio espiritual.
+**1. A Entrada (O Rio)**
+* O jogador deve chegar na entrada da caverna no momento certo da maré.
+* **Tick < 40:** Entrada submersa (Teste de Natação difícil).
+* **Tick 40-80:** Entrada acessível.
+* **Tick > 80:** A água sobe, prendendo quem estiver dentro.
+
+**2. O Guardião (O Mentor)**
+* No fundo da mina, o jogador encontra um **Eremita Mineralogista** (ou um Espírito da Terra) que estava preso, não um monstro.
+* Ele protege um veio de "Ouro Amaldiçoado".
+
+**3. A Escolha**
+* **Saquear:** Mata o Eremita, pega o ouro (muito dinheiro), mas ganha uma Maldição.
+* **Libertar:** Ajuda o Eremita a selar a mina. Ele se torna seu Mentor.
+
+---
+
+### 🎁 Recompensa
+
+-   **Desbloqueio de Mentor:** O **Eremita** ensina a proficiência **Mineração e Geologia** e permite evoluir classes de Explorador.
+-   Ganha um **Mapa de Atalhos** (reduz custo de Ticks em viagens futuras).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+A mina era, na verdade, um selo para conter a entidade **A Garganta da Fome**.
+
+**Expansão Possível:**
+* **Os Selos Quebrados:** O Eremita revela a localização de outros selos que estão sendo minerados por ganância.
+* **A Febre do Ouro:** Uma vila inteira é corrompida pela entidade, transformando-se em devoradores de metal.

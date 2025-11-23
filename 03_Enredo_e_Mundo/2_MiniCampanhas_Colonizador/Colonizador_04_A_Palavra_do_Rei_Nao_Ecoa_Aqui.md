@@ -1,33 +1,46 @@
-# 🏛️ A Palavra do Rei Não Ecoa Aqui
+# 🏛️ A Palavra do Rei Não Ecoa Aqui (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Qualquer classe colonizadora
-
-**Estilo de Missão:** Política e insubordinação
-
-**Resumo:**
-
-Um vilarejo colonizador se declarou independente, desafiando a Coroa. O personagem é enviado como diplomata ou agente secreto — mas pode acabar sendo seduzido por essa nova ordem.
+**Estilo de Missão:** Política, insubordinação, escolhas de facção
 
 **Motivo para Jogar:**
-
-Explora alianças, ideologia e quebra de juramentos.
-
-**Recompensa:**
-
-- Permite infiltrar-se como “simpatizante” em grupos rebeldes
-- +2 em testes sociais contra inimigos da Coroa
-- Escolha entre reforçar a autoridade ou fomentar a revolução (afeta o mundo)
+Explora alianças, ideologia e quebra de juramentos em um cenário de tensão política.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A vila rebelde não se rebelou sozinha. Recebeu apoio de um **movimento oculto no Velho Mundo**: os **Filhos do Horizonte Livre**, um grupo filosófico que acredita que o Novo Mundo deve **cortar totalmente os laços com a Europa**, espirituais e materiais.
+Um cobrador de impostos da Coroa desapareceu ao entrar na Vila Independente. O jogador é enviado para encontrá-lo. A vila tem **ciclos de patrulha rigorosos**. O cobrador está preso e será executado no **Amanhecer do dia seguinte**.
 
-Esse grupo envia mensagens codificadas por navios, forma “reis alternativos” nas colônias e treina líderes entre indígenas, colonos e até seres folclóricos que queiram romper o ciclo histórico.
+**Gatilhos de Início:**
+* **Carta:** Recebe uma ordem selada do Governador.
 
-**Expansão possível:**
+---
 
-- Conflito ideológico entre revolução libertária e lealdade à coroa.
-- Escolha entre apoiar a descentralização mágica do Brasil ou mantê-la controlada.
-- Influência global: o personagem pode acabar como peça-chave no futuro político-místico da colônia.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Infiltração ou Diplomacia**
+* Entrar na vila disfarçado (Teste de Atuação) ou forçar entrada (Combate).
+* **Rotina de NPC:** O Líder Rebelde faz discursos na praça ao entardecer (Tick 80). É a chance de invadir a casa dele enquanto ele está fora.
+
+**2. O Prisioneiro**
+* O cobrador está no porão. Ele oferece **tudo** para ser solto.
+* O Líder Rebelde oferece uma **aliança** se o jogador deixar o cobrador morrer.
+
+---
+
+### 🎁 Recompensa
+
+-   **Item de Evolução:** **Moeda de Classe (Selo Real ou Medalha da Liberdade)** - Dependendo de quem você apoiar.
+-   Permite infiltrar-se como “simpatizante” em grupos rebeldes ou ganha posto oficial na Coroa.
+-   +2 em testes sociais contra a facção oposta.
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+A rebelião é financiada por uma sociedade secreta do Velho Mundo: **Filhos do Horizonte Livre**.
+
+**Expansão Possível:**
+* **A Guerra Civil:** A vila se torna o estopim de um conflito regional.
+* **Agente Duplo:** O jogador pode trabalhar para os dois lados, vendendo informações.

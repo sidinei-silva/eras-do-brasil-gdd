@@ -1,31 +1,45 @@
-# 🕰️ Os Relógios do Porto Morto
+# 🕰️ Os Relógios do Porto Morto (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Explorador de Terras ou Missionário
-
-**Estilo de Missão:** Mistério, passagem do tempo, exploração urbana
-
-**Resumo:**
-
-Na colônia portuária de Santa Azeitona, seis relógios pararam ao mesmo tempo — e, desde então, ninguém mais sonha. Os anciãos falam de um pacto quebrado com o tempo, e comerciantes afirmam que os dias estão ficando mais curtos. O personagem é chamado para descobrir a origem do fenômeno.
+**Estilo de Missão:** Mistério, anomalia temporal
 
 **Motivo para Jogar:**
-
 Cria um elo com o tempo como força narrativa e joga com a percepção do real e do espiritual.
-
-**Recompensa:**
-
-- Acesso a um “Relógio Invertido” (item narrativo que permite prever brevemente o próximo turno de um inimigo)
-- Desbloqueio da proficiência **Navegação Temporal** (mecânica futura opcional para campanhas longas)
-- Ganha reputação como **“Aquele que viu o tempo parado”**
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-Descobre-se que o tempo está sendo distorcido por um **artefato trazido da Europa**, ativado acidentalmente por rituais locais. O personagem pode seguir sua trilha até outras colônias que apresentam “anomalias temporais”, com fragmentos de futuros não realizados.
+Em Santa Azeitona, os relógios pararam. Mas o tempo *do jogo* (Ticks) começa a se comportar de forma estranha: **a cada 10 Ticks, o mundo "reseta" para o estado de 10 Ticks atrás**, mas o jogador mantém a memória. É um *loop* temporal local.
 
-**Expansão possível:**
+**Gatilhos de Início:**
+* **Ambiental:** Ao entrar na cidade, o relógio da UI trava ou gira ao contrário.
 
-- Campanha de “saltos temporais” que conecta momentos da história brasileira.
-- Introdução de antagonistas que manipulam eventos futuros.
-- Escolha moral: restaurar o tempo “correto” ou preservar mudanças que salvaram vidas?
+---
+
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. O Loop**
+* O jogador tem 10 Ticks para descobrir a causa. Se falhar, volta para a entrada da cidade.
+* Deve observar a rotina dos NPCs e prever onde o "Sabotador Temporal" vai estar.
+
+**2. A Quebra**
+* Sabendo onde o sabotador estará no Tick 5, o jogador pode interceptá-lo.
+* O sabotador carrega um **Artefato de Cronometria** defeituoso.
+
+---
+
+### 🎁 Recompensa
+
+-   **Item Único:** **Relógio Invertido** (Item narrativo: permite prever brevemente o próximo turno de um inimigo em combate).
+-   Desbloqueio da proficiência **Navegação Temporal** (Opcional).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+O artefato veio da Europa, de um relojoeiro que estuda a Raiz do Mundo à distância.
+
+**Expansão Possível:**
+* **Os Viajantes:** Encontrar outros presos em loops temporais pela colônia.
+* **O Relojoeiro:** Um Boss que manipula a ordem de iniciativa no combate.
