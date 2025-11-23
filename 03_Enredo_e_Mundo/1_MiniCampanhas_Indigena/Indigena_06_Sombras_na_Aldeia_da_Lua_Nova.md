@@ -1,35 +1,46 @@
-# 🏹 Sombras na Aldeia da Lua Nova
+# 🏹 Sombras na Aldeia da Lua Nova (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Arqueiro Selvagem ou Caçador de Feras
-
-**Estilo de Missão:** Infiltração e confronto com forças internas
-
-**Resumo:**
-
-Após o desaparecimento de três anciões, a Aldeia da Lua Nova está em caos. Os rastros levam a uma caverna selada há gerações. A aldeia teme que **um antigo traidor**, banido no passado, tenha retornado através de pactos obscuros.
-
-O personagem deve descobrir a verdade e impedir que forças internas dividam o povo.
+**Estilo de Missão:** Infiltração, stealth, política
 
 **Motivo para Jogar:**
-
-Tensões políticas e dilemas de lealdade, com foco em stealth e exploração.
-
-**Recompensa Narrativa/Mecânica:**
-
-- Permite realizar **ações furtivas sem penalidade em ambientes naturais**
-- Pode aprender uma técnica única de disparo silencioso ou armadilha
-- Ganha confiança de um clã rival
+Tensões políticas e dilemas de lealdade, exigindo furtividade e inteligência social em vez de força bruta.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-O traidor selado era um **conhecedor de magia proibida ligada ao sono e aos sonhos**. Seus ensinamentos foram proibidos, mas nunca esquecidos.
+Anciões estão sumindo. A aldeia está em "Estado de Alerta" (NPCs guardas patrulham com mais frequência, dificultando furtividade). O jogador deve descobrir o traidor interno sem ser visto, pois qualquer alarme pode fazer o traidor fugir ou matar os reféns.
 
-A investigação revela que ele estava tentando proteger a tribo de algo maior — e sua “traição” talvez tenha sido **um último ato de sacrifício**.
+**Gatilhos de Início:**
+* **Ambiente:** A aldeia entra em "Lockdown" (ninguém entra ou sai) no Tick 0 da noite.
 
-**Expansão possível:**
+---
 
-- Reescrever a história da aldeia à medida que mais verdades emergem.
-- Escolha entre seguir ou silenciar os ensinamentos do traidor.
-- Possibilidade de manipular o mundo onírico para interferir no plano físico.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Infiltração (Stealth)**
+* O jogador deve se mover pelos blocos da aldeia evitando a linha de visão dos guardas (que têm rotas fixas de patrulha).
+* **Fator Tempo:** O traidor se encontra com seu contato externo no Tick 200 (Madrugada). O jogador deve estar posicionado para ouvir.
+
+**2. O Confronto**
+* Ao descobrir o traidor (um antigo guerreiro banido), o jogador pode confrontá-lo ou segui-lo até o esconderijo dos reféns.
+
+---
+
+### 🎁 Recompensa
+
+- **Técnica:** Aprende **"Disparo Silencioso"** ou **"Passo sem Rastro"** (Habilidade Especial).
+- Ganha a confiança do Conselho Tribal (acesso a áreas restritas).
+- Itens do traidor (Arco de qualidade Média).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+O traidor estava tentando proteger a tribo usando magia proibida de sonhos. Seus diários revelam que uma **ameaça maior** está vindo, algo que os rituais tradicionais não podem parar.
+
+**Expansão Possível:**
+* **O Caminho dos Sonhos:** O jogador pode decidir aprender essa magia proibida.
+* **Inocência ou Culpa:** O traidor estava certo? O jogador pode tentar reabilitar a memória dele.
+* **Ameaça Externa:** A entidade que o traidor temia começa a se manifestar.

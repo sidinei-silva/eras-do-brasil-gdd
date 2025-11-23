@@ -1,33 +1,53 @@
-# 🪓 Sombras Sobre a Aldeia Queimada
+# 🪓 Sombras Sobre a Aldeia Queimada (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Guerreiro Tribal ou Xamã Curandeiro
-
-**Estilo de Missão:** Recuperação de território, trauma coletivo
-
-**Resumo:**
-
-Uma antiga aldeia foi queimada pelos colonizadores décadas atrás. Espíritos dos anciãos permanecem presos, em tormento. Cabe ao personagem decidir se irá purificar o local, ou usar esse sofrimento para forjar um novo poder espiritual.
+**Estilo de Missão:** Recuperação de território, trauma coletivo, purificação
 
 **Motivo para Jogar:**
-
-Ressignificação de território, cura de traumas, ou canalização de dor em força.
-
-**Recompensa:**
-
-- Pode transformar um local ancestral em “solo consagrado”
-- +2 em rituais ou testes envolvendo comunhão espiritual
-- Escolha entre purificar ou manter a dor como foco de poder
+Lidar com temas de luto e memória, escolhendo entre curar o passado ou usar sua dor como arma (Ressignificação de território).
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A aldeia foi construída sobre o ponto de intersecção de dois **caminhos espirituais** da Raiz do Mundo. A destruição do local não apenas matou seus habitantes, mas também **trancou as energias ancestrais**, aprisionando-as em um ciclo de dor e ira.
+Uma antiga aldeia foi queimada pelos colonizadores décadas atrás. O local é evitado por todos, mas recentemente, durante a **Lua Nova (Ciclo Espiritual)**, os espíritos dos anciãos começaram a gritar, perturbando o sono da vila vizinha. O jogador tem uma janela de oportunidade: o ritual de purificação só pode ser feito antes que a Lua Mude (100 Ticks Globais).
 
-Purificar a aldeia é apenas o começo: o personagem descobre que **outras aldeias queimadas** durante o mesmo período estão conectadas — e juntas formam **um antigo selo protetor**, agora fragmentado.
+**Gatilhos de Início:**
+* **Passivo:** Ouvir os gritos ao passar perto do bloco "Ruínas Queimadas" à noite.
+* **Ativo (Fofoca):** O Pajé Ubiratã (NPC) comenta: "Os ancestrais não dormem. Se não forem acalmados em 3 dias, a loucura vai se espalhar."
 
-**Expansão possível:**
+---
 
-- Viagens entre ruínas para **restaurar ou romper o selo completo**.
-- Encontro com um **espírito ancestral da vingança**, que oferece poder em troca de cicatrizes permanentes.
-- Conflito entre reconstruir o passado ou usar a dor como combustível místico.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Preparação (Coleta de Ingredientes)**
+* O jogador precisa de "Cinzas de Fogueira Antiga" e "Erva de Sonho".
+* **Rotina de NPC:** A Herborista Tainá sabe onde encontrar a erva, mas ela só atende na sua tenda pela manhã (Ticks 0-30). À tarde, ela sai para coletar (o jogador teria que rastreá-la).
+
+**2. A Travessia (Ruínas)**
+* O local é uma zona de "Perigo Espiritual".
+* **Mecânica de Ticks:** A cada 10 Ticks dentro das ruínas sem proteção, o jogador deve fazer um teste de Resistência Espiritual ou ganhar 1 ponto de "Perturbação".
+
+**3. O Ritual (Decisão)**
+* O jogador encontra o **Espírito do Cacique Queimado**.
+* **Opção A (Purificar):** Exige teste de Sabedoria Ancestral (CD 14). Liberta os espíritos.
+* **Opção B (Canalizar Ira):** Aceita a dor deles. Ganha poder de combate, mas corrompe o local.
+
+---
+
+### 🎁 Recompensa
+
+- **Item de Evolução:** **Moeda de Classe (Totem Ancestral)** - Encontrada nas cinzas após o ritual.
+- Pode transformar o local em “solo consagrado” (Ponto de descanso seguro).
+- +2 em rituais ou testes envolvendo comunhão espiritual.
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+A aldeia foi queimada porque ficava sobre uma **Linha de Ley** (Caminho da Raiz). Ao purificar (ou corromper), o jogador "acende" esse nó no mapa global.
+
+**Expansão Possível:**
+* **Rede de Ruínas:** Descobrir que outras aldeias queimadas formam um padrão geométrico (um selo antigo).
+* **O Inimigo Oculto:** O incêndio não foi aleatório; foi um ritual de supressão da Raiz feito por uma ordem antiga.
+* **Espírito da Vingança:** Se escolher a "Ira", o jogador pode desbloquear uma classe secreta ou habilidade de "Vingador Ancestral".

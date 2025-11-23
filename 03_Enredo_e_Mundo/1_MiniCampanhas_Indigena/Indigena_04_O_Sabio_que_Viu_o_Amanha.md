@@ -1,33 +1,52 @@
-# 🦉 O Sábio que Viu o Amanhã
+# 🦉 O Sábio que Viu o Amanhã (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Qualquer classe indígena
-
-**Estilo de Missão:** Profecia, legado e escolhas futuras
-
-**Resumo:**
-
-Um xamã deixou um enigma antes de morrer: “Quando o sangue da lua tocar o rio seco, sigam o corvo de três olhos.” A profecia está prestes a se cumprir, e o personagem deve decidir se irá mudar o destino — ou deixá-lo seguir.
+**Estilo de Missão:** Profecia, legado, tempo
 
 **Motivo para Jogar:**
-
-Lida com visão de futuro, ciclos, legado e sacrifício.
-
-**Recompensa:**
-
-- O jogador pode “adiar” um evento trágico uma vez por campanha
-- Pode ter visões sobre um NPC ou inimigo importante
-- Marca de “Avisado pelo Futuro” (abre caminhos especiais em momentos-chave)
+Lidar com visões do futuro, ciclos temporais e o peso do sacrifício para alterar o destino.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A profecia deixada pelo xamã não é isolada — ela é parte de um **ciclo de visões interligadas** deixadas por diversos sábios ao longo das Eras.
+Um xamã eremita, que vive em uma caverna de difícil acesso, deixou uma profecia: “Quem chegar ao topo da montanha antes da sombra da águia tocar o rio (Meio-dia) receberá o segredo do amanhã.” É uma corrida contra o tempo (Ticks) e contra outros NPCs rivais que também querem o prêmio.
 
-O corvo de três olhos é uma **manifestação da Raiz do Mundo**, capaz de guiar aqueles que enxergam além do tempo. Segui-lo pode revelar não apenas o futuro do personagem, mas **fragmentos de eras alternativas**.
+**Gatilhos de Início:**
+* **Evento de Tempo:** A missão só fica disponível ao amanhecer (Tick 0 do dia).
 
-**Expansão possível:**
+---
 
-- Descoberta de **outros “enigmistas”** que deixaram pistas ao longo do mundo.
-- Permissão para viajar entre “possibilidades não realizadas” (mini campanhas em eras divergentes).
-- Impacto direto sobre eventos futuros — o personagem pode **impedir ou provocar eventos profetizados**.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Corrida (Escalada)**
+* O jogador tem **40 Ticks** para chegar ao topo.
+* Cada obstáculo (rio, parede de pedra, animais) consome Ticks.
+* **Escolha:** Usar atalhos perigosos (Teste de Astúcia, gasta 2 Ticks, risco de dano) ou caminho seguro (Gasta 5 Ticks).
+
+**2. Os Rivais (NPCs Vivos)**
+* O guerreiro rival **Kauê** também está subindo. O jogador pode tentar atrasá-lo (armadilhas) ou focar na própria velocidade.
+* O sistema compara os Ticks gastos pelo jogador vs. os Ticks do NPC.
+
+**3. A Revelação**
+* Se chegar primeiro: O Xamã entrega o prêmio.
+* Se chegar depois: Kauê já pegou o prêmio. O jogador pode tentar negociar, roubar ou aceitar a derrota (falha na missão principal).
+
+---
+
+### 🎁 Recompensa
+
+- **Item de Evolução:** **Moeda de Classe (Olho de Cristal)** - O "segredo do amanhã" cristalizado.
+- Habilidade Narrativa: Pode ter visões sobre um NPC ou inimigo importante 1x por campanha.
+- Marca de “Avisado pelo Futuro” (Abre diálogos únicos).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+O Sábio revela que a profecia não era sobre o prêmio, mas sobre **quem** o pegaria. O vencedor é marcado pela Raiz do Mundo para enfrentar uma **Ruptura** iminente.
+
+**Expansão Possível:**
+* **O Ciclo de Sábios:** Descobrir outros "enigmistas" que guardam fragmentos do futuro em outras regiões.
+* **Viagem Temporal:** A "Moeda" pode eventualmente permitir acesso a uma "Ecoera" (futuro alternativo).
+* **O Paradoxo:** O jogador pode ser forçado a escolher entre salvar alguém ou preservar a linha do tempo correta.

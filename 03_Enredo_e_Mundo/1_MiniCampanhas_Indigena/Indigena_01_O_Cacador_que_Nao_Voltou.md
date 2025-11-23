@@ -3,6 +3,9 @@
 **Classes Relacionadas:** Caçador de Feras ou Arqueiro Selvagem
 **Estilo de Missão:** Floresta, rastreamento, cronometrada
 
+**Motivo para Jogar:**
+Explorar a tensão da caça, o uso de proficiências de sobrevivência e o mistério de pactos espirituais quebrados na floresta.
+
 ---
 
 ### 📝 Resumo Dinâmico
@@ -42,6 +45,11 @@ Um jovem caçador (NPC: Iaguarê) não retornou de sua rotina diária. Sua agend
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 🔗 **Gancho Maior de Campanha e Expansão**
 
-A criatura não era natural. Era um espírito guardião corrompido. Iaguarê, se salvo, revela que viu um "Homem de Preto" (Colonizador) fazendo um ritual na nascente do rio antes da fera enlouquecer. Isso abre a missão de facção: **"A Fonte Envenenada"**.
+A criatura não era natural. Era um espírito guardião corrompido. Iaguarê, se salvo, revela que viu um "Homem de Preto" (Colonizador) fazendo um ritual na nascente do rio antes da fera enlouquecer.
+
+**Expansão Possível:**
+* **A Fonte Envenenada:** Uma nova missão para purificar a nascente.
+* **Guerra de Facções:** A aldeia pode declarar guerra aos colonos se a prova do "Homem de Preto" for encontrada.
+* **O Pacto Quebrado:** Outros guardiões da floresta podem se tornar hostis se a corrupção não for contida.
