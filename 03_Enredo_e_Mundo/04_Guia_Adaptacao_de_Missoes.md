@@ -74,3 +74,22 @@ Missões de resgate ou caça devem ter **contadores de Ticks**.
 
 > 🔄 **Conclusão:**
 > As mini-campanhas funcionam como **molde narrativo vivo**. Adaptar para outra classe e para o tempo do mundo enriquece a imersão.
+
+---
+## 💰 Diretrizes de Economia e Recompensa (Sistema de Evolução)
+
+Para garantir que o jogador consiga evoluir de Tier sem quebrar a raridade da progressão, as Mini-Campanhas seguem uma distribuição rigorosa de recompensas principais.
+
+**A Regra 2-1-3 (Por Origem):**
+Em cada pacote de 6 Missões de uma Origem:
+* **2 Missões** devem recompensar com **Moeda de Classe** (Item de Evolução).
+* **1 Missão** deve desbloquear um **Mentor/NPC Especialista** (Acesso a Tiers/Proficiências).
+* **3 Missões** oferecem recompensas padrão (Itens Raros, Reputação, Rituais).
+
+**Tabela de Distribuição Atual (Ato 1):**
+
+| Origem | Missões com Moeda de Classe | Missão com Mentor |
+| :--- | :--- | :--- |
+| **Indígena** | *Sombras Sobre a Aldeia Queimada* <br> *O Sábio que Viu o Amanhã* | *O Tambor que Silenciou o Céu* |
+| **Colonizador** | *Justiça das Mãos Sujas* <br> *A Palavra do Rei Não Ecoa Aqui* | *O Ouro que Nunca Brilha* |
+| **Folclórico** | *A Canção que Não Dorme* <br> *Os Filhos do Espinho e da Flor* | *O Sopro dos Quatro Ventos* |

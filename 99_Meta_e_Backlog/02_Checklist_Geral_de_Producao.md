@@ -1,39 +1,34 @@
-# ✅ Checklist Geral de Produção (Pós-Auditoria)
+# ✅ Checklist Geral de Produção (Status: PRONTO PARA DADOS)
 
-Status atual do projeto: **Transição de GDD para Produção de Conteúdo/Código.**
+Status atual: **GDD Finalizado. Iniciando Arquitetura de Dados.**
 
-## 🔴 Prioridade Máxima (Bloqueantes)
+## 🟢 Concluído (GDD & Core)
 
 ### Design Visual
-- [ ] **Criar UI da Fase 2:** Escrever `06_UI_Fase_2_Combate_Tatico.md` na pasta `04_Design_Visual` (Grid, Alcance, Feedback Tático).
-- [ ] **Validar Lista de Assets:** Usar o NotebookLM para gerar a lista de compras de arte (baseada nos docs de UI e Classes).
+- [x] **UI Fase 1 (Estática):** Documentada em `05_UI_Fase_1_Exploracao_e_Combate.md`.
+- [x] **UI Fase 2 (Tática):** Documentada em `06_UI_Fase_2_Combate_Tatico.md`.
+- [x] **Lista de Assets:** Gerada e validada (via NotebookLM).
 
-### Enredo e Mundo Vivo (Refatoração)
-*Objetivo: Aplicar o padrão "Mundo Vivo" (Ticks/Rotinas) e "Economia Fechada" (Moedas de Classe) em todas as missões.*
-- [ ] Atualizar as 5 Missões Indígenas restantes.
-- [ ] Atualizar as 6 Missões de Colonizador.
-- [ ] Atualizar as 6 Missões de Ser Folclórico.
-- [ ] Atualizar o Ato 1 (Adicionar recompensa garantida de Moeda de Classe no final).
+### Enredo e Mundo Vivo
+- [x] **Refatoração Indígena:** 6 Missões atualizadas com Ticks/Economia.
+- [x] **Refatoração Colonizador:** 6 Missões atualizadas com Ticks/Economia.
+- [x] **Refatoração Folclórico:** 6 Missões atualizadas com Ticks/Economia.
+- [x] **Ato 1 (Principal):** Atualizado com Mecânica de Corrida e Sinergia.
+- [x] **Guia de Missões:** Atualizado com Tabela de Distribuição de Loot.
 
-### Arquitetura de Dados (Pasta 05)
-- [ ] Definir Schema JSON de **Itens** (Matriz 5x5).
-- [ ] Definir Schema JSON de **Inimigos**.
-- [ ] Definir Schema JSON de **Habilidades**.
+### Regras e Classes
+- [x] **Classes Hardificadas:** Regras de invocação e qualidade definidas.
+- [x] **Mundo Vivo:** Regras de Ticks e IA documentadas no Cap 8.
 
-## 🟡 Desenvolvimento Técnico (Próximos Passos)
+## 🟡 Próximos Passos (Arquitetura de Dados - Pasta 05)
 
-### Definição de Stack
-- [ ] **Fase 1 & 2 (Web/Texto):** React + Next.js (Frontend), Node.js (Backend Fase 2).
-- [ ] **Fase 3+ (Visual):** Godot Engine.
+Estes são os arquivos que precisamos criar agora para transformar o texto em sistema.
 
-### Provas de Conceito (POCs)
-- [ ] **POC 01 - Motor de Combate (CLI):** Script simples para rodar 1x1 com logs de texto.
-- [ ] **POC 02 - Navegador de Blocos (Web):** Interface visual para andar entre nós (Baseada em *Roadwarden*).
-- [ ] **POC 03 - Gerador de Itens:** Script que gera um item baseado na Matriz 5x5 (Qualidade x Raridade).
+- [ ] **Schema de Itens (JSON):** Definir a estrutura da Matriz 5x5 para código.
+- [ ] **Schema de Inimigos (JSON):** Definir stats e comportamento.
+- [ ] **Schema de Habilidades (JSON):** Definir fórmulas de dano e efeitos.
 
-## 🟢 Concluído (Validado)
-- [x] Estrutura de Pastas do GDD.
-- [x] Fatiamento do Livro de Regras (com novas regras de IA/Ticks).
-- [x] Fatiamento e Correção do Livro de Classes (Regras rígidas).
-- [x] Fatiamento do Enredo (Estrutura base).
-- [x] Definição Visual da Fase 1 (UI Estática).
+## 🔴 Futuro (Desenvolvimento/POCs)
+
+- [ ] **POC 01:** Motor de Combate em Texto (Node.js).
+- [ ] **POC 02:** Navegador de Blocos (React).
