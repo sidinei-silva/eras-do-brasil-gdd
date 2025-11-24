@@ -1,31 +1,51 @@
-# 🌕 A Canção que Não Dorme
+# 🌕 A Canção que Não Dorme (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Encantador de Espíritos ou Ser Elemental
-
-**Estilo de Missão:** Espiritual e sensorial
-
-**Resumo:**
-
-Uma melodia ancestral ecoa em um lago esquecido. Criada por um ser encantado que não aceita sua forma, ela exige fim ou continuidade. O personagem precisa decidir.
+**Estilo de Missão:** Espiritual, sensorial, investigação
 
 **Motivo para Jogar:**
-
-Identidade, espiritualidade e melancolia.
-
-**Recompensa:**
-
-- Ritual de comunicação profunda com entidades não-humanas
-- +2 em testes de manipulação emocional espiritual
-- Invocar um “eco do canto” como bônus narrativo
+Uma missão focada em empatia, mistério e na interação com o invisível, sem foco principal em combate.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A canção é uma **forma viva de lamento** criada por uma entidade aprisionada entre dois planos — nem humana, nem espírito completo. Libertá-la exige encontrar **as notas perdidas**, espalhadas em sonhos e locais de poder.
+Uma melodia triste ecoa no Lago dos Espelhos, mas apenas durante a **Lua Alta (Ticks 150-200 da noite)**. Quem ouve a música começa a andar sonâmbulo em direção à água. O jogador precisa descobrir a fonte e resolvê-la antes que a filha do Chefe da Vila se afogue na próxima noite.
 
-**Expansão possível:**
+**Gatilhos de Início:**
+* **Ambiental:** Ouvir a música ao passar perto do lago à noite.
+* **NPC:** O Chefe da Vila pede ajuda desesperado no amanhecer (Tick 0).
 
-- Jornada para reunir os fragmentos da melodia e reconstituir o ser.
-- Escolha narrativa entre dar-lhe nova forma, deixá-la desaparecer, ou tornar-se sua voz.
-- Conexão com outros personagens que ouviram ecos da mesma melodia em lugares distantes.
+---
+
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Investigação (Dia)**
+* Durante o dia (Ticks 0-100), o lago está silencioso.
+* O jogador deve usar **Percepção Espiritual** ou falar com o **Pescador Velho** (que só aparece no píer entre Ticks 20-40). Ele revela que a música começou depois que "uma pedra brilhante caiu do céu".
+
+**2. A Espera (Noite)**
+* O jogador deve estar posicionado antes do Tick 150.
+* **Evento:** No Tick 150, a neblina sobe. Sonâmbulos (NPCs da vila) começam a caminhar para a água. O jogador deve contê-los (não matá-los) enquanto busca a fonte.
+
+**3. A Fonte**
+* Uma entidade (Iara ou Sereia) está chorando sobre um fragmento de cristal.
+* **Solução:** Convencer a entidade (Social), destruir o cristal (Combate) ou purificar a área (Ritual).
+
+---
+
+### 🎁 Recompensa
+
+-   **Item de Evolução:** **Moeda de Classe (Lágrima Cristalizada)** - O fragmento que causava o canto.
+-   **Ritual:** Comunicação Profunda (permite falar com espíritos da água).
+-   +2 em testes de manipulação emocional espiritual.
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+O fragmento não "caiu do céu", ele foi **arremessado** de uma Ruptura. Ele vibra na mesma frequência da Raiz do Mundo.
+
+**Expansão Possível:**
+-   **A Voz da Raiz:** O cristal, se guardado, começa a dar coordenadas de outras Rupturas.
+-   **A Orquestra:** Outras entidades estão sendo atraídas por "músicas" similares em outras regiões.

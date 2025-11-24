@@ -1,33 +1,49 @@
-# 🌀 O Sopro dos Quatro Ventos
+# 🌀 O Sopro dos Quatro Ventos (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Ser Elemental ou Encantador de Espíritos
-
-**Estilo de Missão:** Testes e equilíbrio dos elementos
-
-**Resumo:**
-
-Quatro ventos testam o personagem: físico, mágico, espiritual e moral. Superar todos é ser digno. Falhar é ser partido entre mundos.
+**Estilo de Missão:** Testes de elemento, puzzle ambiental
 
 **Motivo para Jogar:**
-
-Domínio elemental e harmonia espiritual.
-
-**Recompensa:**
-
-- Resistência a um elemento (+1 em testes, meio dano)
-- Ritual de controle climático
-- Título: **Filho dos Quatro Ventos**
+Domínio elemental e harmonia espiritual. Uma missão de "provação" clássica para magos e xamãs.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-O teste é apenas o começo. Os quatro ventos são **entidades primordiais desgarradas da Raiz do Mundo**, que se recusam a retornar ao equilíbrio.
+No topo da "Pedra dos Ventos", um furacão mágico nunca para. Dizem que no olho da tempestade vive um Mestre Elemental. O caminho só se abre quando os **quatro ventos se alinham**, um evento que acontece a cada 4 dias no jogo, ou pode ser forçado com rituais.
 
-O personagem pode se tornar **um mediador elemental**, convocado para reatar os ventos ao ciclo — ou para tomar seu lugar como quinto elemento: o da **vontade**.
+**Gatilhos de Início:**
+* **NPC:** Um velho eremita na base da montanha aponta para o topo: "Ele só fala com quem sabe ouvir o vento."
 
-**Expansão possível:**
+---
 
-- Jornadas a cada templo do vento: Leste (Ar), Sul (Fogo), Norte (Água), Oeste (Terra).
-- Desafio final de fundir os quatro elementos em um novo poder.
-- Possibilidade de alterar o clima de regiões inteiras com grandes rituais.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Subida (O Clima)**
+* A montanha tem um ciclo climático de **50 Ticks**.
+    * 0-10: Vento Norte (Frio/Dano de Gelo).
+    * 11-20: Vento Sul (Calor/Dano de Fogo).
+    * Etc.
+* O jogador deve usar poções ou magias de resistência corretas no tempo certo (*timing*).
+
+**2. O Teste do Equilíbrio**
+* No topo, o jogador encontra o **Espírito da Tempestade (Mentor)**.
+* Ele não luta, ele testa. O jogador deve usar uma habilidade elemental oposta à do espírito para "acalmar" a tempestade.
+
+---
+
+### 🎁 Recompensa
+
+-   **Desbloqueio de Mentor:** O **Espírito da Tempestade** ensina magias de controle climático e evolui classes elementais.
+-   Resistência permanente a um elemento (+1 em testes, meio dano).
+-   Título: **Filho dos Quatro Ventos**.
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+Os ventos estão agitados porque sentem a "Febre" da Raiz do Mundo.
+
+**Expansão Possível:**
+-   **A Tempestade Global:** O Mentor pede ajuda para impedir um furacão que destruirá a costa.
+-   **A Fusão:** Aprender a fundir elementos para criar novos tipos de magia (ex: Raio + Fogo = Plasma).

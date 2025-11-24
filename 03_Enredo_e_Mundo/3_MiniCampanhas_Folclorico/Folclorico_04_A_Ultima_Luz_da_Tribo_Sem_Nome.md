@@ -1,33 +1,46 @@
-# 🕯️ A Última Luz da Tribo Sem Nome
+# 🕯️ A Última Luz da Tribo Sem Nome (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Guardião Ancestral ou qualquer folclórico
-
-**Estilo de Missão:** Reconstrução de memória ancestral
-
-**Resumo:**
-
-Uma tribo inteira desapareceu da história. A única pista é uma vela mágica. Cada chama reacende uma lembrança.
+**Estilo de Missão:** Memória, proteção, horror sutil
 
 **Motivo para Jogar:**
-
-Memória, apagamento cultural e reconexão.
-
-**Recompensa:**
-
-- Evocar memórias em locais místicos
-- Foco para bloquear invocações
-- Bênção de um **Ancestral Desconhecido** (evita a morte 1x por jornada)
+Uma história melancólica sobre esquecimento e o poder da memória como magia.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A tribo esquecida não desapareceu por acaso — ela **sacrificou sua existência para proteger um fragmento proibido da Raiz do Mundo**.
+O jogador encontra uma vela mágica que nunca derrete, mas sua chama está quase apagando. Um espírito sussurra: "Não me deixe esquecer". A chama diminui a cada **Tick**. O jogador deve levá-la até o "Altar do Esquecimento" antes que ela se apague (Time Trial).
 
-As lembranças recuperadas são **chaves para reativar esse fragmento**, ou deixá-lo selado para sempre.
+**Gatilhos de Início:**
+* **Item:** Encontrar a "Vela dos Esquecidos" em uma ruína.
 
-**Expansão possível:**
+---
 
-- Viagens a locais apagados da memória comum.
-- Conflito entre restaurar o legado ou respeitar o sacrifício do esquecimento.
-- Despertar da tribo no mundo atual — como espíritos, humanos ou algo entre os dois.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Peregrinação (Time Trial)**
+* A vela tem "100 Ticks de Vida".
+* Ventos sobrenaturais tentam apagá-la (reduzem Ticks da vela). O jogador deve buscar abrigo ou usar o corpo para proteger a chama.
+* Monstros das sombras atacam a luz. O combate gasta Ticks. O jogador deve lutar rápido.
+
+**2. O Altar**
+* Ao colocar a vela no Altar, as memórias da Tribo Sem Nome são projetadas no céu.
+* O jogador aprende a história de como eles se sacrificaram para prender um Mal Antigo.
+
+---
+
+### 🎁 Recompensa
+
+-   **Bênção:** **Proteção do Ancestral Desconhecido** (Uma vez por jornada, se o jogador chegar a 0 PV, ele volta com 1 PV).
+-   Item: **Foco de Memória** (Bloqueia invocações inimigas em área).
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+O "Mal Antigo" que a tribo prendeu está acordando porque ninguém mais lembra dele.
+
+**Expansão Possível:**
+-   **O Retorno:** O jogador agora é o "Guardião da Memória". Ele deve ensinar a história da tribo para outros NPCs para fortalecer o selo.
+-   **O Nome:** Descobrir o verdadeiro nome da tribo concede poder sobre a região.

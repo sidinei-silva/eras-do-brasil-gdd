@@ -1,33 +1,46 @@
-# 👁️ A Máscara do Vazio
+# 👁️ A Máscara do Vazio (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Encantador de Espíritos ou Lobo Lendário
-
-**Estilo de Missão:** Mistério, identidade e entidades proibidas
-
-**Resumo:**
-
-Uma máscara aparece nas mãos do personagem, sem explicação. Ela concede poder — mas rouba emoções. Vozes sussurram quando usada. O personagem deve descobrir sua origem e decidir se irá destruí-la, usá-la ou devolvê-la ao seu criador.
+**Estilo de Missão:** Mistério, item amaldiçoado, identidade
 
 **Motivo para Jogar:**
-
-Temas de sacrifício, esquecimento de si, e corrupção elegante.
-
-**Recompensa:**
-
-- Pode ativar a Máscara para ganhar +2 em testes espirituais, mas perde empatia por 1 cena
-- Visões de entidades esquecidas
-- +1 em interações com espíritos neutros ou corrompidos
+Explorar o custo do poder e a perda da humanidade. Uma missão focada em um item único.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-A máscara é um fragmento de um **espírito de esquecimento**, um ser que deseja apagar as barreiras entre os planos — e a própria identidade dos seres.
+O jogador encontra uma máscara estranha. Ao colocá-la, ele vê o mundo espiritual, mas perde Ticks de vida (envelhece). A máscara não sai. Ele deve encontrar o criador da máscara para removê-la ou aprender a controlá-la.
 
-O personagem é visto como **seu novo avatar**, despertando caçadores, cultistas e antigos aliados desse ser.
+**Gatilhos de Início:**
+* **Item:** A máscara aparece no inventário após derrotar um espírito sem rosto.
 
-**Expansão possível:**
+---
 
-- Campanha para selar ou libertar a entidade do Esquecimento.
-- Conflito entre manter o eu ou se fundir com algo maior.
-- Decisões que podem apagar memórias coletivas — ou restaurá-las em outro formato.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Maldição (Corrida)**
+* A cada 100 Ticks com a máscara, o jogador perde 1 ponto de Carisma/Presença permanentemente (até remover).
+* A máscara sussurra coordenadas de um ateliê oculto.
+
+**2. O Criador**
+* O Artesão de Almas (NPC) vive em um semi-plano. Ele exige um pagamento para tirar a máscara: uma memória feliz do jogador.
+* **Escolha:** Entregar a memória (perde XP ou Lore) ou lutar contra o Artesão.
+
+---
+
+### 🎁 Recompensa
+
+-   **Item Único:** **A Máscara do Vazio (Dominada)**.
+    * *Uso:* Pode ativar para ganhar +2 em testes espirituais e ver o invisível, mas perde empatia (não pode interagir socialmente) por 1 cena.
+-   Visões de entidades esquecidas.
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+A máscara é uma de muitas. O Artesão está criando um exército de "Sem Rosto".
+
+**Expansão Possível:**
+-   **A Legião:** Encontrar outros portadores de máscaras que foram dominados.
+-   **O Plano:** O Artesão quer substituir a população da vila por cópias usando máscaras.

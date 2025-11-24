@@ -1,33 +1,47 @@
-# 🌳 Os Filhos do Espinho e da Flor
+# 🌳 Os Filhos do Espinho e da Flor (Versão Mundo Vivo)
 
 **Classes Relacionadas:** Qualquer folclórico
-
-**Estilo de Missão:** Escolha de legado e dualidade mágica
-
-**Resumo:**
-
-Dois grandes clãs místicos da floresta estão em guerra velada: um deseja proteger os humanos, outro puni-los por séculos de destruição. O personagem é convocado para tomar posição — ou buscar um caminho impossível de reconciliação.
+**Estilo de Missão:** Guerra de facções, escolha de legado
 
 **Motivo para Jogar:**
-
-Temas de dualidade, diplomacia espiritual, legado de poder.
-
-**Recompensa:**
-
-- Ganha acesso a um dos rituais de clã (proteção ou destruição)
-- +1 em testes de decisão moral envolvendo NPCs
-- Título: **Herdeiro dos Espinhos** ou **Guardião das Flores**
+Participar de uma guerra civil entre espíritos da natureza, definindo o futuro da floresta.
 
 ---
 
-### 🔗 **Gancho Maior de Campanha:**
+### 📝 Resumo Dinâmico
 
-Essa disputa mística não é única. Outros clãs espirituais estão despertando, cada um com ideologias diferentes sobre a relação com os humanos, os colonizadores e a própria Raiz do Mundo.
+Dois clãs espirituais entraram em guerra aberta. Os "Espinhos" (agressivos) querem expulsar os humanos. As "Flores" (simbióticos) querem coexistir. A batalha final acontecerá no **Solstício (Tick Global X)**. O jogador deve escolher um lado e enfraquecer o outro antes da data.
 
-O personagem pode se tornar um **ponto de unificação ou catalisador de guerra entre espíritos**.
+**Gatilhos de Início:**
+* **Evento:** Árvores começam a atacar lenhadores (Espinhos) ou curar viajantes (Flores).
 
-**Expansão possível:**
+---
 
-- Reunião dos clãs místicos para um concílio espiritual.
-- Definição do futuro das relações entre planos.
-- Escolhas que influenciam todas as interações com entidades até o fim da campanha.
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+
+**1. A Sabotagem**
+* O jogador tem 3 dias (Ciclos) para realizar missões para um dos lados.
+* Cada missão concluída aumenta a força do exército aliado no dia da batalha.
+* **Exemplo:** Destruir os totens de espinho (Combate) ou plantar sementes de flor (Ritual).
+
+**2. A Batalha do Solstício**
+* Um combate em larga escala. O lado que o jogador apoiou tem vantagens baseadas nas missões anteriores.
+* O jogador enfrenta o Campeão do clã rival.
+
+---
+
+### 🎁 Recompensa
+
+-   **Item de Evolução:** **Moeda de Classe (Semente da Dualidade)** - O coração do campeão derrotado.
+-   **Ritual de Clã:** Acesso a magias exclusivas de Espinho (Dano/Sangramento) ou Flor (Cura/Controle).
+-   +1 em testes de decisão moral envolvendo NPCs.
+
+---
+
+### 🔗 **Gancho Maior de Campanha e Expansão**
+
+A guerra não era local. Era um reflexo de uma guerra maior na Raiz do Mundo.
+
+**Expansão Possível:**
+-   **A Praga:** Se os Espinhos vencerem, a floresta se torna hostil permanentemente (Mudança de Bioma).
+-   **A União:** O jogador pode tentar forjar uma terceira via, unindo os clãs contra os Colonizadores.
