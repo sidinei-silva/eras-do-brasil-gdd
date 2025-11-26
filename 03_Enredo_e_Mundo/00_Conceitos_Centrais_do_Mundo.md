@@ -32,19 +32,21 @@ Os personagens do jogador são seres marcados por esse Dom:
 
 ---
 
-## 4. Arquitetura da Realidade: Ecos e Raízes (Sistema Híbrido)
+---
 
-Para conciliar a narrativa pessoal profunda com um mundo online vivo, *Eras do Brasil* utiliza o conceito de **Ruptura Temporal** na sua estrutura de jogo.
+## 4. Arquitetura da Realidade: Ecos e Raízes (Sistema Co-op)
 
-### 4.1 O Eco (Modo Offline / História Pessoal)
-É a linha do tempo pessoal do jogador.
-* **Conceito:** Uma simulação ou memória de eventos passados (ex: 1497).
-* **Soberania:** O mundo reage exclusivamente às escolhas do jogador. Se ele salvar a vila, ela permanece salva neste Eco.
-* **Estabilidade:** O "Relógio da Ruptura" pausa quando o jogador desloga. Ideal para imersão, leitura de diálogos e "What If" (testar escolhas diferentes).
+Para justificar a entrada de outros jogadores na sua campanha, *Eras do Brasil* utiliza o conceito de **Sincronia Espiritual**.
 
-### 4.2 A Raiz (Modo Online / Hub Sazonal)
-É a "Linha do Tempo Mestra" do servidor, onde todos os Ecos se encontram.
-* **Conceito:** O presente vivo e instável. A história avança via **Temporadas** (ex: "Ato 1", "Ato 2").
-* **Soberania Comunitária:** Se a comunidade falhar em um evento global, o mapa muda para todos na próxima temporada. Quem entra depois joga a "Consequência".
-* **Economia de Risco:** As Expedições na Raiz (Dungeons Online) são mais difíceis e instáveis, mas oferecem **maior quantidade de Moedas de Classe** e materiais mágicos raros que não existem no mundo físico.
-* **Legado:** O jogo reconhece os feitos do jogador no Offline (Títulos) e os NPCs da Raiz reagem a isso ("Olhem, o Herói do Eco de 1497 chegou!").
+### 4.1 O Eco (O Mundo do Host)
+Cada campanha é um **Eco** único na linha do tempo.
+* **O Anfitrião:** O jogador que inicia o jogo é a "Âncora" daquele Eco. As decisões dele moldam a história daquele mundo (salvar ou queimar a vila).
+* **O Tempo:** O tempo obedece ao Anfitrião. Se ele pausar, o mundo pausa.
+
+### 4.2 A Raiz (A Conexão / Co-op)
+A **Raiz do Mundo** permite que outros Despertos (jogadores convidados) cruzem a fronteira entre os Ecos.
+* **O Viajante:** Um segundo jogador pode projetar seu personagem no Eco do Anfitrião para ajudar.
+* **Ganhos Compartilhados:** O Viajante mantém a experiência (XP) e os itens (Loot) que coletar, levando-os de volta para seu próprio Eco.
+* **Impacto na História:** O Viajante não toma decisões narrativas críticas (só o Anfitrião decide), mas suas ações em combate e exploração são vitais para o sucesso do grupo.
+
+> *"Caminhamos em nossos próprios sonhos, mas nas horas mais sombrias, a Raiz nos permite sonhar juntos."*

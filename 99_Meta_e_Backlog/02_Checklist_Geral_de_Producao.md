@@ -1,26 +1,26 @@
 # ✅ Checklist Geral de Produção
 
-Status atual: **Refinamento de Arquitetura e Revalidação.**
+Status atual: **Design Finalizado (Co-op P2P). Iniciando Dados.**
 
 ## 🟢 Concluído (GDD & Core)
-- [x] **Enredo Principal:** Ato 1 refatorado com Corrida e Sinergia.
-- [x] **Arquitetura Híbrida:** Definido modelo Eco (Offline) vs Raiz (Online).
-- [x] **Economia:** Regra "Online dá mais Moedas/Loot Mágico" definida.
-- [x] **Auditoria Prévia:** Sinergia e Ticks validados anteriormente.
+- [x] **Pivotagem:** Arquitetura alterada para Co-op P2P (Tick-Tock).
+- [x] **Regras de Tempo:** Definido "Tempo Fluido" para exploração Multiplayer.
+- [x] **Enredo e Classes:** Todo conteúdo narrativo validado.
+- [x] **Economia:** Ajustada para suportar troca entre jogadores (Trade).
 
-## 🟡 A Fazer Agora (Consolidação)
-Antes de iniciar a produção massiva de JSONs:
+## 🟡 A Fazer (Fase 2 - Arquitetura de Dados)
+O foco agora é criar a estrutura JSON que suporte tanto o Solo quanto o Co-op.
 
-- [ ] **Atualização de Docs:** Aplicar as mudanças de "Híbrido" nos arquivos `Conceitos`, `Mundo Vivo` e `Project Plan`.
-- [ ] **Revalidação Final (NotebookLM):** Subir os novos arquivos atualizados e rodar um prompt de verificação ("A nova arquitetura Híbrida quebra alguma regra anterior? O Project Plan está coerente?").
+### 1. Schemas JSON (A Base do Código)
+- [ ] **Schema de Missões:** Suporte a objetivos compartilhados (`shared_progress: true`).
+- [ ] **Schema de Itens:** Propriedades de troca e posse (`owner_id`).
+- [ ] **Schema de Diálogos:** Estrutura para árvore de conversa.
+- [ ] **Schema de Inimigos:** Definição de stats e loot.
 
-## 🔵 Próximos Passos (Fase 2 - Dados)
-Após a revalidação estar OK:
+### 2. Conteúdo (Preenchimento)
+- [ ] Transcrever Missões do Ato 1 para JSON.
+- [ ] Transcrever Itens Iniciais para JSON.
 
-- [ ] **Schema de Missões (JSON):** Definir estrutura de Gatilhos/Etapas.
-- [ ] **Schema de Diálogos (JSON):** Definir estrutura de texto e escolhas.
-- [ ] **Produção de Conteúdo:** Escrever os diálogos do Ato 1 e Sidequests dentro dos JSONs.
-
-## 🔴 Futuro (Desenvolvimento Iterativo)
-- [ ] **Fase 3:** POC Visual Offline.
-- [ ] **Fase 4:** POC Visual Online.
+## 🔴 Futuro (Desenvolvimento)
+- [ ] **POC Fase 1:** RPG de Texto Solo.
+- [ ] **POC Fase 2:** RPG de Texto Co-op (Conexão P2P).

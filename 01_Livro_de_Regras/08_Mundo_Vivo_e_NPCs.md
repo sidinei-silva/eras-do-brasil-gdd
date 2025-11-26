@@ -190,62 +190,34 @@ NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos
 
 ---
 
-## 8.7 – Arquitetura do Mundo Persistente (Online)
+## 8.7 – Dinâmica de Tempo: Solo vs. Cooperativo
 
-(Conteúdo novo da Auditoria Gemini)
+O sistema de Ticks se adapta para garantir fluidez quando mais de um jogador está no mundo.
 
-No modo online, o Tick Global proativo impulsiona os sistemas de simulação do servidor:
+### 1. Modo Solo (Turno Reativo)
+Quando joga sozinho, o mundo espera por você.
+* O tempo só avança quando você realiza uma ação (mover, craftar, esperar).
+* Permite estratégia profunda e pausas para leitura.
 
-### StoryManager (O Calendário de Eventos)
-O `StoryManager` funciona como um "Calendário de Eventos do Mundo". A história principal, eventos sazonais e invasões de facções avançam com o Tick Global, não com o progresso do jogador. Um novo jogador que entra no servidor pode encontrar o mundo em um estado "Pós-Guerra", ouvindo apenas histórias sobre os jogadores que lutaram na batalha.
+### 2. Modo Cooperativo (Tempo Fluido / Heartbeat)
+Quando um aliado se conecta, o mundo entra em **Sincronia Contínua**.
 
-### Sistema de Missões "Corrida pela Recompensa"
-Para se alinhar ao mundo persistente, as missões de NPCs seguem um modelo de "competição":
+* **Exploração (Tempo Real):** O servidor (Host) gera um "Heartbeat" (batida de coração) a cada X segundos (ex: 1 segundo = 1 Tick de exploração).
+    * Jogadores se movem livremente e simultaneamente.
+    * Se um jogador parar para ler, o outro pode continuar andando ou coletando.
+    * NPCs seguem suas rotinas baseadas nesse relógio contínuo.
 
-1.  **Anúncio:** Um NPC anuncia um problema (ex: "Preciso de 10 Peles de Lobo").
-2.  **Múltiplos Aceites:** Vários jogadores (ou grupos) podem aceitar a missão.
-3.  **Primeiro a Concluir:** A recompensa é entregue ao *primeiro jogador* que retornar com os itens. O NPC informará aos outros que "o problema já foi resolvido por outro aventureiro".
-4.  **Expiração:** A missão tem um prazo de validade baseado no Tick Global (ex: "Preciso das peles antes de 3 dias"). Se ninguém completar, a missão falha para todos e o mundo reage (ex: o NPC fica sem estoque).
-
----
-
-## 8.8 – Dinâmica de Eventos Globais e Consequências (Meta-Eventos)
-
-Em *Eras do Brasil*, as **Missões Principais** funcionam como gatilhos para mudanças de estado no mundo.
-
-### 🏛️ Os 3 Estados de um Evento (Linha do Tempo)
-1.  **Tensão (Pré-Evento):** Sinais visuais e missões de preparação.
-2.  **Apogeu (O Evento):** O clímax (Batalha/Ritual).
-3.  **Legado (Pós-Evento):** O mundo transformado pela consequência (Vitória ou Derrota).
-
-### ⚖️ Decisão Coletiva (No Online)
-No modo **Raiz (Online)**, o desfecho é decidido pela maioria. Se a comunidade falhar em entregar suprimentos a tempo, a vila queima para todos na próxima temporada.
-
-### 🏅 Recompensas de Legado
-* **Offline:** Você vê a consequência direta no seu save.
-* **Online:** Jogadores recebem Títulos ("Veterano da Ruptura") que são reconhecidos por NPCs em futuras temporadas.
+* **Combate (Turno Rígido):** Assim que qualquer jogador entra em combate, cria-se uma **"Bolha de Turno"**.
+    * Dentro da bolha, a regra volta a ser estrita: Iniciativa define quem age.
+    * Jogadores fora da bolha podem continuar se movendo em tempo real até entrarem na área de combate (juntando-se à Iniciativa).
 
 ---
 
-## 8.9 – Sincronia de Tempo no Modelo Híbrido
+## 8.8 – O Papel dos Jogadores no Co-op
 
-Devido à arquitetura de "Eco vs Raiz", o sistema de Ticks se comporta de duas formas distintas:
+Para evitar conflitos de narrativa, definimos papéis claros:
 
-1.  **No Eco (Offline):** Ticks são **Locais e Reativos**.
-    * `Game_Time += Player_Action_Cost`.
-    * O mundo só avança quando o jogador age. NPCs simulam suas rotinas baseados nesse relógio local.
-2.  **Na Raiz (Online/Expedição):** Ticks são **Sincronizados (Heartbeat)**.
-    * `Game_Time` avança a cada X segundos reais (ex: 1 Tick = 5 segundos).
-    * Isso garante que todos os jogadores na instância vejam o sol se pôr ou o Boss atacar ao mesmo tempo.
+* **O Host (Anfitrião):** É o dono do Save. Ele tem a palavra final em diálogos de missão e escolhas morais que alteram o mundo permanentemente.
+* **O Client (Aliado):** É um suporte de luxo. Ele pode interagir com lojas, coletar recursos e lutar livremente, mas em diálogos de história, ele atua como conselheiro (pode sugerir opções, mas não clicar na decisão final).
 
 ---
-
-## 8.10 – Dinâmica Online: Turnos de Trabalho
-
-No Modo Online (Raiz), para evitar que NPCs "sumam" quando o jogador precisa deles, utilizamos **Turnos Globais**:
-
-1.  **Ciclo Acelerado:** O servidor roda um ciclo Dia/Noite.
-2.  **Turnos de NPC:**
-    * **Dia:** O Mestre Ferreiro atende na Forja (Qualidade Alta).
-    * **Noite:** O Mestre vai para a Taverna. O **Aprendiz** assume a Forja (Qualidade Normal, Estoque Reduzido).
-    * **Resultado:** O serviço nunca fecha (evitando punição ao jogador casual), mas o mundo respira e os NPCs têm vida.
