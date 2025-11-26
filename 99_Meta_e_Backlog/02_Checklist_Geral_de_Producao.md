@@ -1,34 +1,26 @@
-# ✅ Checklist Geral de Produção (Status: PRONTO PARA DADOS)
+# ✅ Checklist Geral de Produção
 
-Status atual: **GDD Finalizado. Iniciando Arquitetura de Dados.**
+Status atual: **Refinamento de Arquitetura e Revalidação.**
 
 ## 🟢 Concluído (GDD & Core)
+- [x] **Enredo Principal:** Ato 1 refatorado com Corrida e Sinergia.
+- [x] **Arquitetura Híbrida:** Definido modelo Eco (Offline) vs Raiz (Online).
+- [x] **Economia:** Regra "Online dá mais Moedas/Loot Mágico" definida.
+- [x] **Auditoria Prévia:** Sinergia e Ticks validados anteriormente.
 
-### Design Visual
-- [x] **UI Fase 1 (Estática):** Documentada em `05_UI_Fase_1_Exploracao_e_Combate.md`.
-- [x] **UI Fase 2 (Tática):** Documentada em `06_UI_Fase_2_Combate_Tatico.md`.
-- [x] **Lista de Assets:** Gerada e validada (via NotebookLM).
+## 🟡 A Fazer Agora (Consolidação)
+Antes de iniciar a produção massiva de JSONs:
 
-### Enredo e Mundo Vivo
-- [x] **Refatoração Indígena:** 6 Missões atualizadas com Ticks/Economia.
-- [x] **Refatoração Colonizador:** 6 Missões atualizadas com Ticks/Economia.
-- [x] **Refatoração Folclórico:** 6 Missões atualizadas com Ticks/Economia.
-- [x] **Ato 1 (Principal):** Atualizado com Mecânica de Corrida e Sinergia.
-- [x] **Guia de Missões:** Atualizado com Tabela de Distribuição de Loot.
+- [ ] **Atualização de Docs:** Aplicar as mudanças de "Híbrido" nos arquivos `Conceitos`, `Mundo Vivo` e `Project Plan`.
+- [ ] **Revalidação Final (NotebookLM):** Subir os novos arquivos atualizados e rodar um prompt de verificação ("A nova arquitetura Híbrida quebra alguma regra anterior? O Project Plan está coerente?").
 
-### Regras e Classes
-- [x] **Classes Hardificadas:** Regras de invocação e qualidade definidas.
-- [x] **Mundo Vivo:** Regras de Ticks e IA documentadas no Cap 8.
+## 🔵 Próximos Passos (Fase 2 - Dados)
+Após a revalidação estar OK:
 
-## 🟡 Próximos Passos (Arquitetura de Dados - Pasta 05)
+- [ ] **Schema de Missões (JSON):** Definir estrutura de Gatilhos/Etapas.
+- [ ] **Schema de Diálogos (JSON):** Definir estrutura de texto e escolhas.
+- [ ] **Produção de Conteúdo:** Escrever os diálogos do Ato 1 e Sidequests dentro dos JSONs.
 
-Estes são os arquivos que precisamos criar agora para transformar o texto em sistema.
-
-- [ ] **Schema de Itens (JSON):** Definir a estrutura da Matriz 5x5 para código.
-- [ ] **Schema de Inimigos (JSON):** Definir stats e comportamento.
-- [ ] **Schema de Habilidades (JSON):** Definir fórmulas de dano e efeitos.
-
-## 🔴 Futuro (Desenvolvimento/POCs)
-
-- [ ] **POC 01:** Motor de Combate em Texto (Node.js).
-- [ ] **POC 02:** Navegador de Blocos (React).
+## 🔴 Futuro (Desenvolvimento Iterativo)
+- [ ] **Fase 3:** POC Visual Offline.
+- [ ] **Fase 4:** POC Visual Online.

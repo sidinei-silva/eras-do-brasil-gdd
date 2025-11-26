@@ -211,55 +211,41 @@ Para se alinhar ao mundo persistente, as missões de NPCs seguem um modelo de "c
 
 ## 8.8 – Dinâmica de Eventos Globais e Consequências (Meta-Eventos)
 
-Em *Eras do Brasil*, as **Missões Principais** não são apenas tarefas individuais; elas são gatilhos para **Meta-Eventos** que alteram o estado do mundo para todos os jogadores.
+Em *Eras do Brasil*, as **Missões Principais** funcionam como gatilhos para mudanças de estado no mundo.
 
-Essa mecânica resolve o problema da "eterna guerra estática" dos MMOs tradicionais, criando uma **Linha do Tempo Soberana**. O servidor avança, e quem chega depois vive a história através das consequências, não da repetição.
+### 🏛️ Os 3 Estados de um Evento (Linha do Tempo)
+1.  **Tensão (Pré-Evento):** Sinais visuais e missões de preparação.
+2.  **Apogeu (O Evento):** O clímax (Batalha/Ritual).
+3.  **Legado (Pós-Evento):** O mundo transformado pela consequência (Vitória ou Derrota).
 
-### 🏛️ Os 3 Estados de um Evento Principal
+### ⚖️ Decisão Coletiva (No Online)
+No modo **Raiz (Online)**, o desfecho é decidido pela maioria. Se a comunidade falhar em entregar suprimentos a tempo, a vila queima para todos na próxima temporada.
 
-Cada grande arco de história (como a "Primeira Ruptura" ou uma "Guerra de Facções") passa por três estados distintos no servidor:
-
-#### 1. O Estado de Tensão (Pré-Evento)
-* **O Mundo:** O evento ainda não aconteceu, mas os sinais estão lá. NPCs estão ansiosos, recursos específicos ficam escassos, o céu muda de cor.
-* **A Missão:** Todos os jogadores recebem a missão de **Preparação**.
-    * *Exemplo:* "A Guerra se aproxima. Entregue ferro para o exército ou suprimentos para os rebeldes."
-* **Mecânica de Votação por Ação:** Os jogadores não votam em menus. Eles votam jogando. Se a facção A receber mais recursos que a facção B até o "Tick do Juízo Final", a facção A terá vantagem no evento.
-
-#### 2. O Apogeu (O Evento Sincronizado)
-* **O Gatilho:** Ocorre quando um contador de Ticks Globais chega a zero OU quando um grupo de jogadores "Pioneiros" completa a meta final.
-* **A Experiência:**
-    * **Para quem está online:** Uma notificação global chama para a batalha/ritual. O mundo muda em tempo real (uma explosão, uma invasão). Jogadores participam de uma batalha massiva ou instância épica.
-    * **Para o "Corredor" (No meio da quest):** Se o jogador estava na metade da missão de preparação, ela é interrompida e atualizada: *"O General caiu! A preparação acabou. Junte-se à defesa final agora!"*. Ele não perde o progresso, mas é empurrado para o clímax.
-
-#### 3. O Legado (Pós-Evento / Estado de Mundo Novo)
-* **O Mundo:** O evento acabou. A cratera está lá. O General está morto. A cidade está em reconstrução ou em festa.
-* **Para o "Atrasado" (Novos Jogadores):** Quem entrar no jogo após o evento **não joga a missão da guerra**. Eles recebem a missão **"Ecos da Guerra"** (investigar o que houve, ajudar na reconstrução).
-* **A Imersão:** Eles ouvem dos NPCs e leem em monumentos os nomes dos jogadores que foram os "Heróis da Guerra". O mundo evoluiu.
+### 🏅 Recompensas de Legado
+* **Offline:** Você vê a consequência direta no seu save.
+* **Online:** Jogadores recebem Títulos ("Veterano da Ruptura") que são reconhecidos por NPCs em futuras temporadas.
 
 ---
 
-### ⚖️ Mecânica de Decisão Coletiva (Votação Diegética)
+## 8.9 – Sincronia de Tempo no Modelo Híbrido
 
-Para que a história principal seja épica e imprevisível, o desfecho de certos arcos é decidido pela maioria, mas executado pelos jogadores.
+Devido à arquitetura de "Eco vs Raiz", o sistema de Ticks se comporta de duas formas distintas:
 
-**Exemplo: O Destino do Traidor**
-Ao final de um Ato, o vilão é capturado. O servidor abre uma janela de 24 horas (Ciclo de Julgamento).
-* **Opção A (Executar):** Jogadores entregam "Madeira de Fogueira" na praça.
-* **Opção B (Prender):** Jogadores entregam "Correntes de Ferro" na masmorra.
-* **Opção C (Libertar):** Jogadores usam a proficiência *Ladinagem* para enfraquecer as celas.
-
-Ao fim do ciclo, o servidor calcula. O resultado muda o próximo Ato da Campanha Principal para todos.
+1.  **No Eco (Offline):** Ticks são **Locais e Reativos**.
+    * `Game_Time += Player_Action_Cost`.
+    * O mundo só avança quando o jogador age. NPCs simulam suas rotinas baseados nesse relógio local.
+2.  **Na Raiz (Online/Expedição):** Ticks são **Sincronizados (Heartbeat)**.
+    * `Game_Time` avança a cada X segundos reais (ex: 1 Tick = 5 segundos).
+    * Isso garante que todos os jogadores na instância vejam o sol se pôr ou o Boss atacar ao mesmo tempo.
 
 ---
 
-### 🏅 Recompensas de Legado: "Eu Estava Lá"
+## 8.10 – Dinâmica Online: Turnos de Trabalho
 
-Para valorizar os jogadores ativos sem punir os casuais, o sistema separa **Poder** de **Prestígio**.
+No Modo Online (Raiz), para evitar que NPCs "sumam" quando o jogador precisa deles, utilizamos **Turnos Globais**:
 
-| Tipo de Jogador | Recompensa de Poder | Recompensa de Prestígio |
-| :--- | :--- | :--- |
-| **O Pioneiro** (Deu o gatilho/Venceu) | Moeda de Classe + Loot Épico | Título Único ("A Lança da Alvorada"), Estátua na Vila, Skin Brilhante. |
-| **O Participante** (Estava no evento) | Moeda de Classe + Loot Raro | Título ("Veterano da Ruptura"), Medalha de Participação (Cosmético). |
-| **O Historiador** (Chegou depois) | Moeda de Classe (via missão de reconstrução) | Título ("Arqueólogo do Passado"). Acesso ao conteúdo, mas sem a glória do momento. |
-
-> 🔥 **Filosofia de Design:** A História do *Eras do Brasil* é um rio que corre para frente. Você pode nadar com a correnteza (participar dos eventos) ou navegar pelas águas calmas que ficaram para trás (jogar o conteúdo de legado), mas o rio nunca para.
+1.  **Ciclo Acelerado:** O servidor roda um ciclo Dia/Noite.
+2.  **Turnos de NPC:**
+    * **Dia:** O Mestre Ferreiro atende na Forja (Qualidade Alta).
+    * **Noite:** O Mestre vai para a Taverna. O **Aprendiz** assume a Forja (Qualidade Normal, Estoque Reduzido).
+    * **Resultado:** O serviço nunca fecha (evitando punição ao jogador casual), mas o mundo respira e os NPCs têm vida.
