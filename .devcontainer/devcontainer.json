@@ -24,6 +24,6 @@
     "features": {
         "ghcr.io/devcontainers/features/git:1": {}
     },
-    "postCreateCommand": "curl -fsSL https://www.princexml.com/download/prince_15.2-1_ubuntu20.04_amd64.deb -o prince.deb && sudo dpkg -i prince.deb && sudo apt-get -f install -y && rm prince.deb"
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libwebpdemux2 && curl -fsSL https://www.princexml.com/download/prince_15.2-1_ubuntu20.04_amd64.deb -o prince.deb && sudo dpkg -i prince.deb && sudo apt-get -f install -y && rm prince.deb"
 
 }
