@@ -24,6 +24,6 @@
     "features": {
         "ghcr.io/devcontainers/features/git:1": {}
     },
-    "postCreateCommand": "curl -fsSL https://www.princexml.com/download/prince_14.2-1_amd64.deb -o prince.deb && sudo dpkg -i prince.deb && sudo apt-get -f install -y && rm prince.deb"
+    "postCreateCommand": "curl -fsSL https://www.princexml.com/download/prince_16.1-1_ubuntu24.04_amd64.deb -o prince.deb && sudo dpkg -i prince.deb && sudo apt-get -f install -y && rm prince.deb"
 
 }
