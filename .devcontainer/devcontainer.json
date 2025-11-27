@@ -1,30 +1,29 @@
 {
-  "name": "Eras Do Brasil GDD - Container",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  // Extensões que serão instaladas automaticamente no container
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "codezombiech.gitignore",
-        "editorconfig.editorconfig",
-        "github.copilot",
-        "github.copilot-chat",
-        "mermaidchart.vscode-mermaid-chart",
-        "ms-ceintl.vscode-language-pack-pt-br",
-        "pkief.material-icon-theme",
-        "shd101wyy.markdown-preview-enhanced",
-        "tomoki1207.pdf",
-        "yzhang.markdown-all-in-one"
-      ],
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh"
-      }
-    }
-  },
-  
-  
-  // Features adicionais que podem ser úteis
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
-  }
+    "name": "Eras Do Brasil GDD - Container",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "codezombiech.gitignore",
+                "editorconfig.editorconfig",
+                "github.copilot",
+                "github.copilot-chat",
+                "mermaidchart.vscode-mermaid-chart",
+                "ms-ceintl.vscode-language-pack-pt-br",
+                "pkief.material-icon-theme",
+                "shd101wyy.markdown-preview-enhanced",
+                "tomoki1207.pdf",
+                "yzhang.markdown-all-in-one",
+                "willasm.obsidian-md-vsc"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "postCreateCommand": "curl -fsSL https://www.princexml.com/download/prince_14.2-1_amd64.deb -o prince.deb && sudo dpkg -i prince.deb && sudo apt-get -f install -y && rm prince.deb"
+
 }
