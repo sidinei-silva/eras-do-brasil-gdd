@@ -1,26 +1,32 @@
 # ✅ Checklist Geral de Produção
 
-Status atual: **Design Finalizado (Co-op P2P). Iniciando Dados.**
+Status atual: **Refatoração Final de Design (Pós-Auditoria).**
 
-## 🟢 Concluído (GDD & Core)
-- [x] **Pivotagem:** Arquitetura alterada para Co-op P2P (Tick-Tock).
-- [x] **Regras de Tempo:** Definido "Tempo Fluido" para exploração Multiplayer.
-- [x] **Enredo e Classes:** Todo conteúdo narrativo validado.
-- [x] **Economia:** Ajustada para suportar troca entre jogadores (Trade).
+## 🟢 Concluído (Fase 1 - Design)
+- [x] **Enredo Principal:** Ato 1 estruturado.
+- [x] **Arquitetura:** Definido modelo "Eco Compartilhado" (Co-op P2P).
+- [x] **Validação IA (Round 1):** Identificados conflitos de "MMO vs P2P" e exploits de economia.
 
-## 🟡 A Fazer (Fase 2 - Arquitetura de Dados)
-O foco agora é criar a estrutura JSON que suporte tanto o Solo quanto o Co-op.
+## 🟡 A Fazer Agora (Limpeza e Segurança)
+Estes itens corrigem os problemas apontados pelos relatórios de áudio e texto.
 
-### 1. Schemas JSON (A Base do Código)
-- [ ] **Schema de Missões:** Suporte a objetivos compartilhados (`shared_progress: true`).
-- [ ] **Schema de Itens:** Propriedades de troca e posse (`owner_id`).
-- [ ] **Schema de Diálogos:** Estrutura para árvore de conversa.
-- [ ] **Schema de Inimigos:** Definição de stats e loot.
+### 1. Remoção de Vestígios MMO
+- [ ] **Refatorar Ato 1:** Remover "Corrida pela Glória" (Competição de Servidor). Substituir por "Corrida contra a Facção Rival (IA)".
+- [ ] **Limpeza Terminológica:** Remover termos como "Servidor Global", "Raiz Sazonal" e "Lobby Massivo" de todos os arquivos.
 
-### 2. Conteúdo (Preenchimento)
-- [ ] Transcrever Missões do Ato 1 para JSON.
-- [ ] Transcrever Itens Iniciais para JSON.
+### 2. Correção de Regras de Tempo (Co-op)
+- [ ] **Mundo Vivo (Cap 8):** Definir a regra da **"Bolha de Combate"**. (Quando um jogador entra em combate, o tempo para ou cria uma instância de turno? Definir que o relógio global é pausado ou dilatado durante lutas táticas).
 
-## 🔴 Futuro (Desenvolvimento)
-- [ ] **POC Fase 1:** RPG de Texto Solo.
-- [ ] **POC Fase 2:** RPG de Texto Co-op (Conexão P2P).
+### 3. Segurança Econômica (Anti-Exploit)
+- [ ] **Economia (Cap 6):** Adicionar regra de **"Salvamento Atômico"** para trocas P2P (evitar duplicação de itens).
+- [ ] **Balanceamento:** Adicionar **Cooldown Global** ao item "Tambor que Silenciou o Céu" (evitar uso infinito em dupla).
+
+## 🔵 Próximos Passos (Fase 2 - Dados)
+*Só iniciar após a Revalidação Final (Round 2).*
+
+- [ ] **Planejamento de Dados:** Definir a estrutura dos JSONs (Missões, Diálogos, Itens).
+- [ ] **Produção:** Escrever os JSONs.
+
+## 🔴 Futuro (Dev)
+- [ ] **Fase 3:** POC Visual Offline.
+- [ ] **Fase 4:** POC Visual Co-op.

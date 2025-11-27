@@ -407,6 +407,13 @@ Alguns itens não possuem valor em UC, mas:
 
 ---
 
+### 🛡️ Protocolo de Troca Segura (P2P)
+Para evitar a duplicação de itens (exploit) em partidas cooperativas, o jogo utiliza o sistema de **"Salvamento Atômico"**:
+1.  **Troca Iniciada:** Quando um item é jogado no chão ou colocado na janela de troca, ele entra em estado "Pendente" (bloqueado para uso).
+2.  **Confirmação:** Quando o outro jogador pega o item, o jogo força um **Autosave Simultâneo** no Host e no Client.
+3.  **Liberação:** O item só é desbloqueado no inventário do receptor após a confirmação de que ambos os saves foram escritos com sucesso.
+
+
 ### 📚 Considerações Finais
 
 - A economia é uma **ferramenta narrativa viva**, e o mestre pode usá-la para recompensar ou punir decisões de longo prazo.

@@ -19,12 +19,11 @@ A Missão Principal não espera pelo jogador. Ela é regida por um **Relógio Gl
 * **Fase 3 (Ticks 401-500): *O Colapso.*** Portais abrem aleatoriamente soltando monstros (Eventos de Combate Forçado). O Dano Espiritual ambiente causa 1 de dano por turno em áreas abertas. Dificuldade: Muito Difícil.
 * **Pós-Tick 500 (O Mundo Quebrado):** A ruptura explode. A região muda visualmente (corrupção permanente). A missão muda de "Prevenir" para "Sobreviver e Conter".
 
-### A "Corrida pela Glória" (Bounty Race)
-* **Modo Online:** Múltiplos grupos de jogadores recebem o chamado.
-    * *Vencedor (1º Grupo):* Define o destino da região no servidor e ganha Título Único + Estátua.
-    * *Demais:* Completam a missão de contenção. Ganham a mesma **Moeda de Classe**, mas com Títulos de "Sobrevivente".
-* **Modo Offline:** O grupo rival "Os Bandeirantes de Sangue" (NPCs com IA) está avançando no mapa. O jogador deve chegar antes deles ou enfrentá-los no final.
-
+### A "Corrida contra a Sombra" (Rivalidade IA)
+* **O Rival:** O grupo de NPCs "Os Bandeirantes de Sangue" está avançando no mapa em tempo real (baseado em Ticks).
+* **Modo Co-op:** O Host e o Client trabalham juntos. Se os jogadores demorarem (gastarem muitos Ticks explorando), os Bandeirantes chegam primeiro aos objetivos, roubando itens ou fortificando o local.
+* **Consequência:** Não é Game Over. É uma mudança de cenário. Se os rivais vencerem, o Boss final estará mais forte ("Ascendido") e a recompensa narrativa muda.
+* 
 ---
 
 ## 🎲 Estrutura da Campanha (Integração de Sistemas)

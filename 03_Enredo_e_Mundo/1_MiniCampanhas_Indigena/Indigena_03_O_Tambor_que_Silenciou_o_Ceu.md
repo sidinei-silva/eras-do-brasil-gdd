@@ -34,10 +34,11 @@ O "Tambor do Céu", roubado por saqueadores, foi visto sendo transportado por um
 
 ### 🎁 Recompensa
 
-- **Desbloqueio de Mentor:** O **Espírito do Som** ensina técnicas avançadas (Permite evoluir Xamã ou Bardo para Tier 2).
-- Recupera o **Tambor do Céu Silencioso** (Item de Foco: +1 em magias sônicas).
-- Pode fazer um som ecoar em toda uma vila ou floresta uma vez por sessão.
-
+- **Desbloqueio de Mentor:** O Espírito do Som.
+- **Tambor do Céu Silencioso (Item Único):**
+    * *Efeito:* Congela o Relógio da Ruptura por 20 Ticks.
+    * *Restrição:* **Cooldown Global.** Uma vez usado por qualquer jogador no Eco, a Raiz do Mundo impede que *qualquer* Tambor seja ativado novamente por 500 Ticks. (Impede o "stacking" de efeitos entre jogadores).
+  
 ---
 
 ### 🔗 **Gancho Maior de Campanha e Expansão**

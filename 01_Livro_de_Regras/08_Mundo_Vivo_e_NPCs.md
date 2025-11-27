@@ -192,25 +192,19 @@ NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos
 
 ## 8.7 – Dinâmica de Tempo: Solo vs. Cooperativo
 
-O sistema de Ticks se adapta para garantir fluidez quando mais de um jogador está no mundo.
-
 ### 1. Modo Solo (Turno Reativo)
-Quando joga sozinho, o mundo espera por você.
-* O tempo só avança quando você realiza uma ação (mover, craftar, esperar).
-* Permite estratégia profunda e pausas para leitura.
+O mundo espera por você. O tempo avança apenas quando você age.
 
-### 2. Modo Cooperativo (Tempo Fluido / Heartbeat)
-Quando um aliado se conecta, o mundo entra em **Sincronia Contínua**.
+### 2. Modo Cooperativo (Tempo Fluido e Bolhas)
+Para permitir liberdade sem quebrar a tática:
 
-* **Exploração (Tempo Real):** O servidor (Host) gera um "Heartbeat" (batida de coração) a cada X segundos (ex: 1 segundo = 1 Tick de exploração).
-    * Jogadores se movem livremente e simultaneamente.
-    * Se um jogador parar para ler, o outro pode continuar andando ou coletando.
-    * NPCs seguem suas rotinas baseadas nesse relógio contínuo.
-
-* **Combate (Turno Rígido):** Assim que qualquer jogador entra em combate, cria-se uma **"Bolha de Turno"**.
-    * Dentro da bolha, a regra volta a ser estrita: Iniciativa define quem age.
-    * Jogadores fora da bolha podem continuar se movendo em tempo real até entrarem na área de combate (juntando-se à Iniciativa).
-
+* **Exploração (Tempo Real):** O Host gera um "Heartbeat" (1 seg = 1 Tick). Jogadores andam livremente.
+* **A Bolha de Combate (Pausa Tática):**
+    * Quando **qualquer** jogador entra em combate, o Relógio Global de Exploração (Dia/Noite/Missão) é **PAUSADO**.
+    * O combate ocorre em sua própria velocidade (Turnos Táticos).
+    * **Ao final do combate:** O sistema calcula a duração da luta e "desconta" os Ticks do Relógio Global de uma vez (ex: 6 rodadas = 60 Ticks avançados no mundo).
+    * *Isso impede que um jogador trave o tempo do mundo propositalmente apenas entrando em luta.*
+  
 ---
 
 ## 8.8 – O Papel dos Jogadores no Co-op
