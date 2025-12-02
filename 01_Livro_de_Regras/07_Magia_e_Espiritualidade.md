@@ -333,7 +333,7 @@ O sistema de magia utiliza **dois tipos de custos**, dependendo da magia:
 Magias que não são de efeito contínuo possuem **tempo de recarga**, normalmente representado em:
 
 - **Turnos** (em combate).
-- **Ticks** (na exploração do mundo digital ou mundo persistente).
+- **Ticks** (na exploração do mundo digital ou Mundo Vivo).
 - **Cenas** (no RPG de mesa, a critério do mestre).
 
 > ⚠️ Magias defensivas e buffs poderosos, por regra, não podem ser empilhadas sem encerrar a anterior ou encerrar concentração.

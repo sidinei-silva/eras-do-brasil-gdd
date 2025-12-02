@@ -10,7 +10,7 @@ Bem-vindo à Fonte Única da Verdade (SSoT) do projeto *Eras do Brasil*. Este re
 
 * **A Raiz do Mundo:** Uma entidade espiritual que conecta todas as eras e memórias.
 * **O Dom da Revivência:** A mecânica narrativa que permite aos jogadores acessar habilidades e ecos de outras eras.
-* **Mundo Vivo:** Um mundo persistente impulsionado por "Ticks", onde NPCs possuem rotinas, necessidades e uma rede social de conhecimento (IA de "Utility" e "Fofoca").
+* **Mundo Vivo:** Um Mundo Vivo impulsionado por "Ticks", onde NPCs possuem rotinas, necessidades e uma rede social de conhecimento (IA de "Utility" e "Fofoca").
 * **Progressão Flexível:** Um sistema de classes (inspirado em *Orna*) onde habilidades ativas são herdadas, permitindo "builds híbridas".
 * **Itemização Profunda:** Um sistema 5x5 de Qualidade e Raridade que define o poder e o valor de cada item.
 

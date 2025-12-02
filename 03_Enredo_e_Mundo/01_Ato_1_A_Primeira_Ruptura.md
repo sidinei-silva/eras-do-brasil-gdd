@@ -9,9 +9,9 @@ Estamos em 1497. Uma expedição secreta portuguesa e tribos locais convergem pa
 
 ---
 
-## ⏳ Mecânica Central: O Relógio da Ruptura (Global Ticks)
+## ⏳ Mecânica Central: O Relógio da Ruptura
 
-A Missão Principal não espera pelo jogador. Ela é regida por um **Relógio Global de 500 Ticks**. A passagem do tempo altera a dificuldade, o ambiente e a narrativa.
+A Missão Principal não espera pelo jogador. Ela é regida por um **Relógio Global de 500 Ticks**. A passagem do tempo (gasto pelas ações dos jogadores) altera a dificuldade, o ambiente e a narrativa.
 
 ### As Fases da Catástrofe
 * **Fase 1 (Ticks 0-200): *Sinais.*** Animais agem estranho. O céu muda de cor. Dificuldade: Normal.
@@ -21,6 +21,7 @@ A Missão Principal não espera pelo jogador. Ela é regida por um **Relógio Gl
 
 ### A "Corrida contra a Sombra" (Rivalidade IA)
 * **O Rival:** O grupo de NPCs "Os Bandeirantes de Sangue" está avançando no mapa em tempo real (baseado em Ticks).
+* **Mecânica:** O progresso deles é atrelado ao Relógio Global. Se os jogadores gastarem muitos Ticks craftando ou explorando, os Bandeirantes chegarão primeiro aos objetivos-chave.
 * **Modo Co-op:** O Host e o Client trabalham juntos. Se os jogadores demorarem (gastarem muitos Ticks explorando), os Bandeirantes chegam primeiro aos objetivos, roubando itens ou fortificando o local.
 * **Consequência:** Não é Game Over. É uma mudança de cenário. Se os rivais vencerem, o Boss final estará mais forte ("Ascendido") e a recompensa narrativa muda.
 * 
@@ -87,6 +88,6 @@ A conclusão do Ato 1 marca a transição do personagem para o "Mid-Game".
 
 ### 🧩 Epílogo: O Estado do Mundo
 
-O servidor (ou o mestre) registra o resultado:
+O **Estado do Mundo (Save do Host)** registra o resultado:
 * **Vitória (Ruptura Fechada):** A floresta floresce com mana. A vila inicial prospera.
 * **Sobrevivência (Ruptura Explodiu):** A floresta vira o "Bosque das Sombras". Monstros de Tier 2 aparecem lá. A vila inicial é evacuada.

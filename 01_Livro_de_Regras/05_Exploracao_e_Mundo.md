@@ -11,7 +11,7 @@ O sistema de exploração foi projetado para:
 - Funcionar de forma consistente tanto no RPG de mesa quanto na versão digital (Fase 1).
 - Permitir que NPCs se movam e evoluam junto ao jogador, seguindo **rotinas vivas**.
 - Tornar cada ambiente significativo — com recursos, eventos, segredos e reações.
-- Preparar o terreno para a futura expansão de **simulação completa de mundo persistente**, que será ativada na Fase 2 da versão digital.
+- Preparar o terreno para a futura expansão de **simulação completa de Mundo Vivo**, que será ativada na Fase 2 da versão digital.
 
 ---
 
@@ -248,16 +248,16 @@ Se o NPC for bem-sucedido:
 
 ---
 
-### 📅 Avanço Global e Tempo Persistente
+### 📅 Avanço Global e Mundo Vivo
 
-- O tempo **avança mesmo sem os jogadores**, especialmente no modo digital persistente.
-- Eventos podem ocorrer **entre sessões** com base nos ticks globais:
-  - NPCs mudam de posição
-  - Recursos se regeneram ou se esgotam
-  - Locais entram em estado de alerta
-  - Fações ou criaturas agem independentemente
+- O tempo é reativo, mas o mundo simula vida.
+- Eventos podem ocorrer com base nos ticks globais acumulados:
+  - NPCs mudam de posição.
+  - Recursos se regeneram ou se esgotam.
+  - Locais entram em estado de alerta.
+  - Facções ou criaturas agem (simulação abstrata).
 
-> Em campanhas de mesa, o mestre pode simular isso com tabelas e anotações. No digital, o servidor processará tudo automaticamente.
+> Em campanhas de mesa, o mestre pode simular isso com tabelas e anotações. No digital, o **sistema de jogo** processará as rotinas automaticamente em segundo plano.
 
 ---
 
@@ -596,14 +596,13 @@ No RPG de mesa, o mestre pode:
 
 ### 🌐 Eventos Globais (Fase Digital)
 
-Na versão digital com mundo persistente, eventos podem afetar **todos os jogadores conectados**, como:
+Na versão digital com Mundo Vivo, eventos podem afetar a região inteira, como:
 
-- Chegada de uma nova facção
-- Quebra de equilíbrio entre as Eras
-- Espíritos corrompendo grandes áreas do mapa
-- Recompensas únicas para os primeiros a completarem a missão
+- Chegada de uma nova facção.
+- Quebra de equilíbrio entre as Eras.
+- Espíritos corrompendo grandes áreas do mapa.
 
-> Esses eventos possuem **ciclos próprios**, iniciando, progredindo e encerrando com base nas ações da comunidade.
+> Esses eventos possuem ciclos próprios, progredindo com base nas ações e no tempo gasto pelo grupo de jogadores.
 
 ---
 
@@ -777,7 +776,7 @@ No próximo capítulo, **Capítulo 6 – Economia, Itens e Crafting**, abordarem
 - Recursos coletáveis
 - Sistemas de criação de itens
 - Qualidade e raridade dos equipamentos
-- Comerciantes, reparos e economia do mundo persistente
+- Comerciantes, reparos e economia do Mundo Vivo
 
 Você entenderá como os frutos da exploração se convertem em **progresso, sobrevivência e personalização do personagem** — seja dominando a forja de um machado espiritual ou criando um ensopado raro que salva vidas em um ritual.
 

@@ -31,7 +31,7 @@ A economia do jogo também pode sofrer variações locais, influenciada por:
 - Oferta e demanda em regiões específicas
 - Presença de feiras e comerciantes itinerantes
 - Catástrofes, eventos mágicos ou escassez natural
-- Influência do progresso global no mundo digital persistente
+- Influência do progresso da história no Mundo Vivo.
 
 > 💡 **Importante:** O sistema de crafting está conectado diretamente às *Proficiências de Vida* (ver Capítulo 3.5) e ao [[📘 Livro de Itens e Crafting]], que contém as tabelas completas de receitas, materiais e efeitos.
 
@@ -328,7 +328,6 @@ Um personagem pode **melhorar um item** progressivamente ao invés de criar outr
 
 - Itens danificados são oportunidade narrativa: forjam relações com NPCs ferreiros ou místicos.
 - Falhas críticas em combate **podem** reduzir a durabilidade, mesmo sem atingir zero.
-- Em mundos digitais persistentes, **ticks** podem representar desgaste automático por uso prolongado ou condições ambientais.
 
 ---
 ## 6.5 – Comércio e Economia Regional

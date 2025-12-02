@@ -10,7 +10,7 @@ O mestre, em *Eras do Brasil*, não é apenas o narrador dos eventos — é o **
 
 Diferente de muitos sistemas clássicos, aqui o mestre não controla um universo estático, mas sim um **mundo vivo, dinâmico e em constante transformação**, onde:
 - **NPCs possuem rotinas, desejos, vínculos e conhecimento próprio.**
-- **O mundo se move mesmo sem a presença dos jogadores.**
+- **O mundo se move reagindo à presença dos jogadores.**
 - **Eventos acontecem em ciclos temporais (ticks), afetando regiões, recursos, mercados, facções e relações.**
 
 O mestre deve equilibrar três pilares:
@@ -22,15 +22,14 @@ O mestre deve equilibrar três pilares:
 
 ## 8.2 – Arquitetura de Ticks, Blocos e Ciclos
 
-(Conteúdo fundido do original 8.2 e das novas regras de Ticks)
-
 O mundo é construído sobre uma lógica de **Blocos de Cenário** (cap. 5.2) e regido por **Ticks**.
 
-### Arquitetura do "Tick Comutável" (Offline vs. Online)
-O motor do mundo de *Eras do Brasil* é o "Tick". Um Tick é a unidade fundamental de avanço do tempo. Toda a arquitetura de simulação é construída sobre um "Motor" de lógica (`Mundo.ProcessarTick()`) que é separado de seu "Gatilho".
+### Arquitetura do "Tick Reativo" (Motor do Mundo)
+O motor do mundo de *Eras do Brasil* é o "Tick". Um Tick é a unidade fundamental de avanço do tempo. Toda a arquitetura de simulação é construída sobre um princípio de **reação** um "Motor" de lógica (`Mundo.ProcessarTick()`) que é separado de seu "Gatilho".:
 
 * **Gatilho Offline (Reativo):** Para as Fases 1 e 3 (Offline / RPG de Mesa), o mundo é reativo. O "Motor" do Tick só é disparado quando o jogador realiza uma ação significativa, como `OnPlayerAction_Move` (mover-se entre blocos de cenário). O mundo espera pelo jogador.
-* **Gatilho Online (Proativo):** Para as Fases de Mundo Persistente (Online), o mundo é proativo. O "Motor" do Tick é disparado por um relógio global no servidor (ex: `setInterval` a cada 1 ou 5 minutos), independentemente das ações do jogador. O mundo avança sozinho.
+* **Gatilho Coop (Reativo Combinado):** Para o Modo Cooperativo, o mundo segue um Relógio Compartilhado. O 'Motor' do Tick avança conforme as ações combinadas dos jogadores (Host e Client). Se ambos pararem, o mundo espera.
+* **Sincronia:** Se o Anfitrião ou o Viajante agem, o mundo reage. Se ambos param para conversar, o sol para no céu e os NPCs aguardam. Isso garante que ninguém perca eventos por estar lendo um diálogo.
 
 ### Ciclos Temporais
 Ticks fazem parte de ciclos maiores, que podem ser:
@@ -39,7 +38,7 @@ Ticks fazem parte de ciclos maiores, que podem ser:
 - **Ciclos Sazonais:** estações que alteram recursos e clima.
 - **Ciclos Espirituais:** fases da lua, rupturas da Raiz.
 
-A cada Tick, o mundo atualiza:
+A cada Tick processado, o mundo atualiza:
 - Movimentação de NPCs.
 - Regeneração ou esgotamento de recursos.
 - Ativação de eventos.
@@ -61,7 +60,7 @@ Cada NPC possui um `NPC_Data` com os seguintes componentes:
 * **`Agenda`:** A rotina de trabalho padrão do NPC (ex: "08:00 - Ir para a Forja").
 
 ### O Fluxo de Decisão do NPC (`OnTick` - Utility AI)
-A cada Tick Global, o cérebro de cada NPC (Utility AI) roda o seguinte processo:
+A cada Tick Global processado, o cérebro de cada NPC roda o seguinte processo:
 
 1.  **Fase 1 (Passivo):** Atualiza todas as `Needs` (Fome +1, Energia -1) e recalcula o `Humor` total.
 2.  **Fase 2 (Decisão):** O NPC avalia todas as suas "Metas" (Trabalhar, Comer, Dormir, Socializar) e atribui uma prioridade a cada uma.
@@ -71,18 +70,19 @@ A cada Tick Global, o cérebro de cada NPC (Utility AI) roda o seguinte processo
     * *Exemplo:* Se a `Prioridade_Fome` (70) for maior que a `Prioridade_Trabalho` (50), o Ferreiro "quebra" sua rotina de Agenda e decide ir à taverna para comer.
 
 ### Percepção Cognitiva (`knowledgeBase`)
-(Conteúdo original 8.3 e novo 8.4 fundidos)
-
 Cada NPC possui uma "Base de Conhecimento" (`knowledgeBase`) onde armazena informações que *vê* durante suas rotinas:
-* **Recursos:** `{"tipo": "RECURSO", "id": "minerio_ferro_01", "local": "bloco_mina", "ultimo_visto": 12340}`
-* **Monstros:** `{"tipo": "ENTIDADE", "id": "lobo_alfa", "local": "floresta_norte", "ultimo_visto": 12300}`
-* **Rotinas de NPCs:** `{"tipo": "ROTINA_NPC", "id": "npc_guarda", "info": "Vai para a taverna ao meio-dia"}`
+* **Recursos:** Onde viu minérios ou ervas.
+`{"tipo": "RECURSO", "id": "minerio_ferro_01", "local": "bloco_mina", "ultimo_visto": 12340}`
+* **Monstros:** Onde viu perigos.
+`{"tipo": "ENTIDADE", "id": "lobo_alfa", "local": "floresta_norte", "ultimo_visto": 12300}`
+* **Rotinas:** Onde viu outros NPCs.
+`{"tipo": "ROTINA_NPC", "id": "npc_guarda", "info": "Vai para a taverna ao meio-dia"}`
 * As informações possuem um "prazo de validade" (baseado no `ultimo_visto`) e são "esquecidas" após um tempo.
 
 ### Relacionamentos (NPC <=> NPC) e "Fofoca"
 NPCs rastreiam seu nível de amizade/inimizade com *outros NPCs* e com os jogadores.
 
-Quando as rotinas de dois NPCs (baseadas no Tick) fazem com que eles se encontrem no mesmo bloco (ex: Ferreiro e Guarda na Taverna), o sistema de "Fofoca" é ativado:
+Quando as rotinas de dois NPCs (baseadas no Tick) fazem com que eles se encontrem no mesmo bloco (ex: Ferreiro e Guarda na Taverna), o sistema de "Fofoca" é ativado, permitindo que troquem informações de sua `knowledgeBase`.
 1.  Os NPCs trocam 1-2 itens de suas `knowledgeBase`.
 2.  Eles atualizam seus `Relacionamentos` (ex: "Falar com o Ferreiro aumentou minha amizade com ele").
 
@@ -190,28 +190,32 @@ NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos
 
 ---
 
-## 8.7 – Dinâmica de Tempo: Solo vs. Cooperativo
+## 8.7 – Dinâmica de Tempo: O Sistema Reativo e a Bolha
 
-### 1. Modo Solo (Turno Reativo)
-O mundo espera por você. O tempo avança apenas quando você age.
+Em *Eras do Brasil*, o tempo é um recurso estratégico, não uma pressão constante. Ele **não passa sozinho**. O mundo espera pelos jogadores.
 
-### 2. Modo Cooperativo (Tempo Fluido e Bolhas)
-Para permitir liberdade sem quebrar a tática:
+### 1. Ticks Reativos (A Regra de Ouro)
+O Relógio Global só avança quando um jogador realiza uma ação que consome tempo.
+* **Mover-se no Mapa:** +1 a +5 Ticks.
+* **Coletar/Craftar:** +X Ticks (baseado na tarefa).
+* **Ação "Esperar":** O jogador pode decidir avançar o relógio propositalmente (ex: esperar anoitecer para um evento).
 
-* **Exploração (Tempo Real):** O Host gera um "Heartbeat" (1 seg = 1 Tick). Jogadores andam livremente.
-* **A Bolha de Combate (Pausa Tática):**
-    * Quando **qualquer** jogador entra em combate, o Relógio Global de Exploração (Dia/Noite/Missão) é **PAUSADO**.
-    * O combate ocorre em sua própria velocidade (Turnos Táticos).
-    * **Ao final do combate:** O sistema calcula a duração da luta e "desconta" os Ticks do Relógio Global de uma vez (ex: 6 rodadas = 60 Ticks avançados no mundo).
-    * *Isso impede que um jogador trave o tempo do mundo propositalmente apenas entrando em luta.*
-  
----
+### 2. Dinâmica Cooperativa (Tempo Compartilhado)
+No modo Co-op, o Relógio Global é único para a sessão (sincronizado entre Host e Client).
+* **Ação Consequente:** Se o Jogador A viaja para uma cidade distante (gasto de 50 Ticks), o relógio avança 50 Ticks para o mundo todo. O Jogador B verá o dia virar noite instantaneamente.
+* **Estratégia:** Os jogadores devem coordenar suas ações. "Eu vou craftar essa espada, vai gastar 20 Ticks, tudo bem para você?"
 
-## 8.8 – O Papel dos Jogadores no Co-op
-
-Para evitar conflitos de narrativa, definimos papéis claros:
-
-* **O Host (Anfitrião):** É o dono do Save. Ele tem a palavra final em diálogos de missão e escolhas morais que alteram o mundo permanentemente.
-* **O Client (Aliado):** É um suporte de luxo. Ele pode interagir com lojas, coletar recursos e lutar livremente, mas em diálogos de história, ele atua como conselheiro (pode sugerir opções, mas não clicar na decisão final).
+### 3. A Bolha de Combate (Pausa Tática)
+Quando um combate inicia, o Relógio Global de Exploração **PAUSA**.
+* A luta ocorre em turnos táticos (Iniciativa), isolada do tempo do mundo.
+* **Ao final do combate:** O sistema calcula a duração da luta e "desconta" os Ticks do Relógio Global de uma só vez (ex: 6 rodadas de combate = 60 Ticks avançados no mundo após a luta).
+* *Isso impede que um jogador trave o tempo do mundo propositalmente apenas entrando em luta, pois a conta do tempo chega no final.*
 
 ---
+
+## 8.8 – O Papel dos Despertos (Dinâmica Cooperativa)
+
+Para evitar conflitos de narrativa e garantir a integridade do save, definimos papéis claros:
+
+* **O Anfitrião (Dono do Eco):** É a âncora da realidade. Ele tem a palavra final em diálogos de missão e escolhas morais que alteram o mundo permanentemente (pois o save é dele).
+* **O Viajante (Aliado):** É um suporte de luxo e companheiro de armas. Ele pode interagir com lojas, coletar recursos e lutar livremente, mas em diálogos cruciais da história, ele atua como conselheiro (pode sugerir opções, mas a decisão final é do Anfitrião).

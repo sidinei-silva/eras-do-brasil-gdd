@@ -32,21 +32,20 @@ Os personagens do jogador são seres marcados por esse Dom:
 
 ---
 
----
+## 4. Arquitetura da Realidade: A Sincronia dos Ecos (Sistema Co-op)
 
-## 4. Arquitetura da Realidade: Ecos e Raízes (Sistema Co-op)
+Para conciliar a narrativa pessoal profunda com a possibilidade de compartilhar sua jornada, *Eras do Brasil* utiliza o conceito místico de **Sincronia Espiritual**.
 
-Para justificar a entrada de outros jogadores na sua campanha, *Eras do Brasil* utiliza o conceito de **Sincronia Espiritual**.
-
-### 4.1 O Eco (O Mundo do Host)
+### 4.1 O Eco (Seu Mundo Pessoal)
 Cada campanha é um **Eco** único na linha do tempo.
-* **O Anfitrião:** O jogador que inicia o jogo é a "Âncora" daquele Eco. As decisões dele moldam a história daquele mundo (salvar ou queimar a vila).
-* **O Tempo:** O tempo obedece ao Anfitrião. Se ele pausar, o mundo pausa.
+* **O Guardião do Tempo (O Anfitrião):** Você é a âncora da sua realidade. As decisões que você toma (salvar ou queimar a vila) marcam o "tecido" do seu mundo permanentemente.
+* **Soberania:** O tempo e a história obedecem à sua presença. Se você pausar, o mundo pausa. Se você não está lá, o Eco adormece.
 
-### 4.2 A Raiz (A Conexão / Co-op)
-A **Raiz do Mundo** permite que outros Despertos (jogadores convidados) cruzem a fronteira entre os Ecos.
-* **O Viajante:** Um segundo jogador pode projetar seu personagem no Eco do Anfitrião para ajudar.
-* **Ganhos Compartilhados:** O Viajante mantém a experiência (XP) e os itens (Loot) que coletar, levando-os de volta para seu próprio Eco.
+### 4.2 A Raiz (A Conexão Espiritual)
+A **Raiz do Mundo** é o canal que permite que outros Despertos (seus amigos) cruzem a fronteira entre os Ecos e visitem seu mundo.
+* **O Viajante:** Um aliado pode projetar seu espírito no seu mundo (Eco do Anfitrião) para ajudar.
+* **Vínculo (Ganhos Compartilhados):** O Viajante mantém a experiência (XP) e os itens (Loot) que conquistar, levando-os de volta para sua própria realidade.
+* **Consequência:** Enquanto estão conectados pela Raiz, os destinos se entrelaçam. O perigo enfrentado por um é real para ambos.
 * **Impacto na História:** O Viajante não toma decisões narrativas críticas (só o Anfitrião decide), mas suas ações em combate e exploração são vitais para o sucesso do grupo.
 
 > *"Caminhamos em nossos próprios sonhos, mas nas horas mais sombrias, a Raiz nos permite sonhar juntos."*

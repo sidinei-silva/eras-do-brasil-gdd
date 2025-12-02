@@ -967,7 +967,7 @@ Para grupos que desejam combates mais rápidos e narrativos:
 |----------------|-----------|--------|
 | Combate com Grid | Segunda Etapa Digital | Planejado |
 | Reação por Alcance | RPG de Mesa e Digital | Em discussão |
-| Inimigos com IA Estratégica | Versão Digital Persistente | Em design |
+| Inimigos com IA Estratégica | Versão Digital Completa (Fase 2) | Em design |
 | Combate por Zona de Impacto | Ambientes mágicos ou espirituais | Em concepção |
 
 ---
