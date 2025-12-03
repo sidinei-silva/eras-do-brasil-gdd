@@ -32,7 +32,7 @@ Este glossário reúne os principais termos técnicos, narrativos e mecânicos u
 | **Dom da Revivência** | Habilidade mística que permite acessar memórias de vidas passadas e transitar por ecos das eras. |
 | **Tick** | Unidade de tempo que sincroniza eventos, NPCs, movimentação no mundo e mudanças globais. |
 | **Bloco de Exploração** | Unidade de mapa que representa um local específico. Jogadores movem-se de bloco em bloco. |
-| **Evento Global** | Acontecimento que impacta o mundo inteiro (ex.: eclipses, invasões espirituais). |
+| **Evento Global** | Acontecimento que afeta todas as regiões do mapa atual da campanha (ex.: o dia vira noite, uma estação muda). |
 
 ### 🧙 Termos de Magia e Espiritualidade
 

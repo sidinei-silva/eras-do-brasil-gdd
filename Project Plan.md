@@ -66,10 +66,10 @@ A visão final não é um MMO massivo, mas uma experiência de RPG profunda que 
 * **Tech:** Sistema de Grid Visual, Máquina de Estados de Animação.
 
 ### Fase 4: Jogo Digital v1 - Mundo Conectado (Co-op)
-* **Objetivo:** Validar a exploração conjunta em tempo real.
+* **Objetivo:** Validar a exploração conjunta em Sincronia.
 * **O Jogo:** Dois personagens andando no mapa visualmente.
-* **Funcionalidades:** Implementação do **"Tempo Fluido" (Heartbeat)** para movimento simultâneo fora de combate. Sincronia de posição e estado dos NPCs.
-* **Tech:** Interpolação de movimento, Correção de latência básica.
+* **Funcionalidades:** Implementação da **"Sincronia de Ticks"**: O mundo reage quando qualquer jogador gasta um Tick. Implementação da "Fofoca" de NPCs compartilhada.
+* **Tech:** Netcode P2P (Steamworks/Direct IP). O Host autoriza as mudanças de estado do mundo.
 
 ### Fase 5: Jogo Digital v2 - Núcleo Tático (Offline)
 * **Objetivo:** Implementar a profundidade final (Grid Tático).
