@@ -975,3 +975,20 @@ Para grupos que desejam combates mais rápidos e narrativos:
 > ✅ Estas regras não impactam o núcleo do jogo atual, mas serão incorporadas de forma modular e transparente sempre que forem ativadas.
 
 ---
+
+---
+
+## ⚖️ Escala de Dificuldade (Solo vs. Cooperativo)
+
+Para garantir que o combate seja desafiador tanto para o lobo solitário quanto para a dupla de despertos, o sistema utiliza uma regra de **Ajuste Dinâmico de Vitalidade**.
+
+A "Economia de Ações" (o número de ataques que o grupo de jogadores faz por turno) dobra no modo cooperativo. Para compensar isso sem tornar a luta trivial:
+
+| Cenário | Ajuste no Inimigo |
+| :--- | :--- |
+| **Jogador Solo** | **PV Padrão (100%)**. O balanceamento assume que o jogador é o único alvo. |
+| **Modo Cooperativo** | **PV Aumentado (+75%)**. Inimigos ganham vitalidade extra para sobreviver ao foco de dano de dois jogadores. |
+
+> 🧠 **Nota de Design:** O dano causado pelos inimigos **não aumenta**. O objetivo é fazer a luta durar o número correto de rodadas (4 a 6), e não matar os jogadores com um único golpe (Hit Kill).
+
+---
