@@ -20,29 +20,18 @@ O mestre deve equilibrar três pilares:
 
 ---
 
-## 8.2 – Arquitetura de Ticks, Blocos e Ciclos
+## 8.2 – Arquitetura de Ticks e Fila de Ações
 
-O mundo é construído sobre uma lógica de **Blocos de Cenário** (cap. 5.2) e regido por **Ticks**.
+O mundo é regido por **Ticks** (unidade de tempo) e processado através de uma **Fila de Ações (Action Queue)**.
 
-### Arquitetura do "Tick Reativo" (Motor do Mundo)
-O motor do mundo de *Eras do Brasil* é o "Tick". Um Tick é a unidade fundamental de avanço do tempo. Toda a arquitetura de simulação é construída sobre um princípio de **reação** um "Motor" de lógica (`Mundo.ProcessarTick()`) que é separado de seu "Gatilho".:
+### Arquitetura do "Tick de Fila" (Multiplayer Assíncrono)
+Para permitir que jogadores realizem ações de durações diferentes (ex: um viaja por 10 ticks, o outro combate por 5), o sistema utiliza uma lógica de **Débito de Tempo**:
 
-* **Gatilho Offline (Reativo):** Para as Fases 1 e 3 (Offline / RPG de Mesa), o mundo é reativo. O "Motor" do Tick só é disparado quando o jogador realiza uma ação significativa, como `OnPlayerAction_Move` (mover-se entre blocos de cenário). O mundo espera pelo jogador.
-* **Gatilho Coop (Reativo Combinado):** Para o Modo Cooperativo, o mundo segue um Relógio Compartilhado. O 'Motor' do Tick avança conforme as ações combinadas dos jogadores (Host e Client). Se ambos pararem, o mundo espera.
-* **Sincronia:** Se o Anfitrião ou o Viajante agem, o mundo reage. Se ambos param para conversar, o sol para no céu e os NPCs aguardam. Isso garante que ninguém perca eventos por estar lendo um diálogo.
+1.  **O Débito:** Quando um jogador realiza uma ação longa (viajar, craftar), ele acumula "Débito de Ticks" e entra em estado de espera.
+2.  **A Resolução:** O servidor (Host) processa as ações do jogador com *menor* débito até que ele alcance o tempo do outro.
+3.  **Sincronia:** O relógio do mundo (Dia/Noite/NPCs) avança conforme o "Maior Débito Comum" é pago.
 
-### Ciclos Temporais
-Ticks fazem parte de ciclos maiores, que podem ser:
-- **Ciclos Diurnos:** manhã, tarde, noite, madrugada.
-- **Ciclos Semanais:** dias de feira, rituais.
-- **Ciclos Sazonais:** estações que alteram recursos e clima.
-- **Ciclos Espirituais:** fases da lua, rupturas da Raiz.
-
-A cada Tick processado, o mundo atualiza:
-- Movimentação de NPCs.
-- Regeneração ou esgotamento de recursos.
-- Ativação de eventos.
-- Progresso de facções.
+Isso impede que um jogador que está apenas andando na praça (1 tick) tenha que esperar 10 minutos reais enquanto o outro viaja pelo mapa.
 
 ---
 
@@ -190,26 +179,23 @@ NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos
 
 ---
 
-## 8.7 – Dinâmica de Tempo: O Sistema Reativo e a Bolha
+## 8.7 – Dinâmica de Tempo: Fila e Bolha
 
-Em *Eras do Brasil*, o tempo é um recurso estratégico, não uma pressão constante. Ele **não passa sozinho**. O mundo espera pelos jogadores.
+Em *Eras do Brasil*, o tempo é um recurso tático geranciado individualmente, mas sincronizado globalmente.
 
-### 1. Ticks Reativos (A Regra de Ouro)
-O Relógio Global só avança quando um jogador realiza uma ação que consome tempo.
-* **Mover-se no Mapa:** +1 a +5 Ticks.
-* **Coletar/Craftar:** +X Ticks (baseado na tarefa).
-* **Ação "Esperar":** O jogador pode decidir avançar o relógio propositalmente (ex: esperar anoitecer para um evento).
+### 1. Modo Solo (Fluxo Direto)
+O mundo reage imediatamente. Se você gasta 5 Ticks viajando, os NPCs movem 5 passos instantaneamente.
 
-### 2. Dinâmica Cooperativa (Tempo Compartilhado)
-No modo Co-op, o Relógio Global é único para a sessão (sincronizado entre Host e Client).
-* **Ação Consequente:** Se o Jogador A viaja para uma cidade distante (gasto de 50 Ticks), o relógio avança 50 Ticks para o mundo todo. O Jogador B verá o dia virar noite instantaneamente.
-* **Estratégia:** Os jogadores devem coordenar suas ações. "Eu vou craftar essa espada, vai gastar 20 Ticks, tudo bem para você?"
+### 2. Modo Cooperativo (Fluxo de Fila)
+O tempo opera em **Sincronia Flexível**:
+* **Jogador A** decide viajar para a Floresta (Custo: 5 Ticks). Ele fica "Ocupado/Viajando".
+* **Jogador B** está na Vila. Ele tem 5 Ticks de "Tempo Livre" para gastar (comprar, falar, craftar rápido) antes de alcançar o tempo do Jogador A.
+* **Convergência:** Se o Jogador B também viajar para a Floresta (5 Ticks), ambos chegam juntos e o tempo sincroniza.
 
-### 3. A Bolha de Combate (Pausa Tática)
-Quando um combate inicia, o Relógio Global de Exploração **PAUSA**.
-* A luta ocorre em turnos táticos (Iniciativa), isolada do tempo do mundo.
-* **Ao final do combate:** O sistema calcula a duração da luta e "desconta" os Ticks do Relógio Global de uma só vez (ex: 6 rodadas de combate = 60 Ticks avançados no mundo após a luta).
-* *Isso impede que um jogador trave o tempo do mundo propositalmente apenas entrando em luta, pois a conta do tempo chega no final.*
+### 3. A Bolha de Combate
+Quando um combate inicia, ele gera Ticks para a Fila:
+* **1 Rodada de Combate = 1 Tick de Débito.**
+* Se o Jogador A está lutando (gastando 1 tick por rodada), o Jogador B (que está fora da luta) pode assistir ou realizar ações curtas de 1 tick ao redor da área de combate, mantendo o fluxo dinâmico.
 
 ---
 

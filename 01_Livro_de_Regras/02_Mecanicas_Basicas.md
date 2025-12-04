@@ -151,6 +151,15 @@ A **CD** é definida pelo efeito, magia ou criatura. Se a rolagem for menor, o p
 
 ---
 
+## 2.9 – Equivalência de Tempo (Turno vs. Tick)
+
+Para fins de regras gerais:
+* **1 Turno (Combate)** equivale a **1 Tick (Mundo)**.
+* Habilidades que duram "10 minutos" duram **1 Tick**.
+* Habilidades que duram "1 hora" duram **5 a 6 Ticks** (dependendo da escala da região).
+
+---
+
 ## 📚 Considerações Finais
 
 - Este sistema é usado tanto na versão de mesa quanto na digital.
