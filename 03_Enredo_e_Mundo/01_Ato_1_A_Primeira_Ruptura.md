@@ -24,7 +24,30 @@ A Missão Principal não espera pelo jogador. Ela é regida por um **Relógio Gl
 * **Mecânica:** O progresso deles é atrelado ao Relógio Global. Se os jogadores gastarem muitos Ticks craftando ou explorando, os Bandeirantes chegarão primeiro aos objetivos-chave.
 * **Modo Co-op:** O Host e o Client trabalham juntos. Se os jogadores demorarem (gastarem muitos Ticks explorando), os Bandeirantes chegam primeiro aos objetivos, roubando itens ou fortificando o local.
 * **Consequência:** Não é Game Over. É uma mudança de cenário. Se os rivais vencerem, o Boss final estará mais forte ("Ascendido") e a recompensa narrativa muda.
-* 
+
+
+### ⚔️ Mecânica de Rivalidade: Ações de Sabotagem
+
+Os Bandeirantes de Sangue não são apenas um relógio passivo; eles são agentes ativos no mapa. O jogador pode gastar recursos e Ticks para **atrasar o progresso rival**, comprando tempo valioso para si mesmo.
+
+#### Formas de Intervenção:
+
+1. **Sabotagem Física (Exige Ferramentas + Força/Astúcia)**
+   * *Ação:* Destruir uma ponte ou provocar um deslizamento em um "Bloco de Gargalo" (passagem obrigatória).
+   * *Custo:* 5 Ticks + 1 Kit de Armadilhas.
+   * *Efeito:* Adiciona **+30 Ticks** ao tempo de viagem dos rivais.
+
+2. **Desinformação Social (Exige Presença + Rede de Fofoca)**
+   * *Ação:* Espalhar boatos falsos nas tavernas (ex: "O ouro foi visto no Sul").
+   * *Custo:* 3 Ticks + Ouro (suborno).
+   * *Efeito:* Se o teste de Presença for maior que a Inteligência do Líder Rival, o grupo inimigo desvia da rota, perdendo **1 Ciclo Inteiro (100 Ticks)**.
+
+3. **Interdição Mística (Exige Magia/Ritual)**
+   * *Ação:* Um Xamã ou Elemental invoca névoas densas ou espíritos guardiões em uma região.
+   * *Custo:* Itens Rituais.
+   * *Efeito:* Os rivais ficam presos em combate contra a natureza, paralisando seu avanço por **20 Ticks**.
+
+> ⚠️ **Risco:** Falhas críticas nessas ações podem revelar a posição do jogador aos rivais, fazendo com que eles enviem caçadores para emboscar o jogador (Gera um Evento de Combate Forçado).
 ---
 
 ## 🎲 Estrutura da Campanha (Integração de Sistemas)

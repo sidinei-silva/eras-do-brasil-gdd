@@ -978,17 +978,16 @@ Para grupos que desejam combates mais rápidos e narrativos:
 
 ---
 
-## ⚖️ Escala de Dificuldade (Solo vs. Cooperativo)
+## ⚖️ Dinâmica de Escala e Sincronia Temporal
 
-Para garantir que o combate seja desafiador tanto para o lobo solitário quanto para a dupla de despertos, o sistema utiliza uma regra de **Ajuste Dinâmico de Vitalidade**.
+### Escala de Dificuldade (Solo vs. Cooperativo)
+* **Jogador Solo:** Inimigos têm **PV Padrão (100%)**.
+* **Modo Cooperativo:** Inimigos recebem **+75% de PV**. O dano não aumenta para evitar hit-kill.
 
-A "Economia de Ações" (o número de ataques que o grupo de jogadores faz por turno) dobra no modo cooperativo. Para compensar isso sem tornar a luta trivial:
-
-| Cenário | Ajuste no Inimigo |
-| :--- | :--- |
-| **Jogador Solo** | **PV Padrão (100%)**. O balanceamento assume que o jogador é o único alvo. |
-| **Modo Cooperativo** | **PV Aumentado (+75%)**. Inimigos ganham vitalidade extra para sobreviver ao foco de dano de dois jogadores. |
-
-> 🧠 **Nota de Design:** O dano causado pelos inimigos **não aumenta**. O objetivo é fazer a luta durar o número correto de rodadas (4 a 6), e não matar os jogadores com um único golpe (Hit Kill).
-
----
+### ⏳ Sincronia de Ticks (Sistema de Fila)
+O jogo utiliza um sistema de **Processamento Assíncrono de Ações**:
+1. **Custo da Ação:** Toda ação (viajar, craftar, lutar) tem um custo em Ticks.
+2. **O Estado de "Ocupado":** Ao realizar uma ação longa (ex: viagem de 10 Ticks), o jogador entra em estado "Ocupado" e aguarda.
+3. **Resolução:** O jogo libera o outro jogador para agir livremente até que ele também gaste 10 Ticks (ou entre em estado Ocupado).
+4. **O Combate:** Cada rodada de combate consome **1 Tick**.
+    * *Exemplo:* O Jogador A viaja (Custo 10). O Jogador B entra em combate. O Jogador B joga 10 rodadas de combate enquanto o Jogador A viaja. No 11º tick, ambos estão livres novamente.

@@ -46,7 +46,7 @@ Tanto no RPG de mesa quanto na versão digital (fase 1), a movimentação pelo m
 | Aspecto                    | RPG de Mesa                     | RPG Digital (Fase 1)                 |
 |----------------------------|----------------------------------|--------------------------------------|
 | Movimento entre blocos     | Feito por escolha do jogador guiado pelo mestre | Feito por cliques ou setas direcionais |
-| Interação com NPCs e objetos| Narrado e interpretado pelo mestre | Baseado em menus, ações e caminhos |  
+| Interação com NPCs e objetos| Narrado e interpretado pelo mestre | Baseado em menus, ações e caminhos |
 | Transição de cenário       | O mestre descreve ou apresenta o próximo bloco | Visual e automatizada (com eventos) |
 
 > O sistema de blocos unifica a experiência, permitindo que **as mesmas campanhas sejam adaptadas facilmente** entre mesa e digital.
@@ -89,49 +89,44 @@ Explorar significa:
 > A exploração é onde o mundo se revela, se dobra e se estende conforme o caminhar dos personagens.
 
 ---
-## 🚶 5.2 – Movimentação entre Blocos
+## 🚶 5.2 – Movimentação e Distância Padronizada
 
-A movimentação no mundo de *Eras do Brasil* é feita através de **blocos de exploração conectados**, representando locais específicos do cenário — como trilhas, vilarejos, florestas, ruínas ou cidades.
+A movimentação no mundo de *Eras do Brasil* é feita através de **blocos de exploração conectados**, mas regida pelo conceito universal de **Esforço de Viagem**.
 
-Cada bloco é uma **unidade geográfica e narrativa**, com elementos únicos que podem incluir:
+Para garantir consistência entre a visualização abstrata (Blocos) e a futura movimentação livre (Grid), o custo de Ticks é calculado pela **Distância Narrativa**, não apenas pelo ato de clicar.
 
-- NPCs com rotinas vivas
-- Recursos para coleta
-- Eventos aleatórios ou roteirizados
-- Entradas para combate
-- Conexões com outros blocos
+### 📏 A Regra da Distância Padrão
+* **1 Tick de Movimento** = Deslocamento significativo dentro de uma região (aprox. 15-30 minutos de caminhada ou travessia de um quadrante médio).
 
-> 💡 Essa estrutura permite que o jogo seja explorado de forma visual e interativa, tanto no RPG de mesa quanto na versão digital (Fase 1).
-
----
-
-### 🧭 Tipos de Movimento
-
-No início de cada **tick narrativo** (intervalo de tempo no jogo), o jogador ou grupo pode escolher:
-
-- **Deslocar-se para um bloco conectado**
-- **Permanecer no mesmo bloco e explorar**
-- **Aguardar ou descansar**
-
-As conexões entre blocos são **predefinidas pelo Mestre** (ou pelo mapa da campanha no digital), como um **grafo de caminhos** com opções limitadas por cenário.
-
-> Exemplo:
-> - Da "Trilha das Raízes", é possível ir para:
->   - Floresta Sombria
->   - Pedra do Chamado
->   - Acampamento do Norte
+#### Aplicação nas Fases do Jogo:
+* **Fase 1 (Blocos):** O custo em Ticks é definido pela distância narrativa entre os nós.
+    * *Praça -> Taverna (Perto):* Custa **1 Tick**.
+    * *Vila -> Floresta Profunda (Longe):* Custa **3 Ticks**.
+* **Fase 2 (Movimentação Livre):** O custo é acumulativo.
+    * O jogador tem uma "Barra de Viagem".
+    * Cada passo no grid enche a barra. Ao completar a distância padrão (ex: 10 passos), gasta-se **1 Tick**.
 
 ---
 
-### 🔄 Consumo de Ticks
+### 🧭 Tipos de Movimento e Terreno
 
-Cada movimentação entre blocos consome **1 Tick de Exploração**.
+No início de cada **tick narrativo**, o jogador escolhe seu destino. O custo final depende do terreno:
 
-- O tempo avançado pode gerar **eventos**, **mudanças no cenário** ou **movimento de NPCs**.
-- Em certos casos, pode haver **custos adicionais**:
-  - Terrenos difíceis (2 ticks)
-  - Movimentos furtivos (testes de Astúcia)
-  - Ambientes perigosos (possibilidade de encontros)
+| Terreno | Custo Base | Observação |
+| :--- | :--- | :--- |
+| **Estrada / Vila** | 1 Tick | Movimento normal e seguro. |
+| **Floresta Densa** | 2 Ticks | Terreno difícil, exige mais tempo. |
+| **Pântano / Montanha** | 3 Ticks | Terreno muito difícil, exige esforço ou teste de Vigor. |
+
+> Exemplo: Ir da Vila para a Caverna (Distância Longe + Terreno Montanha) pode custar **5 Ticks** de uma só vez.
+
+---
+
+### 🔄 Consumo de Ticks e Eventos
+
+O tempo avançado durante a movimentação (seja 1 ou 5 Ticks) é processado pelo mundo:
+- **Eventos de Transição:** Podem ocorrer durante o trajeto (emboscadas, encontros).
+- **Reação de NPCs:** Enquanto você viaja 5 Ticks, os NPCs realizam 5 ações de suas rotinas.
 
 ---
 
@@ -146,8 +141,7 @@ No RPG de mesa, o Mestre pode usar:
 Na versão digital, a movimentação será:
 
 - **Guiada por cliques/setas**, escolhendo blocos conectados
-- Com **animações e feedback visual** representando o deslocamento
-- **Sem movimentação livre** na Fase 1 (movimentação por grid será introduzida na Fase 2)
+- Com **animações e feedback visual** representando o deslocamento e o passar do tempo (Sol/Lua girando conforme os Ticks gastos).
 
 ---
 
@@ -166,13 +160,13 @@ O Mestre pode definir:
 
 O grupo está na "Encruzilhada dos Ventos". As opções visíveis no mapa são:
 
-- Floresta das Visões (ao norte)
-- Ponte Quebrada (a oeste)
-- Cavernas do Sussurro (a leste)
+- Floresta das Visões (ao norte) - *Terreno Difícil*
+- Ponte Quebrada (a oeste) - *Terreno Normal*
 
-Eles decidem seguir para a Floresta das Visões. Isso consome 1 tick.
+Eles decidem seguir para a Floresta das Visões.
+* **Cálculo:** Distância Padrão (1) x Terreno Difícil (2) = **2 Ticks**.
 
-Enquanto se movem, o Mestre rola por um **evento aleatório**. Um **Espírito Errante** é encontrado no caminho, ativando um **evento de interação**.
+O relógio avança 2 Ticks. Os NPCs da vila realizam 2 ações de suas rotinas. O grupo chega ao destino.
 
 ---
 
@@ -197,10 +191,10 @@ Cada tick representa um **bloco de tempo narrativo**, que pode variar conforme o
 
 | Ação                             | Ticks Consumidos | Observações |
 |----------------------------------|------------------|-------------|
-| Mover-se para outro bloco        | 1 Tick           | Padrão, exceto terrenos difíceis |
+| Mover-se para outro bloco        | 1 a 3 Ticks      | Depende da Distância e Terreno |
 | Coletar recursos no bloco        | 1 Tick           | Pode exigir teste ou proficiência |
 | Interagir com NPC                | 1 Tick           | Inclui conversas, compras, missões |
-| Combate                          | 1 Tick           | Ao final da luta, considera-se 1 tick gasto |
+| Combate                          | 1 por Rodada     | O tempo da bolha é convertido em Ticks |
 | Descansar                        | 1 Tick (curto) / 3 Ticks (longo) | Restauração parcial ou total |
 | Realizar ritual ou magia longa   | 1 ou mais Ticks  | Conforme descrição da magia |
 | Estudar, treinar ou aprimorar    | Variável         | Definido pelo mestre ou sistema digital |
@@ -265,9 +259,9 @@ Se o NPC for bem-sucedido:
 
 | Ação                            | Ticks | Observações                     |
 |---------------------------------|-------|---------------------------------|
-| Mover entre blocos              | 1     | Padrão                          |
+| Mover entre blocos              | 1+    | Variável por Terreno            |
 | Interagir com NPC               | 1     | Conversas, comércio, missões    |
-| Combate                         | 1     | Após a luta                     |
+| Combate                         | 1/Rodada | Após a luta                     |
 | Descanso Curto / Longo          | 1 / 3 | Restaura PV e recargas          |
 | Coleta / Craft / Ritual         | 1+    | Depende da tarefa               |
 | NPC age (rotina)                | 1     | A cada tick, com ações definidas |
