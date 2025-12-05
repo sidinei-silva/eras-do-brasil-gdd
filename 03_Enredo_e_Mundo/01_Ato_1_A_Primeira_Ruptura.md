@@ -100,8 +100,9 @@ O jogo recompensa quem explorou o mundo. Ter completado as Mini-Campanhas (Sideq
 A conclusão do Ato 1 marca a transição do personagem para o "Mid-Game".
 
 1.  **Moeda de Classe Universal (Ouro da Raiz):**
-    * *Efeito:* Permite evoluir **qualquer** classe para o Tier 2 imediatamente.
+    * *Efeito*: Um fragmento de memória pura da Raiz. Ao ser consumido, ele invoca o conhecimento de mestres ancestrais diretamente na mente do personagem.
     * *Garantia:* Todos os jogadores que completarem a missão (vencedores ou sobreviventes) recebem este item. Ninguém fica travado.
+    * *Mecânica*: Permite evoluir para o Tier 2 sem a necessidade de um Mentor ou Missão de Evolução. (Representa o despertar do personagem pelo contato direto com a Ruptura).
 2.  **Desbloqueio do Dom da Revivência (Troca de Origem):**
     * O contato direto com a Ruptura desperta o sangue do personagem. Ele ganha o item **"Espelho do Eco"**, que permite visitar santuários para trocar de Origem (ex: jogar como Colonizador sendo Indígena).
 3.  **Acesso ao Mapa Aberto (Tier 2):**

@@ -10,7 +10,7 @@ Ganância versus limites culturais. Teste de valores em ambiente de dungeon.
 
 ### 📝 Resumo Dinâmico
 
-Um mapa comprado de um moribundo revela uma jazida de ouro. Porém, a mina só é acessível quando a maré do rio baixa (entre Ticks 40 e 80 do dia). Dentro, não há apenas ouro, mas um guardião antigo que foi acordado pela mineração.
+Um mapa comprado de um moribundo revela uma jazida de ouro. Porém, a mina só é acessível quando a maré do rio baixa (conforme o ciclo de mare [descrito aqui](../../05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md#-zona-leste-rio-das-marés)). Dentro, não há apenas ouro, mas um guardião antigo que foi acordado pela mineração.
 
 **Gatilhos de Início:**
 * **Item:** Encontrar o "Mapa Manchado de Lama" no inventário de um bandido ou comprá-lo no mercado.
@@ -21,9 +21,6 @@ Um mapa comprado de um moribundo revela uma jazida de ouro. Porém, a mina só �
 
 **1. A Entrada (O Rio)**
 * O jogador deve chegar na entrada da caverna no momento certo da maré.
-* **Tick < 40:** Entrada submersa (Teste de Natação difícil).
-* **Tick 40-80:** Entrada acessível.
-* **Tick > 80:** A água sobe, prendendo quem estiver dentro.
 
 **2. O Guardião (O Mentor)**
 * No fundo da mina, o jogador encontra um **Eremita Mineralogista** (ou um Espírito da Terra) que estava preso, não um monstro.

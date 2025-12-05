@@ -21,7 +21,7 @@ graph TD
     classDef ruin fill:#ccc,stroke:#333,stroke-width:2px;
 
     %% Nós Principais
-    Vila[🏠 Vila de São Tomé HUB]:::hub
+    Vila[🏠 Vila de São Tomé - HUB]:::hub
     Rio[🌊 Rio das Marés]:::water
     Mina[⛏️ A Mina de Ouro]:::danger
     Floresta[🌲 Floresta do Norte]:::forest
@@ -29,7 +29,7 @@ graph TD
     Acampamento[⚔️ Acampamento Rival]:::danger
     Pico[🏔️ Pico da Neblina]:::ruin
     Ruinas[🔥 Ruínas Queimadas]:::ruin
-    Ruptura[🌀 A RUPTURA Final]:::danger
+    Ruptura[🌀 A RUPTURA - Final]:::danger
 
     %% Conexões e Custos (Ida)
     Vila -- "Estrada Velha (4 Ticks)" --> Rio
@@ -48,6 +48,7 @@ graph TD
     %% Conexões Secretas (Atalhos)
     Rio -. "Túnel Submerso (Requer Item)" .-> Ruptura
 ```
+
 ---
 
 ## 2. Regras de Terreno e Biomas
@@ -73,13 +74,16 @@ Uma mata densa, antiga e vibrante, onde a luz do sol mal toca o chão.
     * A localização exata da *Toca da Fera* varia (Norte, Nordeste ou Noroeste da zona).
 
 ### 🌊 Zona Leste: Rio das Marés
-Um rio largo que sofre influência de marés sobrenaturais, subindo e descendo erraticamente.
+Um rio largo que sofre influência de marés sobrenaturais.
 * **Tipo de Terreno:** Água / Lama.
 * **Custo de Movimento:** 1 Tick (Margem) / Impossível (Água Alta).
-* **Mecânica da Maré:**
-    * **Ticks 0-40 (Manhã):** Maré Alta. Acesso à Mina bloqueado.
-    * **Ticks 41-80 (Tarde):** Maré Baixa. Acesso liberado.
-    * **Ticks 81+ (Noite):** Maré Alta e Corrompida (Dano de 1 PV por tick se entrar na água).
+* **Ciclo da Maré (Acesso à Mina):**
+    A maré opera em ciclos de **100 Ticks**. A Mina só é acessível na Maré Baixa.
+    * **Ticks 10-50:** Baixa (Janela Inicial).
+    * **Ticks 51-110:** Alta (Bloqueado).
+    * **Ticks 111-150:** Baixa (Segunda Chance).
+    * *(O ciclo se repete: 40 ticks aberta, 60 ticks fechada).*
+    * **Nota:** Tentar entrar na Maré Alta exige teste de Natação (Vigor CD 18) e causa dano de afogamento.
 
 ### 🏔️ Zona Oeste: Pico da Neblina
 Uma montanha sagrada envolta em nuvens que sussurram.
