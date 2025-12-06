@@ -1,32 +1,27 @@
 # ✅ Checklist Geral de Produção
 
-Status atual: **Refatoração Final de Design (Pós-Auditoria).**
+Status atual: **🟢 FASE 2: ENGENHARIA DE DADOS E ASSETS**
 
-## 🟢 Concluído (Fase 1 - Design)
-- [x] **Enredo Principal:** Ato 1 estruturado.
+## 🟢 Concluído (Fase 1 - Design & Regras)
+- [x] **Enredo Principal:** Ato 1 e Mini-Campanhas estruturados.
 - [x] **Arquitetura:** Definido modelo "Eco Compartilhado" (Co-op P2P).
-- [x] **Validação IA (Round 1):** Identificados conflitos de "MMO vs P2P" e exploits de economia.
+- [x] **Limpeza de Escopo:** Removidos vestígios de MMO (Servidor, Raiz Sazonal).
+- [x] **Motor de Tempo:** Definida regra "1 Turno = 1 Tick" e Sistema de Fila para Co-op.
+- [x] **Geografia:** Criado o "Atlas do Eco" com distâncias padronizadas.
+- [x] **Balanceamento:** Validado via Simulação (Completionista Platinador).
 
-## 🟡 A Fazer Agora (Limpeza e Segurança)
-Estes itens corrigem os problemas apontados pelos relatórios de áudio e texto.
+## 🟡 A Fazer Agora (Fase 2 - Fábrica de Dados)
+*Objetivo: Gerar os insumos técnicos para a Unity.*
 
-### 1. Remoção de Vestígios MMO
-- [ ] **Refatorar Ato 1:** Remover "Corrida pela Glória" (Competição de Servidor). Substituir por "Corrida contra a Facção Rival (IA)".
-- [ ] **Limpeza Terminológica:** Remover termos como "Servidor Global", "Raiz Sazonal" e "Lobby Massivo" de todos os arquivos.
+- [ ] **Estrutura de Dados (Schemas):** Definir o formato JSON padrão para Classes, Itens e NPCs.
+- [ ] **Lista de Assets (Art Bible):** Gerar a lista completa de sprites necessários (Ícones, Personagens, Cenários) para o Artista/IA.
+- [ ] **Banco de Dados Inicial (Mockup):** Gerar os primeiros 10 itens, 5 inimigos e 3 classes em formato JSON para teste.
 
-### 2. Correção de Regras de Tempo (Co-op)
-- [ ] **Mundo Vivo (Cap 8):** Definir a regra da **"Bolha de Combate"**. (Quando um jogador entra em combate, o tempo para ou cria uma instância de turno? Definir que o relógio global é pausado ou dilatado durante lutas táticas).
+## 🔵 Próximos Passos (Fase 3 - Unity/Dev)
+*Só iniciar após ter os JSONs prontos.*
 
-### 3. Segurança Econômica (Anti-Exploit)
-- [ ] **Economia (Cap 6):** Adicionar regra de **"Salvamento Atômico"** para trocas P2P (evitar duplicação de itens).
-- [ ] **Balanceamento:** Adicionar **Cooldown Global** ao item "Tambor que Silenciou o Céu" (evitar uso infinito em dupla).
+- [ ] **POC 01:** Implementar leitura de JSON na Unity.
+- [ ] **POC 02:** Testar movimentação baseada no Atlas.
 
-## 🔵 Próximos Passos (Fase 2 - Dados)
-*Só iniciar após a Revalidação Final (Round 2).*
-
-- [ ] **Planejamento de Dados:** Definir a estrutura dos JSONs (Missões, Diálogos, Itens).
-- [ ] **Produção:** Escrever os JSONs.
-
-## 🔴 Futuro (Dev)
-- [ ] **Fase 3:** POC Visual Offline.
+## 🔴 Futuro
 - [ ] **Fase 4:** POC Visual Co-op.

@@ -15,3 +15,4 @@ Desktop.ini
 
 # Ignorar pasta de backup de arquivos markdown
 todos-arquivos/
+.diff
