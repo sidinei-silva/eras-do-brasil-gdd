@@ -1,33 +1,69 @@
-# Eras do Brasil - Game Design Document (GDD)
+# eras-do-brasil
 
-Bem-vindo à Fonte Única da Verdade (SSoT) do projeto *Eras do Brasil*. Este repositório contém todo o design de jogo, lore, regras e planejamento do projeto.
+> Projeto configurado com [Vibe Flow](https://github.com/yourusername/vibe-flow) - Desenvolvimento assistido por agentes IA especializados
 
-## 🌿 Visão Geral
+## 🚀 Início Rápido
 
-*Eras do Brasil* é um RPG de mesa com ambientação **eco-fantástica**, inspirado na história, nas mitologias e nos povos que moldaram o Brasil ao longo de suas eras. O jogo propõe uma experiência única, onde **colonizadores, povos originários e entidades folclóricas** coexistem em ciclos interconectados de tempo, espiritualidade e memória.
+Este projeto usa o **Vibe Flow** para organizar o desenvolvimento com agentes IA especializados no GitHub Copilot.
 
-### Pilares do Design
+### Agentes Disponíveis
 
-* **A Raiz do Mundo:** Uma entidade espiritual que conecta todas as eras e memórias.
-* **O Dom da Revivência:** A mecânica narrativa que permite aos jogadores acessar habilidades e ecos de outras eras.
-* **Mundo Vivo:** Um Mundo Vivo impulsionado por "Ticks", onde NPCs possuem rotinas, necessidades e uma rede social de conhecimento (IA de "Utility" e "Fofoca").
-* **Progressão Flexível:** Um sistema de classes (inspirado em *Orna*) onde habilidades ativas são herdadas, permitindo "builds híbridas".
-* **Itemização Profunda:** Um sistema 5x5 de Qualidade e Raridade que define o poder e o valor de cada item.
+Use o @ no chat do Copilot para chamar os agentes:
 
-## Status do Projeto
+- **@researcher** - Pesquisa de mercado e validação de ideias
+- **@product-manager** - Definição de produto e especificações
+- **@architect** - Decisões de arquitetura e stack técnica
+- **@tech-lead** - Planejamento de tarefas e roadmap
+- **@vibe-keeper** - Histórico e recuperação de contexto
 
-Este GDD serve como a fundação para duas frentes de desenvolvimento:
+### Estrutura do Projeto
 
-1.  **RPG de Mesa (MVP):** A versão de mesa usada para validar as regras centrais, o combate e o balanceamento.
-2.  **Adaptação Digital (Faseada):**
-    * **Fase 1 (Protótipo):** Movimentação por blocos de cenário e combate estático (estilo JRPG).
-    * **Fase 2 (Jogo Completo):** Movimentação livre baseada em Ticks (estilo *Stoneshard*) e combate tático em grid (estilo *Solasta*).
+```
+├── .github/copilot-instructions.md  # Instruções globais para o Copilot
+├── .vscode/prompts/                 # Agentes customizados
+├── docs/                            # Documentação oficial (A Verdade)
+│   ├── product/                     # Specs de produto
+│   └── tech/                        # Documentação técnica
+├── vibe/                            # Contexto evolutivo e histórico
+│   ├── decisions/                   # ADRs (Architecture Decision Records)
+│   ├── sessions/                    # Logs de sessões de trabalho
+│   ├── research/                    # Pesquisas e análises
+│   ├── backlog.md                   # Backlog de tarefas
+│   └── project-status.md            # Status atual do projeto
+├── ROADMAP.md                       # Roadmap público do projeto
+└── src/                             # Código fonte (a criar)
+```
 
-## 🧭 Estrutura do Repositório
+## 🎯 Próximos Passos
 
-* **[01_Livro_de_Regras/](01_Livro_de_Regras/)**: Contém as mecânicas centrais, combate, exploração e sistemas de mundo vivo.
-* **[02_Livro_de_Classes/](02_Livro_de_Classes/)**: Detalhamento de todas as classes, origens, habilidades e progressão.
-* **[03_Enredo_e_Mundo/](03_Enredo_e_Mundo/)**: A história principal, lore, mini-campanhas e linha do tempo eco-histórica.
-* **[04_Design_Visual/](04_Design_Visual/)**: O Documento de Design Visual, paleta de cores, estilo de arte e UI/HUD.
-* **[05_Livros_Auxiliares/](05_Livros_Auxiliares/)**: Futuros livros (Itens, Bestiário, Proficiências).
-* **[99_Meta_e_Backlog/](99_Meta_e_Backlog/)**: O Checklist do projeto e o arquivo de `ideias_soltas.md`.
+1. **Defina a visão do produto:**
+   ```
+   Abra o Copilot Chat e digite: @product-manager Quero criar [sua ideia]
+   ```
+
+2. **Pesquise o mercado (opcional):**
+   ```
+   @researcher Pesquise sobre [seu mercado/concorrência]
+   ```
+
+3. **Defina a arquitetura:**
+   ```
+   @architect Baseado na spec em docs/product/, defina a stack técnica
+   ```
+
+4. **Planeje as tarefas:**
+   ```
+   @tech-lead Crie o plano de execução para o MVP
+   ```
+
+5. **Comece a codar:**
+   O Copilot padrão já está configurado para seguir as specs em `docs/`
+
+## 📚 Documentação
+
+- [Vibe Flow - Guia Completo](https://github.com/yourusername/vibe-flow)
+- [Como usar os Agentes](https://github.com/yourusername/vibe-flow#agentes)
+
+---
+
+**Criado com Vibe Flow v1.1.0**

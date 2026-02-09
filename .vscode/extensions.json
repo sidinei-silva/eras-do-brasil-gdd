@@ -9,7 +9,12 @@
     "pkief.material-icon-theme",
     "shd101wyy.markdown-preview-enhanced",
     "tomoki1207.pdf",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-mermaid",
+    "davidanson.vscode-markdownlint",
+    "gruntfuggly.todo-tree",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens"
   ],
   "unwantedRecommendations": []
 }
