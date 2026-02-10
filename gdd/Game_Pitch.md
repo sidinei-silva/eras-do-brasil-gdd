@@ -1,5 +1,7 @@
 # Eras do Brasil: Documento de Apresentação (Game Pitch)
 
+> **Navegação:** [GDD](README.md) · [Project Plan](Project%20Plan.md) · [Roadmap](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md) · [Projeto](../README.md)
+
 --------------------------------------------------------------------------------
 
 ## 1. Visão Geral: O Coração de _Eras do Brasil_

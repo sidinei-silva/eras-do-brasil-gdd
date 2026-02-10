@@ -1,5 +1,7 @@
 # 🧠 Estratégia de Dados e Documentação
 
+> **Navegação:** [GDD](../README.md) · [Roadmap](02_Roadmap_Desenvolvimento.md) · [Schemas](../06_Dados_e_Assets/01_Schemas_Estruturais.md) · [Projeto](../../README.md)
+
 Este documento define a filosofia de arquitetura de informação do projeto *Eras do Brasil*, estabelecendo como transformaremos conceitos (GDD) em código (Game).
 
 ## 1. Filosofia: "Alma vs. Lógica"

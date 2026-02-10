@@ -1,5 +1,7 @@
 # Plano de Projeto: Eras do Brasil (Estratégia Co-op P2P)
 
+> **Navegação:** [GDD](README.md) · [Game Pitch](Game_Pitch.md) · [Roadmap de Desenvolvimento](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md) · [Projeto](../README.md)
+
 ## 1.0 Visão e Estratégia Geral
 
 Este documento delineia a visão fundamental para 'Eras do Brasil', detalhando o conceito de alto nível, a missão central e a estratégia de entrada no mercado.
@@ -45,43 +47,37 @@ A visão final não é um MMO massivo, mas uma experiência de RPG profunda que 
 
 ---
 
-## 5.0 Roadmap de Desenvolvimento (6 Fases)
+## 5.0 Roadmap de Desenvolvimento
 
-### Fase 1: RPG de Mesa Digital (MVP Offline)
-* **Objetivo:** Validar Regras, Enredo (Ato 1) e Loop de Loot sem custos de arte.
-* **O Jogo:** Interface de Texto (Console/UI na Engine). Combate estático por turnos.
-* **Tech:** Godot/Unity (UI de Texto). Lógica desacoplada da visualização.
-* **Entregável:** Motor de RPG rodando localmente onde se pode jogar a história completa do Ato 1.
+> **Nota:** O roadmap detalhado com todas as POCs, entregas por sprint e critérios de aceite está em [02_Roadmap_Desenvolvimento.md](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md). Esta seção apresenta a visão estratégica das fases.
 
-### Fase 2: RPG de Mesa Digital (MVP Co-op)
-* **Objetivo:** Validar a Arquitetura de Rede P2P e Sincronia de Dados.
-* **O Jogo:** A mesma interface de texto da Fase 1, mas um segundo jogador se conecta.
-* **Funcionalidades:** Chat, troca de itens, combate em grupo (Turno A -> Turno B -> Inimigo).
-* **Tech:** Netcode básico (RPCs/Sinais). O "Serviço de Jogo" aceita comandos remotos.
+### Fase 0: POCs — Provas de Conceito
+* **Objetivo:** Validar riscos técnicos isolados antes de montar o jogo.
+* **Escopo:** 38 POCs organizadas em 8 módulos (Regras, Mundo, NPCs, Combate, Economia, UI, Rede, Narrativa).
+* **Tech:** Unity (LTS) + C#. Cada POC é um mini-projeto independente.
+* **Referência:** [Índice de POCs](../pocs/README.md)
 
-### Fase 3: Jogo Digital v1 - Protótipo Visual (Offline)
-* **Objetivo:** Validar Estilo de Arte (Pixel Art), Fluxo de Exploração e Ambientação.
-* **O Jogo:** O "Eco" ganha vida visual. Movimentação via "Navegação por Blocos" (clique para andar). Ciclo Dia/Noite visual.
-* **Funcionalidades:** Combate Estático (JRPG) com visual. Interação com NPCs.
-* **Tech:** Sistema de Grid Visual, Máquina de Estados de Animação.
+### Fase 1: MVP — "O Despertar" (Offline)
+* **Objetivo:** Loop jogável de 15–30 min. Criar personagem, explorar, lutar, voltar.
+* **Escopo:** 1 Origem, 1 Classe, 3 Blocos, 2 Inimigos, Combate Estático, Inventário, Save/Load.
+* **Referência:** [Detalhes do MVP](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md#-fase-1-mvp--o-despertar)
 
-### Fase 4: Jogo Digital v1 - Mundo Conectado (Co-op)
-* **Objetivo:** Validar a exploração conjunta em Sincronia.
-* **O Jogo:** Dois personagens andando no mapa visualmente.
-* **Funcionalidades:** Implementação da **"Sincronia de Ticks"**: O mundo reage quando qualquer jogador gasta um Tick. Implementação da "Fofoca" de NPCs compartilhada.
-* **Tech:** Netcode P2P (Steamworks/Direct IP). O Host autoriza as mudanças de estado do mundo.
+### Fase 2: Pré-Alpha — "O Mundo Vivo"
+* **Objetivo:** Adicionar profundidade: NPCs, economia, Relógio da Ruptura.
+* **Escopo:** 3 Origens, diálogos, crafting, 8 blocos.
+* **Referência:** [Detalhes Pré-Alpha](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md#-fase-2-pré-alpha--o-mundo-vivo)
 
-### Fase 5: Jogo Digital v2 - Núcleo Tático (Offline)
-* **Objetivo:** Implementar a profundidade final (Grid Tático).
-* **O Jogo:** Substituição do combate estático pelo combate em **Grid Isométrico**.
-* **Funcionalidades:** Ataques de Oportunidade, Cobertura, Flanco, Alcance real.
-* **Tech:** Pathfinding Avançado (A*), Lógica de Grid Tático.
+### Fase 3: Alpha — "O Jogo Ganha Vida"
+* **Objetivo:** Pixel art, 12 classes, Ato 1 completo.
+* **Referência:** [Detalhes Alpha](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md#-fase-3-alpha--o-jogo-ganha-vida)
 
-### Fase 6: Jogo Digital v2 - Tática Compartilhada (Co-op)
-* **Objetivo:** A experiência completa para lançamento.
-* **O Jogo:** Combate tático onde os jogadores combinam estratégias no grid.
-* **Funcionalidades:** Sincronia de turnos táticos, combos de habilidades entre jogadores.
-* **Entregável:** Build Final para Acesso Antecipado.
+### Fase 4: Beta — "A Tática"
+* **Objetivo:** Grid isométrico, combate posicional, 18 mini-campanhas.
+* **Referência:** [Detalhes Beta](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md#-fase-4-beta--a-tática)
+
+### Fase 5: Release — "A Raiz Conecta"
+* **Objetivo:** Co-op P2P, polimento, Acesso Antecipado (Steam).
+* **Referência:** [Detalhes Release](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md#-fase-5-release--a-raiz-conecta)
 
 ---
 
