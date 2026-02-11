@@ -14,8 +14,10 @@ Antes de qualquer tarefa, entenda o estado atual:
 
 | Área | Status | O que existe |
 |------|--------|-------------|
-| **GDD (Design)** | ✅ 95% Completo | 9 capítulos de regras, 12 classes Tier 1, 18 mini-campanhas, design visual, schemas JSON |
-| **Auditoria (PR #1)** | ✅ Mergeado | 4 correções aplicadas, 7 recomendações documentadas ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
+| **GDD (Design)** | ✅ 100% Completo | 9 capítulos de regras + Cap. 3B (Progressão), 12 classes Tier 1, Troca de Origem, 18 mini-campanhas |
+| **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
+| **Sprint 1** | ✅ Concluída | Slots de habilidades, Defesa Base, referências cruzadas |
+| **Sprint 2** | ✅ Concluída | Sistema de XP/Níveis, Troca de Origem, Pré-requisitos Multi-Class |
 | **POCs** | 🔲 0/38 | 38 POCs definidas com READMEs, nenhuma implementada |
 | **Código** | 🔲 Não iniciado | Projeto Unity não criado |
 | **Livros Auxiliares** | ⚠️ 1/7 | Apenas Atlas do Eco existe. 6 livros referenciados no GDD ainda não existem |
@@ -33,15 +35,16 @@ Estas correções **já foram aplicadas** e estão no código:
 
 ### O Que Ainda Precisa Ser Feito (Recomendações da Auditoria)
 
-| # | Recomendação | Prioridade | Em qual Sprint |
-|---|-------------|------------|---------------|
-| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | [Sprint 1](#-sprint-1--correções-do-gdd-documentação-pura) |
-| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) |
-| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) |
-| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) |
-| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) |
-| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) |
-| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | [Sprint 1](#-sprint-1--correções-do-gdd-documentação-pura) |
+| # | Recomendação | Prioridade | Em qual Sprint | Status |
+|---|-------------|------------|---------------|--------|
+| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | Sprint 1 | ✅ Concluído |
+| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | Sprint 2 | ✅ Concluído |
+| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
+| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
+| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | Sprint 2 | ✅ Concluído |
+| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | Sprint 2 | ✅ Concluído |
+| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
+| 12 | Harmonizar **fórmula de Defesa Base** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
 
 ---
 
@@ -132,12 +135,12 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 1
+### ✅ Checklist da Sprint 1 (CONCLUÍDA)
 
-- [ ] 1.1 — Definir slots de habilidades herdadas em `03_Heranca_de_Habilidades.md`
-- [ ] 1.2 — Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas)
-- [ ] 1.3 — Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
-- [ ] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens 5 e 11 como ✅
+- [x] 1.1 — Definir slots de habilidades herdadas em `03_Heranca_de_Habilidades.md`
+- [x] 1.2 — Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas)
+- [x] 1.3 — Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
+- [x] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens 5, 11 e 12 como ✅
 
 ---
 
@@ -198,12 +201,12 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 2
+### ✅ Checklist da Sprint 2 (CONCLUÍDA)
 
-- [ ] 2.1 — Criar sistema de XP e progressão de nível
-- [ ] 2.2 — Definir mecânica de troca de Origem (Espelho do Eco)
-- [ ] 2.3 — Definir pré-requisitos multi-class para Tiers 2/3
-- [ ] Atualizar `03_Auditoria_GDD.md` marcando itens 6, 9 e 10 como ✅
+- [x] 2.1 — Criar sistema de XP e progressão de nível — `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
+- [x] 2.2 — Definir mecânica de troca de Origem (Espelho do Eco) — `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`
+- [x] 2.3 — Definir pré-requisitos multi-class para Tiers 2/3 — `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
+- [x] Atualizar `03_Auditoria_GDD.md` marcando itens 6, 9 e 10 como ✅
 
 ---
 

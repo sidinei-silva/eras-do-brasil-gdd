@@ -30,6 +30,7 @@ As mecânicas centrais do jogo.
 | [01 — Introdução e Ambientação](01_Livro_de_Regras/01_Introducao_e_Ambientacao.md) | Premissa, tom, Despertos |
 | [02 — Mecânicas Básicas](01_Livro_de_Regras/02_Mecanicas_Basicas.md) | Sistema D20, testes, vantagem/desvantagem |
 | [03 — Criação de Personagem](01_Livro_de_Regras/03_Criacao_de_Personagem.md) | Atributos, point-buy (27 pts), origens |
+| [03B — Progressão e Experiência](01_Livro_de_Regras/03B_Progressao_e_Experiencia.md) | **NOVO** Sistema de XP, níveis 1-15, ganhos por nível |
 | [04 — Sistema de Combate](01_Livro_de_Regras/04_Sistema_de_Combate.md) | Iniciativa, turnos, ataques, dano |
 | [05 — Exploração e Mundo](01_Livro_de_Regras/05_Exploracao_e_Mundo.md) | Ticks, dia/noite, navegação por blocos |
 | [06 — Economia, Itens e Crafting](01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Matriz 5×5, proficiências, receitas |
@@ -43,9 +44,10 @@ Sistema de classes e progressão.
 | Documento | Conteúdo |
 |-----------|----------|
 | [00 — Introdução ao Sistema](02_Livro_de_Classes/00_Sistema_de_Classes_Intro.md) | Visão geral do sistema |
-| [01 — Tiers e Evolução](02_Livro_de_Classes/01_Tiers_e_Evolucao.md) | Tier 1→2→3, requisitos, Moeda de Classe |
+| [01 — Tiers e Evolução](02_Livro_de_Classes/01_Tiers_e_Evolucao.md) | Tier 1→2→3, requisitos, Moeda de Classe, **pré-requisitos multi-class** |
 | [02 — Alternância de Classes](02_Livro_de_Classes/02_Alternancia_de_Classes.md) | Dom da Revivência, troca de classe |
-| [03 — Herança de Habilidades](02_Livro_de_Classes/03_Heranca_de_Habilidades.md) | Ativas herdadas, passivas não |
+| [03 — Herança de Habilidades](02_Livro_de_Classes/03_Heranca_de_Habilidades.md) | Ativas herdadas, passivas não, **limite de slots por Tier** |
+| [04 — Troca de Origem](02_Livro_de_Classes/04_Troca_de_Origem.md) | **NOVO** Espelho do Eco, mecânica de troca de origem |
 | **Origem Colonizador** | [Conquistador](02_Livro_de_Classes/1_Origem_Colonizador/Conquistador.md) · [Explorador](02_Livro_de_Classes/1_Origem_Colonizador/Explorador_de_Terras.md) · [Missionário](02_Livro_de_Classes/1_Origem_Colonizador/Missionario.md) · [Mosqueteiro](02_Livro_de_Classes/1_Origem_Colonizador/Mosqueteiro.md) |
 | **Origem Indígena** | [Guerreiro Tribal](02_Livro_de_Classes/2_Origem_Indigena/Guerreiro_Tribal.md) · [Caçador de Feras](02_Livro_de_Classes/2_Origem_Indigena/Caçador_de_Feras.md) · [Arqueiro Selvagem](02_Livro_de_Classes/2_Origem_Indigena/Arqueiro_Selvagem.md) · [Xamã Curandeiro](02_Livro_de_Classes/2_Origem_Indigena/Xama_Curandeiro.md) |
 | **Origem Folclórica** | [Guardião Ancestral](02_Livro_de_Classes/3_Origem_Folclorica/Guardiao_Ancestral.md) · [Lobo Lendário](02_Livro_de_Classes/3_Origem_Folclorica/Lobo_Lendario.md) · [Ser Elemental](02_Livro_de_Classes/3_Origem_Folclorica/Ser_Elemental.md) · [Encantador de Espíritos](02_Livro_de_Classes/3_Origem_Folclorica/Encantador_de_Espiritos.md) |

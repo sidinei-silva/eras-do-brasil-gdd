@@ -127,9 +127,9 @@ O mestre pode permitir **sucesso parcial**, com custo, limitação ou consequên
 
 Todo personagem tem **Defesa Base** igual a:
 
-`10 + Modificador de Astúcia`
+`10 + Modificador de Astúcia + Bônus de Armadura (se houver)`
 
-> A Defesa Base é usada para evitar ataques físicos simples.
+> A Defesa Base é usada para evitar ataques físicos simples. O Bônus de Armadura depende do equipamento utilizado (consulte o *Livro de Itens e Equipamentos*).
 
 ### 🧠 Testes de Resistência
 

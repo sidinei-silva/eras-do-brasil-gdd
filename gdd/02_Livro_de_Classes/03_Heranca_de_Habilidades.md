@@ -28,10 +28,39 @@ Ao alternar de classe, o personagem pode **herdar algumas habilidades ativas** d
 - Garante **versatilidade**, mas dentro de uma **estrutura coerente e justa**.
 
 ---
+### 📊 Limite de Habilidades Herdadas
+
+Para evitar que personagens de alto nível acumulem dezenas de habilidades ativas (quebrando o balanceamento), existe um **limite de slots de habilidades ativas herdáveis** baseado no Tier da classe atual:
+
+| Tier da Classe Ativa | Slots de Habilidades Ativas Herdáveis |
+|---|---|
+| Tier 1 | 1 habilidade ativa de outra classe |
+| Tier 2 | 2 habilidades ativas de outras classes |
+| Tier 3 | 3 habilidades ativas de outras classes |
+
+> 💡 **Nota:** Este limite se refere apenas às habilidades **ativas** herdadas de **outras classes**. As habilidades ativas da classe atual não entram nessa conta.
+
+#### 🧪 Exemplo de Slots de Habilidades
+
+**Personagem:** Yara  
+**Classes Desbloqueadas:** Guerreiro Tribal (ativo, Tier 2), Xamã da Floresta (Tier 1), Guardião Ancestral (Tier 1)
+
+Como Yara está em Tier 2, ela possui **2 slots de habilidades ativas herdáveis**. Ela pode escolher:
+
+| Slot | Habilidade Herdada | Classe de Origem |
+|---|---|---|
+| Slot 1 | Cura Espiritual | Xamã da Floresta |
+| Slot 2 | Proteção Ancestral | Guardião Ancestral |
+
+Se Yara evoluir para Tier 3, ela ganha **1 slot adicional**, podendo equipar até 3 habilidades ativas de outras classes.
+
+> ⚔️ Essa mecânica é inspirada no sistema de *Final Fantasy Tactics*, onde cada classe permite equipar um número limitado de habilidades secundárias.
+
+---
 ### 🧠 Regras Complementares
 
-- O jogador pode **usar habilidades herdadas livremente** durante o combate, desde que respeite as condições normais de uso (alcance, recarga, etc.).
-- O mestre pode restringir a **quantidade de habilidades ativas herdadas** em campanhas específicas, para criar desafios ou incentivar foco.
+- O jogador pode **usar habilidades herdadas livremente** durante o combate, desde que respeite as condições normais de uso (alcance, recarga, etc.) e o **limite de slots**.
+- O jogador pode **trocar quais habilidades ocupam os slots** fora de combate, em qualquer local seguro (Vila, Acampamento).
 - Algumas habilidades de Tier 2 ou 3 só são herdáveis se estiverem marcadas como **"Herdável"** na descrição oficial da classe.
 
 ---
@@ -67,7 +96,6 @@ Bento pode usar tanto a **Proteção Ancestral** quanto a **Bênção da Salvaç
 (Seção recuperada da auditoria)
 O sistema de herança pode ser expandido com:
 
-- **Slots de habilidades ativas herdáveis** (limite por nível).
 - **Condições de herança** (ex: requerimentos de atributo mínimo).
 - **Customizações narrativas**, como inscrições rúnicas, bênçãos ou tatuagens espirituais.
 
