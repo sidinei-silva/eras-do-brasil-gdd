@@ -180,7 +180,7 @@ Ativa uma habilidade da classe atual (ex: habilidades ativas iniciais).
 Conjura uma magia disponível para o personagem.
 
 **Regras Gerais:**
-- Segue as regras específicas de Magia descritas no Capítulo 9 (Magias e Espiritualidade).
+- Segue as regras específicas de Magia descritas no Capítulo 7 (Magia e Espiritualidade).
 - Pode exigir:
   - Teste de ataque mágico (1D20 + Conhecimento/Sabedoria)
   - Resistência do alvo
@@ -320,10 +320,10 @@ Exemplos:
 |:---|:---|:---|
 | Muito fácil | 5 | Pisar sobre um tronco sem cair |
 | Fácil | 10 | Saltar uma pequena fenda |
-| Médio | 15 | Resistir a um feitiço comum |
-| Difícil | 20 | Quebrar grilhões de ferro pesado |
-| Muito difícil | 25 | Resistir a uma magia de grande poder |
-| Épico | 30+ | Evitar a ruptura de um ritual ancestral |
+| Moderado | 13 | Resistir a um feitiço comum |
+| Difícil | 16 | Quebrar grilhões de ferro pesado |
+| Muito difícil | 18 | Resistir a uma magia de grande poder |
+| Quase impossível | 20+ | Evitar a ruptura de um ritual ancestral |
 
 > ⚡ O mestre pode ajustar a CD conforme o contexto, condições do ambiente e situação narrativa.
 
