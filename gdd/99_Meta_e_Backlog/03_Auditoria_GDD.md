@@ -70,7 +70,7 @@ O sistema de classes de *Eras do Brasil* já possui **forte alinhamento com Fina
 
 **Recomendação:** Definir um sistema de **slots de habilidades herdadas** para evitar que personagens de alto nível acumulem dezenas de habilidades ativas, quebrando o balanceamento. Sugestão: 1 slot no Tier 1, 2 slots no Tier 2, 3 slots no Tier 3.
 
-**Status:** 📝 Documentado como recomendação.
+**Status:** ✅ CORRIGIDO — Sistema de slots implementado em `gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`.
 
 #### B) Ausência de pré-requisitos entre classes (multi-class paths)
 
@@ -140,7 +140,7 @@ O Capítulo 3 menciona distribuição de 27 pontos na criação, mas nenhum meca
 
 **Problema:** No Cap. 2 (seção 2.8), a Defesa Base é definida como `10 + Modificador de Astúcia`. No Cap. 9 (Apêndices), a fórmula é `10 + Mod. Astúcia + Bônus de Armadura (se houver)`. O bônus de armadura não é mencionado na definição original do Cap. 2.
 
-**Status:** Inconsistência menor, mas o Cap. 9 apresenta a fórmula mais completa.
+**Status:** ✅ CORRIGIDO — Fórmula do Cap. 2 atualizada para incluir "Bônus de Armadura (se houver)".
 
 #### D) Inteligência mencionada no Ato 1 mas não é atributo (Menor)
 
@@ -204,7 +204,7 @@ O sistema de Fofoca se entrelaça com o jogo das seguintes formas (todas documen
 
 **Recomendação:** Manter o Cap. 5 focado na perspectiva do jogador (como interagir com NPCs durante exploração) e o Cap. 8 como referência técnica completa (como a IA funciona). Adicionar referências cruzadas claras entre ambos para evitar confusão.
 
-**Status:** 📝 Documentado como recomendação.
+**Status:** ✅ CORRIGIDO — Referências cruzadas adicionadas nas seções 5.3 e 5.4 direcionando ao Cap. 8.
 
 ### 5.2 — Adaptação Digital em dois locais (Menor)
 
@@ -255,13 +255,14 @@ O sistema de Fofoca se entrelaça com o jogo das seguintes formas (todas documen
 | 2 | Corrigir referência "Capítulo 9" → "Capítulo 7" no Cap. 4 | Correção | ✅ |
 | 3 | Corrigir "Inteligência" → "Conhecimento" no Ato 1 | Correção | ✅ |
 | 4 | Adicionar seção de Esquecimento ao Cap. 8.3 | Adição | ✅ |
-| 5 | Definir slots de habilidades herdadas (estilo FFT) | Recomendação | 📝 |
+| 5 | Definir slots de habilidades herdadas (estilo FFT) | Recomendação | ✅ |
 | 6 | Definir pré-requisitos multi-class para Tiers 2/3 | Recomendação | 📝 |
 | 7 | Criar Reaction Abilities por classe | Recomendação | 📝 |
 | 8 | Detalhar habilidades de Tier 2/3 | Recomendação | 📝 |
 | 9 | Definir mecânica de troca de Origem | Recomendação | 📝 |
 | 10 | Definir sistema de XP e progressão de nível | Recomendação | 📝 |
-| 11 | Reduzir sobreposição Cap. 5 vs Cap. 8 | Recomendação | 📝 |
+| 11 | Reduzir sobreposição Cap. 5 vs Cap. 8 | Recomendação | ✅ |
+| 12 | Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9) | Correção | ✅ |
 
 ---
 

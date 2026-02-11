@@ -33,9 +33,9 @@ Estamos na fase de **Provas de Conceito**, validando riscos técnicos isolados e
 - [x] Adicionar mecânica de Esquecimento (Cap. 8.3)
 
 ### 🚧 Correções Pós-Auditoria (Sprint 1–2)
-- [ ] Definir slots de habilidades herdadas (limite por Tier)
-- [ ] Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
-- [ ] Reduzir sobreposição Cap. 5 vs Cap. 8
+- [x] Definir slots de habilidades herdadas (limite por Tier)
+- [x] Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
+- [x] Reduzir sobreposição Cap. 5 vs Cap. 8
 - [ ] Criar sistema de XP e progressão de nível
 - [ ] Definir mecânica de troca de Origem (Espelho do Eco)
 - [ ] Definir pré-requisitos multi-class para Tiers 2/3
@@ -102,7 +102,8 @@ Loop jogável de 15–30 minutos:
 - [x] Design Visual (estilo, UI Fase 1 e 2)
 - [x] Schemas e Dados Iniciais
 - [x] Auditoria do GDD (PR #1)
-- [ ] Correções pós-auditoria (slots, XP, Origem)
+- [x] Sprint 1: Slots de habilidades, Defesa Base, referências cruzadas
+- [ ] Sprint 2: Sistema de XP, troca de Origem, pré-requisitos
 - [ ] Livros Auxiliares prioritários (4 livros)
 
 ### Desenvolvimento
@@ -114,4 +115,4 @@ Loop jogável de 15–30 minutos:
 
 ---
 
-**Última atualização:** 2026-02-10
+**Última atualização:** 2026-02-11 (Sprint 1 concluída)

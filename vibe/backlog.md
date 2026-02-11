@@ -7,16 +7,16 @@
 
 ---
 
-## 🔴 Sprint 1 — Correções do GDD (Fazer AGORA)
+## ✅ Sprint 1 — Correções do GDD (CONCLUÍDA)
 
 > Pré-requisito: Nenhum. É a primeira coisa a fazer.
 
-- [ ] Definir slots de habilidades herdadas (limite por Tier) — `gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`
-- [ ] Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas) — `gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md`
-- [ ] Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9) — `gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`
-- [ ] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens resolvidos
+- [x] Definir slots de habilidades herdadas (limite por Tier) — `gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`
+- [x] Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas) — `gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md`
+- [x] Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9) — `gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`
+- [x] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens resolvidos
 
-## 🔴 Sprint 2 — Sistema de Progressão (Fazer DEPOIS da Sprint 1)
+## 🔴 Sprint 2 — Sistema de Progressão (Fazer AGORA)
 
 > Pré-requisito: Sprint 1
 

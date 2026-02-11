@@ -177,6 +177,8 @@ O relógio avança 2 Ticks. Os NPCs da vila realizam 2 ações de suas rotinas. 
 
 O **sistema de ticks** é a unidade fundamental de tempo em *Eras do Brasil*, controlando não apenas a passagem de horas e dias, mas também a movimentação de personagens, NPCs, eventos e mudanças no mundo.
 
+> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs, necessidades, rotinas, sistema de fofoca e arquitetura de ticks em multiplayer, consulte o [Capítulo 8 — Mestres, Campanhas e Mundo Vivo](08_Mundo_Vivo_e_NPCs.md).
+
 Cada tick representa um **bloco de tempo narrativo**, que pode variar conforme o contexto da campanha:
 
 - Em **exploração**: 1 tick pode equivaler a 1 hora de deslocamento.
@@ -277,6 +279,8 @@ Se o NPC for bem-sucedido:
 NPCs (Personagens Não Jogáveis) são figuras fundamentais no mundo de *Eras do Brasil*. Eles não são apenas figurantes: possuem **rotinas próprias, memórias, opiniões, papéis sociais e níveis de conhecimento** sobre o mundo, monstros, recursos e outros personagens.
 
 Este sistema cria uma experiência viva e reativa, tanto no RPG de mesa quanto na versão digital.
+
+> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs (Utility AI), sistema de necessidades e traços, `knowledgeBase`, esquecimento de memória e sistema de fofoca, consulte o [Capítulo 8 — Mestres, Campanhas e Mundo Vivo](08_Mundo_Vivo_e_NPCs.md), especialmente as seções 8.3 e 8.6.
 
 ---
 

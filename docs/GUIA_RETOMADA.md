@@ -33,15 +33,16 @@ Estas correções **já foram aplicadas** e estão no código:
 
 ### O Que Ainda Precisa Ser Feito (Recomendações da Auditoria)
 
-| # | Recomendação | Prioridade | Em qual Sprint |
-|---|-------------|------------|---------------|
-| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | [Sprint 1](#-sprint-1--correções-do-gdd-documentação-pura) |
-| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) |
-| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) |
-| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) |
-| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) |
-| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) |
-| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | [Sprint 1](#-sprint-1--correções-do-gdd-documentação-pura) |
+| # | Recomendação | Prioridade | Em qual Sprint | Status |
+|---|-------------|------------|---------------|--------|
+| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | Sprint 1 | ✅ Concluído |
+| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Pendente |
+| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
+| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
+| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Pendente |
+| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Pendente |
+| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
+| 12 | Harmonizar **fórmula de Defesa Base** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
 
 ---
 
@@ -132,12 +133,12 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 1
+### ✅ Checklist da Sprint 1 (CONCLUÍDA)
 
-- [ ] 1.1 — Definir slots de habilidades herdadas em `03_Heranca_de_Habilidades.md`
-- [ ] 1.2 — Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas)
-- [ ] 1.3 — Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
-- [ ] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens 5 e 11 como ✅
+- [x] 1.1 — Definir slots de habilidades herdadas em `03_Heranca_de_Habilidades.md`
+- [x] 1.2 — Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas)
+- [x] 1.3 — Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
+- [x] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens 5, 11 e 12 como ✅
 
 ---
 
