@@ -68,6 +68,14 @@ Cada NPC possui uma "Base de Conhecimento" (`knowledgeBase`) onde armazena infor
 `{"tipo": "ROTINA_NPC", "id": "npc_guarda", "info": "Vai para a taverna ao meio-dia"}`
 * As informações possuem um "prazo de validade" (baseado no `ultimo_visto`) e são "esquecidas" após um tempo.
 
+### Expiração e Esquecimento da Memória
+A cada processamento de Tick Global, o `NPCManager` varre a `knowledgeBase` de cada NPC e **remove entradas expiradas**, garantindo que as informações sejam recentes e o mundo permaneça dinâmico.
+
+* **Regra:** Uma entrada é removida quando `(TickAtual - ultimo_visto) > Limite_de_Memória`.
+* **Limite padrão sugerido:** 500 Ticks (equivalente a aproximadamente 2 dias de jogo).
+* **Exceções:** Informações marcadas como "Importante" (ex: morte de um NPC, evento de ruptura) podem ter limite estendido ou ser permanentes.
+* **Impacto:** Isso significa que um NPC não vai falar sobre um recurso que viu há 3 dias — a informação já expirou. O jogador precisa buscar fontes recentes.
+
 ### Relacionamentos (NPC <=> NPC) e "Fofoca"
 NPCs rastreiam seu nível de amizade/inimizade com *outros NPCs* e com os jogadores.
 

@@ -40,7 +40,7 @@ Os Bandeirantes de Sangue não são apenas um relógio passivo; eles são agente
 2. **Desinformação Social (Exige Presença + Rede de Fofoca)**
    * *Ação:* Espalhar boatos falsos nas tavernas (ex: "O ouro foi visto no Sul").
    * *Custo:* 3 Ticks + Ouro (suborno).
-   * *Efeito:* Se o teste de Presença for maior que a Inteligência do Líder Rival, o grupo inimigo desvia da rota, perdendo **1 Ciclo Inteiro (100 Ticks)**.
+   * *Efeito:* Se o teste de Presença for maior que o Conhecimento do Líder Rival, o grupo inimigo desvia da rota, perdendo **1 Ciclo Inteiro (100 Ticks)**.
 
 3. **Interdição Mística (Exige Magia/Ritual)**
    * *Ação:* Um Xamã ou Elemental invoca névoas densas ou espíritos guardiões em uma região.
