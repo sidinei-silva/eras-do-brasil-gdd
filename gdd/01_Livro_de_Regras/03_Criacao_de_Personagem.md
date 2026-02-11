@@ -180,10 +180,12 @@ A ficha contém:
 - Classes evoluem em **Tiers (1 a 3)**
 - Pode alternar entre classes **fora de combate**
 - Ao alternar:
-  - Mantém habilidades ativas desbloqueadas
+  - Mantém habilidades ativas desbloqueadas (dentro do [limite de slots](../02_Livro_de_Classes/03_Heranca_de_Habilidades.md))
   - Perde acesso a passivas e proficiências de XP da classe anterior
 
 > 🔗 Veja detalhes em: [[Livro de Classes#Tiers e Evolução]]
+> 🔗 Para sistema de XP e níveis: [Capítulo 3B — Progressão e Experiência](03B_Progressao_e_Experiencia.md)
+> 🔗 Para troca de origem: [Troca de Origem — Espelho do Eco](../02_Livro_de_Classes/04_Troca_de_Origem.md)
 
 ---
 

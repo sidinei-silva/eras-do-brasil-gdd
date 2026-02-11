@@ -78,7 +78,7 @@ O sistema de classes de *Eras do Brasil* já possui **forte alinhamento com Fina
 
 **Recomendação:** Considerar pré-requisitos de classe como mecânica futura para Tier 2/3, incentivando caminhos de progressão mais profundos e dando propósito ao multi-classing.
 
-**Status:** 📝 Documentado como recomendação.
+**Status:** ✅ CORRIGIDO — Pré-requisitos multi-class implementados em `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`. Tier 3 agora requer ter pelo menos 1 outra classe em Tier 2.
 
 #### C) Sistema de Reaction Abilities ausente
 
@@ -120,7 +120,7 @@ O sistema de classes de *Eras do Brasil* já possui **forte alinhamento com Fina
 
 **Recomendação:** Criar uma seção dedicada no Livro de Classes ou no Livro de Regras (talvez como extensão do Cap. 3) detalhando a mecânica de troca de origem.
 
-**Status:** 📝 Documentado como recomendação.
+**Status:** ✅ CORRIGIDO — Mecânica completa implementada em `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`.
 
 #### B) Sistema de Nível/XP não definido (Importante)
 
@@ -134,7 +134,7 @@ O Capítulo 3 menciona distribuição de 27 pontos na criação, mas nenhum meca
 
 **Recomendação:** Adicionar uma seção "Progressão e Experiência" no Livro de Regras (como seção 3.11 ou capítulo dedicado).
 
-**Status:** 📝 Documentado como recomendação.
+**Status:** ✅ CORRIGIDO — Sistema completo implementado em `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`.
 
 #### C) Defesa Base vs. Bônus de Armadura (Menor)
 
@@ -256,11 +256,11 @@ O sistema de Fofoca se entrelaça com o jogo das seguintes formas (todas documen
 | 3 | Corrigir "Inteligência" → "Conhecimento" no Ato 1 | Correção | ✅ |
 | 4 | Adicionar seção de Esquecimento ao Cap. 8.3 | Adição | ✅ |
 | 5 | Definir slots de habilidades herdadas (estilo FFT) | Recomendação | ✅ |
-| 6 | Definir pré-requisitos multi-class para Tiers 2/3 | Recomendação | 📝 |
+| 6 | Definir pré-requisitos multi-class para Tiers 2/3 | Recomendação | ✅ |
 | 7 | Criar Reaction Abilities por classe | Recomendação | 📝 |
 | 8 | Detalhar habilidades de Tier 2/3 | Recomendação | 📝 |
-| 9 | Definir mecânica de troca de Origem | Recomendação | 📝 |
-| 10 | Definir sistema de XP e progressão de nível | Recomendação | 📝 |
+| 9 | Definir mecânica de troca de Origem | Recomendação | ✅ |
+| 10 | Definir sistema de XP e progressão de nível | Recomendação | ✅ |
 | 11 | Reduzir sobreposição Cap. 5 vs Cap. 8 | Recomendação | ✅ |
 | 12 | Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9) | Correção | ✅ |
 

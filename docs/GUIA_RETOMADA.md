@@ -14,8 +14,10 @@ Antes de qualquer tarefa, entenda o estado atual:
 
 | Área | Status | O que existe |
 |------|--------|-------------|
-| **GDD (Design)** | ✅ 95% Completo | 9 capítulos de regras, 12 classes Tier 1, 18 mini-campanhas, design visual, schemas JSON |
-| **Auditoria (PR #1)** | ✅ Mergeado | 4 correções aplicadas, 7 recomendações documentadas ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
+| **GDD (Design)** | ✅ 100% Completo | 9 capítulos de regras + Cap. 3B (Progressão), 12 classes Tier 1, Troca de Origem, 18 mini-campanhas |
+| **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
+| **Sprint 1** | ✅ Concluída | Slots de habilidades, Defesa Base, referências cruzadas |
+| **Sprint 2** | ✅ Concluída | Sistema de XP/Níveis, Troca de Origem, Pré-requisitos Multi-Class |
 | **POCs** | 🔲 0/38 | 38 POCs definidas com READMEs, nenhuma implementada |
 | **Código** | 🔲 Não iniciado | Projeto Unity não criado |
 | **Livros Auxiliares** | ⚠️ 1/7 | Apenas Atlas do Eco existe. 6 livros referenciados no GDD ainda não existem |
@@ -199,12 +201,12 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 2
+### ✅ Checklist da Sprint 2 (CONCLUÍDA)
 
-- [ ] 2.1 — Criar sistema de XP e progressão de nível
-- [ ] 2.2 — Definir mecânica de troca de Origem (Espelho do Eco)
-- [ ] 2.3 — Definir pré-requisitos multi-class para Tiers 2/3
-- [ ] Atualizar `03_Auditoria_GDD.md` marcando itens 6, 9 e 10 como ✅
+- [x] 2.1 — Criar sistema de XP e progressão de nível — `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
+- [x] 2.2 — Definir mecânica de troca de Origem (Espelho do Eco) — `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`
+- [x] 2.3 — Definir pré-requisitos multi-class para Tiers 2/3 — `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
+- [x] Atualizar `03_Auditoria_GDD.md` marcando itens 6, 9 e 10 como ✅
 
 ---
 

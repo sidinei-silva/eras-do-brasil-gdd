@@ -16,14 +16,14 @@
 - [x] Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9) — `gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`
 - [x] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens resolvidos
 
-## 🔴 Sprint 2 — Sistema de Progressão (Fazer AGORA)
+## ✅ Sprint 2 — Sistema de Progressão (CONCLUÍDA)
 
 > Pré-requisito: Sprint 1
 
-- [ ] Criar sistema de XP e progressão de nível — nova seção no Cap. 3 ou arquivo dedicado
-- [ ] Definir mecânica de troca de Origem (Espelho do Eco) — Livro de Classes ou Cap. 3
-- [ ] Definir pré-requisitos multi-class para Tiers 2/3 — `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
-- [ ] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens resolvidos
+- [x] Criar sistema de XP e progressão de nível — `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
+- [x] Definir mecânica de troca de Origem (Espelho do Eco) — `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`
+- [x] Definir pré-requisitos multi-class para Tiers 2/3 — `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
+- [x] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens resolvidos
 
 ## 🟡 Sprint 3 — Livros Auxiliares Prioritários (Paralelo com Sprint 4)
 

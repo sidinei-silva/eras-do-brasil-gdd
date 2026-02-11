@@ -4,7 +4,7 @@
 
 ## 🎯 Fase Atual
 
-**Fase 0: Correções GDD + POCs** — Sprint 1 concluída. Resolvendo recomendações da auditoria (PR #1) e preparando para as POCs em Unity/C#.
+**Fase 0: Correções GDD + POCs** — Sprints 1 e 2 concluídas! GDD 100% consistente. Pronto para iniciar os Livros Auxiliares (Sprint 3) e/ou Setup Unity (Sprint 4).
 
 > 🔴 **Retomando?** Comece pelo [Guia de Retomada](../docs/GUIA_RETOMADA.md)
 
@@ -12,8 +12,8 @@
 
 | Área | Status | Progresso |
 |------|--------|-----------|
-| **GDD (Design)** | ✅ Completo | 98% (Sprint 1 concluída, faltam Sprints 2-3) |
-| **Auditoria (PR #1)** | ✅ Mergeado | 7/12 correções aplicadas, 5 recomendações pendentes |
+| **GDD (Design)** | ✅ Completo | 100% (todas correções pós-auditoria concluídas) |
+| **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras |
 | **Livros Auxiliares** | ⚠️ Parcial | 1/7 (apenas Atlas do Eco) |
 | **Schemas e Dados** | ✅ Completo | 100% |
 | **Roadmap** | ✅ Consolidado | 100% |
@@ -36,7 +36,7 @@
 | Sprint | Foco | Status |
 |--------|------|--------|
 | **Sprint 1** | Correções do GDD (slots, Defesa Base, sobreposição) | ✅ Concluída |
-| **Sprint 2** | Sistema de XP, troca de Origem, pré-requisitos multi-class | 🔲 Pendente |
+| **Sprint 2** | Sistema de XP, troca de Origem, pré-requisitos multi-class | ✅ Concluída |
 | **Sprint 3** | Livros Auxiliares (Habilidades, Itens, Proficiências, Bestiário) | 🔲 Pendente |
 | **Sprint 4** | Setup Unity + POCs Módulo A (Motor de Regras) | 🔲 Pendente |
 | **Sprint 5** | POCs Módulo B (Mundo) + D (Combate) | 🔲 Pendente |
@@ -69,6 +69,7 @@
 - ✅ Auditoria do GDD concluída (PR #1 mergeado — 4 correções, 7 recomendações)
 - ✅ Guia de Retomada criado com timeline cronológica detalhada
 - ✅ **Sprint 1 concluída** — Slots de habilidades herdadas, Defesa Base harmonizada, referências cruzadas Cap. 5/8
+- ✅ **Sprint 2 concluída** — Sistema de XP/Níveis, Troca de Origem (Espelho do Eco), Pré-requisitos Multi-Class
 
 ## 📝 Notas
 

@@ -32,13 +32,13 @@ Estamos na fase de **Provas de Conceito**, validando riscos técnicos isolados e
 - [x] Corrigir "Inteligência" → "Conhecimento" (Ato 1)
 - [x] Adicionar mecânica de Esquecimento (Cap. 8.3)
 
-### 🚧 Correções Pós-Auditoria (Sprint 1–2)
+### 🚧 Correções Pós-Auditoria (Sprint 1–2) — ✅ CONCLUÍDAS
 - [x] Definir slots de habilidades herdadas (limite por Tier)
 - [x] Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
 - [x] Reduzir sobreposição Cap. 5 vs Cap. 8
-- [ ] Criar sistema de XP e progressão de nível
-- [ ] Definir mecânica de troca de Origem (Espelho do Eco)
-- [ ] Definir pré-requisitos multi-class para Tiers 2/3
+- [x] Criar sistema de XP e progressão de nível
+- [x] Definir mecânica de troca de Origem (Espelho do Eco)
+- [x] Definir pré-requisitos multi-class para Tiers 2/3
 
 ### 🚧 Livros Auxiliares Prioritários (Sprint 3)
 - [ ] Livro de Habilidades (consolidado das 12 classes)
@@ -103,7 +103,7 @@ Loop jogável de 15–30 minutos:
 - [x] Schemas e Dados Iniciais
 - [x] Auditoria do GDD (PR #1)
 - [x] Sprint 1: Slots de habilidades, Defesa Base, referências cruzadas
-- [ ] Sprint 2: Sistema de XP, troca de Origem, pré-requisitos
+- [x] Sprint 2: Sistema de XP, troca de Origem, pré-requisitos
 - [ ] Livros Auxiliares prioritários (4 livros)
 
 ### Desenvolvimento

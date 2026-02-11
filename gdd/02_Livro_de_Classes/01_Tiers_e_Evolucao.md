@@ -63,4 +63,60 @@ Ao evoluir uma classe, o personagem ganha:
 - A evolução pode ser usada como ferramenta narrativa. Envolva o cenário, NPCs e decisões morais.
 - Crie missões de evolução coerentes com o estilo da classe e do jogador.
 - Permita que a evolução represente uma mudança visível no personagem, tanto em aparência quanto em reputação.
+
+---
+
+## 🔗 Pré-requisitos Multi-Class para Tiers Avançados
+
+Para incentivar a exploração do sistema de classes (inspiração *Final Fantasy Tactics*), os Tiers avançados possuem pré-requisitos adicionais:
+
+### Tier 2 — Especialização Avançada
+
+| Requisito | Descrição |
+|-----------|-----------|
+| **Nível mínimo** | Nível 5 do personagem |
+| **Nível da classe** | Nível 5 na classe atual (Tier 1) |
+| **Moeda de Classe** | 1 Moeda de Classe específica |
+| **Missão de Evolução** | Completar missão com NPC mentor |
+
+### Tier 3 — Forma Plena da Classe
+
+| Requisito | Descrição |
+|-----------|-----------|
+| **Nível mínimo** | Nível 10 do personagem |
+| **Nível da classe** | Nível 10 na classe atual (Tier 2) |
+| **Experiência multi-class** | Ter pelo menos **1 outra classe em Tier 2** |
+| **Moeda de Classe** | 1 Moeda de Classe Rara |
+| **Missão de Evolução** | Completar ritual ou desafio épico |
+
+> ⚔️ **Por que o requisito multi-class?** Este requisito garante que para alcançar o ápice de uma classe, o jogador tenha experimentado a diversidade do sistema. Isso:
+> - Incentiva a exploração de diferentes estilos de jogo
+> - Cria builds mais interessantes com habilidades herdadas
+> - Reflete narrativamente a sabedoria de quem trilhou múltiplos caminhos
+
+### 🧪 Exemplo de Progressão Multi-Class
+
+**Objetivo:** Evoluir o Guerreiro Tribal para Tier 3 (Protetor do Clã)
+
+**Caminho:**
+1. Começar como Guerreiro Tribal (Tier 1)
+2. Chegar ao Nível 5 → Evoluir para Guerreiro Tribal Veterano (Tier 2)
+3. Desbloquear Caçador de Feras (Tier 1) com Moeda de Classe
+4. Evoluir Caçador de Feras para Tier 2 (agora tem 2 classes Tier 2)
+5. Chegar ao Nível 10 → Evoluir Guerreiro Tribal Veterano para Protetor do Clã (Tier 3)
+
+> O jogador agora tem acesso às habilidades de ambas as classes, criando uma build única!
+
+---
+
+## 📊 Tabela Resumo de Pré-requisitos
+
+| Tier | Nível Mín. | Nível da Classe | Multi-Class | Moeda | Missão |
+|------|------------|-----------------|-------------|-------|--------|
+| 1 | 1 | — | — | Sim* | Sim* |
+| 2 | 5 | 5 | — | Sim | Sim |
+| 3 | 10 | 10 | 1 classe Tier 2 | Sim (Rara) | Sim |
+
+*Para classes além da inicial
+
 ---
