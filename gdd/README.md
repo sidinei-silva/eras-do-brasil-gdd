@@ -2,7 +2,7 @@
 
 > Fonte Única da Verdade (SSoT) do design de jogo. Todo o design, lore, regras e planejamento vivem aqui.
 
-**Navegação rápida:** [Projeto](../README.md) · [POCs](../pocs/README.md) · [Roadmap](../ROADMAP.md)
+**Navegação rápida:** [Projeto](../README.md) · [POCs](../pocs/README.md) · [Roadmap](../ROADMAP.md) · [🔴 Guia de Retomada](../docs/GUIA_RETOMADA.md)
 
 ---
 
@@ -94,6 +94,7 @@ Pixel art, paleta, UI/HUD.
 |-----------|----------|
 | [01 — Estratégia de Dados](99_Meta_e_Backlog/01_Estrategia_de_Dados_e_Documentacao.md) | Filosofia "Alma vs. Lógica" |
 | [02 — Roadmap de Desenvolvimento](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Fases, POCs, checklist completo |
+| [03 — Auditoria do GDD](99_Meta_e_Backlog/03_Auditoria_GDD.md) | Resultado da auditoria de consistência (PR #1) |
 
 ---
 
