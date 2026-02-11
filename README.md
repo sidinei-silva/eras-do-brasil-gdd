@@ -102,6 +102,8 @@ O projeto segue uma abordagem de **desenvolvimento progressivo**: construir peç
 | [GDD Completo](gdd/README.md) | Índice do Game Design Document |
 | [POCs](pocs/README.md) | Índice das 38 provas de conceito |
 | [Roadmap](gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Roadmap de desenvolvimento |
+| [🔴 Guia de Retomada](docs/GUIA_RETOMADA.md) | Timeline cronológica para retomar o projeto |
+| [Auditoria do GDD](gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md) | Resultado da auditoria de consistência |
 
 ---
 
