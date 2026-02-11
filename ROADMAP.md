@@ -115,4 +115,4 @@ Loop jogável de 15–30 minutos:
 
 ---
 
-**Última atualização:** 2026-02-11 (Sprint 1 concluída)
+**Última atualização:** 2026-02-11 (Sprints 1 e 2 concluídas)

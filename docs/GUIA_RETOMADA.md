@@ -38,11 +38,11 @@ Estas correções **já foram aplicadas** e estão no código:
 | # | Recomendação | Prioridade | Em qual Sprint | Status |
 |---|-------------|------------|---------------|--------|
 | 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | Sprint 1 | ✅ Concluído |
-| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Pendente |
+| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | Sprint 2 | ✅ Concluído |
 | 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
 | 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
-| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Pendente |
-| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | [Sprint 2](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Pendente |
+| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | Sprint 2 | ✅ Concluído |
+| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | Sprint 2 | ✅ Concluído |
 | 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
 | 12 | Harmonizar **fórmula de Defesa Base** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
 
