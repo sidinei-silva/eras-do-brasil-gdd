@@ -81,6 +81,7 @@ Pixel art, paleta, UI/HUD.
 | Documento | Conteúdo |
 |-----------|----------|
 | [01 — Atlas do Eco (Ato 1)](05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md) | Mapa de nós com distâncias e terrenos |
+| [03 — Livro de Itens e Equipamentos](05_Livros_Auxiliares/03_Livro_de_Itens_e_Equipamentos.md) | Catálogo completo, Matriz 5×5, 15 itens MVP Ato 1, receitas de crafting |
 
 ### 💾 [06 — Dados e Assets](06_Dados_e_Assets/)
 
