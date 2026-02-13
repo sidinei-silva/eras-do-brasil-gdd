@@ -4,7 +4,7 @@
 >
 > **Como usar:** Siga as Sprints na ordem. Cada Sprint tem tarefas numeradas. Faça a tarefa 1, depois a 2, etc. Não pule Sprints.
 >
-> **Última atualização:** 2026-02-11
+> **Última atualização:** 2026-02-13
 
 ---
 
@@ -18,8 +18,10 @@ Antes de qualquer tarefa, entenda o estado atual:
 | **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
 | **Sprint 1** | ✅ Concluída | Slots de habilidades, Defesa Base, referências cruzadas |
 | **Sprint 2** | ✅ Concluída | Sistema de XP/Níveis, Troca de Origem, Pré-requisitos Multi-Class |
+| **Decisões Técnicas** | ✅ Definidas | Projeto Unity único ([ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md)), workflow de UI/UX ([ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md)) |
 | **POCs** | 🔲 0/38 | 38 POCs definidas com READMEs, nenhuma implementada |
 | **Código** | 🔲 Não iniciado | Projeto Unity não criado |
+| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos para Sprint 4, protótipos para Sprint 6 |
 | **Livros Auxiliares** | ⚠️ 1/7 | Apenas Atlas do Eco existe. 6 livros referenciados no GDD ainda não existem |
 
 ### O Que Foi Corrigido na Auditoria (PR #1)
@@ -319,32 +321,48 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ### Tarefa 4.1 — Setup do Projeto Unity
 
+> ⚠️ **Decisão:** Um único projeto Unity para todas as POCs e o jogo final. POCs são separadas por **cenas**, não por projetos. Scripts são escritos direto na estrutura de produção. Detalhes em [ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md) e [Organização do Projeto Unity](tech/organizacao-projeto-unity.md).
+
 **O que fazer:**
 1. Instalar Unity Hub + Unity LTS (versão mais recente estável)
-2. Criar projeto 2D vazio
-3. Configurar estrutura de pastas:
+2. Criar projeto 2D vazio chamado `ErasDoBrasil`
+3. Configurar estrutura de pastas (projeto único — POCs e jogo):
    ```
    Assets/
    ├── Scripts/
-   │   ├── Core/          (Motor de regras, D20, atributos)
-   │   ├── Data/          (ScriptableObjects, schemas)
-   │   ├── Combat/        (Combate, status, habilidades)
-   │   ├── World/         (Ticks, navegação, eventos)
-   │   ├── Economy/       (Inventário, crafting, comércio)
-   │   ├── NPC/           (IA, rotinas, fofoca)
-   │   ├── UI/            (HUD, menus, cenas)
-   │   └── Network/       (P2P, sincronia)
+   │   ├── Core/              (Motor de regras, D20, atributos)
+   │   ├── Data/              (ScriptableObjects, loaders)
+   │   ├── Combat/            (Combate, status, habilidades)
+   │   ├── World/             (Ticks, navegação, eventos)
+   │   ├── Economy/           (Inventário, crafting, comércio)
+   │   ├── NPC/               (IA, rotinas, fofoca)
+   │   ├── UI/                (HUD, menus, cenas)
+   │   ├── Persistence/       (Save/Load)
+   │   ├── Network/           (P2P, sincronia)
+   │   └── Narrative/         (Quests, diálogos)
    ├── Resources/
    │   ├── ScriptableObjects/
    │   └── JSON/
    ├── Scenes/
-   │   └── POC/           (Cenas de teste para cada POC)
-   └── Tests/
+   │   ├── POC/               (1 cena por POC — sandbox de teste)
+   │   ├── MVP/               (Cena integrada do MVP)
+   │   └── Game/              (Cenas do jogo final — fases futuras)
+   ├── Tests/
+   │   ├── EditMode/          (Testes unitários)
+   │   └── PlayMode/          (Testes com cena)
+   ├── Art/
+   │   ├── Placeholder/       (Assets temporários para POCs)
+   │   └── Final/             (Pixel art final — Fase 3+)
+   └── Prefabs/
    ```
 4. Configurar `.gitignore` para Unity
-5. Criar cena de teste vazia (`POC_Sandbox.unity`)
+5. Criar cena de teste vazia (`Scenes/POC/POC_Sandbox.unity`)
+6. Configurar namespaces C# por módulo (`ErasDoBrasil.Core`, `ErasDoBrasil.Combat`, etc.)
 
-**Referência:** [`pocs/README.md`](../pocs/README.md)
+**Referências:**
+- [`pocs/README.md`](../pocs/README.md)
+- [Organização do Projeto Unity](tech/organizacao-projeto-unity.md)
+- [ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md)
 
 ---
 
@@ -396,13 +414,34 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
+### Tarefa 4.6 — Wireframes de Baixa Fidelidade (UI/UX)
+
+> 🎨 **Por quê?** O GDD já tem specs detalhadas de UI ([UI Fase 1](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)), mas não existia uma etapa de design visual intermediária antes de implementar as POCs de UI. Wireframes reduzem retrabalho. Detalhes em [ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md).
+
+**O que fazer:**
+1. Criar wireframes de **baixa fidelidade** para as 4 telas principais do MVP:
+   - HUD Principal (barra superior)
+   - Mapa de Nós (pergaminho com nós clicáveis)
+   - Tela de Cena (split: ilustração + texto/ações)
+   - Tela de Combate Estático (sprites + hotbar + log)
+2. Usar [Excalidraw](https://excalidraw.com/) ou ferramenta similar
+3. Salvar em `docs/tech/wireframes/`
+4. Basear nos layouts de [`gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md`](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
+
+**Referências:**
+- [Workflow de UI/UX](tech/workflow-ui-ux.md)
+- [ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md)
+
+---
+
 ### ✅ Checklist da Sprint 4
 
-- [ ] 4.1 — Setup do projeto Unity (estrutura de pastas, .gitignore, cena de teste)
+- [ ] 4.1 — Setup do projeto Unity (projeto único, estrutura de pastas, .gitignore, namespaces)
 - [ ] 4.2 — POC 01: Fundação de Dados
 - [ ] 4.3 — POC 02: Motor D20
 - [ ] 4.4 — POC 03: Atributos e Criação
 - [ ] 4.5 — POC 06: Matriz de Itens 5×5
+- [ ] 4.6 — Wireframes de baixa fidelidade (HUD, Mapa, Cena, Combate)
 
 ---
 
@@ -510,11 +549,30 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
+### Tarefa 6.4 — Protótipo de UI e Validação de Fluxo (UI/UX)
+
+> 🎨 **Por quê?** Antes de implementar as POCs de UI (28, 29, 30, 31), validar o fluxo visual com um protótipo navegável. Isso evita retrabalho na implementação Unity.
+
+**O que fazer:**
+1. Refinar os wireframes da Sprint 4 com aprendizados das POCs de lógica
+2. Criar protótipo navegável (Unity UI Toolkit ou Figma):
+   - Fluxo: Menu → Criação → Mapa → Cena → Combate → Inventário → Save
+3. Validar: legibilidade, hierarquia visual, feedback de ações
+4. Atualizar wireframes em `docs/tech/wireframes/`
+
+**Referências:**
+- [Workflow de UI/UX](tech/workflow-ui-ux.md)
+- [Wireframes da Sprint 4](tech/wireframes/)
+- [UI Fase 1](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
+
+---
+
 ### ✅ Checklist da Sprint 6
 
 - [ ] 6.1 — POC 24: Inventário
 - [ ] 6.2 — POC 28: HUD Principal
 - [ ] 6.3 — POC 33: Save/Load
+- [ ] 6.4 — Protótipo de UI e validação de fluxo
 
 ---
 
@@ -553,6 +611,8 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
 1. Jogar o loop completo pelo menos 3 vezes
 2. Anotar bugs, desequilíbrios, problemas de flow
 3. Ajustar números (PV, dano, CD, loot)
+4. **Validação de UI/UX:** Avaliar se o HUD é compreensível, se a navegação no mapa é intuitiva, se o combate tem feedback visual suficiente, se os botões de ação são claros
+5. Documentar problemas de usabilidade para iteração pós-MVP
 
 ---
 
@@ -671,17 +731,27 @@ eras-do-brasil/
 │   ├── 📂 01_Livro_de_Regras/      ← 9 capítulos de mecânicas
 │   ├── 📂 02_Livro_de_Classes/     ← 12 classes Tier 1 + sistema
 │   ├── 📂 03_Enredo_e_Mundo/       ← Ato 1 + 18 mini-campanhas
-│   ├── 📂 04_Design_Visual/        ← Pixel art, UI, HUD
+│   ├── 📂 04_Design_Visual/        ← Pixel art, UI, HUD (specs de referência)
 │   ├── 📂 05_Livros_Auxiliares/    ← Atlas do Eco + futuros livros
 │   ├── 📂 06_Dados_e_Assets/       ← Schemas JSON, dados mockup
 │   └── 📂 99_Meta_e_Backlog/       ← Estratégia, Roadmap, Auditoria
+│
+├── 📂 docs/                        ← Documentação oficial
+│   └── 📂 tech/                    ← Documentação técnica
+│       ├── 📄 organizacao-projeto-unity.md  ← Estrutura do projeto Unity
+│       ├── 📄 workflow-ui-ux.md             ← Processo de UI/UX
+│       └── 📂 wireframes/                   ← Wireframes das telas (Sprint 4)
 │
 ├── 📂 pocs/                        ← 38 POCs (protótipos Unity/C#)
 │   └── 📄 README.md                ← Índice mestre de POCs
 │
 ├── 📂 vibe/                        ← Contexto evolutivo do projeto
 │   ├── 📄 backlog.md               ← Tarefas priorizadas
-│   └── 📄 project-status.md        ← Snapshot do estado atual
+│   ├── 📄 project-status.md        ← Snapshot do estado atual
+│   ├── 📂 decisions/               ← ADRs (decisões de arquitetura)
+│   │   ├── 📄 ADR-001-organizacao-projeto-unity.md
+│   │   └── 📄 ADR-002-workflow-ui-ux.md
+│   └── 📂 sessions/               ← Logs de sessão
 │
 └── 📂 ia-conversations/            ← Conversas com IAs (Gemini)
     └── 📂 gemini/                  ← Conversas 7 e 8
@@ -708,5 +778,4 @@ eras-do-brasil/
 
 ---
 
-> **Última atualização:** 2026-02-11
-> **Referências:** [ROADMAP](../ROADMAP.md) · [Auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md) · [Roadmap Dev](../gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md)
+> **Última atualização:** 2026-02-13

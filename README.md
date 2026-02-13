@@ -37,8 +37,11 @@
 ├── docs/                        # Documentação oficial
 │   ├── product/                 # Specs de produto
 │   └── tech/                    # Documentação técnica
+│       ├── organizacao-projeto-unity.md  # Estrutura do projeto Unity
+│       ├── workflow-ui-ux.md            # Processo de UI/UX
+│       └── wireframes/                  # Wireframes das telas
 ├── vibe/                        # Contexto evolutivo (Vibe Flow)
-│   ├── decisions/               # ADRs
+│   ├── decisions/               # ADRs (decisões de arquitetura)
 │   ├── sessions/                # Logs de sessões
 │   └── project-status.md        # Status atual
 └── ROADMAP.md                   # Roadmap público
@@ -103,6 +106,8 @@ O projeto segue uma abordagem de **desenvolvimento progressivo**: construir peç
 | [POCs](pocs/README.md) | Índice das 38 provas de conceito |
 | [Roadmap](gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Roadmap de desenvolvimento |
 | [🔴 Guia de Retomada](docs/GUIA_RETOMADA.md) | Timeline cronológica para retomar o projeto |
+| [Organização Unity](docs/tech/organizacao-projeto-unity.md) | Estrutura do projeto Unity (POCs + jogo) |
+| [Workflow UI/UX](docs/tech/workflow-ui-ux.md) | Processo de wireframes, prototipagem e design |
 | [Auditoria do GDD](gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md) | Resultado da auditoria de consistência |
 
 ---

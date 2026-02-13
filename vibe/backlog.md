@@ -1,6 +1,6 @@
 # Backlog — Eras do Brasil
 
-**Última atualização:** 2026-02-11
+**Última atualização:** 2026-02-13
 
 > 📌 Para a timeline completa e detalhada, consulte o [Guia de Retomada](../docs/GUIA_RETOMADA.md).
 > As tarefas abaixo estão ordenadas **cronologicamente** — faça na ordem listada.
@@ -40,18 +40,26 @@
 ## 🟡 Sprint 4 — Setup Unity + POCs Fundação
 
 > Pré-requisito: Sprint 2
+> Organização definida: [ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md) · [Estrutura do Projeto](../docs/tech/organizacao-projeto-unity.md)
 
 ### Setup & Infraestrutura
-- [ ] Criar projeto Unity (versão LTS)
-- [ ] Configurar estrutura de pastas Unity
+- [ ] Criar projeto Unity único (versão LTS) — POCs e jogo no mesmo projeto
+- [ ] Configurar estrutura de pastas Unity (por módulo, não por POC)
 - [ ] Configurar .gitignore para Unity
-- [ ] Criar cena de teste para POCs
+- [ ] Criar cena de teste para POCs (`Scenes/POC/POC_Sandbox.unity`)
+- [ ] Configurar namespaces C# por módulo
 
 ### POCs Módulo A — Motor de Regras (🟢 Core)
 - [ ] POC 01: Fundação de Dados — ScriptableObjects + JSON pipeline
 - [ ] POC 02: Motor D20 — Rolagens, modificadores, críticos
 - [ ] POC 03: Atributos e Criação — Point-buy (27 pts), modificadores
 - [ ] POC 06: Matriz de Itens 5×5 — Qualidade × Raridade
+
+### UI/UX — Wireframes ([ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md) · [Workflow](../docs/tech/workflow-ui-ux.md))
+- [ ] Wireframe: HUD Principal (barra superior)
+- [ ] Wireframe: Mapa de Nós (pergaminho com nós clicáveis)
+- [ ] Wireframe: Tela de Cena (split: ilustração + texto/ações)
+- [ ] Wireframe: Tela de Combate Estático (sprites + hotbar + log)
 
 ## 🟡 Sprint 5 — POCs Mundo e Combate
 
@@ -74,6 +82,7 @@
 - [ ] POC 24: Inventário — Equipar/desequipar, peso
 
 ### POCs Módulo F — UI (🟢 Core)
+- [ ] Protótipo de UI e validação de fluxo (antes das POCs de UI)
 - [ ] POC 28: HUD Principal — Barras, relógio, recursos
 
 ### POCs Módulo G — Persistência (🟢 Core)
@@ -124,4 +133,4 @@
 ---
 
 **Gerenciado por:** @tech-lead
-**Referência:** [Guia de Retomada](../docs/GUIA_RETOMADA.md) · [Roadmap completo](../gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md)
+**Referência:** [Guia de Retomada](../docs/GUIA_RETOMADA.md) · [Roadmap completo](../gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md) · [ADRs](decisions/)
