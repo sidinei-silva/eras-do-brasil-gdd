@@ -60,6 +60,10 @@ Estamos na fase de **Provas de Conceito**, validando riscos técnicos isolados e
 | G | Persistência e Rede | 33–36 | 🔲 |
 | H | Missões e Narrativa | 37–38 | 🔲 |
 
+> **Organização:** Projeto Unity único para POCs e jogo final. Detalhes em [ADR-001](vibe/decisions/ADR-001-organizacao-projeto-unity.md) e [Organização do Projeto](docs/tech/organizacao-projeto-unity.md).
+>
+> **UI/UX:** Wireframes na Sprint 4, protótipos na Sprint 6, validação na Sprint 7. Detalhes em [ADR-002](vibe/decisions/ADR-002-workflow-ui-ux.md) e [Workflow UI/UX](docs/tech/workflow-ui-ux.md).
+
 ### 📋 Fase 1: MVP — "O Despertar"
 Loop jogável de 15–30 minutos:
 - [ ] 1 Origem (Indígena), 1 Classe (Guerreiro Tribal)
@@ -107,12 +111,23 @@ Loop jogável de 15–30 minutos:
 - [ ] Livros Auxiliares prioritários (4 livros)
 
 ### Desenvolvimento
-- [ ] Setup do projeto Unity
+- [ ] Setup do projeto Unity ([estrutura definida](docs/tech/organizacao-projeto-unity.md))
+- [ ] Wireframes de baixa fidelidade ([workflow definido](docs/tech/workflow-ui-ux.md))
 - [ ] POCs Módulo A (Motor de Regras)
 - [ ] POCs Módulo B (Mundo e Tempo)
 - [ ] POCs restantes (C–H)
+- [ ] Protótipo de UI e validação de fluxo
 - [ ] Integração MVP
 
 ---
 
-**Última atualização:** 2026-02-11 (Sprints 1 e 2 concluídas)
+## 📐 Decisões Técnicas
+
+| ADR | Decisão | Documento |
+|-----|---------|-----------|
+| [ADR-001](vibe/decisions/ADR-001-organizacao-projeto-unity.md) | Projeto Unity único para POCs e jogo final | [Organização do Projeto](docs/tech/organizacao-projeto-unity.md) |
+| [ADR-002](vibe/decisions/ADR-002-workflow-ui-ux.md) | Wireframes + protótipos antes de implementar UI | [Workflow UI/UX](docs/tech/workflow-ui-ux.md) |
+
+---
+
+**Última atualização:** 2026-02-13 (ADRs de organização Unity e workflow UI/UX)

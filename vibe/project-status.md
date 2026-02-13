@@ -1,10 +1,10 @@
 # Status do Projeto — Eras do Brasil
 
-**Última atualização:** 2026-02-11
+**Última atualização:** 2026-02-13
 
 ## 🎯 Fase Atual
 
-**Fase 0: Correções GDD + POCs** — Sprints 1 e 2 concluídas! GDD 100% consistente. Pronto para iniciar os Livros Auxiliares (Sprint 3) e/ou Setup Unity (Sprint 4).
+**Fase 0: Correções GDD + POCs** — Sprints 1 e 2 concluídas! GDD 100% consistente. Decisões técnicas de organização Unity e workflow UI/UX definidas (ADR-001 e ADR-002). Pronto para iniciar os Livros Auxiliares (Sprint 3) e/ou Setup Unity (Sprint 4).
 
 > 🔴 **Retomando?** Comece pelo [Guia de Retomada](../docs/GUIA_RETOMADA.md)
 
@@ -14,9 +14,11 @@
 |------|--------|-----------|
 | **GDD (Design)** | ✅ Completo | 100% (todas correções pós-auditoria concluídas) |
 | **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras |
+| **Decisões Técnicas** | ✅ Definidas | ADR-001 (Unity único) + ADR-002 (Workflow UI/UX) |
 | **Livros Auxiliares** | ⚠️ Parcial | 1/7 (apenas Atlas do Eco) |
 | **Schemas e Dados** | ✅ Completo | 100% |
 | **Roadmap** | ✅ Consolidado | 100% |
+| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos Sprint 4, protótipos Sprint 6 |
 | **POCs** | 🔲 Não iniciado | 0/38 |
 | **MVP** | 🔲 Aguardando POCs | 0% |
 
@@ -70,12 +72,16 @@
 - ✅ Guia de Retomada criado com timeline cronológica detalhada
 - ✅ **Sprint 1 concluída** — Slots de habilidades herdadas, Defesa Base harmonizada, referências cruzadas Cap. 5/8
 - ✅ **Sprint 2 concluída** — Sistema de XP/Níveis, Troca de Origem (Espelho do Eco), Pré-requisitos Multi-Class
+- ✅ **ADR-001** — Organização do projeto Unity definida (projeto único para POCs e jogo)
+- ✅ **ADR-002** — Workflow de UI/UX definido (wireframes, prototipagem, validação)
 
 ## 📝 Notas
 
 - Stack definida: Unity (LTS) + C# + NGO para rede P2P
 - Filosofia: desenvolvimento progressivo, peça por peça
 - IA centralizada no GitHub Copilot (VS Code)
+- Projeto Unity único para POCs e jogo (ver [ADR-001](decisions/ADR-001-organizacao-projeto-unity.md))
+- Workflow de UI/UX integrado às sprints (ver [ADR-002](decisions/ADR-002-workflow-ui-ux.md))
 - **Tier 2 das classes NÃO deve ser feito agora** — é do Ato 2, após MVP
 
 ---
