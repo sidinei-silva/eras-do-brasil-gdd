@@ -6,7 +6,14 @@ O **Espelho do Eco** é um artefato místico que permite ao Desperto transcender
 
 ## 🌟 O Que é o Espelho do Eco?
 
-O Espelho do Eco é um item lendário obtido como recompensa do **Ato 1 — A Primeira Ruptura**. Ele materializa o poder do Dom da Revivência, permitindo que o personagem acesse memórias e habilidades de outras eras e culturas.
+O Espelho do Eco é um item lendário obtido como recompensa do **Ato 1 — A Primeira Ruptura**. Ele materializa o **despertar completo do Dom da Revivência**, permitindo que o personagem acesse memórias e habilidades de outras eras e culturas além de sua origem inicial.
+
+### O Dom Latente vs. O Dom Desperto
+
+Todos os Despertos (personagens jogáveis) nascem com o **Dom da Revivência latente**:
+
+- **Durante o Ato 1 (Dom Latente):** O personagem pode alternar entre classes da **mesma origem** que escolheu na criação
+- **Após o Ato 1 (Dom Desperto):** O Espelho do Eco desperta o Dom completamente, permitindo transcender a origem inicial e acessar classes de **outras origens**
 
 > *"No reflexo do Espelho, vi não minha face, mas as faces de todos que fui — e todos que ainda posso ser."*
 > — Fragmento de diário de um Desperto
@@ -114,7 +121,7 @@ Um personagem pode ter acesso a **múltiplas origens** ao longo do jogo:
 
 A troca de origem é justificada pelo **Dom da Revivência** — a capacidade do Desperto de acessar memórias e habilidades de vidas passadas em outras eras e culturas.
 
-O Espelho do Eco funciona como um **catalisador espiritual** que amplifica esse dom, permitindo:
+Durante o Ato 1, esse Dom permanece **latente**, permitindo apenas a alternância entre classes da mesma origem. O Espelho do Eco funciona como um **catalisador espiritual** que **desperta o Dom completamente**, permitindo:
 
 - **Visões ancestrais:** O personagem sonha com uma vida passada de outra origem
 - **Reencarnação parcial:** Fragmentos de uma alma antiga se fundem ao Desperto

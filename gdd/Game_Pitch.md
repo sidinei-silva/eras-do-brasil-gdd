@@ -68,7 +68,13 @@ Além de um mundo rico e dinâmico, _Eras do Brasil_ se define por mecânicas ce
 
 ### 3.1. Sua Identidade Não é uma Prisão: O Dom da Revivência
 
-Esta é a mecânica central de progressão de personagem. O **"Dom da Revivência"** é uma habilidade narrativa e mecânica que permite aos jogadores trocar livremente entre classes e até mesmo origens (Colonizador, Indígena, Ser Folclórico) que já foram desbloqueadas. Essa troca pode ser feita fora de combate, permitindo uma adaptação estratégica a qualquer desafio. O progresso não é perdido, mas expandido; cada nova classe desbloqueada adiciona mais ferramentas ao arsenal do jogador, com transições justificadas narrativamente como visões, reencarnações ou rituais místicos.
+Esta é a mecânica central de progressão de personagem. O **"Dom da Revivência"** é uma habilidade narrativa e mecânica que permite aos jogadores trocar livremente entre classes de sua própria origem desde o início, e eventualmente — após o contato com uma Ruptura ao final do Ato 1 — acessar até mesmo origens diferentes (Colonizador, Indígena, Ser Folclórico).
+
+**Durante o Ato 1 (Dom Latente):** O personagem pode alternar entre classes de sua **origem inicial** fora de combate, adaptando-se aos desafios dentro de seu contexto cultural.
+
+**Após o Ato 1 (Dom Desperto):** O contato direto com a Ruptura desperta o Dom completamente, concedendo o **Espelho do Eco**, um artefato místico que permite ao personagem transcender sua origem e desbloquear classes de outras culturas e eras.
+
+O progresso não é perdido, mas expandido; cada nova classe desbloqueada adiciona mais ferramentas ao arsenal do jogador, com transições justificadas narrativamente como visões, reencarnações ou rituais místicos.
 
 ### 3.2. Herança Estratégica: Construindo um Legado
 

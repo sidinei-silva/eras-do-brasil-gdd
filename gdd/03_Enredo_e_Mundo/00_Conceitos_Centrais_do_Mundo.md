@@ -24,11 +24,23 @@ Essa raiz pulsa mais forte em momentos de crise e mudança, abrindo portais natu
 
 ## 3. Dom da Revivência
 
-Os personagens do jogador são seres marcados por esse Dom:
+Os personagens do jogador são **Despertos** — seres marcados por esse Dom, embora ele permaneça **latente** até ser despertado pela primeira vez.
 
-- Podem experimentar outras **origens** (Colonizador, Indígena, Ser Folclórico) por meio de **eventos místicos ou escolhas narrativas**.
-- Ao **trocar de origem ou classe**, não perdem totalmente o progresso anterior — mas sim, o expandem.
-- Essas transições são justificadas **narrativamente como visões, reencarnações, pactos ou rituais**.
+### 3.1 O Dom Latente (Ato 1)
+
+Durante o Ato 1, os Despertos carregam o Dom de forma **adormecida**:
+
+- Podem alternar entre **classes da mesma origem** que escolheram na criação do personagem
+- Ainda não podem acessar **outras origens** (isso requer o despertar completo do Dom)
+- O Dom latente já lhes confere uma conexão especial com a Raiz do Mundo
+
+### 3.2 O Despertar do Dom (Ato 2+)
+
+O **contato direto com a Ruptura** ao final do Ato 1 desperta o Dom completamente:
+
+- Podem experimentar outras **origens** (Colonizador, Indígena, Ser Folclórico) por meio do **Espelho do Eco**
+- Ao **trocar de origem**, não perdem o progresso anterior — mas sim, o expandem
+- Essas transições são justificadas **narrativamente como visões, reencarnações, pactos ou rituais**
 
 ---
 

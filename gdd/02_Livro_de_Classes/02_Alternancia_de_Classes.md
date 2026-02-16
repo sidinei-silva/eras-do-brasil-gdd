@@ -2,10 +2,14 @@
 
 O sistema de classes em _Eras do Brasil_ foi criado para permitir **flexibilidade estratégica e narrativa**, permitindo que o jogador alterne entre estilos diferentes de jogo sem perder o progresso conquistado. A alternância de classes é um dos pilares que torna o mundo do jogo vivo, personalizável e aberto a múltiplas abordagens.
 
+> 📘 **Importante:** Este documento trata da alternância entre **classes da mesma origem**. Para trocar de **origem** (ex: Indígena → Colonizador), consulte [Troca de Origem — Espelho do Eco](04_Troca_de_Origem.md).
+
 ---
 ### 🔄 Como funciona a Alternância
 
-- **O jogador pode alternar entre quaisquer classes já desbloqueadas**.
+- **O jogador pode alternar entre quaisquer classes já desbloqueadas da mesma origem**.
+- **Durante o Ato 1, apenas classes da origem inicial estão disponíveis** (o Dom da Revivência está latente).
+- **Após completar o Ato 1 e obter o Espelho do Eco**, o jogador pode desbloquear classes de outras origens através da [Troca de Origem](04_Troca_de_Origem.md).
 - **A troca só pode ser feita fora de combate**, ou seja, em momentos de descanso, entre cenas ou em ambientes seguros.
 - **As habilidades ativas de outras classes desbloqueadas podem ser mantidas**, mesmo que a classe não esteja ativa.
 - **Habilidades passivas e bônus de proficiência só funcionam com a classe ativa**.

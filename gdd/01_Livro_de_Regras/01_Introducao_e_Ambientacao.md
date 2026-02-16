@@ -25,6 +25,13 @@ Este dom desperta nos personagens uma sensibilidade única:
 - Acessar habilidades ancestrais ou futuras.
 - Reagir de forma especial a eventos espirituais ou históricos.
 
+### O Dom Latente e o Despertar
+
+Todos os personagens jogáveis são **Despertos** — indivíduos marcados pelo Dom da Revivência. No entanto, esse dom se manifesta em dois estágios:
+
+- **Dom Latente (Ato 1):** O personagem pode alternar entre classes de sua **origem inicial**, explorando diferentes aspectos de sua cultura.
+- **Dom Desperto (Ato 2+):** Após o contato direto com uma Ruptura, o Dom desperta completamente, permitindo ao personagem transcender sua origem e acessar memórias e habilidades de **outras eras e culturas**.
+
 O Dom da Revivência é o motivo pelo qual os jogadores podem alternar entre classes, experimentar múltiplas origens e navegar por diferentes eras sem perder sua essência.
 
 ---
