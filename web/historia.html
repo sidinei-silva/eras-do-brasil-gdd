@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História Navegável — Eras do Brasil</title>
+  <meta name="description" content="Explore a linha do tempo eco-histórica de Eras do Brasil. Descubra as Rupturas, os marcos temporais e as 18 mini-campanhas que compõem o universo do jogo.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body class="page-historia">
+  <!-- Navigation -->
+  <nav class="navbar navbar-solid" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Eras do Brasil</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#visao-geral">Visão Geral</a></li>
+        <li><a href="#linha-do-tempo">Linha do Tempo</a></li>
+        <li><a href="#ato1">Ato 1</a></li>
+        <li><a href="#campanhas">Mini-Campanhas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <h1 class="page-title">📜 História Navegável</h1>
+      <p class="page-subtitle">Explore a narrativa de Eras do Brasil: a Raiz do Mundo, as Rupturas e as campanhas que moldam o destino do continente.</p>
+    </div>
+  </header>
+
+  <!-- Story Navigation (Sidebar on desktop) -->
+  <div class="story-layout">
+    <aside class="story-nav" id="storyNav">
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="#visao-geral" class="story-nav-link active">🌍 Visão Geral do Mundo</a></li>
+        <li><a href="#raiz" class="story-nav-link">🌿 A Raiz do Mundo</a></li>
+        <li><a href="#dom" class="story-nav-link">✨ Dom da Revivência</a></li>
+        <li>
+          <a href="#linha-do-tempo" class="story-nav-link">🕰️ Linha do Tempo</a>
+          <ul class="story-nav-sub">
+            <li><a href="#era-1497">1497 — A Primeira Ruptura</a></li>
+            <li><a href="#era-1530">1530 — Fogo da Coroa</a></li>
+            <li><a href="#era-1584">1584 — Tratado do Silêncio</a></li>
+            <li><a href="#era-1612">1612 — Lua sobre São Luís</a></li>
+            <li><a href="#era-1640">1640 — Guerra dos Dois Reinos</a></li>
+            <li><a href="#era-1661">1661 — O Alquimista de Salvador</a></li>
+            <li><a href="#era-1680">1680 — Fundação da Colônia do Sul</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#ato1" class="story-nav-link">⚔️ Ato 1: Campanha Principal</a>
+          <ul class="story-nav-sub">
+            <li><a href="#sessao1">Sessão 1 — Sussurros na Floresta</a></li>
+            <li><a href="#sessao2">Sessão 2 — Fronteira dos Mundos</a></li>
+            <li><a href="#sessao3">Sessão 3 — A Corrida Final</a></li>
+            <li><a href="#sessao4">Sessão 4 — A Primeira Ruptura</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#campanhas" class="story-nav-link">🎭 Mini-Campanhas</a>
+          <ul class="story-nav-sub">
+            <li><a href="#camp-indigena">Origem Indígena</a></li>
+            <li><a href="#camp-colonizador">Origem Colonizador</a></li>
+            <li><a href="#camp-folclorico">Origem Folclórica</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Story Content -->
+    <main class="story-content">
+
+      <!-- Visão Geral -->
+      <section class="story-section" id="visao-geral">
+        <h2 class="story-title">🌍 Visão Geral do Mundo</h2>
+        <div class="story-block">
+          <p class="story-lead">Em um Brasil como você nunca viu — onde a história real se entrelaça com forças místicas esquecidas — o tempo não é uma linha reta.</p>
+          <p>Aqui, os acontecimentos de diferentes eras vibram simultaneamente em um campo espiritual conhecido como <strong>a Raiz do Mundo</strong>.</p>
+          <p>Essa raiz conecta tudo: os ancestrais indígenas, os colonizadores que chegaram do mar, os seres folclóricos que emergem das sombras, e até mesmo futuros que ainda não se concretizaram. Cada era do Brasil deixa uma marca nesse solo encantado.</p>
+          <blockquote class="story-quote">
+            "Você é um Desperto. Carrega dentro de si ecos de vidas passadas e possíveis. Suas escolhas moldarão não só seu destino, mas os caminhos das Eras."
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- A Raiz do Mundo -->
+      <section class="story-section" id="raiz">
+        <h2 class="story-title">🌿 A Raiz do Mundo</h2>
+        <div class="story-block">
+          <p class="story-lead">No coração espiritual do continente há um entrelaçado místico que vibra através do tempo e do espaço.</p>
+          <div class="perspective-cards">
+            <div class="perspective-card">
+              <span class="pc-icon">🪶</span>
+              <h4>Para os Indígenas</h4>
+              <p>Ela é uma entidade viva, feita do sopro dos primeiros espíritos.</p>
+            </div>
+            <div class="perspective-card">
+              <span class="pc-icon">✝️</span>
+              <h4>Para os Missionários</h4>
+              <p>Uma criação divina que esconde os véus do pecado e da salvação.</p>
+            </div>
+            <div class="perspective-card">
+              <span class="pc-icon">🌙</span>
+              <h4>Para os Seres Folclóricos</h4>
+              <p>Um campo onde as histórias ganham forma e consciência.</p>
+            </div>
+          </div>
+          <p>Essa raiz pulsa mais forte em momentos de crise e mudança, abrindo portais naturais, sonhos vívidos e dungeons espirituais — fragmentos de eras onde a história se distorce e desafios surgem.</p>
+        </div>
+      </section>
+
+      <!-- Dom da Revivência -->
+      <section class="story-section" id="dom">
+        <h2 class="story-title">✨ Dom da Revivência</h2>
+        <div class="story-block">
+          <p class="story-lead">Os personagens do jogador são seres marcados por esse Dom especial.</p>
+          <ul class="story-list">
+            <li>Podem experimentar outras <strong>origens</strong> (Colonizador, Indígena, Ser Folclórico) por meio de eventos místicos ou escolhas narrativas.</li>
+            <li>Ao <strong>trocar de origem ou classe</strong>, não perdem totalmente o progresso anterior — o expandem.</li>
+            <li>Essas transições são justificadas <strong>narrativamente</strong> como visões, reencarnações, pactos ou rituais.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Linha do Tempo -->
+      <section class="story-section" id="linha-do-tempo">
+        <h2 class="story-title">🕰️ Linha Eco-Histórica — Marcos das Rupturas</h2>
+        <div class="story-block">
+          <p class="story-lead">A Raiz do Mundo pulsa através do tempo, entrelaçando momentos históricos com ecos espirituais e mágicos. A história do Brasil nesse universo não é linear nem definitiva — ela sofre interferências, conhecidas como <strong>Rupturas</strong>.</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+
+          <div class="timeline-item" id="era-1497">
+            <div class="timeline-marker">
+              <span class="timeline-year">1497</span>
+              <span class="timeline-icon">🪵</span>
+            </div>
+            <div class="timeline-content">
+              <h3>A Primeira Ruptura</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Expedição secreta portuguesa</span>
+                <span class="tag tag-ruptura">Primeira fissura entre eras</span>
+              </div>
+              <p>Antes da chegada oficial de Cabral, uma expedição secreta portuguesa chega ao Brasil. Um artefato desperta na floresta, abrindo a primeira fissura entre eras. É aqui que começa o <strong>Ato 1 da campanha principal</strong> — a introdução ao Dom da Revivência, com combates e encontros com versões distorcidas de seres de outras épocas.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" id="era-1530">
+            <div class="timeline-marker">
+              <span class="timeline-year">1530</span>
+              <span class="timeline-icon">🔥</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Fogo da Coroa</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Capitanias hereditárias</span>
+                <span class="tag tag-ruptura">Pacto com entidades folclóricas</span>
+              </div>
+              <p>Com o início das capitanias hereditárias, uma linhagem de senhores da terra firma um pacto sombrio com entidades folclóricas para manter poder sobre a terra. Gera campanhas de espionagem entre famílias, rituais secretos por herança e possessões familiares. Introdução ao conceito de "capitanias místicas".</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" id="era-1584">
+            <div class="timeline-marker">
+              <span class="timeline-year">1584</span>
+              <span class="timeline-icon">🧭</span>
+            </div>
+            <div class="timeline-content">
+              <h3>O Tratado do Silêncio</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Missões jesuíticas</span>
+                <span class="tag tag-ruptura">Ritos de silêncio absoluto</span>
+              </div>
+              <p>À medida que as missões jesuíticas se espalham, uma ordem secreta da Igreja descobre a Raiz do Mundo e tenta selá-la por meio de "ritos de silêncio absoluto". Permite aventuras em ruínas de missões, lutas internas entre religiosos, ou campanhas para resgatar segredos espirituais apagados à força.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" id="era-1612">
+            <div class="timeline-marker">
+              <span class="timeline-year">1612</span>
+              <span class="timeline-icon">🌑</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Lua sobre São Luís</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Invasão francesa no Maranhão</span>
+                <span class="tag tag-ruptura">Eclipse ativa elo lunar-florestal</span>
+              </div>
+              <p>Um eclipse total ativa um elo entre os encantados da floresta e as forças lunares do Velho Mundo. Gera quick campaigns entre França mística, entidades lunares, seres da mata e rituais ligados à maré de sonhos. Pode envolver missões em noites que nunca terminam.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" id="era-1640">
+            <div class="timeline-marker">
+              <span class="timeline-year">1640</span>
+              <span class="timeline-icon">⚔️</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Guerra dos Dois Reinos</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Restauração portuguesa</span>
+                <span class="tag tag-ruptura">Batalha espiritual pelos selos</span>
+              </div>
+              <p>Uma batalha espiritual invisível acontece entre os representantes da coroa portuguesa e espanhola, disputando o controle dos selos da Raiz do Mundo. Campanhas com espiões, traições entre planos, agentes que cruzam planos espirituais para "empurrar" a história a favor de um império.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" id="era-1661">
+            <div class="timeline-marker">
+              <span class="timeline-year">1661</span>
+              <span class="timeline-icon">🧪</span>
+            </div>
+            <div class="timeline-content">
+              <h3>O Alquimista de Salvador</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Expulsão dos holandeses</span>
+                <span class="tag tag-ruptura">Laboratório de substâncias instáveis</span>
+              </div>
+              <p>Um alquimista europeu deixa para trás um laboratório que transforma elementos da terra brasileira em substâncias instáveis. Gatilho para aventuras urbanas, mistérios em subsolos, e o surgimento de criaturas instáveis chamadas <strong>filhos da fusão</strong>.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" id="era-1680">
+            <div class="timeline-marker">
+              <span class="timeline-year">1680</span>
+              <span class="timeline-icon">🌪️</span>
+            </div>
+            <div class="timeline-content">
+              <h3>A Fundação da Colônia do Sul</h3>
+              <div class="timeline-meta">
+                <span class="tag tag-evento">Colônia do Sacramento</span>
+                <span class="tag tag-ruptura">Pacto com espírito do vento</span>
+              </div>
+              <p>Um pacto com um espírito do vento é feito para proteger a região — mas parte da cidade é deslocada temporalmente em noites de tempestade. Sessões em "zonas desfasadas", encontros com versões futuras de personagens, e dungeons que só aparecem quando o vento sopra de leste.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ato 1 -->
+      <section class="story-section" id="ato1">
+        <h2 class="story-title">⚔️ Ato 1 — A Primeira Ruptura</h2>
+        <div class="story-block">
+          <h3>🪵 "1497 – Sinais da Primeira Era"</h3>
+          <blockquote class="story-quote">"Antes da chegada oficial, houve sussurros. E acima de tudo, houve um chamado que não podia esperar."</blockquote>
+          <p>Estamos em 1497. Uma expedição secreta portuguesa e tribos locais convergem para um ponto de ruptura na floresta. O tempo está colapsando. O jogador não é o único tentando resolver isso.</p>
+        </div>
+
+        <!-- Relógio da Ruptura -->
+        <div class="story-block mechanic-highlight">
+          <h3>⏳ O Relógio da Ruptura</h3>
+          <p>A Missão Principal não espera pelo jogador. Ela é regida por um <strong>Relógio Global de 500 Ticks</strong>.</p>
+          <div class="clock-phases">
+            <div class="phase phase-1">
+              <div class="phase-header">
+                <span class="phase-range">Ticks 0–200</span>
+                <h4>Fase 1: Sinais</h4>
+              </div>
+              <p>Animais agem estranho. O céu muda de cor. Dificuldade: <strong>Normal</strong>.</p>
+            </div>
+            <div class="phase phase-2">
+              <div class="phase-header">
+                <span class="phase-range">Ticks 201–400</span>
+                <h4>Fase 2: Instabilidade</h4>
+              </div>
+              <p>Magias falham ou explodem (CD +2). NPCs começam a fugir ou enlouquecer. Dificuldade: <strong>Difícil</strong>.</p>
+            </div>
+            <div class="phase phase-3">
+              <div class="phase-header">
+                <span class="phase-range">Ticks 401–500</span>
+                <h4>Fase 3: O Colapso</h4>
+              </div>
+              <p>Portais abrem aleatoriamente soltando monstros. Dano Espiritual ambiente causa 1 de dano por turno. Dificuldade: <strong>Muito Difícil</strong>.</p>
+            </div>
+            <div class="phase phase-end">
+              <div class="phase-header">
+                <span class="phase-range">Pós-500</span>
+                <h4>O Mundo Quebrado</h4>
+              </div>
+              <p>A ruptura explode. A região muda visualmente (corrupção permanente). A missão muda de "Prevenir" para "Sobreviver e Conter".</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sessões -->
+        <div class="story-block" id="sessao1">
+          <h3>🎲 Sessão 1 — Sussurros na Floresta</h3>
+          <p class="session-objective"><strong>Objetivo:</strong> Triangular a localização da Ruptura.</p>
+          <p>O local da ruptura não está marcado no mapa. O jogador deve interagir com a rede de fofocas dos NPCs para encontrar pistas. Aldeões sussurram que "o gado não vai para o Norte" e caçadores reportam luzes estranhas no vale.</p>
+          <p>O único NPC que sabe o caminho exato — O Velho Pajé — segue uma rotina própria. Ele medita na cachoeira pela manhã e dorme à noite. O jogador deve rastreá-lo no momento certo.</p>
+        </div>
+
+        <div class="story-block" id="sessao2">
+          <h3>🎲 Sessão 2 — Fronteira dos Mundos</h3>
+          <p class="session-objective"><strong>Objetivo:</strong> Obter a "Chave Espiritual" para entrar no Epicentro.</p>
+          <p>Três facções bloqueiam o caminho. O jogador deve fazer uma escolha crucial:</p>
+          <div class="faction-grid">
+            <div class="faction-card faction-indigena">
+              <span class="faction-icon">🪶</span>
+              <h4>Indígenas</h4>
+              <p>Querem curar a ferida da Raiz.</p>
+            </div>
+            <div class="faction-card faction-colonizador">
+              <span class="faction-icon">⚓</span>
+              <h4>Colonizadores</h4>
+              <p>Querem extrair a energia da Ruptura.</p>
+            </div>
+            <div class="faction-card faction-folclorico">
+              <span class="faction-icon">🌙</span>
+              <h4>Folclóricos</h4>
+              <p>Querem acelerar o caos cósmico.</p>
+            </div>
+          </div>
+          <p>Se o jogador demorar muito (Fase 2 do Relógio), as facções entram em guerra aberta, transformando o mapa em zona de combate.</p>
+        </div>
+
+        <div class="story-block" id="sessao3">
+          <h3>🎲 Sessão 3 — A Corrida Final</h3>
+          <p class="session-objective"><strong>Objetivo:</strong> Atravessar a "Zona de Distorção".</p>
+          <p>O terreno muda conforme a fase do Relógio. Caminhos que existiam na Fase 1 agora são abismos na Fase 2. O grupo rival prepara emboscadas. Classes como Explorador de Terras ou Arqueiro Selvagem podem detectar e contornar as armadilhas.</p>
+        </div>
+
+        <div class="story-block" id="sessao4">
+          <h3>🎲 Sessão 4 — A Primeira Ruptura (Clímax)</h3>
+          <p class="session-objective"><strong>Objetivo:</strong> Enfrentar o Boss "Guardião da Fenda".</p>
+          <p>O desfecho depende do tempo:</p>
+          <div class="outcome-grid">
+            <div class="outcome outcome-good">
+              <h4>⏱️ Chegou Cedo</h4>
+              <p>O Boss está contido. Luta padrão com dificuldade equilibrada.</p>
+            </div>
+            <div class="outcome outcome-bad">
+              <h4>💀 Chegou Tarde (Pós-500)</h4>
+              <p>O Boss absorveu a ruptura. Ele é "Ascendido" com ataques em área e dano massivo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Epílogo -->
+        <div class="story-block">
+          <h3>🧩 Epílogo: O Estado do Mundo</h3>
+          <div class="outcome-grid">
+            <div class="outcome outcome-good">
+              <h4>✅ Vitória (Ruptura Fechada)</h4>
+              <p>A floresta floresce com mana. A vila inicial prospera. Novas regiões são desbloqueadas.</p>
+            </div>
+            <div class="outcome outcome-bad">
+              <h4>💔 Sobrevivência (Ruptura Explodiu)</h4>
+              <p>A floresta vira o "Bosque das Sombras". Monstros de Tier 2 aparecem. A vila é evacuada.</p>
+            </div>
+          </div>
+          <p>Em ambos os casos, o jogador recebe a <strong>Moeda de Classe Universal</strong> para evoluir ao Tier 2 e desbloqueia o <strong>Dom da Revivência</strong> (troca de Origem).</p>
+        </div>
+      </section>
+
+      <!-- Mini-Campanhas -->
+      <section class="story-section" id="campanhas">
+        <h2 class="story-title">🎭 Mini-Campanhas</h2>
+        <div class="story-block">
+          <p class="story-lead">18 mini-campanhas distribuídas entre as três origens. Cada uma enriquece a narrativa principal e pode desbloquear vantagens no Ato 1.</p>
+        </div>
+
+        <!-- Indígena -->
+        <div class="campaign-group" id="camp-indigena">
+          <h3><span class="origin-badge origin-badge-indigena">🪶</span> Origem Indígena</h3>
+          <div class="campaign-cards">
+            <div class="campaign-card">
+              <span class="campaign-number">01</span>
+              <h4>O Caçador que Não Voltou</h4>
+              <p>Um caçador desapareceu na floresta profunda. Sua trilha leva a segredos ancestrais e perigos sobrenaturais.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">02</span>
+              <h4>Sombras Sobre a Aldeia Queimada</h4>
+              <p>Uma aldeia destruída guarda memórias que se recusam a morrer. As cinzas contam histórias que ninguém quer ouvir.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">03</span>
+              <h4>O Tambor que Silenciou o Céu</h4>
+              <p>Um tambor sagrado com o poder de congelar o tempo. Mas a que custo?</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">04</span>
+              <h4>O Sábio que Viu o Amanhã</h4>
+              <p>Um ancião que viu o futuro tenta mudar o destino — mas cada visão cobra seu preço.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">05</span>
+              <h4>Sementes de Terra e Sangue</h4>
+              <p>A terra clama por nutrição, e o preço é mais alto do que qualquer colheita.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">06</span>
+              <h4>Sombras na Aldeia da Lua Nova</h4>
+              <p>Quando a lua desaparece, criaturas emergem das sombras em uma aldeia que esconde antigos segredos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonizador -->
+        <div class="campaign-group" id="camp-colonizador">
+          <h3><span class="origin-badge origin-badge-colonizador">⚓</span> Origem Colonizador</h3>
+          <div class="campaign-cards">
+            <div class="campaign-card">
+              <span class="campaign-number">01</span>
+              <h4>Justiça das Mãos Sujas</h4>
+              <p>Um capitão da guarda com segredos sombrios. Justiça e corrupção caminham juntas nesta terra sem lei.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">02</span>
+              <h4>O Ouro que Nunca Brilha</h4>
+              <p>Uma mina amaldiçoada onde o ouro corrói a alma de quem o toca. Um mentor eremita guarda a verdade.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">03</span>
+              <h4>Fé que Ilumina ou Queima</h4>
+              <p>Missionários divididos entre salvar almas e destruir culturas. A fé é arma — mas para qual lado?</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">04</span>
+              <h4>A Palavra do Rei Não Ecoa Aqui</h4>
+              <p>Longe da coroa, as leis se torcem. Um decreto real chega, mas ninguém pretende obedecer.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">05</span>
+              <h4>Os Relógios do Porto Morto</h4>
+              <p>Um porto abandonado onde o tempo se comporta de maneira errática. Relógios giram ao contrário.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">06</span>
+              <h4>Onde Enterram os Segredos</h4>
+              <p>Sob a terra de uma fortaleza colonial, segredos de gerações esperam para serem desenterrados.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Folclórico -->
+        <div class="campaign-group" id="camp-folclorico">
+          <h3><span class="origin-badge origin-badge-folclorico">🌙</span> Origem Folclórica</h3>
+          <div class="campaign-cards">
+            <div class="campaign-card">
+              <span class="campaign-number">01</span>
+              <h4>A Canção que Não Dorme</h4>
+              <p>Uma melodia eterna ecoa por um lago encantado. Quem a ouve não consegue parar de seguir.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">02</span>
+              <h4>Passos que Não Deixam Pegadas</h4>
+              <p>Algo caminha pela floresta sem deixar rastro. Nem os animais conseguem rastreá-lo.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">03</span>
+              <h4>O Sopro dos Quatro Ventos</h4>
+              <p>Os quatro ventos guardam fragmentos de uma profecia. Reuní-los revela um caminho — ou uma maldição.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">04</span>
+              <h4>A Última Luz da Tribo Sem Nome</h4>
+              <p>Uma tribo esquecida pela história deixou um farol espiritual que ainda brilha nas noites mais escuras.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">05</span>
+              <h4>Os Filhos do Espinho e da Flor</h4>
+              <p>Dois clãs em conflito eterno: os Espinhos e as Flores. Um representa a guerra, o outro a paz.</p>
+            </div>
+            <div class="campaign-card">
+              <span class="campaign-number">06</span>
+              <h4>A Máscara do Vazio</h4>
+              <p>Uma máscara antiga que revela o vazio entre os mundos. Quem a veste vê o que não deveria ser visto.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to top -->
+      <div class="back-to-top-container">
+        <a href="#" class="btn btn-secondary">↑ Voltar ao Topo</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🌿</span>
+          <span class="logo-text">Eras do Brasil</span>
+          <p>RPG Tático · Eco-Fantasy · Brasil Colonial Místico</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="#visao-geral">Visão Geral</a></li>
+            <li><a href="#linha-do-tempo">Linha do Tempo</a></li>
+            <li><a href="#ato1">Ato 1</a></li>
+            <li><a href="#campanhas">Mini-Campanhas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Projeto</h4>
+          <ul>
+            <li><a href="https://github.com/sidinei-silva/eras-do-brasil" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Eras do Brasil — Projeto Open Source</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
