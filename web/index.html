@@ -26,6 +26,7 @@
         <li><a href="#mundo">O Mundo</a></li>
         <li><a href="#origens">Origens</a></li>
         <li><a href="#mecanicas">Mecânicas</a></li>
+        <li><a href="#noticias">Notícias</a></li>
         <li><a href="historia.html" class="nav-cta">📜 História Navegável</a></li>
       </ul>
     </div>
@@ -37,10 +38,15 @@
     <div class="hero-content">
       <p class="hero-subtitle">RPG Tático · Eco-Fantasy · Brasil Colonial Místico</p>
       <h1 class="hero-title">Eras do Brasil</h1>
-      <p class="hero-tagline">"Você é um Desperto. Carrega dentro de si ecos de vidas passadas e possíveis. Suas escolhas moldarão não só seu destino, mas os caminhos das Eras."</p>
+      <p class="hero-tagline">"Antes da primeira palavra, havia o Sussurro. Antes do primeiro império, havia a Raiz."</p>
+      <div class="hero-status">
+        <span class="status-badge">🚧 Em Desenvolvimento</span>
+        <span class="status-info">Fase 0 — POCs + GDD Completo</span>
+      </div>
       <div class="hero-actions">
         <a href="#sobre" class="btn btn-primary">Descubra o Jogo</a>
         <a href="historia.html" class="btn btn-secondary">📜 Explorar a História</a>
+        <a href="#noticias" class="btn btn-secondary">📰 Últimas Notícias</a>
       </div>
     </div>
     <div class="hero-scroll-indicator">
@@ -56,23 +62,33 @@
       <div class="about-grid">
         <div class="about-card">
           <div class="about-icon">⚔️</div>
-          <h3>RPG Tático</h3>
-          <p>Combate baseado em D20 com posicionamento tático em grid isométrico. Cada decisão importa, cada dado conta.</p>
+          <h3>Combate Tático D20</h3>
+          <p>Combate por turnos com D20 e modificadores, evoluindo de estático para grid isométrico com posicionamento, cobertura e flanqueio.</p>
         </div>
         <div class="about-card">
           <div class="about-icon">🌿</div>
-          <h3>Eco-Fantasy</h3>
-          <p>A história real do Brasil entrelaçada com forças místicas, folclore e seres espirituais em uma narrativa única.</p>
+          <h3>Eco-Fantasy Brasileira</h3>
+          <p>A história real do Brasil entrelaçada com folclore, seres espirituais e forças místicas em uma narrativa onde o tempo não é linear.</p>
         </div>
         <div class="about-card">
           <div class="about-icon">🕰️</div>
-          <h3>Mundo Vivo</h3>
-          <p>NPCs com rotinas, sistema de fofoca, facções dinâmicas e um Relógio da Ruptura que muda tudo em tempo real.</p>
+          <h3>Mundo Vivo (Ticks)</h3>
+          <p>Sistema de 500 Ticks onde o mundo evolui independente do jogador. NPCs com rotinas, facções rivais avançando e um Relógio da Ruptura que muda tudo.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">✨</div>
+          <h3>Dom da Revivência</h3>
+          <p>Troque de classe e origem livremente fora de combate. Herde habilidades ativas e construa um legado único sem perder progresso.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🎭</div>
+          <h3>12 Classes, 3 Origens</h3>
+          <p>Colonizador, Indígena e Ser Folclórico — cada origem com 4 classes únicas e progressão em 3 Tiers de especialização.</p>
         </div>
         <div class="about-card">
           <div class="about-icon">🤝</div>
-          <h3>Co-op P2P</h3>
-          <p>Jogue com amigos sem servidores. Projete seu espírito no Eco de outro Desperto e lute lado a lado.</p>
+          <h3>Co-op P2P Narrativo</h3>
+          <p>Jogue com amigos via Sincronia Espiritual. Um é o Guardião do Tempo, o outro projeta seu espírito. Sem servidores, sem compromissos narrativos.</p>
         </div>
       </div>
     </div>
@@ -202,6 +218,94 @@
     </div>
   </section>
 
+  <!-- News Section -->
+  <section class="section section-news" id="noticias">
+    <div class="container">
+      <h2 class="section-title">📰 Notícias do Desenvolvimento</h2>
+      <p class="section-subtitle">Acompanhe o progresso de Eras do Brasil — das decisões de design ao código.</p>
+      <div class="news-grid">
+
+        <article class="news-card news-featured">
+          <div class="news-date">
+            <span class="news-day">17</span>
+            <span class="news-month">Fev 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-milestone">Marco</span>
+            <h3>Backlog Completo: 62 Issues no GitHub Projects</h3>
+            <p>O backlog do projeto foi finalizado com 62 issues organizadas em 9 Epics, cobrindo desde correções de lore até o MVP "O Despertar". Cada issue tem Sprint, Prioridade, Categoria, Tipo e Esforço definidos. O projeto está pronto para execução.</p>
+            <ul class="news-highlights">
+              <li>9 Epics cobrindo Sprints 0 a 8+</li>
+              <li>38 POCs planejadas em 8 módulos Unity/C#</li>
+              <li>Sistema de diálogos e narrativa identificado como maior gap — Epic dedicada criada</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">
+            <span class="news-day">15</span>
+            <span class="news-month">Fev 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-design">Design</span>
+            <h3>Auditoria Profunda do GDD: 12 Inconsistências Resolvidas</h3>
+            <p>Uma auditoria completa do Game Design Document identificou e documentou 12 furos narrativos e mecânicos — desde a natureza do Dom da Revivência até a escala de Ticks e contradições de nível entre documentos. Todas geraram issues com prioridade e correção planejada.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">
+            <span class="news-day">13</span>
+            <span class="news-month">Fev 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-tech">Técnico</span>
+            <h3>ADR-001 e ADR-002: Decisões de Arquitetura Unity</h3>
+            <p>Duas decisões técnicas fundamentais foram documentadas: a organização do projeto Unity como projeto único (POCs + jogo final) e o workflow de UI/UX com wireframes antes da implementação. Ambas guiarão toda a fase de desenvolvimento.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">
+            <span class="news-day">10</span>
+            <span class="news-month">Fev 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-lore">Lore</span>
+            <h3>GDD Completo: 9 Livros e 18 Mini-Campanhas</h3>
+            <p>O Game Design Document atingiu sua versão completa com 9 livros de regras, 12 classes Tier 1 documentadas, o enredo do Ato 1 com 4 sessões jogáveis e 18 mini-campanhas distribuídas entre as 3 origens. O Atlas do Eco (mapa do Ato 1) também foi finalizado.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">
+            <span class="news-day">06</span>
+            <span class="news-month">Fev 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-design">Design</span>
+            <h3>Sistema de Crafting e Economia: Matriz 5x5 Definida</h3>
+            <p>O sistema de itemização foi definido com uma matriz de Qualidade x Raridade (5x5) que governa preço, eficácia e durabilidade. O crafting exige receitas, materiais, local adequado e testes de proficiência — mantendo cada item significativo.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">
+            <span class="news-day">01</span>
+            <span class="news-month">Fev 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-milestone">Marco</span>
+            <h3>Projeto Aberto no GitHub — Open Source</h3>
+            <p>Eras do Brasil é oficialmente um projeto open source! Todo o GDD, roadmap, decisões técnicas e planejamento estão disponíveis no repositório público. Contribuições e feedback da comunidade são bem-vindos.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="section section-cta">
     <div class="container">
@@ -229,6 +333,7 @@
             <li><a href="#mundo">O Mundo</a></li>
             <li><a href="#origens">Origens e Classes</a></li>
             <li><a href="#mecanicas">Mecânicas</a></li>
+            <li><a href="#noticias">Notícias</a></li>
             <li><a href="historia.html">História Navegável</a></li>
           </ul>
         </div>
