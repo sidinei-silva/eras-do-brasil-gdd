@@ -4,7 +4,7 @@
 >
 > **Como usar:** Siga as Sprints na ordem. Cada Sprint tem tarefas numeradas. Faça a tarefa 1, depois a 2, etc. Não pule Sprints.
 >
-> **Última atualização:** 2026-02-13
+> **Última atualização:** 2026-02-17
 
 ---
 
@@ -16,12 +16,12 @@ Antes de qualquer tarefa, entenda o estado atual:
 |------|--------|-------------|
 | **GDD (Design)** | ✅ 100% Completo | 9 capítulos de regras + Cap. 3B (Progressão), 12 classes Tier 1, Troca de Origem, 18 mini-campanhas |
 | **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
-| **Sprint 1** | ✅ Concluída | Slots de habilidades, Defesa Base, referências cruzadas |
-| **Sprint 2** | ✅ Concluída | Sistema de XP/Níveis, Troca de Origem, Pré-requisitos Multi-Class |
+| **Correções pré-backlog** | ✅ Concluídas | Slots de habilidades, Defesa Base, XP/Níveis, Troca de Origem, Pré-requisitos Multi-Class |
 | **Decisões Técnicas** | ✅ Definidas | Projeto Unity único ([ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md)), workflow de UI/UX ([ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md)) |
+| **Backlog GitHub** | ✅ Completo | 62 issues (#20-#81), 9 Epics, 7 Sprints (0-6+) no [Project #10](https://github.com/users/sidinei-silva/projects/10) |
 | **POCs** | 🔲 0/38 | 38 POCs definidas com READMEs, nenhuma implementada |
 | **Código** | 🔲 Não iniciado | Projeto Unity não criado |
-| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos para Sprint 4, protótipos para Sprint 6 |
+| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos para Sprint 2, protótipos para Sprint 4 |
 | **Livros Auxiliares** | ⚠️ 1/7 | Apenas Atlas do Eco existe. 6 livros referenciados no GDD ainda não existem |
 
 ### O Que Foi Corrigido na Auditoria (PR #1)
@@ -39,187 +39,108 @@ Estas correções **já foram aplicadas** e estão no código:
 
 | # | Recomendação | Prioridade | Em qual Sprint | Status |
 |---|-------------|------------|---------------|--------|
-| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | Sprint 1 | ✅ Concluído |
-| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | Sprint 2 | ✅ Concluído |
-| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
-| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 8](#-sprint-8--tier-2-das-classes-ato-2) | 📝 Pendente |
-| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | Sprint 2 | ✅ Concluído |
-| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | Sprint 2 | ✅ Concluído |
-| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
-| 12 | Harmonizar **fórmula de Defesa Base** | 🔵 Baixa | Sprint 1 | ✅ Concluído |
+| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | Pré-backlog | ✅ Concluído |
+| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | Pré-backlog | ✅ Concluído |
+| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 6+](#-sprint-6--futuro) | 📝 Pendente |
+| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 6+](#-sprint-6--futuro) | 📝 Pendente |
+| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | Pré-backlog | ✅ Concluído |
+| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | Pré-backlog | ✅ Concluído |
+| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | Pré-backlog | ✅ Concluído |
+| 12 | Harmonizar **fórmula de Defesa Base** | 🔵 Baixa | Pré-backlog | ✅ Concluído |
 
 ---
 
 ## 🗓️ Visão Geral das Sprints
 
 > Cada Sprint tem uma **estimativa** de tempo. Ajuste conforme sua disponibilidade.
+> Backlog completo no [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10) com 62 issues.
 
 | Sprint | Nome | Tipo | Estimativa | Pré-requisito |
 |--------|------|------|-----------|---------------|
-| **1** | [Correções do GDD](#-sprint-1--correções-do-gdd-documentação-pura) | 📝 Documentação | 1–2 dias | Nenhum |
-| **2** | [Sistema de Progressão (XP e Nível)](#-sprint-2--sistema-de-progressão-xp-e-nível) | 📝 Documentação | 1–2 dias | Sprint 1 |
-| **3** | [Livros Auxiliares Prioritários](#-sprint-3--livros-auxiliares-prioritários) | 📝 Documentação | 3–5 dias | Sprint 2 |
-| **4** | [Setup Unity + POCs Fundação](#-sprint-4--setup-unity--pocs-fundação-módulo-a) | 💻 Código | 3–5 dias | Sprint 2 |
-| **5** | [POCs Mundo e Combate](#-sprint-5--pocs-mundo-e-combate-módulos-b--d) | 💻 Código | 5–7 dias | Sprint 4 |
-| **6** | [POCs Economia e Persistência](#-sprint-6--pocs-economia-e-persistência-módulos-e--g) | 💻 Código | 3–5 dias | Sprint 5 |
-| **7** | [MVP "O Despertar"](#-sprint-7--mvp-o-despertar-integração) | 💻 Código | 5–7 dias | Sprint 6 |
-| **8** | [Tier 2 das Classes (Ato 2)](#-sprint-8--tier-2-das-classes-ato-2) | 📝+💻 | Futuro | Sprint 7 |
+| **0** | [Correções de Lore](#-sprint-0--correções-de-lore-12-issues) | 📝 Documentação | 2–3 dias | Nenhum |
+| **1** | [Livros & Narrativa](#-sprint-1--livros--narrativa-12-issues) | 📝 Documentação | 3–5 dias | Sprint 0 |
+| **2** | [Fundação Unity](#-sprint-2--fundação-unity-13-issues) | 💻 Código | 3–5 dias | Sprint 0 |
+| **3** | [Mundo & Combate](#-sprint-3--mundo--combate-6-issues) | 💻 Código | 5–7 dias | Sprint 2 |
+| **4** | [Economia & UI](#-sprint-4--economia--ui-5-issues) | 💻 Código | 3–5 dias | Sprint 3 |
+| **5** | [MVP "O Despertar"](#-sprint-5--mvp-o-despertar-6-issues) | 💻 Código | 5–7 dias | Sprint 4 |
+| **6+** | [Futuro](#-sprint-6--futuro-8-issues) | 📝+💻 | Futuro | Sprint 5 |
 
 ```
-Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
-                  │
-                  └──► Sprint 4 ──► Sprint 5 ──► Sprint 6 ──► Sprint 7 ──► Sprint 8
+Sprint 0 ──► Sprint 1 (pode paralelo com Sprint 2)
+   │
+   └──► Sprint 2 ──► Sprint 3 ──► Sprint 4 ──► Sprint 5 ──► Sprint 6+
 ```
 
 ---
 
-## 📝 Sprint 1 — Correções do GDD (Documentação Pura)
+## ✅ Correções Pré-Backlog (CONCLUÍDAS)
 
-> **Objetivo:** Resolver todas as recomendações pendentes da auditoria que são de documentação pura (sem código). Isso deixa o GDD 100% consistente antes de começar a codar.
+> Estas correções foram feitas ANTES do backlog de 62 issues ser criado no GitHub.
+> Não têm número de Sprint — eram "Sprint 1-2 de retomada" antes da renumeração.
+
+### ✅ Tarefa: Definir Slots de Habilidades Herdadas
+
+**Resultado:** Tabela de slots por Tier adicionada em `gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`
+
+### ✅ Tarefa: Reduzir Sobreposição Cap. 5 vs Cap. 8
+
+**Resultado:** Referências cruzadas adicionadas, Cap. 5 resumido com link para Cap. 8
+
+### ✅ Tarefa: Harmonizar Defesa Base (Cap. 2 vs Cap. 9)
+
+**Resultado:** Fórmula unificada: `10 + Mod. Astúcia + Bônus de Armadura (se houver)`
+
+### ✅ Tarefa: Criar Sistema de XP e Progressão de Nível
+
+**Resultado:** Novo capítulo criado em `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
+
+### ✅ Tarefa: Definir Mecânica de Troca de Origem (Espelho do Eco)
+
+**Resultado:** Documentado em `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`
+
+### ✅ Tarefa: Definir Pré-requisitos Multi-Class para Tiers 2/3
+
+**Resultado:** Seção adicionada em `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
+
+---
+
+## 📝 Sprint 0 — Correções de Lore (12 issues)
+
+> **Objetivo:** Resolver os 11 furos de lore e inconsistências identificados na auditoria profunda do GDD.
 >
-> **Estimativa:** 1–2 dias
-> **Pré-requisito:** Nenhum — esta é a primeira coisa a fazer.
+> **Epic #20** — Correções de Lore e Enredo: Furos e Inconsistências do GDD
+> **Estimativa:** 2–3 dias
+> **Pré-requisito:** Nenhum — esta é a primeira Sprint do backlog.
+> **Issues:** #21–#31 (ver detalhes no [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10))
 
-### Tarefa 1.1 — Definir Slots de Habilidades Herdadas
+### Tarefas
 
-**Por quê?** Sem um limite de slots, um personagem que desbloqueia 4 classes pode acumular 4+ habilidades ativas herdadas, quebrando o balanceamento. No FFT, existe um limite claro.
+Cada tarefa corresponde a uma issue no GitHub. Abra a issue para ver o contexto completo.
 
-**O que fazer:**
-1. Abrir `gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`
-2. Na seção "🔮 Expansões Futuras", transformar a sugestão de "Slots de habilidades ativas herdáveis" em **regra oficial**
-3. Adicionar uma nova seção **"📊 Limite de Habilidades Herdadas"** com a tabela:
-
-| Tier da Classe Ativa | Slots de Habilidades Ativas Herdáveis |
-|---|---|
-| Tier 1 | 1 habilidade ativa de outra classe |
-| Tier 2 | 2 habilidades ativas de outras classes |
-| Tier 3 | 3 habilidades ativas de outras classes |
-
-4. Adicionar um exemplo prático mostrando como funciona
-5. Atualizar a seção "Regras Complementares" para referenciar o novo limite
-
-**Arquivo:** [`gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`](../gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md)
-
-**Referência:** [Auditoria §2.2A](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
+| # | Issue | Tarefa |
+|---|-------|--------|
+| 1 | #21 | Dom da Revivência: latente ou ativo no Ato 1? |
+| 2 | #22 | Causa da Ruptura de 1497: definir origem canônica |
+| 3 | #23 | Motivação da facção Folclórica no Ato 1 |
+| 4 | #24 | Contradição de Nível para Tier 2/3 entre documentos |
+| 5 | #25 | "Mana" referenciada sem sistema definido — Fadiga vs Mana |
+| 6 | #26 | Definir "Dano Espiritual" e "Exaustão Espiritual" |
+| 7 | #27 | Escala de Ticks — 500 Ticks = quanto tempo real/narrativo? |
+| 8 | #28 | Guardião da Fenda — identidade, backstory e stats |
+| 9 | #29 | Definir ou remover "Sanidade/Moral" como sistema |
+| 10 | #30 | Definir ou remover conceito "Ecoera" |
+| 11 | #31 | 12 mini-campanhas sem impacto sinérgico no Ato 1 |
 
 ---
 
-### Tarefa 1.2 — Reduzir Sobreposição Cap. 5 vs Cap. 8
+## 📝 Sprint 1 — Livros & Narrativa (12 issues)
 
-**Por quê?** O Cap. 5 (Exploração e Mundo) e o Cap. 8 (Mundo Vivo e NPCs) ambos falam sobre NPCs, Ticks e IA. Não são contraditórios, mas são redundantes. Isso confunde quem lê.
-
-**O que fazer:**
-1. Abrir `gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md`
-2. Nas seções 5.3 e 5.4 (sobre NPCs), **reduzir para um resumo breve** e adicionar um link explícito:
-   > *"Para regras completas sobre IA de NPCs, necessidades, rotinas e sistema de fofoca, consulte o [Capítulo 8 — Mundo Vivo e NPCs](08_Mundo_Vivo_e_NPCs.md)."*
-3. Manter no Cap. 5 apenas o que é relevante para o **jogador durante exploração** (como interagir com NPCs, o que esperar)
-4. Manter no Cap. 8 a **referência técnica completa** (como a IA funciona)
-
-**Arquivos:**
-- [`gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md`](../gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md)
-
-**Referência:** [Auditoria §5.1](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
-
----
-
-### Tarefa 1.3 — Harmonizar Defesa Base (Cap. 2 vs Cap. 9)
-
-**Por quê?** O Cap. 2 define Defesa Base como `10 + Mod. Astúcia`. O Cap. 9 define como `10 + Mod. Astúcia + Bônus de Armadura`. A versão do Cap. 9 é a completa.
-
-**O que fazer:**
-1. Abrir `gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`
-2. Na seção 2.8, atualizar a fórmula para incluir "Bônus de Armadura (se houver)":
-   > **Defesa Base:** `10 + Modificador de Astúcia + Bônus de Armadura (se houver)`
-
-**Arquivo:** [`gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`](../gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md)
-
-**Referência:** [Auditoria §3.1C](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
-
----
-
-### ✅ Checklist da Sprint 1 (CONCLUÍDA)
-
-- [x] 1.1 — Definir slots de habilidades herdadas em `03_Heranca_de_Habilidades.md`
-- [x] 1.2 — Reduzir sobreposição Cap. 5 vs Cap. 8 (referências cruzadas)
-- [x] 1.3 — Harmonizar fórmula de Defesa Base (Cap. 2 = Cap. 9)
-- [x] Atualizar `gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md` marcando itens 5, 11 e 12 como ✅
-
----
-
-## 📝 Sprint 2 — Sistema de Progressão (XP e Nível)
-
-> **Objetivo:** Resolver as duas lacunas mais importantes do GDD: o sistema de XP/nível (que é mencionado mas nunca definido) e a mecânica de troca de Origem.
+> **Objetivo:** Criar os livros auxiliares necessários para o MVP e o sistema de diálogos (o maior gap do projeto).
 >
-> **Estimativa:** 1–2 dias
-> **Pré-requisito:** Sprint 1
-
-### Tarefa 2.1 — Criar Sistema de XP e Progressão de Nível
-
-**Por quê?** O GDD menciona "PV por Nível" em todas as 12 classes e "XP de proficiência", mas **nenhum documento define** como funciona a progressão de nível. Sem isso, não dá para implementar as POCs de Tier Scaling (POC 04) nem o MVP.
-
-**O que fazer:**
-1. Criar uma nova seção no Cap. 3 (Criação de Personagem) **ou** criar uma seção dedicada `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
-2. Definir:
-   - **Fontes de XP:** Combate (derrotar inimigos), Quests (completar missões), Exploração (descobrir blocos novos)
-   - **Tabela de XP por nível:** Sugestão progressiva (ex: Nível 2 = 100 XP, Nível 3 = 300 XP, etc.)
-   - **Ganhos por nível:** PV (conforme classe), possível ponto de atributo a cada X níveis
-   - **Nível máximo por Tier:** Sugestão: Tier 1 = Nível 1-5, Tier 2 = Nível 6-10, Tier 3 = Nível 11-15
-   - **Relação XP ↔ Moeda de Classe:** A Moeda de Classe desbloqueia classes, mas o nível determina o poder dentro da classe
-
-**Referência:** [Auditoria §3.1B](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
-
----
-
-### Tarefa 2.2 — Definir Mecânica de Troca de Origem (Espelho do Eco)
-
-**Por quê?** O Ato 1 promete o "Espelho do Eco" como recompensa, que permite trocar de Origem. Mas não existe nenhuma regra mecânica que defina como isso funciona.
-
-**O que fazer:**
-1. Criar uma seção no Livro de Classes ou no Cap. 3 do Livro de Regras: **"Troca de Origem — O Espelho do Eco"**
-2. Definir:
-   - **Custo:** O Espelho do Eco (item obtido como recompensa do Ato 1)
-   - **O que acontece:** O personagem ganha acesso às classes Tier 1 da nova Origem
-   - **O que se mantém:** Nível, XP, habilidades ativas herdadas (dentro do limite de slots)
-   - **O que se perde:** Bônus passivos de classes da origem anterior (só funcionam com classe ativa), acesso a classes da origem anterior **permanece** (já foram desbloqueadas)
-   - **Restrição:** Só pode ser feito fora de combate, em local seguro (Vila/Acampamento)
-   - **Justificativa narrativa:** Visão espiritual, reencarnação, pacto (já previsto em `00_Conceitos_Centrais_do_Mundo.md`)
-
-**Referência:** [Auditoria §3.1A](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md), [`gdd/03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md`](../gdd/03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md)
-
----
-
-### Tarefa 2.3 — Definir Pré-requisitos Multi-Class para Tiers 2/3
-
-**Por quê?** No FFT, classes avançadas exigem progresso em classes anteriores. Isso incentiva diversificação. Em Eras do Brasil, qualquer classe Tier 1 é desbloqueada apenas com Moeda de Classe + Missão, sem exigir progressão em outras classes.
-
-**O que fazer:**
-1. Abrir `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
-2. Adicionar uma seção **"Pré-requisitos Multi-Class"** com a regra:
-   - **Tier 2:** Requer Nível 5 na classe atual + Moeda de Classe + Missão NPC
-   - **Tier 3:** Requer Nível 10 na classe atual + ter pelo menos 1 outra classe em Tier 2 + Moeda de Classe + Missão NPC
-3. Isso garante que para chegar ao Tier 3, o jogador precisa ter experimentado pelo menos 2 classes, incentivando o multi-classing
-
-**Referência:** [Auditoria §2.2B](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
-
----
-
-### ✅ Checklist da Sprint 2 (CONCLUÍDA)
-
-- [x] 2.1 — Criar sistema de XP e progressão de nível — `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
-- [x] 2.2 — Definir mecânica de troca de Origem (Espelho do Eco) — `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`
-- [x] 2.3 — Definir pré-requisitos multi-class para Tiers 2/3 — `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
-- [x] Atualizar `03_Auditoria_GDD.md` marcando itens 6, 9 e 10 como ✅
-
----
-
-## 📝 Sprint 3 — Livros Auxiliares Prioritários
-
-> **Objetivo:** Criar os livros auxiliares que são referenciados no GDD mas ainda não existem. Priorizar apenas os necessários para o MVP e Fase 1/2.
->
+> **Epic #32** — Livros Auxiliares Prioritários
+> **Epic #60** — Sistema de Diálogos e Narrativa
 > **Estimativa:** 3–5 dias
-> **Pré-requisito:** Sprint 2 (sistema de XP definido)
->
-> **NOTA:** Os livros de Tier 2/3 e o Bestiário completo ficam para depois do MVP.
+> **Pré-requisito:** Sprint 0
 
 ### Quais Livros Criar Agora vs. Depois?
 
@@ -299,27 +220,37 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 3
+### ✅ Checklist da Sprint 1
 
-- [ ] 3.1 — Criar Livro de Habilidades (consolidado das 12 classes)
-- [ ] 3.2 — Criar Livro de Itens e Equipamentos (10-15 itens MVP)
-- [ ] 3.3 — Criar Livro de Proficiências de Vida
-- [ ] 3.4 — Criar Bestiário Ato 1 (5+ inimigos)
+**Livros Auxiliares (Epic #32):**
+- [ ] 1.1 — Criar Livro de Habilidades — consolidado das 12 classes (#33)
+- [ ] 1.2 — Criar Livro de Itens e Equipamentos — 10-15 itens MVP (#34)
+- [ ] 1.3 — Criar Livro de Proficiências de Vida (#35)
+- [ ] 1.4 — Criar Bestiário Ato 1 — 5+ inimigos (#36)
 - [ ] Atualizar `gdd/README.md` com links para os novos livros
-- [ ] Atualizar `03_Auditoria_GDD.md` marcando "Livros Referenciados Inexistentes" com progresso
+
+**Sistema de Diálogos (Epic #60):**
+- [ ] 1.5 — Criar Livro de Diálogos e Narrativa — Guia de Estilo (#61)
+- [ ] 1.6 — Definir Schema JSON para DialogueTree (#62)
+- [ ] 1.7 — Definir Formato de Texto Narrativo para Tela de Cena (#63)
+- [ ] 1.8 — Criar Diálogos JSON dos NPCs da Vila de São Tomé (#64)
+- [ ] 1.9 — Escrever Diálogos da mini-campanha "O Caçador que Não Voltou" (#65)
+- [ ] 1.10 — Definir Integração Quest ↔ Dialogue (#66)
 
 ---
 
-## 💻 Sprint 4 — Setup Unity + POCs Fundação (Módulo A)
+## 💻 Sprint 2 — Fundação Unity (13 issues)
 
-> **Objetivo:** Criar o projeto Unity e implementar as POCs de lógica pura (C# sem gráficos). Estas são as POCs mais fundamentais — sem elas, nada mais funciona.
+> **Objetivo:** Criar o projeto Unity e implementar as POCs de lógica pura (C# sem gráficos), schemas JSON e dados. São as POCs mais fundamentais — sem elas, nada mais funciona.
 >
+> **Epic #37** — Setup Unity + POCs Fundação (Módulo A)
+> **Epic #67** — Schemas JSON e Dados Estruturais Faltantes
 > **Estimativa:** 3–5 dias
-> **Pré-requisito:** Sprint 2 (sistema de XP definido para o Tier Scaling)
+> **Pré-requisito:** Sprint 0
 >
-> **NOTA:** A Sprint 3 (Livros Auxiliares) pode ser feita em paralelo com a Sprint 4, já que uma é documentação e a outra é código.
+> **NOTA:** A Sprint 1 (Livros & Narrativa) pode ser feita em paralelo com a Sprint 2, já que uma é documentação e a outra é código.
 
-### Tarefa 4.1 — Setup do Projeto Unity
+### Tarefa 2.1 — Setup do Projeto Unity
 
 > ⚠️ **Decisão:** Um único projeto Unity para todas as POCs e o jogo final. POCs são separadas por **cenas**, não por projetos. Scripts são escritos direto na estrutura de produção. Detalhes em [ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md) e [Organização do Projeto Unity](tech/organizacao-projeto-unity.md).
 
@@ -366,7 +297,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 4.2 — POC 01: Fundação de Dados
+### Tarefa 2.2 — POC 01: Fundação de Dados
 
 **O que fazer:** Implementar o pipeline ScriptableObject → JSON conforme os schemas definidos.
 
@@ -378,7 +309,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 4.3 — POC 02: Motor D20
+### Tarefa 2.3 — POC 02: Motor D20
 
 **O que fazer:** Implementar o motor de rolagem D20 com modificadores, vantagem/desvantagem, críticos.
 
@@ -390,7 +321,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 4.4 — POC 03: Atributos e Criação
+### Tarefa 2.4 — POC 03: Atributos e Criação
 
 **O que fazer:** Implementar o sistema de point-buy (27 pontos) e cálculo de modificadores.
 
@@ -402,7 +333,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 4.5 — POC 06: Matriz de Itens 5×5
+### Tarefa 2.5 — POC 06: Matriz de Itens 5×5
 
 **O que fazer:** Implementar o sistema de Qualidade × Raridade para itens.
 
@@ -414,7 +345,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 4.6 — Wireframes de Baixa Fidelidade (UI/UX)
+### Tarefa 2.6 — Wireframes de Baixa Fidelidade (UI/UX)
 
 > 🎨 **Por quê?** O GDD já tem specs detalhadas de UI ([UI Fase 1](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)), mas não existia uma etapa de design visual intermediária antes de implementar as POCs de UI. Wireframes reduzem retrabalho. Detalhes em [ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md).
 
@@ -434,25 +365,31 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 4
+### ✅ Checklist da Sprint 2
 
-- [ ] 4.1 — Setup do projeto Unity (projeto único, estrutura de pastas, .gitignore, namespaces)
-- [ ] 4.2 — POC 01: Fundação de Dados
-- [ ] 4.3 — POC 02: Motor D20
-- [ ] 4.4 — POC 03: Atributos e Criação
-- [ ] 4.5 — POC 06: Matriz de Itens 5×5
-- [ ] 4.6 — Wireframes de baixa fidelidade (HUD, Mapa, Cena, Combate)
+- [ ] 2.1 — Setup do projeto Unity (projeto único, estrutura de pastas, .gitignore, namespaces) (#38)
+- [ ] 2.2 — POC 01: Fundação de Dados (#39)
+- [ ] 2.3 — POC 02: Motor D20 (#40)
+- [ ] 2.4 — POC 03: Atributos e Criação (#41)
+- [ ] 2.5 — POC 06: Matriz de Itens 5×5 (#42)
+- [ ] 2.6 — Wireframes de baixa fidelidade — HUD, Mapa, Cena, Combate (#43)
+- [ ] POC 04: Tier Scaling — Progressão por Tiers e Curvas de XP (#80)
+- [ ] POC 05: Herança de Habilidades — Dom da Revivência e Troca de Classes (#81)
+- [ ] Schemas JSON: Quest, NPC, Faction, Gossip, Skill, Proficiency, Campaign (#68)
+- [ ] NPC Agenda Data — Rotinas dos NPCs da Vila de São Tomé (#69)
+- [ ] Expandir Dados Iniciais Ato 1 — Enemy Stats, Itens e Localizações (#70)
 
 ---
 
-## 💻 Sprint 5 — POCs Mundo e Combate (Módulos B + D)
+## 💻 Sprint 3 — Mundo & Combate (6 issues)
 
 > **Objetivo:** Implementar o motor de tempo (Ticks) e o sistema de combate. Estes são os dois sistemas mais importantes após a fundação.
 >
+> **Epic #44** — POCs Mundo e Combate (Módulos B + D)
 > **Estimativa:** 5–7 dias
-> **Pré-requisito:** Sprint 4 (fundação de dados e Motor D20)
+> **Pré-requisito:** Sprint 2 (fundação de dados e Motor D20)
 
-### Tarefa 5.1 — POC 07: Motor de Ticks
+### Tarefa 3.1 — POC 07: Motor de Ticks
 
 **O que fazer:** Implementar o relógio universal de Ticks, ciclo dia/noite, regeneração de PV.
 
@@ -462,7 +399,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 5.2 — POC 08: Navegação por Blocos
+### Tarefa 3.2 — POC 08: Navegação por Blocos
 
 **O que fazer:** Implementar o grafo de mundo com custo de Ticks por terreno.
 
@@ -474,7 +411,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 5.3 — POC 17: Combate Estático (Fase 1)
+### Tarefa 3.3 — POC 17: Combate Estático (Fase 1)
 
 **O que fazer:** Implementar o loop completo de combate: Iniciativa → Turnos → D20 vs Defesa → Dano → Loot.
 
@@ -486,7 +423,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 5.4 — POC 18: Status e Condições
+### Tarefa 3.4 — POC 18: Status e Condições
 
 **O que fazer:** Implementar condições de status (Envenenado, Atordoado, Queimando).
 
@@ -496,7 +433,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 5.5 — POC 19: Habilidades em Combate
+### Tarefa 3.5 — POC 19: Habilidades em Combate
 
 **O que fazer:** Implementar habilidades ativas, custo de recurso, efeitos de área.
 
@@ -506,24 +443,25 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### ✅ Checklist da Sprint 5
+### ✅ Checklist da Sprint 3
 
-- [ ] 5.1 — POC 07: Motor de Ticks
-- [ ] 5.2 — POC 08: Navegação por Blocos
-- [ ] 5.3 — POC 17: Combate Estático
-- [ ] 5.4 — POC 18: Status e Condições
-- [ ] 5.5 — POC 19: Habilidades em Combate
+- [ ] 3.1 — POC 07: Motor de Ticks (#45)
+- [ ] 3.2 — POC 08: Navegação por Blocos (#46)
+- [ ] 3.3 — POC 17: Combate Estático (#47)
+- [ ] 3.4 — POC 18: Status e Condições (#48)
+- [ ] 3.5 — POC 19: Habilidades em Combate (#49)
 
 ---
 
-## 💻 Sprint 6 — POCs Economia e Persistência (Módulos E + G)
+## 💻 Sprint 4 — Economia & UI (5 issues)
 
 > **Objetivo:** Implementar inventário, HUD e save/load. Estes são os últimos sistemas necessários antes de integrar o MVP.
 >
+> **Epic #50** — POCs Economia, UI e Persistência (Módulos E + F + G)
 > **Estimativa:** 3–5 dias
-> **Pré-requisito:** Sprint 5 (combate e mundo)
+> **Pré-requisito:** Sprint 3 (combate e mundo)
 
-### Tarefa 6.1 — POC 24: Inventário
+### Tarefa 4.1 — POC 24: Inventário
 
 **O que fazer:** UI de inventário com equipar/desequipar, peso/capacidade.
 
@@ -531,7 +469,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 6.2 — POC 28: HUD Principal
+### Tarefa 4.2 — POC 28: HUD Principal
 
 **O que fazer:** Barra superior com retrato, PV/XP, recursos, moeda, relógio de Ticks.
 
@@ -541,7 +479,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 6.3 — POC 33: Save/Load (JSON)
+### Tarefa 4.3 — POC 33: Save/Load (JSON)
 
 **O que fazer:** Salvar e carregar estado completo do personagem em JSON.
 
@@ -549,7 +487,7 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 ---
 
-### Tarefa 6.4 — Protótipo de UI e Validação de Fluxo (UI/UX)
+### Tarefa 4.4 — Protótipo de UI e Validação de Fluxo (UI/UX)
 
 > 🎨 **Por quê?** Antes de implementar as POCs de UI (28, 29, 30, 31), validar o fluxo visual com um protótipo navegável. Isso evita retrabalho na implementação Unity.
 
@@ -562,26 +500,27 @@ Sprint 1 ──► Sprint 2 ──► Sprint 3 (pode paralelo com 4)
 
 **Referências:**
 - [Workflow de UI/UX](tech/workflow-ui-ux.md)
-- [Wireframes da Sprint 4](tech/wireframes/)
+- [Wireframes da Sprint 2](tech/wireframes/)
 - [UI Fase 1](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
 
 ---
 
-### ✅ Checklist da Sprint 6
+### ✅ Checklist da Sprint 4
 
-- [ ] 6.1 — POC 24: Inventário
-- [ ] 6.2 — POC 28: HUD Principal
-- [ ] 6.3 — POC 33: Save/Load
-- [ ] 6.4 — Protótipo de UI e validação de fluxo
+- [ ] 4.1 — POC 24: Inventário (#51)
+- [ ] 4.2 — POC 28: HUD Principal (#53)
+- [ ] 4.3 — POC 33: Save/Load (#54)
+- [ ] 4.4 — Protótipo de UI e validação de fluxo (#52)
 
 ---
 
-## 💻 Sprint 7 — MVP "O Despertar" (Integração)
+## 💻 Sprint 5 — MVP "O Despertar" (6 issues)
 
 > **Objetivo:** Integrar todas as POCs anteriores em um loop jogável de 15–30 minutos.
 >
+> **Epic #55** — MVP "O Despertar" (Integração + Playtest)
 > **Estimativa:** 5–7 dias
-> **Pré-requisito:** Sprints 4, 5 e 6 (todas as POCs core)
+> **Pré-requisito:** Sprints 2, 3 e 4 (todas as POCs core)
 
 ### O Core Loop do MVP
 
@@ -596,7 +535,7 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
     → Repetir
 ```
 
-### Tarefa 7.1 — Integrar POCs no Projeto Principal
+### Tarefa 5.1 — Integrar POCs no Projeto Principal
 
 **O que fazer:**
 1. Criar cena `MVP_Main.unity`
@@ -605,7 +544,7 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
 
 ---
 
-### Tarefa 7.2 — Primeiro Playtest
+### Tarefa 5.2 — Primeiro Playtest
 
 **O que fazer:**
 1. Jogar o loop completo pelo menos 3 vezes
@@ -616,7 +555,7 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
 
 ---
 
-### Tarefa 7.3 — Build Funcional
+### Tarefa 5.3 — Build Funcional
 
 **O que fazer:**
 1. Criar build exportável (Windows/Mac)
@@ -625,22 +564,26 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
 
 ---
 
-### ✅ Checklist da Sprint 7
+### ✅ Checklist da Sprint 5
 
-- [ ] 7.1 — Integrar POCs no projeto principal
-- [ ] 7.2 — Primeiro playtest (3+ runs)
-- [ ] 7.3 — Build funcional exportável
+- [ ] 5.1 — Integrar POCs no projeto principal (#56)
+- [ ] Projetar Tutorial / Onboarding Flow (#72)
+- [ ] Projetar Main Menu + Pause Menu + Settings (#73)
+- [ ] 5.2 — Primeiro playtest — 3+ runs (#57)
+- [ ] 5.3 — Build funcional exportável (#58)
 
 ---
 
-## 📝💻 Sprint 8 — Tier 2 das Classes (Ato 2) — FUTURO
+## 📝💻 Sprint 6+ — Futuro (8 issues)
 
-> **Objetivo:** Expandir o sistema de classes com Tier 2, Reaction Abilities, e preparar o Ato 2.
+> **Objetivo:** Game Feel, expansão de classes, e preparação para Ato 2.
 >
+> **Epic #71** — Game Feel: Infraestrutura de Jogo
+> **Meta-Issue #59** — Mapeamento Futuro: Tudo Além do MVP
 > **Estimativa:** Futuro (após MVP validado)
-> **Pré-requisito:** Sprint 7 (MVP funcionando)
+> **Pré-requisito:** Sprint 5 (MVP funcionando)
 >
-> ⚠️ **Esta Sprint só deve ser iniciada após o MVP estar jogável e validado.** O Tier 2 está previsto para o Ato 2 do game.
+> ⚠️ **Esta Sprint só deve ser iniciada após o MVP estar jogável e validado.**
 
 ### Por que NÃO fazer o Tier 2 agora?
 
@@ -651,12 +594,20 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
 
 ### O que entra nesta Sprint (quando chegar a hora)
 
-- [ ] 8.1 — Detalhar habilidades de Tier 2 para as 12 classes
-- [ ] 8.2 — Criar Reaction Abilities (1 por classe)
-- [ ] 8.3 — Implementar POC 04 (Tier Scaling) e POC 05 (Herança de Habilidades)
-- [ ] 8.4 — Criar Livro de Magias e Rituais (necessário para classes mágicas Tier 2)
-- [ ] 8.5 — Criar Livro de Receitas de Crafting
-- [ ] 8.6 — Esboço do Ato 2
+**Game Feel (Epic #71):**
+- [ ] Sistema de Áudio — Música, SFX e Ambientação (#74)
+- [ ] Mecânica de Morte do Jogador — Game Over / Respawn (#75)
+- [ ] Loading Screens com Dicas de Lore (#76)
+- [ ] Estratégia de Localização i18n (#77)
+- [ ] Accessibility Features — Fonte, Daltonismo, Controles (#78)
+- [ ] Expandir Habilidades Tier 1 + Reaction Abilities + Scaling (#79)
+
+**Tier 2 e Ato 2 (NÃO fazer agora):**
+- [ ] Detalhar habilidades de Tier 2 para as 12 classes
+- [ ] Criar Reaction Abilities (1 por classe)
+- [ ] Criar Livro de Magias e Rituais
+- [ ] Criar Livro de Receitas de Crafting
+- [ ] Esboço do Ato 2
 
 **Referências:**
 - [Auditoria §2.2C — Reaction Abilities](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
@@ -668,29 +619,29 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
 
 > Resumo rápido de quais POCs fazer agora e quais adiar.
 
-### ✅ POCs Obrigatórias para o MVP (Sprints 4–6)
+### ✅ POCs Obrigatórias para o MVP (Sprints 2–4)
 
 | # | POC | Sprint |
 |---|-----|--------|
-| 01 | Fundação de Dados | Sprint 4 |
-| 02 | Motor D20 | Sprint 4 |
-| 03 | Atributos e Criação | Sprint 4 |
-| 06 | Matriz de Itens 5×5 | Sprint 4 |
-| 07 | Motor de Ticks | Sprint 5 |
-| 08 | Navegação por Blocos | Sprint 5 |
-| 17 | Combate Estático | Sprint 5 |
-| 18 | Status e Condições | Sprint 5 |
-| 19 | Habilidades em Combate | Sprint 5 |
-| 24 | Inventário | Sprint 6 |
-| 28 | HUD Principal | Sprint 6 |
-| 33 | Save/Load | Sprint 6 |
+| 01 | Fundação de Dados | Sprint 2 |
+| 02 | Motor D20 | Sprint 2 |
+| 03 | Atributos e Criação | Sprint 2 |
+| 04 | Tier Scaling | Sprint 2 |
+| 05 | Herança de Habilidades | Sprint 2 |
+| 06 | Matriz de Itens 5×5 | Sprint 2 |
+| 07 | Motor de Ticks | Sprint 3 |
+| 08 | Navegação por Blocos | Sprint 3 |
+| 17 | Combate Estático | Sprint 3 |
+| 18 | Status e Condições | Sprint 3 |
+| 19 | Habilidades em Combate | Sprint 3 |
+| 24 | Inventário | Sprint 4 |
+| 28 | HUD Principal | Sprint 4 |
+| 33 | Save/Load | Sprint 4 |
 
 ### ⏳ POCs para a Fase 2 (Pré-Alpha) — Após MVP
 
 | # | POC | Por quê adiar? |
 |---|-----|----------------|
-| 04 | Tier Scaling | Tier 2 é do Ato 2 |
-| 05 | Herança de Habilidades | Multi-class é Fase 2 |
 | 09 | Eventos de Mundo | MVP funciona sem eventos aleatórios |
 | 10 | Relógio da Ruptura | Ato 1 pode ser testado sem countdown |
 | 12 | Rotinas de NPCs | NPCs estáticos no MVP |
@@ -761,21 +712,22 @@ eras-do-brasil/
 
 ## 🎯 Resumo Executivo
 
-**O que fazer AGORA (esta semana):**
-1. ✅ Ler este guia completo
-2. Sprint 1 — Correções do GDD (1–2 dias)
-3. Sprint 2 — Sistema de XP e progressão (1–2 dias)
+**O que fazer AGORA:**
+1. Sprint 0 — Correções de Lore (12 issues de documentação)
+2. Sprint 1 — Livros Auxiliares + Sistema de Diálogos (paralelo com Sprint 2)
+3. Sprint 2 — Setup Unity + POCs Fundação
 
-**O que fazer DEPOIS (próximas semanas):**
-4. Sprint 3 — Livros Auxiliares prioritários (paralelo com Sprint 4)
-5. Sprint 4 — Setup Unity + POCs Fundação
+**O que fazer DEPOIS:**
+4. Sprint 3 — POCs Mundo e Combate
+5. Sprint 4 — POCs Economia, UI e Persistência
+6. Sprint 5 — MVP "O Despertar"
 
 **O que NÃO fazer agora:**
-- ❌ Tier 2/3 das classes (é do Ato 2, precisa de MVP primeiro)
-- ❌ Livro de Magias (MVP não usa classes mágicas)
-- ❌ Grid tático / Pathfinding (é da Fase 4 — Beta)
-- ❌ Multiplayer P2P (é da Fase 5 — Release)
+- Tier 2/3 das classes (é do Ato 2, precisa de MVP primeiro)
+- Livro de Magias (MVP não usa classes mágicas)
+- Grid tático / Pathfinding (é da Fase 4 — Beta)
+- Multiplayer P2P (é da Fase 5 — Release)
 
 ---
 
-> **Última atualização:** 2026-02-13
+> **Última atualização:** 2026-02-17

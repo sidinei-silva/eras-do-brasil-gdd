@@ -1,10 +1,10 @@
 # Status do Projeto — Eras do Brasil
 
-**Última atualização:** 2026-02-13
+**Última atualização:** 2026-02-17
 
 ## 🎯 Fase Atual
 
-**Fase 0: Correções GDD + POCs** — Sprints 1 e 2 concluídas! GDD 100% consistente. Decisões técnicas de organização Unity e workflow UI/UX definidas (ADR-001 e ADR-002). Pronto para iniciar os Livros Auxiliares (Sprint 3) e/ou Setup Unity (Sprint 4).
+**Fase 0: Correções GDD + POCs** — Correções pré-backlog concluídas. GDD 100% consistente. Decisões técnicas definidas (ADR-001, ADR-002). Backlog completo com **62 issues** no [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10), organizadas em **7 sprints** (0–6+) e **9 Epics**. Pronto para iniciar Sprint 0 (Correções de Lore).
 
 > 🔴 **Retomando?** Comece pelo [Guia de Retomada](../docs/GUIA_RETOMADA.md)
 
@@ -15,10 +15,11 @@
 | **GDD (Design)** | ✅ Completo | 100% (todas correções pós-auditoria concluídas) |
 | **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras |
 | **Decisões Técnicas** | ✅ Definidas | ADR-001 (Unity único) + ADR-002 (Workflow UI/UX) |
+| **Backlog GitHub** | ✅ Completo | 62 issues (#20-#81), 9 Epics, 7 Sprints (0–6+) |
 | **Livros Auxiliares** | ⚠️ Parcial | 1/7 (apenas Atlas do Eco) |
 | **Schemas e Dados** | ✅ Completo | 100% |
-| **Roadmap** | ✅ Consolidado | 100% |
-| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos Sprint 4, protótipos Sprint 6 |
+| **Roadmap** | ✅ Consolidado | 100% — alinhado com Project #10 |
+| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos Sprint 2, protótipos Sprint 4 |
 | **POCs** | 🔲 Não iniciado | 0/38 |
 | **MVP** | 🔲 Aguardando POCs | 0% |
 
@@ -33,47 +34,46 @@
 - ✅ Game Pitch e Project Plan
 - ✅ Auditoria do GDD (PR #1 mergeado)
 
-## 🔥 Foco Atual — Sprints de Retomada
+## 🔥 Foco Atual — Sprints de Produção
 
 | Sprint | Foco | Status |
 |--------|------|--------|
-| **Sprint 1** | Correções do GDD (slots, Defesa Base, sobreposição) | ✅ Concluída |
-| **Sprint 2** | Sistema de XP, troca de Origem, pré-requisitos multi-class | ✅ Concluída |
-| **Sprint 3** | Livros Auxiliares (Habilidades, Itens, Proficiências, Bestiário) | 🔲 Pendente |
-| **Sprint 4** | Setup Unity + POCs Módulo A (Motor de Regras) | 🔲 Pendente |
-| **Sprint 5** | POCs Módulo B (Mundo) + D (Combate) | 🔲 Pendente |
-| **Sprint 6** | POCs Módulo E (Economia) + G (Save/Load) | 🔲 Pendente |
-| **Sprint 7** | MVP "O Despertar" — Integração | 🔲 Pendente |
+| **Sprint 0** | Correções de Lore e Enredo (12 issues) | 🔲 Pendente |
+| **Sprint 1** | Livros Auxiliares (4) + Sistema de Diálogos (7 issues) | 🔲 Pendente |
+| **Sprint 2** | Setup Unity + POCs Fundação Módulo A (13 issues) | 🔲 Pendente |
+| **Sprint 3** | POCs Mundo e Combate — Módulos B + D (6 issues) | 🔲 Pendente |
+| **Sprint 4** | POCs Economia, UI e Persistência — Módulos E + F + G (5 issues) | 🔲 Pendente |
+| **Sprint 5** | MVP "O Despertar" — Integração + Playtest (6 issues) | 🔲 Pendente |
+| **Sprint 6+** | Game Feel: Áudio, i18n, Acessibilidade (8 issues) | 🔲 Futuro |
 
-> Detalhes completos em [Guia de Retomada](../docs/GUIA_RETOMADA.md)
+> Detalhes completos em [ROADMAP.md](../ROADMAP.md) e [Guia de Retomada](../docs/GUIA_RETOMADA.md)
 
 ## 📋 Próximos Marcos
 
 | Marco | Descrição | Dependências |
 |-------|-----------|--------------|
-| GDD 100% consistente | Correções pós-auditoria (Sprint 1–2) | Nenhuma |
-| Livros Auxiliares MVP | 4 livros prioritários (Sprint 3) | Sprint 2 |
-| POC 01 concluída | Pipeline ScriptableObject → JSON funcional | Setup Unity |
-| Módulo A completo | 4 POCs de lógica pura (C# sem gráficos) | POC 01 |
-| MVP "O Despertar" | Loop jogável de 15-30 min | 12 POCs core |
+| Sprint 0 completa | Correções de lore do GDD (12 issues) | Nenhuma |
+| Sprint 1 completa | 4 Livros Auxiliares + 7 issues de diálogos | Sprint 0 |
+| POC 01 concluída | Pipeline ScriptableObject → JSON funcional | Setup Unity (Sprint 2) |
+| Módulo A completo | POCs 01–06 (lógica pura em C#) | Sprint 2 |
+| MVP "O Despertar" | Loop jogável de 15-30 min | Sprint 5 |
 
 ## ⚠️ Bloqueios Conhecidos
 
-- Setup do projeto Unity ainda não iniciado
-- 7 recomendações da auditoria pendentes (nenhuma bloqueia o início das POCs, mas as Sprints 1-2 devem ser feitas antes do MVP)
+- Nenhum bloqueio ativo — pronto para iniciar Sprint 0
 
 ## 🎉 Conquistas Recentes
 
 - ✅ GDD completo (9+ livros, 50+ documentos)
 - ✅ 38 POCs definidas com READMEs detalhados
-- ✅ Roadmap de desenvolvimento consolidado (6 fases)
-- ✅ Estrutura de pastas organizada
 - ✅ Auditoria do GDD concluída (PR #1 mergeado — 4 correções, 7 recomendações)
-- ✅ Guia de Retomada criado com timeline cronológica detalhada
-- ✅ **Sprint 1 concluída** — Slots de habilidades herdadas, Defesa Base harmonizada, referências cruzadas Cap. 5/8
-- ✅ **Sprint 2 concluída** — Sistema de XP/Níveis, Troca de Origem (Espelho do Eco), Pré-requisitos Multi-Class
+- ✅ Correções pré-backlog concluídas (slots, Defesa Base, XP, Origem, pré-requisitos)
 - ✅ **ADR-001** — Organização do projeto Unity definida (projeto único para POCs e jogo)
 - ✅ **ADR-002** — Workflow de UI/UX definido (wireframes, prototipagem, validação)
+- ✅ **Backlog completo** — 62 issues (#20-#81) criadas, organizadas em 9 Epics e 7 Sprints
+- ✅ **GitHub Project #10** — Todos os campos preenchidos (Sprint, Prioridade, Categoria, Tipo, Esforço)
+- ✅ **ROADMAP.md** — Totalmente alinhado com as 62 issues
+- ✅ **Website** atualizado com seção de notícias (PR #82 mergeado)
 
 ## 📝 Notas
 
