@@ -22,7 +22,7 @@ Antes de qualquer tarefa, entenda o estado atual:
 | **POCs** | 🔲 0/38 | 38 POCs definidas com READMEs, nenhuma implementada |
 | **Código** | 🔲 Não iniciado | Projeto Unity não criado |
 | **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos para Sprint 2, protótipos para Sprint 4 |
-| **Livros Auxiliares** | ⚠️ 1/7 | Apenas Atlas do Eco existe. 6 livros referenciados no GDD ainda não existem |
+| **Livros Auxiliares** | ⚠️ 2/7 | Atlas do Eco + Livro de Itens existem. 5 livros referenciados no GDD ainda não existem |
 
 ### O Que Foi Corrigido na Auditoria (PR #1)
 
@@ -86,9 +86,9 @@ Sprint 0 ──► Sprint 1 (pode paralelo com Sprint 2)
 
 **Resultado:** Referências cruzadas adicionadas, Cap. 5 resumido com link para Cap. 8
 
-### ✅ Tarefa: Harmonizar Defesa Base (Cap. 2 vs Cap. 9)
+### ✅ Tarefa: Harmonizar Defesa Base (Cap. 2 vs Cap. 4 vs Cap. 9)
 
-**Resultado:** Fórmula unificada: `10 + Mod. Astúcia + Bônus de Armadura (se houver)`
+**Resultado:** Fórmula unificada: `10 + Mod. Astúcia + Bônus de Armadura (se houver)` — agora consistente nos 3 capítulos
 
 ### ✅ Tarefa: Criar Sistema de XP e Progressão de Nível
 

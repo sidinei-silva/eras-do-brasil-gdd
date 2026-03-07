@@ -507,12 +507,12 @@ A **Defesa Base** de cada personagem determina o número que os inimigos precisa
 
 #### Cálculo da Defesa Base
 
-**Defesa Base = 10 + Modificador de Astúcia**
+**Defesa Base = 10 + Modificador de Astúcia + Bônus de Armadura (se houver)**
 
 | Situação | Ajuste |
 |:---|:---|
-| Sem armadura | Defesa Base normal |
-| Com armadura | Defesa Base normal + bônus de armadura (se houver) |
+| Sem armadura | 10 + Mod. Astúcia |
+| Com armadura | 10 + Mod. Astúcia + Bônus de Armadura |
 
 > 🔔 *A Defesa representa a capacidade de esquiva, bloqueio parcial e proteção passiva*.
 

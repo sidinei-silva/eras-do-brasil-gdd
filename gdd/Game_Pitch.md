@@ -1,6 +1,9 @@
 # Eras do Brasil: Documento de Apresentação (Game Pitch)
 
 > **Navegação:** [GDD](README.md) · [Project Plan](Project%20Plan.md) · [Roadmap](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md) · [Projeto](../README.md)
+>
+> **Propósito:** Documento de apresentação **externa** — para investidores, publishers, comunidade. Foco em vender a visão e diferencial do jogo.
+> **Relação:** Para a estratégia técnica e de desenvolvimento, veja o [Project Plan](Project%20Plan.md).
 
 --------------------------------------------------------------------------------
 

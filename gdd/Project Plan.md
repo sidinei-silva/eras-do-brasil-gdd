@@ -1,6 +1,9 @@
 # Plano de Projeto: Eras do Brasil (Estratégia Co-op P2P)
 
 > **Navegação:** [GDD](README.md) · [Game Pitch](Game_Pitch.md) · [Roadmap de Desenvolvimento](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md) · [Projeto](../README.md)
+>
+> **Propósito:** Documento de estratégia **interna** — para a equipe de desenvolvimento. Define escopo técnico, arquitetura de sistemas e roadmap de fases.
+> **Relação:** Para a apresentação externa do jogo (visão, narrativa, diferencial), veja o [Game Pitch](Game_Pitch.md).
 
 ## 1.0 Visão e Estratégia Geral
 

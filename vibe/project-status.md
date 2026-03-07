@@ -4,7 +4,7 @@
 
 ## 🎯 Fase Atual
 
-**Fase 0: Reorganização + Sprint 0 (Lore)** — Projeto passou por reorganização profunda. Diagnóstico completo realizado. ADR-003 proposto (estratégia de repositórios). Plano de desenvolvimento realista criado (~6h/semana). Plano de spin-offs definido. Estrutura de pastas atualizada (`game/`, `spinoffs/`). MVP spec formalizado. Pronto para resolver Sprint 0 (Correções de Lore) e iniciar primeiro spin-off.
+**Fase 0: Reorganização + Sprint 0 (Lore)** — Projeto passou por reorganização profunda. Diagnóstico completo realizado. ADR-003 proposto (estratégia de repositórios). Plano de desenvolvimento realista criado (~6h/semana). Plano de spin-offs definido. Estrutura de pastas atualizada (`game/`, `spinoffs/`). MVP spec formalizado. Auditoria de documentação concluída (contradições corrigidas, duplicações consolidadas, arquivos desnecessários removidos). Pronto para resolver Sprint 0 (Correções de Lore) e iniciar primeiro spin-off.
 
 > 🔴 **Retomando?** Comece pelo [Guia de Retomada](../docs/GUIA_RETOMADA.md)
 > 📋 **Plano completo:** [docs/product/plano-desenvolvimento-realista.md](../docs/product/plano-desenvolvimento-realista.md)
@@ -70,6 +70,7 @@
 
 ## 🎉 Conquistas Recentes
 
+- ✅ **Auditoria de documentação** — Contradições corrigidas (Defesa Base Cap. 4), duplicações consolidadas (ROADMAP/backlog), arquivos removidos (issues/, scripts utilitários, ia-conversations/)
 - ✅ **Diagnóstico completo** do projeto (análise 360° — vibe/research/diagnostico-completo-projeto.md)
 - ✅ **ADR-003** — Estratégia de Repositórios (monorepo organizado com `game/` e `spinoffs/`)
 - ✅ **Plano de Desenvolvimento Realista** — Calendário Mar-Dez 2026 calibrado para ~6h/semana
