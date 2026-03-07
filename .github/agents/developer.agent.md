@@ -13,7 +13,7 @@ tools:
     "edit",
     "agent",
   ]
-model: Raptor mini (Preview) (copilot)
+model: Claude Sonnet 4.6 (copilot)
 handoffs:
   - label: Revisar Arquitetura
     agent: Architect

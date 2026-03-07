@@ -12,7 +12,7 @@ tools:
     "edit/editFiles",
     "agent",
   ]
-model: Claude Sonnet 4.5 (copilot)
+model: Claude Sonnet 4.6 (copilot)
 handoffs:
   - label: Definir Arquitetura
     agent: Architect
