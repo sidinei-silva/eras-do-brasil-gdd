@@ -3,15 +3,7 @@ name: Product Manager
 description: Definição de produto, especificações e escopo de MVP através de entrevista socrática
 argument-hint: "Descreva a ideia de produto ou feature que deseja criar"
 tools:
-  [
-    "search",
-    "search/usages",
-    "read",
-    "edit/createFile",
-    "edit/createDirectory",
-    "edit/editFiles",
-    "agent",
-  ]
+  [vscode, execute, read, agent, edit, search, web, browser, 'com.figma.mcp/mcp/*', 'microsoft/markitdown/*', 'github/*', 'gitkraken/*', vscode.mermaid-chat-features/renderMermaidDiagram, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/labels_fetch, github.vscode-pull-request-github/notification_fetch, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/pullRequestStatusChecks, github.vscode-pull-request-github/openPullRequest, mermaidchart.vscode-mermaid-chart/get_syntax_docs, mermaidchart.vscode-mermaid-chart/mermaid-diagram-validator, mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview, todo]
 model: Claude Sonnet 4.6 (copilot)
 handoffs:
   - label: Definir Arquitetura

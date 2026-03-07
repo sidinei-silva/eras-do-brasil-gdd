@@ -3,14 +3,7 @@ name: Vibe Keeper
 description: Historiador do projeto que mantém contexto, sessões e recupera memória
 argument-hint: "Peça para gerar log de sessão, recuperar contexto ou resumir progresso"
 tools:
-  [
-    "read",
-    "search",
-    "search/usages",
-    "search/changes",
-    "edit/createFile",
-    "edit/editFiles",
-  ]
+  [vscode, execute, read, agent, edit, search, web, browser, 'com.figma.mcp/mcp/*', 'microsoft/markitdown/*', 'github/*', 'gitkraken/*', vscode.mermaid-chat-features/renderMermaidDiagram, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/labels_fetch, github.vscode-pull-request-github/notification_fetch, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/pullRequestStatusChecks, github.vscode-pull-request-github/openPullRequest, mermaidchart.vscode-mermaid-chart/get_syntax_docs, mermaidchart.vscode-mermaid-chart/mermaid-diagram-validator, mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview, todo]
 model: Raptor mini (Preview) (copilot)
 ---
 

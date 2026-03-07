@@ -3,17 +3,7 @@ name: Architect
 description: Decisões de arquitetura, stack técnica e ADRs (Architecture Decision Records)
 argument-hint: "Descreva o sistema ou decisão técnica que precisa de arquitetura"
 tools:
-  [
-    "search",
-    "search/usages",
-    "read",
-    "web/githubRepo",
-    "web/fetch",
-    "edit/createFile",
-    "edit/createDirectory",
-    "edit/editFiles",
-    "agent",
-  ]
+  [vscode, execute, read, agent, edit, search, web, browser, 'com.figma.mcp/mcp/*', 'microsoft/markitdown/*', 'github/*', 'gitkraken/*', vscode.mermaid-chat-features/renderMermaidDiagram, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/labels_fetch, github.vscode-pull-request-github/notification_fetch, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/pullRequestStatusChecks, github.vscode-pull-request-github/openPullRequest, mermaidchart.vscode-mermaid-chart/get_syntax_docs, mermaidchart.vscode-mermaid-chart/mermaid-diagram-validator, mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview, todo]
 model: Claude Sonnet 4.6 (copilot)
 handoffs:
   - label: Criar Plano de Execução
