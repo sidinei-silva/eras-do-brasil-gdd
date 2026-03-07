@@ -89,6 +89,7 @@
 - ✅ **GitHub Project #10** — Todos os campos preenchidos (Sprint, Prioridade, Categoria, Tipo, Esforço)
 - ✅ **ROADMAP.md** — Totalmente alinhado com as 62 issues
 - ✅ **Website** atualizado com seção de notícias (PR #82 mergeado)
+- ✅ **Pesquisa de mercado** concluída (positivo para RPG tático, lacuna brasileira, público PT-BR, diferencial co-op P2P)
 
 ## 📝 Notas
 

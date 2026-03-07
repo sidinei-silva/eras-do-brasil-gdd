@@ -48,5 +48,8 @@ Consulte o [Roadmap de Desenvolvimento](../gdd/99_Meta_e_Backlog/02_Roadmap_Dese
 
 ---
 
+**Próxima ação recomendada:**
+- [ ] Chamar @product-manager para transformar insights da pesquisa de mercado em especificação de produto refinada, priorizando cultura brasileira e co-op P2P
+
 **Gerenciado por:** @tech-lead
 **Referência:** [ROADMAP.md](../ROADMAP.md) · [Guia de Retomada](../docs/GUIA_RETOMADA.md) · [POCs](../pocs/README.md) · [ADRs](decisions/) · [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10)
