@@ -1,12 +1,13 @@
 # Status do Projeto — Eras do Brasil
 
-**Última atualização:** 2026-02-17
+**Última atualização:** 2026-03-07
 
 ## 🎯 Fase Atual
 
-**Fase 0: Correções GDD + POCs** — Correções pré-backlog concluídas. GDD 100% consistente. Decisões técnicas definidas (ADR-001, ADR-002). Backlog completo com **62 issues** no [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10), organizadas em **7 sprints** (0–6+) e **9 Epics**. Pronto para iniciar Sprint 0 (Correções de Lore).
+**Fase 0: Reorganização + Sprint 0 (Lore)** — Projeto passou por reorganização profunda. Diagnóstico completo realizado. ADR-003 proposto (estratégia de repositórios). Plano de desenvolvimento realista criado (~6h/semana). Plano de spin-offs definido. Estrutura de pastas atualizada (`game/`, `spinoffs/`). MVP spec formalizado. Pronto para resolver Sprint 0 (Correções de Lore) e iniciar primeiro spin-off.
 
 > 🔴 **Retomando?** Comece pelo [Guia de Retomada](../docs/GUIA_RETOMADA.md)
+> 📋 **Plano completo:** [docs/product/plano-desenvolvimento-realista.md](../docs/product/plano-desenvolvimento-realista.md)
 
 ## 📊 Progresso Geral
 
@@ -14,13 +15,18 @@
 |------|--------|-----------|
 | **GDD (Design)** | ✅ Completo | 100% (todas correções pós-auditoria concluídas) |
 | **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras |
-| **Decisões Técnicas** | ✅ Definidas | ADR-001 (Unity único) + ADR-002 (Workflow UI/UX) |
+| **Decisões Técnicas** | ✅ Definidas | ADR-001 (Unity único) + ADR-002 (Workflow UI/UX) + ADR-003 (Repositórios) |
 | **Backlog GitHub** | ✅ Completo | 62 issues (#20-#81), 9 Epics, 7 Sprints (0–6+) |
-| **Livros Auxiliares** | ⚠️ Parcial | 1/7 (apenas Atlas do Eco) |
+| **Livros Auxiliares** | ⚠️ Parcial | 2/7 (Atlas do Eco + Catálogo de Itens) |
 | **Schemas e Dados** | ✅ Completo | 100% |
 | **Roadmap** | ✅ Consolidado | 100% — alinhado com Project #10 |
-| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos Sprint 2, protótipos Sprint 4 |
+| **Diagnóstico** | ✅ Completo | Análise 360° realizada em 2026-03-07 |
+| **Plano de Desenvolvimento** | ✅ Criado | Calendário mensal Mar-Dez 2026, ~6h/semana |
+| **Plano de Spin-offs** | ✅ Criado | 4 spin-offs definidos (Quiz, Card Game, Idle, Tactics) |
+| **MVP Spec** | ✅ Formalizado | 12 POCs necessárias (de 38 originais) |
+| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos Sprint 2 |
 | **POCs** | 🔲 Não iniciado | 0/38 |
+| **Spin-offs** | 🔲 Não iniciado | 0/4 |
 | **MVP** | 🔲 Aguardando POCs | 0% |
 
 ## 📕 Design Concluído
@@ -64,6 +70,14 @@
 
 ## 🎉 Conquistas Recentes
 
+- ✅ **Diagnóstico completo** do projeto (análise 360° — vibe/research/diagnostico-completo-projeto.md)
+- ✅ **ADR-003** — Estratégia de Repositórios (monorepo organizado com `game/` e `spinoffs/`)
+- ✅ **Plano de Desenvolvimento Realista** — Calendário Mar-Dez 2026 calibrado para ~6h/semana
+- ✅ **Plano de Spin-offs** — 4 jogos menores para aprendizado + validação de mecânicas
+- ✅ **MVP Spec** — Escopo exato de "O Despertar" (12 POCs, 1 personagem, 3 nós, 1 quest)
+- ✅ **Perfil do Developer** documentado (skills, limitações, disponibilidade)
+- ✅ **Contexto do Repo Legado** documentado (mapa do que há no ErasDoBrasil-Historico-Legado)
+- ✅ **Estrutura de pastas** atualizada (`game/`, `spinoffs/`)
 - ✅ GDD completo (9+ livros, 50+ documentos)
 - ✅ 38 POCs definidas com READMEs detalhados
 - ✅ Auditoria do GDD concluída (PR #1 mergeado — 4 correções, 7 recomendações)
