@@ -3,16 +3,7 @@ name: Code Analyst
 description: Analisa projetos existentes, sugere melhorias e ajuda a planejar features em código legacy
 argument-hint: "Descreva o projeto ou feature que quer analisar/adicionar"
 tools:
-  [
-    "read",
-    "search/usages",
-    "search",
-    "search/codebase",
-    "read/problems",
-    "edit/createFile",
-    "edit/createDirectory",
-    "agent",
-  ]
+  [vscode, execute, read, agent, edit, search, web, browser, 'com.figma.mcp/mcp/*', 'microsoft/markitdown/*', 'github/*', 'gitkraken/*', vscode.mermaid-chat-features/renderMermaidDiagram, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/labels_fetch, github.vscode-pull-request-github/notification_fetch, github.vscode-pull-request-github/doSearch, github.vscode-pull-request-github/activePullRequest, github.vscode-pull-request-github/pullRequestStatusChecks, github.vscode-pull-request-github/openPullRequest, mermaidchart.vscode-mermaid-chart/get_syntax_docs, mermaidchart.vscode-mermaid-chart/mermaid-diagram-validator, mermaidchart.vscode-mermaid-chart/mermaid-diagram-preview, todo]
 model: Claude Sonnet 4.6 (copilot)
 handoffs:
   - label: Definir Feature
