@@ -32,20 +32,21 @@ Os personagens do jogador são seres marcados por esse Dom:
 
 ---
 
-## 4. Arquitetura da Realidade: A Sincronia dos Ecos (Sistema Co-op)
+## 4. Arquitetura da Realidade: Ecos e Raízes (Sistema Híbrido)
 
-Para conciliar a narrativa pessoal profunda com a possibilidade de compartilhar sua jornada, *Eras do Brasil* utiliza o conceito místico de **Sincronia Espiritual**.
+Para conciliar a narrativa pessoal profunda com um mundo online vivo, *Eras do Brasil* utiliza o conceito de **Ruptura Temporal** na sua estrutura de jogo.
 
-### 4.1 O Eco (Seu Mundo Pessoal)
-Cada campanha é um **Eco** único na linha do tempo.
-* **O Guardião do Tempo (O Anfitrião):** Você é a âncora da sua realidade. As decisões que você toma (salvar ou queimar a vila) marcam o "tecido" do seu mundo permanentemente.
-* **Soberania:** O tempo e a história obedecem à sua presença. Se você pausar, o mundo pausa. Se você não está lá, o Eco adormece.
+### 4.1 O Eco (Modo Offline / História Pessoal)
+É a linha do tempo pessoal do jogador.
+* **Conceito:** Uma simulação ou memória de eventos passados (ex: 1497).
+* **Soberania:** O mundo reage exclusivamente às escolhas do jogador. Se ele salvar a vila, ela permanece salva neste Eco.
+* **Estabilidade:** O "Relógio da Ruptura" pausa quando o jogador desloga. Ideal para imersão, leitura de diálogos e experimentação.
 
-### 4.2 A Raiz (A Conexão Espiritual)
-A **Raiz do Mundo** é o canal que permite que outros Despertos (seus amigos) cruzem a fronteira entre os Ecos e visitem seu mundo.
-* **O Viajante:** Um aliado pode projetar seu espírito no seu mundo (Eco do Anfitrião) para ajudar.
-* **Vínculo (Ganhos Compartilhados):** O Viajante mantém a experiência (XP) e os itens (Loot) que conquistar, levando-os de volta para sua própria realidade.
-* **Consequência:** Enquanto estão conectados pela Raiz, os destinos se entrelaçam. O perigo enfrentado por um é real para ambos.
-* **Impacto na História:** O Viajante não toma decisões narrativas críticas (só o Anfitrião decide), mas suas ações em combate e exploração são vitais para o sucesso do grupo.
+### 4.2 A Raiz (Modo Online / Mundo Persistente)
+É a "Linha do Tempo Mestra" do servidor, onde todos os jogadores coexistem.
+* **Conceito:** O presente vivo e instável. A história avança via **Temporadas** (ex: "Ato 1", "Ato 2").
+* **Soberania Comunitária:** Se a comunidade falhar em um evento global, o mapa muda para todos na próxima temporada. Quem entra depois joga a "Consequência".
+* **Economia de Risco:** Full loot, missões competitivas, e recursos finitos criam tensão real. Materiais raros e Moedas de Classe existem em maior quantidade na Raiz.
+* **Legado:** O jogo reconhece os feitos do jogador no Offline (Títulos) e os NPCs da Raiz reagem a isso ("Olhem, o Herói do Eco de 1497 chegou!").
 
-> *"Caminhamos em nossos próprios sonhos, mas nas horas mais sombrias, a Raiz nos permite sonhar juntos."*
+> *"Cada Eco é um sonho. A Raiz é o despertar — e na Raiz, os sonhos de todos se cruzam."*

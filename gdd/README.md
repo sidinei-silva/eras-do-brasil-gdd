@@ -2,21 +2,22 @@
 
 > Fonte Única da Verdade (SSoT) do design de jogo. Todo o design, lore, regras e planejamento vivem aqui.
 
-**Navegação rápida:** [Projeto](../README.md) · [POCs](../pocs/README.md) · [Roadmap](../ROADMAP.md) · [🔴 Guia de Retomada](../docs/GUIA_RETOMADA.md)
+**Navegação rápida:** [Projeto](../README.md) · [Roadmap](../ROADMAP.md) · [🔴 Guia de Retomada](../docs/GUIA_RETOMADA.md) · [ADR-004](../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md)
 
 ---
 
 ## 🌿 Visão Geral
 
-*Eras do Brasil* é um RPG tático de **eco-fantasia** ambientado em uma versão mística do Brasil colonial (1497), onde **colonizadores, povos originários e entidades folclóricas** coexistem em ciclos interconectados de tempo, espiritualidade e memória.
+*Eras do Brasil* é um **MUD Moderno** (servidor Go + cliente web) de **eco-fantasia** ambientado em uma versão mística do Brasil colonial (1497), onde **colonizadores, povos originários e entidades folclóricas** coexistem em um mundo persistente online interconectado por ciclos de tempo, espiritualidade e memória.
 
 ### Pilares do Design
 
 * **A Raiz do Mundo** — Entidade espiritual que conecta todas as eras e memórias
 * **O Dom da Revivência** — Troca livre de classes herdando habilidades ativas
-* **Mundo Vivo (Ticks)** — NPCs com rotinas, necessidades e rede de fofoca
+* **Mundo Persistente Online** — Servidor Go 24/7, NPCs com rotinas, Utility AI, fofoca
 * **Progressão Flexível** — 12 classes × 3 Tiers com builds híbridas
 * **Itemização Profunda** — Matriz 5×5 de Qualidade × Raridade
+* **Economia de Risco** — Full Loot com mitigações (Marca do Eco, seguro)
 
 ---
 
@@ -96,7 +97,7 @@ Pixel art, paleta, UI/HUD.
 | Documento | Conteúdo |
 |-----------|----------|
 | [01 — Estratégia de Dados](99_Meta_e_Backlog/01_Estrategia_de_Dados_e_Documentacao.md) | Filosofia "Alma vs. Lógica" |
-| [02 — Roadmap de Desenvolvimento](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Fases, POCs, checklist completo |
+| [02 — Roadmap de Desenvolvimento](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Fases (Heartbeat → Multiplayer), checklist |
 | [03 — Auditoria do GDD](99_Meta_e_Backlog/03_Auditoria_GDD.md) | Resultado da auditoria de consistência (PR #1) |
 
 ---
@@ -106,7 +107,8 @@ Pixel art, paleta, UI/HUD.
 | Recurso | Descrição |
 |---------|-----------|
 | [README do Projeto](../README.md) | Visão geral do repositório |
-| [POCs](../pocs/README.md) | 38 provas de conceito Unity/C# |
 | [Roadmap Público](../ROADMAP.md) | Status e progresso geral |
 | [Game Pitch](Game_Pitch.md) | Documento de apresentação |
-| [Project Plan](Project%20Plan.md) | Plano de projeto e estratégia |
+| [Project Plan](Project%20Plan.md) | Plano de projeto (MUD Moderno) |
+| [ADR-004 — Pivot MMORPG](../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md) | Decisão do pivot para servidor Go |
+| [Guia de Retomada](../docs/GUIA_RETOMADA.md) | Ponto de partida para retomar o projeto |

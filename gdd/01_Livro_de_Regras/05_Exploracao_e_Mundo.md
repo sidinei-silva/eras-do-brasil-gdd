@@ -11,7 +11,7 @@ O sistema de exploração foi projetado para:
 - Funcionar de forma consistente tanto no RPG de mesa quanto na versão digital (Fase 1).
 - Permitir que NPCs se movam e evoluam junto ao jogador, seguindo **rotinas vivas**.
 - Tornar cada ambiente significativo — com recursos, eventos, segredos e reações.
-- Preparar o terreno para a futura expansão de **simulação completa de Mundo Vivo**, que será ativada na Fase 2 da versão digital.
+- Preparar o terreno para a **simulação completa de mundo persistente**, que será o modo padrão na versão digital (servidor online).
 
 ---
 
@@ -177,7 +177,7 @@ O relógio avança 2 Ticks. Os NPCs da vila realizam 2 ações de suas rotinas. 
 
 O **sistema de ticks** é a unidade fundamental de tempo em *Eras do Brasil*, controlando não apenas a passagem de horas e dias, mas também a movimentação de personagens, NPCs, eventos e mudanças no mundo.
 
-> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs, necessidades, rotinas, sistema de fofoca e arquitetura de ticks em multiplayer, consulte o [Capítulo 8 — Mestres, Campanhas e Mundo Vivo](08_Mundo_Vivo_e_NPCs.md).
+> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs, necessidades, rotinas, sistema de fofoca e arquitetura de ticks no servidor, consulte o [Capítulo 8 — Mundo Vivo, NPCs e Servidor](08_Mundo_Vivo_e_NPCs.md).
 
 Cada tick representa um **bloco de tempo narrativo**, que pode variar conforme o contexto da campanha:
 
@@ -244,16 +244,16 @@ Se o NPC for bem-sucedido:
 
 ---
 
-### 📅 Avanço Global e Mundo Vivo
+### 📅 Avanço Global e Mundo Persistente
 
-- O tempo é reativo, mas o mundo simula vida.
-- Eventos podem ocorrer com base nos ticks globais acumulados:
-  - NPCs mudam de posição.
-  - Recursos se regeneram ou se esgotam.
-  - Locais entram em estado de alerta.
-  - Facções ou criaturas agem (simulação abstrata).
+- O tempo **avança mesmo sem os jogadores**, no modo digital persistente.
+- Eventos ocorrem com base nos ticks globais:
+  - NPCs mudam de posição
+  - Recursos se regeneram ou se esgotam
+  - Locais entram em estado de alerta
+  - Facções ou criaturas agem independentemente
 
-> Em campanhas de mesa, o mestre pode simular isso com tabelas e anotações. No digital, o **sistema de jogo** processará as rotinas automaticamente em segundo plano.
+> Em campanhas de mesa, o mestre pode simular isso com tabelas e anotações. No digital, o **servidor** processará tudo automaticamente.
 
 ---
 
@@ -280,7 +280,7 @@ NPCs (Personagens Não Jogáveis) são figuras fundamentais no mundo de *Eras do
 
 Este sistema cria uma experiência viva e reativa, tanto no RPG de mesa quanto na versão digital.
 
-> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs (Utility AI), sistema de necessidades e traços, `knowledgeBase`, esquecimento de memória e sistema de fofoca, consulte o [Capítulo 8 — Mestres, Campanhas e Mundo Vivo](08_Mundo_Vivo_e_NPCs.md), especialmente as seções 8.3 e 8.6.
+> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs (Utility AI), sistema de necessidades e traços, `knowledgeBase`, esquecimento de memória e sistema de fofoca, consulte o [Capítulo 8 — Mundo Vivo, NPCs e Servidor](08_Mundo_Vivo_e_NPCs.md), especialmente as seções 8.3 e 8.6.
 
 ---
 
@@ -594,13 +594,14 @@ No RPG de mesa, o mestre pode:
 
 ### 🌐 Eventos Globais (Fase Digital)
 
-Na versão digital com Mundo Vivo, eventos podem afetar a região inteira, como:
+Na versão digital com mundo persistente, eventos podem afetar **todos os jogadores conectados**, como:
 
-- Chegada de uma nova facção.
-- Quebra de equilíbrio entre as Eras.
-- Espíritos corrompendo grandes áreas do mapa.
+- Chegada de uma nova facção
+- Quebra de equilíbrio entre as Eras
+- Espíritos corrompendo grandes áreas do mapa
+- Recompensas únicas para os primeiros a completarem a missão
 
-> Esses eventos possuem ciclos próprios, progredindo com base nas ações e no tempo gasto pelo grupo de jogadores.
+> Esses eventos possuem **ciclos próprios**, iniciando, progredindo e encerrando com base nas ações da comunidade.
 
 ---
 
@@ -774,7 +775,7 @@ No próximo capítulo, **Capítulo 6 – Economia, Itens e Crafting**, abordarem
 - Recursos coletáveis
 - Sistemas de criação de itens
 - Qualidade e raridade dos equipamentos
-- Comerciantes, reparos e economia do Mundo Vivo
+- Comerciantes, reparos e economia do mundo persistente
 
 Você entenderá como os frutos da exploração se convertem em **progresso, sobrevivência e personalização do personagem** — seja dominando a forja de um machado espiritual ou criando um ensopado raro que salva vidas em um ritual.
 

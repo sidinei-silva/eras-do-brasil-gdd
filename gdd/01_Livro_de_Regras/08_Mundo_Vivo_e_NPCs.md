@@ -1,37 +1,57 @@
-# 🌍 Capítulo 8 – Mestres, Campanhas e Mundo Vivo
+# 🌍 Capítulo 8 – Mundo Vivo, NPCs e Servidor
 
-Este capítulo é dedicado aos mestres e ao sistema de "Mundo Vivo", que é um dos pilares centrais do jogo. Ele detalha como o mundo reage, como os NPCs pensam e como o tempo (Ticks) afeta a simulação.
+Este capítulo é dedicado ao sistema de "Mundo Vivo", que é o **pilar central** do jogo. Ele detalha como o servidor simula o mundo, como os NPCs pensam, como o tempo (Ticks) afeta a simulação e como múltiplos jogadores coexistem no mesmo mundo persistente.
 
 ---
 
-## 8.1 – O Papel do Mestre no Mundo Vivo
+## 8.1 – O Mundo Persistente
 
-O mestre, em *Eras do Brasil*, não é apenas o narrador dos eventos — é o **guardião da Raiz do Mundo**, responsável por gerenciar o equilíbrio entre narrativa, desafios, evolução do mundo e escolhas dos jogadores.
+*Eras do Brasil* é um **mundo persistente online**. O servidor roda 24/7, simulando NPCs, economia, clima, facções e eventos — independentemente de haver jogadores conectados.
 
-Diferente de muitos sistemas clássicos, aqui o mestre não controla um universo estático, mas sim um **mundo vivo, dinâmico e em constante transformação**, onde:
 - **NPCs possuem rotinas, desejos, vínculos e conhecimento próprio.**
-- **O mundo se move reagindo à presença dos jogadores.**
+- **O mundo se move mesmo sem a presença dos jogadores.** Um novo jogador que entra pode encontrar o mundo em estado "Pós-Guerra", ouvindo apenas histórias sobre quem lutou na batalha.
 - **Eventos acontecem em ciclos temporais (ticks), afetando regiões, recursos, mercados, facções e relações.**
 
-O mestre deve equilibrar três pilares:
-1.  **Simulação:** garantir que o mundo viva e evolua.
-2.  **Narrativa:** tecer histórias envolventes.
-3.  **Jogabilidade:** assegurar que desafios e recompensas estejam calibrados.
+Os três pilares do Mundo Vivo:
+1.  **Simulação:** O servidor garante que o mundo viva e evolua a cada tick.
+2.  **Narrativa:** Eventos globais tecem histórias que emergem das ações coletivas dos jogadores.
+3.  **Jogabilidade:** Desafios e recompensas se calibram dinamicamente pela economia e pela IA.
 
 ---
 
-## 8.2 – Arquitetura de Ticks e Fila de Ações
+## 8.2 – Arquitetura de Ticks, Blocos e Ciclos
 
-O mundo é regido por **Ticks** (unidade de tempo) e processado através de uma **Fila de Ações (Action Queue)**.
+O mundo é construído sobre uma lógica de **Blocos de Cenário** (cap. 5.2) e regido por **Ticks**.
 
-### Arquitetura do "Tick de Fila" (Multiplayer Assíncrono)
-Para permitir que jogadores realizem ações de durações diferentes (ex: um viaja por 10 ticks, o outro combate por 5), o sistema utiliza uma lógica de **Débito de Tempo**:
+### Arquitetura do "Tick Comutável" (Offline vs. Online)
+O motor do mundo de *Eras do Brasil* é o "Tick". Um Tick é a unidade fundamental de avanço do tempo. Toda a arquitetura de simulação é construída sobre um "Motor" de lógica (`Mundo.ProcessarTick()`) que é **separado de seu "Gatilho"**.
 
-1.  **O Débito:** Quando um jogador realiza uma ação longa (viajar, craftar), ele acumula "Débito de Ticks" e entra em estado de espera.
-2.  **A Resolução:** O servidor (Host) processa as ações do jogador com *menor* débito até que ele alcance o tempo do outro.
-3.  **Sincronia:** O relógio do mundo (Dia/Noite/NPCs) avança conforme o "Maior Débito Comum" é pago.
+* **Gatilho Offline (Reativo):** Para testes locais e desenvolvimento, o mundo é reativo. O "Motor" do Tick só é disparado manualmente ou por ação do jogador. Útil para debug e validação.
+* **Gatilho Online (Proativo):** No servidor de produção, o mundo é proativo. O "Motor" do Tick é disparado por um relógio global (ex: goroutine com `time.Ticker` a cada X segundos), independentemente das ações dos jogadores. O mundo avança sozinho.
 
-Isso impede que um jogador que está apenas andando na praça (1 tick) tenha que esperar 10 minutos reais enquanto o outro viaja pelo mapa.
+```
+// O "Motor" do Tick — reutilizável em ambos os modos
+Mundo.ProcessarTick():
+  TimeManager.AvancarTempo(1)
+  NPCManager.AtualizarAgendas()
+  QuestManager.VerificarPrazos()
+  StoryManager.VerificarEventosAgendados()
+  Mundo.SalvarEstado()
+```
+
+### Ciclos Temporais
+Ticks fazem parte de ciclos maiores, que podem ser:
+- **Ciclos Diurnos:** manhã, tarde, noite, madrugada.
+- **Ciclos Semanais:** feiras, rituais, migrações.
+- **Ciclos Sazonais:** estações que alteram recursos e clima.
+- **Ciclos Espirituais:** fases da lua, rupturas da Raiz.
+
+A cada Tick, o mundo atualiza:
+- Movimentação de NPCs.
+- Regeneração ou esgotamento de recursos.
+- Ativação de eventos.
+- Progresso de missões com prazo.
+- Relações de facções e economia.
 
 ---
 
@@ -187,29 +207,156 @@ NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos
 
 ---
 
-## 8.7 – Dinâmica de Tempo: Fila e Bolha
+## 8.7 – Arquitetura do Mundo Persistente (Online)
 
-Em *Eras do Brasil*, o tempo é um recurso tático geranciado individualmente, mas sincronizado globalmente.
+No modo online, o Tick Global proativo impulsiona todos os sistemas de simulação do servidor.
 
-### 1. Modo Solo (Fluxo Direto)
-O mundo reage imediatamente. Se você gasta 5 Ticks viajando, os NPCs movem 5 passos instantaneamente.
+### StoryManager (O Calendário de Eventos do Mundo)
+O `StoryManager` funciona como um "Calendário de Eventos do Mundo". A história principal, eventos sazonais e invasões de facções avançam com o Tick Global, não com o progresso de um jogador individual.
 
-### 2. Modo Cooperativo (Fluxo de Fila)
-O tempo opera em **Sincronia Flexível**:
-* **Jogador A** decide viajar para a Floresta (Custo: 5 Ticks). Ele fica "Ocupado/Viajando".
-* **Jogador B** está na Vila. Ele tem 5 Ticks de "Tempo Livre" para gastar (comprar, falar, craftar rápido) antes de alcançar o tempo do Jogador A.
-* **Convergência:** Se o Jogador B também viajar para a Floresta (5 Ticks), ambos chegam juntos e o tempo sincroniza.
+Um novo jogador que entra no servidor pode encontrar o mundo em um estado diferente do inicial — ouvindo apenas histórias sobre os jogadores que lutaram na batalha anterior.
 
-### 3. A Bolha de Combate
-Quando um combate inicia, ele gera Ticks para a Fila:
-* **1 Rodada de Combate = 1 Tick de Débito.**
-* Se o Jogador A está lutando (gastando 1 tick por rodada), o Jogador B (que está fora da luta) pode assistir ou realizar ações curtas de 1 tick ao redor da área de combate, mantendo o fluxo dinâmico.
+**Branching de Timeline:**
+```
+Tick Global 10.000 → Evento "Invasão" começa
+  → NPCs em pânico, novos inimigos no mapa
+  → Missão Mundial criada: "Derrote o Rei Goblin" (prazo: Tick 15.000)
+
+Cenário A: Jogadores vencem no Tick 12.500
+  → StoryManager avança para "Era da Reconstrução"
+
+Cenário B: Tick 15.000 chega sem resolução
+  → StoryManager avança para "Era da Ocupação"
+  → Mapa muda para todos
+```
+
+### Sistema de Missões "Corrida pela Recompensa"
+Para se alinhar ao mundo persistente, as missões de NPCs seguem um modelo de **competição**:
+
+1.  **Anúncio:** Um NPC anuncia um problema (ex: "Preciso de 10 Peles de Lobo").
+2.  **Múltiplos Aceites:** Vários jogadores (ou grupos) podem aceitar a missão.
+3.  **Primeiro a Concluir:** A recompensa é entregue ao *primeiro jogador* que retornar com os itens. O NPC informará aos outros que "o problema já foi resolvido por outro aventureiro".
+4.  **Expiração:** A missão tem um prazo de validade baseado no Tick Global (ex: "Preciso das peles antes de 3 dias"). Se ninguém completar, a missão falha para todos e o mundo reage (ex: o NPC fica sem estoque).
+
+### Quadro de Missões (BountyManager) — Metas Coletivas
+Sistema de contribuição comunitária onde jogadores contribuem individualmente para metas globais:
+
+* Uma cidade precisa de 100 couros para construir uma muralha.
+* Cada jogador contribui com até 10 couros.
+* Ao atingir thresholds (25%, 50%, 75%, 100%), recompensas são liberadas para todos que contribuíram.
+* Se o prazo expirar sem completar, a cidade sofre as consequências (invasão, escassez).
 
 ---
 
-## 8.8 – O Papel dos Despertos (Dinâmica Cooperativa)
+## 8.8 – Dinâmica de Eventos Globais e Consequências (Meta-Eventos)
 
-Para evitar conflitos de narrativa e garantir a integridade do save, definimos papéis claros:
+Em *Eras do Brasil*, as **Missões Principais** funcionam como gatilhos para mudanças de estado no mundo.
 
-* **O Anfitrião (Dono do Eco):** É a âncora da realidade. Ele tem a palavra final em diálogos de missão e escolhas morais que alteram o mundo permanentemente (pois o save é dele).
+### Os 3 Estados de um Evento (Linha do Tempo)
+1.  **Tensão (Pré-Evento):** Sinais visuais e missões de preparação.
+2.  **Apogeu (O Evento):** O clímax (Batalha/Ritual).
+3.  **Legado (Pós-Evento):** O mundo transformado pela consequência (Vitória ou Derrota).
+
+### Decisão Coletiva
+O desfecho é decidido pela ação (ou inação) da comunidade. Se os jogadores falharem em entregar suprimentos a tempo, a vila queima para todos na próxima temporada.
+
+### Recompensas de Legado
+* Jogadores recebem Títulos ("Veterano da Ruptura") que são reconhecidos por NPCs em futuras temporadas.
+* Estruturas construídas ou destruídas persistem no mundo.
+* NPCs lembram e referenciam eventos passados em diálogos.
+
+---
+
+## 8.9 – Sincronia de Tempo e Dinâmica Online
+
+### Tick Global Proativo
+O servidor roda um ciclo contínuo:
+* `Game_Time` avança a cada X segundos reais (ex: 1 Tick = 5 segundos).
+* Isso garante que todos os jogadores conectados vejam o sol se pôr ou o Boss atacar ao mesmo tempo.
+* NPCs seguem rotinas baseadas neste relógio global.
+
+### Turnos de Trabalho dos NPCs
+Para evitar que NPCs "sumam" quando o jogador precisa deles, utilizamos **Turnos Globais**:
+
+1.  **Ciclo Acelerado:** O servidor roda um ciclo Dia/Noite.
+2.  **Turnos de NPC:**
+    * **Dia:** O Mestre Ferreiro atende na Forja (Qualidade Alta).
+    * **Noite:** O Mestre vai para a Taverna. O **Aprendiz** assume a Forja (Qualidade Normal, Estoque Reduzido).
+    * **Resultado:** O serviço nunca fecha (evitando punição ao jogador casual), mas o mundo respira e os NPCs têm vida.
+
+### Bolha de Combate
+Quando um jogador entra em combate:
+* O combate é resolvido em **turnos táticos** (Iniciativa), isolado do tick global.
+* O mundo continua avançando ao redor — outros jogadores não são pausados.
+* Ao final do combate, o sistema calcula a duração da luta e aplica os ticks equivalentes ao jogador.
+
+---
+
+## 8.10 – Full Loot e Economia de Risco
+
+### Regra: Morte = Perda
+Ao morrer, o jogador **perde todos os itens equipados e no inventário**, que caem no local da morte como loot acessível a qualquer jogador ou NPC.
+
+### Mitigações
+* **Baú Seguro:** Cada jogador tem um baú limitado em cidades aliadas onde pode guardar itens. Esses itens são protegidos.
+* **Seguro de Facção:** Facções aliadas podem oferecer "seguro" — ao morrer, parte dos itens vai para o cofre da facção em vez de dropar.
+* **Espírito de Retorno:** Ao morrer, o jogador tem X ticks para voltar ao local e recuperar seus itens antes que outros os peguem ou que NPCs os recolham.
+* **Itens Soulbound:** Itens lendários ou de missão podem ser marcados como "vinculados à alma" — não dropam na morte.
+
+### Inimigos Evolutivos
+* Inimigos que derrotam um jogador **ganham XP** e podem reaparecer como líderes mais poderosos.
+* Se um lobo mata 3 jogadores, ele se torna um "Alfa" com stats aumentados e loot melhor.
+* Isso cria uma ecologia emergente onde a morte tem consequências narrativas.
+
+---
+
+## 8.11 – Relógio da Ruptura
+
+O **Relógio da Ruptura** é um ciclo de ~500 ticks que governa transições de era e rupturas temporais no mundo.
+
+* A cada ciclo completo, a Raiz do Mundo pulsa — eventos de ruptura podem disparar.
+* Rupturas alteram geografias, abrem portais, corrompem regiões ou trazem criaturas de outras eras.
+* NPCs sentem a aproximação da ruptura (mudanças de humor, diálogos de medo/excitação).
+* Jogadores preparados podem **influenciar o tipo de ruptura** através de rituais coletivos.
+
+---
+
+## 8.12 – Arquitetura do Motor (Managers)
+
+O servidor é estruturado como uma coleção de **Managers** que rodam a cada tick:
+
+```
+Motor (código reutilizável):
+  TickManager       — Controla o relógio global e dispara ProcessarTick()
+  NPCManager        — Atualiza agendas, needs, decisões de IA
+  QuestManager      — Verifica prazos, missões competitivas, bounties
+  StoryManager      — Calendário de eventos, branching de timeline
+  InventoryManager  — Inventários, drops, full loot
+  CombatManager     — Resolve combates em turno, aplica D20
+  EventBus          — Pub/Sub desacoplado (OnItemCollected, OnNPCDied, etc.)
+
+Conteúdo (dados do jogo, JSON):
+  - NPCs e agendas
+  - Items e receitas
+  - Quests e objetivos
+  - Habilidades e magias
+  - Mapas e blocos de cenário
+
+Cliente (interface):
+  - HTML/CSS/JS via WebSocket
+  - Renderiza texto e painéis de informação
+  - Input do jogador (comandos de texto ou botões)
+```
+
+### EventBus (Arquitetura Event-Driven)
+Os managers se comunicam via Pub/Sub desacoplado:
+
+```
+// Quando jogador coleta item:
+EventBus.Publish("OnItemCollected", { id: "item_minerio_ferro", qtd: 1 })
+
+// QuestManager escuta e atualiza objetivos automaticamente
+// InventoryManager escuta e atualiza inventário
+// NPCManager escuta e atualiza knowledgeBase de NPCs próximos
+```
 * **O Viajante (Aliado):** É um suporte de luxo e companheiro de armas. Ele pode interagir com lojas, coletar recursos e lutar livremente, mas em diálogos cruciais da história, ele atua como conselheiro (pode sugerir opções, mas a decisão final é do Anfitrião).

@@ -1,7 +1,9 @@
 # 🗓️ Plano de Desenvolvimento Realista — Eras do Brasil
 
-**Data:** 2026-03-07
+**Data:** 2026-03-11 (atualizado pós-pivot)
 **Premissa:** 3 noites/semana × ~2h/noite = **~6h/semana** (~24h/mês)
+**Stack:** Servidor Go + Cliente Web (WebSocket)
+**Referência:** [ADR-004 — Pivot MMORPG Servidor Go](../../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md)
 
 ---
 
@@ -15,95 +17,74 @@
 
 | Mês | Foco Principal | Entregável |
 |-----|---------------|------------|
-| **Mar** | Reorganização + Sprint 0 (Lore) + Spin-off 1 | Repo organizado, lore resolvido, card game funcional |
-| **Abr** | Sprint 1 (Livros) + Setup Unity | Livros auxiliares, projeto Unity rodando |
-| **Mai** | Sprint 2 (POCs 01-03) | Motor de dados + D20 + criação de personagem |
-| **Jun** | Sprint 2 (POCs 04-06) + Spin-off 2 | Progressão + itens + idle game protótipo |
-| **Jul** | Sprint 3 (POCs 07-08, 17) | Ticks + navegação + primeiro combate |
-| **Ago** | Sprint 3 (POCs 18-19) | Combate com status e habilidades |
-| **Set** | Sprint 4 (POCs 24, 28, 33) | Inventário + HUD + save/load |
-| **Out** | Sprint 5 (MVP "O Despertar") | Loop jogável de 15-30min |
-| **Nov** | Playtest + polish | Build Windows exportável |
-| **Dez** | Retrospectiva + planejamento 2027 | Decisão sobre próximos passos |
+| **Mar** | Pivot + Rollback GDD + Fase 0 | GDD atualizado, servidor Go com tick + WebSocket |
+| **Abr** | Fase 1: Living World | 3 blocos, 2 NPCs com rotina por ticks |
+| **Mai** | Fase 2: Observer | Cliente web mostrando mundo vivo em tempo real |
+| **Jun** | Fase 3: Player (parte 1) | Criação de personagem, movimentação, Motor D20 |
+| **Jul** | Fase 3: Player (parte 2) | Combate estático, inventário, save/load |
+| **Ago** | Fase 4: Interaction (parte 1) | NPCs com diálogos, fofoca, facções |
+| **Set** | Fase 4: Interaction (parte 2) | Crafting, coleta, economia, Relógio da Ruptura |
+| **Out** | Fase 4: Interaction (parte 3) | 3 classes, 8 blocos, 1 mini-campanha |
+| **Nov** | Playtest + polish | Loop completo funcional, testes |
+| **Dez** | Retrospectiva + planejamento 2027 | Decisão sobre Fase 5 (D20 Full) |
 
-> ⚠️ Este calendário é **otimista**. Se escorregar, a regra é: **terminar a sprint atual antes de começar a próxima**.
+> ⚠️ Este calendário é **otimista**. Se escorregar, a regra é: **terminar a fase atual antes de começar a próxima**.
 
 ---
 
 ## Detalhamento por Fase
 
-### Fase 0: Reorganização + Lore (Março 2026) — AGORA
+### Fase 0: Heartbeat (Março 2026) — AGORA
 
-**Semana 1-2: Reorganização (6-12h)**
-- [x] Diagnóstico completo do projeto
-- [x] ADR-003: Estratégia de repositórios
-- [ ] Criar pastas `game/` e `spinoffs/`
-- [ ] Atualizar README.md principal
-- [ ] Popular `docs/product/` com spec do MVP
-- [ ] Documentar contexto do repo legado
+**~12h (2 semanas)**
+- [ ] `go mod init` + projeto Go básico rodando
+- [ ] Tick loop com `time.Ticker` (goroutine)
+- [ ] WebSocket server (`gorilla/websocket`)
+- [ ] Cliente HTML mínimo conectado, mostrando "Tick: N"
 
-**Semana 3-4: Sprint 0 — Lore (6-12h)**
-- [ ] Resolver 8 furos de lore (Issues #21-#31)
-- [ ] Cada furo = 30-60min de decisão + atualização do GDD
-- [ ] Abordagem: ler o furo → decidir → atualizar doc → fechar issue
+### Fase 1: Living World (Abril 2026)
 
-**Paralelo: Spin-off 1 — Card Game (ver plano de spin-offs)**
+**~24h (4 semanas)**
+- [ ] Structs para Bloco, NPC, Mundo
+- [ ] Grafo de 3 blocos (Vila, Floresta, Ruínas) com adjacência
+- [ ] NPC com agenda por tick (Ferreiro: casa→forja→casa)
+- [ ] Utility AI básica (necessidades: fome, cansaço)
+- [ ] Ciclo Dia/Noite por ticks
+- [ ] Log de eventos: "Tick 42: Ferreiro chegou na Forja"
 
-### Fase 1: Livros + Setup (Abril 2026)
+### Fase 2: Observer (Maio 2026)
 
-**Sprint 1 — Livros Auxiliares (~12h)**
-- [ ] Livro de Habilidades (#33) — consolidar 12 classes
-- [ ] Bestiário Ato 1 (#36) — 10-15 inimigos do MVP
-- [ ] Proficiências (#35) — coleta e receitas básicas
+**~24h (4 semanas)**
+- [ ] Cliente web com mapa de nós (HTML/CSS clicável)
+- [ ] Feed de eventos em tempo real via WebSocket
+- [ ] Inspeção de NPC (clicar → ver estado, necessidade, ação)
+- [ ] Relógio visual (Tick + período)
 
-**Sprint 1 — Diálogos (parcial, ~6h)**
-- [ ] Schema JSON DialogueTree (#62)
-- [ ] Guia de estilo de escrita (#61) — mínimo viável
+### Fase 3: Player (Junho-Julho 2026)
 
-> 💡 **NPC diálogos completos (#64, #65) ficam para depois.** Não bloqueiam código.
+**~48h (8 semanas)**
+- [ ] Criação de personagem (Origem + Classe + Atributos point-buy)
+- [ ] Motor D20 (rolar + mods vs CD, acerto/falha/crítico)
+- [ ] Movimentação por blocos (gastar Ticks)
+- [ ] Combate estático por turnos (Iniciativa → D20 → Dano → Loot)
+- [ ] Inventário (equipar/desequipar, peso)
+- [ ] Save/Load (JSON)
+- [ ] 1 Quest hardcoded ("O Caçador que Não Voltou")
 
-**Setup Unity (~6h)**
-- [ ] Criar projeto Unity em `game/`
-- [ ] Estrutura de pastas conforme ADR-001
-- [ ] .gitignore para Unity
-- [ ] Cena de teste rodando
+### Fase 4: Interaction (Agosto-Outubro 2026)
 
-### Fase 2: Motor de Regras — POCs 01-06 (Maio-Junho 2026)
-
-**Estas são C# puro — sem gráficos. Ideais para aprender C# moderno.**
-
-- [ ] POC 01: Fundação de Dados (~4h)
-- [ ] POC 02: Motor D20 (~4h)
-- [ ] POC 03: Atributos e Criação (~6h)
-- [ ] POC 04: Tier Scaling (~4h)
-- [ ] POC 05: Herança de Habilidades (~6h)
-- [ ] POC 06: Matriz de Itens (~4h)
-
-**Cada POC: Ler README → implementar → rodar testes → fechar issue**
-
-### Fase 3: Mundo + Combate — POCs 07-08, 17-19 (Julho-Agosto 2026)
-
-- [ ] POC 07: Motor de Ticks (~6h)
-- [ ] POC 08: Navegação por Blocos (~6h)
-- [ ] POC 17: Combate Estático (~8h) — **primeiro combate funcional**
-- [ ] POC 18: Status e Condições (~4h)
-- [ ] POC 19: Habilidades em Combate (~6h)
-
-### Fase 4: Economia + UI + Save (Setembro 2026)
-
-- [ ] POC 24: Inventário (~6h)
-- [ ] POC 28: HUD Principal (~8h) — **primeiro visual real**
-- [ ] POC 33: Save/Load (~4h)
-- [ ] Wireframes HUD, Mapa, Cena, Combate (#43)
-
-### Fase 5: MVP "O Despertar" (Outubro-Novembro 2026)
-
-- [ ] Integrar POCs em cena unificada
-- [ ] 1 personagem jogável (Guerreiro Tribal)
-- [ ] 3 locais (Vila, Floresta, Ruínas)
-- [ ] 1 quest completa ("O Caçador que Não Voltou")
-- [ ] Loop: criar personagem → explorar → lutar → completar quest → salvar
-- [ ] Playtest com 3+ runs
+**~72h (12 semanas)**
+- [ ] Relógio da Ruptura (500 Ticks)
+- [ ] NPCs com diálogos ramificados (condições)
+- [ ] Fofoca (knowledgeBase entre NPCs)
+- [ ] Facções e reputação
+- [ ] Coleta + Crafting + Proficiências
+- [ ] Comércio com NPCs
+- [ ] Matriz de Itens 5×5
+- [ ] 3 Origens × 1 Classe = 3 classes jogáveis
+- [ ] Dom da Revivência (troca + herança de ativa)
+- [ ] 8 blocos do Ato 1 navegáveis
+- [ ] 1 mini-campanha completa
 
 ---
 
@@ -122,39 +103,18 @@
 1. **Uma tarefa por sessão.** Começou, termina. Não deixe coisas pela metade.
 2. **Sempre termine com algo rodando.** Pode ser um teste, pode ser um print, mas algo que prove que funciona.
 3. **Use Vibe Keeper ao fim de cada sessão.** O `@vibe-keeper` vai salvar seu contexto para a próxima retomada.
-4. **Se travou, mude para o spin-off.** Melhor fazer progresso lateral do que ficar parado.
-5. **Não perfecione — itere.** POC 01 não precisa ser perfeita. Ela precisa funcionar.
+4. **Se travou, mude para outra entrega da mesma fase.** Melhor fazer progresso lateral do que ficar parado.
+5. **Não perfecione — itere.** Fase 0 não precisa ser perfeita. Precisa funcionar.
 
 ### Padrão de Commits
 
 ```
-docs: resolve furo de lore #21 — Dom da Revivência latente
-gdd: adiciona Livro de Habilidades consolidado
-game: implementa POC 01 — Fundação de Dados
-spinoff: card-game v0.1 — combate básico funcional
-vibe: sessão 2026-03-08 — reorganização do projeto
+docs: resolve furo de lore — Dom da Revivência latente
+gdd: atualiza Cap 8 para modelo servidor persistente
+server: implementa tick loop + WebSocket
+web: cria cliente mínimo com mapa de nós
+vibe: sessão 2026-03-11 — pivot MMORPG rollback
 ```
-
----
-
-## POCs Cortadas do MVP (podem voltar depois)
-
-Estas POCs existem nos specs mas **NÃO** são necessárias para o MVP "O Despertar":
-
-| POC | Motivo do Corte |
-|-----|-----------------|
-| 09 (Eventos de Mundo) | Bom, não essencial |
-| 10 (Relógio da Ruptura) | Complementar, não bloqueia |
-| 11 (Clima/Maré) | Polimento, Fase 2 |
-| 12-16 (NPCs/IA/Fofoca/Facções/Diálogos) | Mundo Vivo = Fase 2 |
-| 20 (Loot) | Pode ser hardcoded no MVP |
-| 21-23 (Grid Tático/Pathfinding/Combate Espacial) | MVP usa combate estático |
-| 25-27 (Coleta/Crafting/Comércio) | Economia = Fase 2 |
-| 29-32 (Mapa/Cena/Combate Tela/Criação) | UI avançada = Fase 2 |
-| 34-36 (P2P/Sincronia/Trade) | Multiplayer = Fase 5 |
-| 37-38 (Quests/Mini-campanha) | Quest hardcoded no MVP |
-
-**MVP real precisa apenas:** POCs 01, 02, 03, 06, 07, 08, 17, 18, 19, 24, 28, 33 = **12 POCs**
 
 ---
 

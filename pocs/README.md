@@ -1,12 +1,14 @@
 # 🧪 POCs — Provas de Conceito
 
-## Eras do Brasil — Índice Mestre
+> ⚠️ **ARQUIVO HISTÓRICO:** Após o [ADR-004](../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md) (pivot para servidor Go + cliente web), as 38 POCs Unity/C# foram substituídas por um desenvolvimento incremental por **Fases** (Heartbeat → Multiplayer). Os conceitos validados por cada POC foram integrados nas entregas das novas fases. Consulte o [Guia de Retomada](../docs/GUIA_RETOMADA.md) para o plano atualizado.
 
-Este diretório contém todas as **Provas de Conceito (POCs)** do projeto "Eras do Brasil". Cada POC é um protótipo isolado que valida uma mecânica, sistema ou funcionalidade específica do jogo.
+## Eras do Brasil — Índice Mestre (Histórico)
 
-### Filosofia de Desenvolvimento
+Este diretório continha as **Provas de Conceito (POCs)** planejadas para Unity/C#. Cada POC era um protótipo isolado que validaria uma mecânica específica.
 
-O desenvolvimento segue uma abordagem **progressiva e modular**:
+### Filosofia de Desenvolvimento (Original — Unity)
+
+O desenvolvimento seguia uma abordagem **progressiva e modular**:
 
 - **Peça por peça** — cada POC resolve um problema específico e bem definido
 - **Reutilização de código** — POCs anteriores servem de base para as seguintes

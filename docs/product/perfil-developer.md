@@ -8,9 +8,9 @@
 
 | Área | Nível | Detalhe |
 |------|-------|---------|
-| **Programação** | Sênior | Fullstack, múltiplas linguagens (JS/TS, Python, etc.) |
-| **C#** | Intermediário (em atualização) | Usou em 2017, precisa reaprender patterns modernos |
-| **Unity** | Iniciante-Intermediário | Fez um Candy Crush de matemática em 2017, precisa atualizar |
+| **Programação** | Sênior | Fullstack: JS/TS, Go, PHP |
+| **Go** | Intermediário (aprendendo) | Stack escolhida para o servidor do jogo. Goroutines, WebSocket. |
+| **C#** | Intermediário | Usou em 2017. Não é mais a stack do projeto. |
 | **Pixel Art** | Iniciante | Tem curso, ainda não concluiu. Não sabe desenhar propsw |
 | **Roteiro/Escrita** | Iniciante | Dificuldade com estrutura narrativa e português formal |
 | **Game Design** | Intermediário | Jogou muitos RPGs, conhece mecânicas por experiência, não por formação |
@@ -32,12 +32,12 @@
 - Se perde com **escopo aberto** — precisa de limites bem definidos
 - Motivado por **ver coisas rodando na tela**
 
-## Gaps a Endereçar (via Spin-offs)
+## Gaps a Endereçar
 
-1. **Unity moderno** ← Card Game (Spin-off 2)
-2. **C# patterns para games** ← POCs 01-06
-3. **Pixel art** ← Curso + prática nos spin-offs
-4. **Escrita de diálogos** ← Quiz (Spin-off 1) + Sprint 1 do jogo principal
+1. **Go idiomático** ← Fases 0-1 do servidor (goroutines, channels, structs)
+2. **WebSocket em Go** ← Fase 0 (Heartbeat)
+3. **Pixel art** ← Curso + prática futura
+4. **Escrita de diálogos** ← Fase 4 (Interaction)
 5. **Game balancing** ← Card Game testa isso diretamente
 
 ---

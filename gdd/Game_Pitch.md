@@ -25,7 +25,7 @@ Nossa visão para _Eras do Brasil_ se materializa em cinco pilares de design ine
 - **Jogabilidade Tática:** Um sistema de combate por turnos baseado em D20, projetado para evoluir de um modelo estático focado em escolhas para um complexo grid tático isométrico com posicionamento e cobertura.
 - **Mundo Vivo e Dinâmico:** Um universo que respira e reage independentemente das ações do jogador através do sistema de "Ticks". Facções rivais avançam seus objetivos, o tempo passa, e o mundo muda, criando um senso constante de urgência e vida.
 - **Flexibilidade de Personagem:** Um sistema inovador que, através do "Dom da Revivência", permite ao jogador trocar de classe livremente fora de combate, herdando habilidades ativas e adaptando-se a qualquer desafio sem perder o progresso.
-- **Experiência Cooperativa Única:** Uma campanha que pode ser jogada 100% solo ou com um amigo em um modelo P2P (Peer-to-Peer), focado na colaboração narrativa e na jornada compartilhada, sem as pressões ou a superficialidade de um MMO tradicional.
+- **Mundo Persistente Online (MUD Moderno):** Um servidor que roda 24/7, onde múltiplos jogadores coexistem no mesmo mundo. Economia de risco com full loot, missões competitivas e eventos globais que mudam o mapa para todos. Acessível via navegador — zero instalação.
 
 Com esta base, convidamos você a mergulhar mais fundo no universo que criamos, um mundo onde a própria história é um personagem vivo e imprevisível.
 
@@ -88,16 +88,16 @@ Aprofundando a flexibilidade do Dom da Revivência, nosso sistema de herança pe
 
 O sistema de **"Ticks"** é o coração do nosso mundo vivo. Cada ação significativa — viajar, lutar, criar itens, descansar — consome uma quantidade específica de Ticks, que são a unidade de tempo do jogo. Isso cria um senso de urgência e consequência, pois o mundo continua a evoluir. A facção rival, os **"Bandeirantes de Sangue"**, por exemplo, avança pelo mapa a uma velocidade de 1 Bloco a cada 15 Ticks Globais. O jogador pode observar seu progresso e até mesmo realizar ações de sabotagem para atrasá-los, mas a ameaça está sempre em movimento, com ou sem a intervenção do jogador.
 
-### 3.4. Sonhando Juntos: A Experiência Cooperativa
+### 3.4. A Raiz Conecta: Um Mundo Persistente
 
-A arquitetura multijogador de _Eras do Brasil_ é uma experiência P2P (Peer-to-Peer) íntima e colaborativa, não um MMO. Através do conceito místico de **"Sincronia Espiritual"**, um amigo pode se juntar à sua campanha.
+_Eras do Brasil_ oferece dois modos de experiência complementares, unidos pelo conceito místico de **Ecos e Raízes**.
 
-- O **Guardião do Tempo (Host)** é a âncora da realidade. Seu mundo, seu progresso e suas decisões narrativas críticas são a base da sessão.
-- O **Viajante (Client)** projeta seu espírito no mundo do anfitrião para ajudar. Ele mantém toda a experiência (XP) e os itens (loot) que conquista, levando-os de volta para sua própria campanha. Essa estrutura permite uma colaboração profunda sem comprometer a integridade da história pessoal de cada jogador.
+- O **Eco (Offline)** é a linha do tempo pessoal do jogador. O mundo reage exclusivamente às suas escolhas, o relógio pausa quando desloga. Ideal para imersão, leitura e experimentação.
+- A **Raiz (Online)** é a Linha do Tempo Mestra — um servidor persistente onde múltiplos jogadores coexistem. O mundo avança 24/7 via tick global. Facções guerreiam, o Relógio da Ruptura transforma a geografia, e morrer significa perder seus itens (Full Loot). Recursos são finitos, missões são competitivas, e os feitos da comunidade definem as temporadas do mundo.
 
-_"Caminhamos em nossos próprios sonhos, mas nas horas mais sombrias, a Raiz nos permite sonhar juntos."_
+_"Cada Eco é um sonho. A Raiz é o despertar — e na Raiz, os sonhos de todos se cruzam."_
 
-Esses sistemas centrais são sustentados por uma base robusta de mecânicas de RPG clássicas, garantindo uma experiência completa e gratificante.
+Esses sistemas centrais são sustentados por uma base robusta de mecânicas de RPG clássicas, um servidor Go autoritativo e um cliente web acessível via navegador, garantindo uma experiência completa e sem fricção.
 
 --------------------------------------------------------------------------------
 

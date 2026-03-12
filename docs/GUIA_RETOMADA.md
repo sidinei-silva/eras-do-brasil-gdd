@@ -2,9 +2,13 @@
 
 > **Objetivo:** Este documento é o seu ponto de partida para retomar o projeto. Ele organiza **tudo** que precisa ser feito, na **ordem exata** em que deve ser feito, com links para cada documento relevante.
 >
-> **Como usar:** Siga as Sprints na ordem. Cada Sprint tem tarefas numeradas. Faça a tarefa 1, depois a 2, etc. Não pule Sprints.
+> **Como usar:** Siga as Fases na ordem. Cada Fase tem entregas numeradas. Não pule Fases.
 >
-> **Última atualização:** 2026-02-17
+> **Stack:** Go 1.22+ (servidor) · HTML/CSS/JS (cliente) · WebSocket (gorilla/websocket) · JSON
+>
+> **Decisão do Pivot:** [ADR-004](../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md)
+>
+> **Última atualização:** 2026-03-11
 
 ---
 
@@ -14,513 +18,174 @@ Antes de qualquer tarefa, entenda o estado atual:
 
 | Área | Status | O que existe |
 |------|--------|-------------|
-| **GDD (Design)** | ✅ 100% Completo | 9 capítulos de regras + Cap. 3B (Progressão), 12 classes Tier 1, Troca de Origem, 18 mini-campanhas |
-| **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
-| **Correções pré-backlog** | ✅ Concluídas | Slots de habilidades, Defesa Base, XP/Níveis, Troca de Origem, Pré-requisitos Multi-Class |
-| **Decisões Técnicas** | ✅ Definidas | Projeto Unity único ([ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md)), workflow de UI/UX ([ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md)) |
-| **Backlog GitHub** | ✅ Completo | 62 issues (#20-#81), 9 Epics, 7 Sprints (0-6+) no [Project #10](https://github.com/users/sidinei-silva/projects/10) |
-| **POCs** | 🔲 0/38 | 38 POCs definidas com READMEs, nenhuma implementada |
-| **Código** | 🔲 Não iniciado | Projeto Unity não criado |
-| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos para Sprint 2, protótipos para Sprint 4 |
+| **GDD (Design)** | ✅ 100% Completo | 9 capítulos de regras, 12 classes Tier 1, 18 mini-campanhas, sistema Eco/Raiz |
+| **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas ([ver auditoria](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)) |
+| **Pivot MMORPG** | ✅ Completo | Todo o GDD atualizado para servidor Go + cliente web ([ADR-004](../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md)) |
+| **Decisões Técnicas** | ✅ Atualizadas | ADR-004 (pivot Go) · ADR-003 (repos) · ADR-001/002 (substituídos) |
 | **Livros Auxiliares** | ⚠️ 2/7 | Atlas do Eco + Livro de Itens existem. 5 livros referenciados no GDD ainda não existem |
+| **Código** | 🔲 Não iniciado | Servidor Go não criado, cliente web não criado |
 
-### O Que Foi Corrigido na Auditoria (PR #1)
+### O Que Foi Feito Antes do Código
 
-Estas correções **já foram aplicadas** e estão no código:
+Estas são conquistas de documentação **já concluídas**, não precisam ser refeitas:
 
-| # | Correção | Arquivo |
-|---|----------|---------|
-| 1 | Tabela de CD do Cap. 4 harmonizada com Cap. 2/9 | `gdd/01_Livro_de_Regras/04_Sistema_de_Combate.md` |
-| 2 | Referência "Capítulo 9" → "Capítulo 7" no Cap. 4 | `gdd/01_Livro_de_Regras/04_Sistema_de_Combate.md` |
-| 3 | "Inteligência" → "Conhecimento" no Ato 1 | `gdd/03_Enredo_e_Mundo/01_Ato_1_A_Primeira_Ruptura.md` |
-| 4 | Seção de Esquecimento adicionada ao Cap. 8.3 | `gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md` |
-
-### O Que Ainda Precisa Ser Feito (Recomendações da Auditoria)
-
-| # | Recomendação | Prioridade | Em qual Sprint | Status |
-|---|-------------|------------|---------------|--------|
-| 5 | Definir **slots de habilidades herdadas** (limite por Tier) | 🟡 Alta | Pré-backlog | ✅ Concluído |
-| 6 | Definir **pré-requisitos multi-class** para Tiers 2/3 | 🟡 Média | Pré-backlog | ✅ Concluído |
-| 7 | Criar **Reaction Abilities** por classe | 🔵 Baixa | [Sprint 6+](#-sprint-6--futuro) | 📝 Pendente |
-| 8 | Detalhar **habilidades de Tier 2/3** | 🔵 Baixa | [Sprint 6+](#-sprint-6--futuro) | 📝 Pendente |
-| 9 | Definir **mecânica de troca de Origem** | 🟡 Média | Pré-backlog | ✅ Concluído |
-| 10 | Definir **sistema de XP e progressão de nível** | 🟡 Alta | Pré-backlog | ✅ Concluído |
-| 11 | Reduzir **sobreposição Cap. 5 vs Cap. 8** | 🔵 Baixa | Pré-backlog | ✅ Concluído |
-| 12 | Harmonizar **fórmula de Defesa Base** | 🔵 Baixa | Pré-backlog | ✅ Concluído |
+- ✅ GDD completo com 9 capítulos de regras + 12 classes Tier 1
+- ✅ Auditoria do GDD (PR #1 mergeado — 4 correções, 7 recomendações)
+- ✅ Correções pré-backlog: Slots de habilidades, Defesa Base, XP/Níveis, Troca de Origem, Pré-requisitos
+- ✅ Schemas JSON (ClasseDePersonagem, Item, Inimigo) em `gdd/06_Dados_e_Assets/`
+- ✅ Atlas do Eco Ato 1 (mapa de nós com distâncias)
+- ✅ Design Visual completo (estilo, paleta, UI Fase 1 e 2)
+- ✅ Pivot completo de Unity Co-op P2P → Servidor Go MMORPG (ADR-004)
+- ✅ Full Loot formalizado no GDD (Cap. 8, seção 8.10)
+- ✅ Sistema Eco/Raiz (offline + online) definido nos Conceitos Centrais
 
 ---
 
-## 🗓️ Visão Geral das Sprints
+## 🗓️ Visão Geral das Fases
 
-> Cada Sprint tem uma **estimativa** de tempo. Ajuste conforme sua disponibilidade.
-> Backlog completo no [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10) com 62 issues.
+> Cada Fase é incremental — o servidor vai ganhando capacidades até se tornar um jogo completo.
+> Roadmap completo em [ROADMAP.md](../ROADMAP.md)
 
-| Sprint | Nome | Tipo | Estimativa | Pré-requisito |
-|--------|------|------|-----------|---------------|
-| **0** | [Correções de Lore](#-sprint-0--correções-de-lore-12-issues) | 📝 Documentação | 2–3 dias | Nenhum |
-| **1** | [Livros & Narrativa](#-sprint-1--livros--narrativa-12-issues) | 📝 Documentação | 3–5 dias | Sprint 0 |
-| **2** | [Fundação Unity](#-sprint-2--fundação-unity-13-issues) | 💻 Código | 3–5 dias | Sprint 0 |
-| **3** | [Mundo & Combate](#-sprint-3--mundo--combate-6-issues) | 💻 Código | 5–7 dias | Sprint 2 |
-| **4** | [Economia & UI](#-sprint-4--economia--ui-5-issues) | 💻 Código | 3–5 dias | Sprint 3 |
-| **5** | [MVP "O Despertar"](#-sprint-5--mvp-o-despertar-6-issues) | 💻 Código | 5–7 dias | Sprint 4 |
-| **6+** | [Futuro](#-sprint-6--futuro-8-issues) | 📝+💻 | Futuro | Sprint 5 |
+| Fase | Nome | Tipo | O que entrega |
+|------|------|------|---------------|
+| **0** | [Heartbeat](#-fase-0--heartbeat) | 💻 Servidor | Tick global + 1 WebSocket |
+| **1** | [Mundo Vivo](#-fase-1--mundo-vivo) | 💻 Servidor | NPCs com rotinas e IA |
+| **2** | [Observador](#-fase-2--observador) | 💻 Full-stack | Cliente web read-only |
+| **3** | [Jogador (≈ MVP)](#-fase-3--jogador--mvp-o-despertar) | 💻 Full-stack | Criar, explorar, lutar, coletar |
+| **4** | [Interação](#-fase-4--interação) | 💻 Full-stack | Diálogos, quests, crafting, comércio |
+| **5** | [D20 Completo](#-fase-5--d20-completo) | 💻 Full-stack | Sistema completo, 12 classes, Tiers |
+| **6+** | [Multiplayer](#-fase-6--multiplayer) | 💻 Full-stack | Full loot, expedições, eventos globais |
 
 ```
-Sprint 0 ──► Sprint 1 (pode paralelo com Sprint 2)
-   │
-   └──► Sprint 2 ──► Sprint 3 ──► Sprint 4 ──► Sprint 5 ──► Sprint 6+
+Fase 0 (Heartbeat) ──► Fase 1 (Mundo Vivo) ──► Fase 2 (Observador)
+                                                      │
+                              Fase 3 (Jogador/MVP) ◄──┘
+                                      │
+                              Fase 4 (Interação)
+                                      │
+                              Fase 5 (D20 Completo)
+                                      │
+                              Fase 6 (Multiplayer)
 ```
 
 ---
 
-## ✅ Correções Pré-Backlog (CONCLUÍDAS)
+## 💻 Fase 0 — Heartbeat
 
-> Estas correções foram feitas ANTES do backlog de 62 issues ser criado no GitHub.
-> Não têm número de Sprint — eram "Sprint 1-2 de retomada" antes da renumeração.
-
-### ✅ Tarefa: Definir Slots de Habilidades Herdadas
-
-**Resultado:** Tabela de slots por Tier adicionada em `gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`
-
-### ✅ Tarefa: Reduzir Sobreposição Cap. 5 vs Cap. 8
-
-**Resultado:** Referências cruzadas adicionadas, Cap. 5 resumido com link para Cap. 8
-
-### ✅ Tarefa: Harmonizar Defesa Base (Cap. 2 vs Cap. 4 vs Cap. 9)
-
-**Resultado:** Fórmula unificada: `10 + Mod. Astúcia + Bônus de Armadura (se houver)` — agora consistente nos 3 capítulos
-
-### ✅ Tarefa: Criar Sistema de XP e Progressão de Nível
-
-**Resultado:** Novo capítulo criado em `gdd/01_Livro_de_Regras/03B_Progressao_e_Experiencia.md`
-
-### ✅ Tarefa: Definir Mecânica de Troca de Origem (Espelho do Eco)
-
-**Resultado:** Documentado em `gdd/02_Livro_de_Classes/04_Troca_de_Origem.md`
-
-### ✅ Tarefa: Definir Pré-requisitos Multi-Class para Tiers 2/3
-
-**Resultado:** Seção adicionada em `gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`
-
----
-
-## 📝 Sprint 0 — Correções de Lore (12 issues)
-
-> **Objetivo:** Resolver os 11 furos de lore e inconsistências identificados na auditoria profunda do GDD.
+> **Objetivo:** Provar que o servidor Go funciona — tick global rodando, uma conexão WebSocket recebendo estado.
 >
-> **Epic #20** — Correções de Lore e Enredo: Furos e Inconsistências do GDD
-> **Estimativa:** 2–3 dias
-> **Pré-requisito:** Nenhum — esta é a primeira Sprint do backlog.
-> **Issues:** #21–#31 (ver detalhes no [GitHub Project #10](https://github.com/users/sidinei-silva/projects/10))
+> **Estimativa:** 1–2 sessões
+> **Pré-requisito:** Go 1.22+ instalado
 
-### Tarefas
+### Estrutura de Pastas do Servidor
 
-Cada tarefa corresponde a uma issue no GitHub. Abra a issue para ver o contexto completo.
+```
+server/
+├── main.go             (entry point + tick loop)
+├── world/              (Mundo, Bloco, NPC)
+├── combat/             (Motor D20, turnos, status)
+├── economy/            (Inventário, crafting, comércio)
+├── data/               (JSONs, structs de dados)
+└── go.mod
+```
 
-| # | Issue | Tarefa |
-|---|-------|--------|
-| 1 | #21 | Dom da Revivência: latente ou ativo no Ato 1? |
-| 2 | #22 | Causa da Ruptura de 1497: definir origem canônica |
-| 3 | #23 | Motivação da facção Folclórica no Ato 1 |
-| 4 | #24 | Contradição de Nível para Tier 2/3 entre documentos |
-| 5 | #25 | "Mana" referenciada sem sistema definido — Fadiga vs Mana |
-| 6 | #26 | Definir "Dano Espiritual" e "Exaustão Espiritual" |
-| 7 | #27 | Escala de Ticks — 500 Ticks = quanto tempo real/narrativo? |
-| 8 | #28 | Guardião da Fenda — identidade, backstory e stats |
-| 9 | #29 | Definir ou remover "Sanidade/Moral" como sistema |
-| 10 | #30 | Definir ou remover conceito "Ecoera" |
-| 11 | #31 | 12 mini-campanhas sem impacto sinérgico no Ato 1 |
+**Referência:** [ADR-003 — Estrutura de Repositórios](../vibe/decisions/ADR-003-estrategia-repositorios.md)
+
+### Entregas
+
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 0.1 | `go mod init` + estrutura de pastas | Compilar sem erros |
+| 0.2 | `main.go` com tick global | `time.Ticker` + goroutine imprimindo "Tick N" no console |
+| 0.3 | Struct `Mundo` com `ProcessarTick()` | Struct criada em `world/`, chamada pelo tick loop |
+| 0.4 | WebSocket listener | Cliente HTML conecta, recebe JSON `{"tick": N}` a cada tick |
+
+### Referências do GDD
+
+- **Tick Comutável:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.2
+- **Arquitetura do Motor:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.12
+
+### ✅ Checklist da Fase 0
+
+- [ ] 0.1 — `go mod init` + pastas (`server/`, `world/`, `combat/`, `economy/`, `data/`)
+- [ ] 0.2 — `main.go` com `time.Ticker` + goroutine de tick global
+- [ ] 0.3 — Struct `Mundo` em `world/mundo.go` com `ProcessarTick()`
+- [ ] 0.4 — WebSocket listener (`gorilla/websocket`) enviando tick ao cliente
 
 ---
 
-## 📝 Sprint 1 — Livros & Narrativa (12 issues)
+## 💻 Fase 1 — Mundo Vivo
 
-> **Objetivo:** Criar os livros auxiliares necessários para o MVP e o sistema de diálogos (o maior gap do projeto).
+> **Objetivo:** O servidor simula um mundo vivo — NPCs existem, têm rotinas, tomam decisões. O mundo funciona sem jogadores.
 >
-> **Epic #32** — Livros Auxiliares Prioritários
-> **Epic #60** — Sistema de Diálogos e Narrativa
-> **Estimativa:** 3–5 dias
-> **Pré-requisito:** Sprint 0
+> **Estimativa:** 2–4 sessões
+> **Pré-requisito:** Fase 0
 
-### Quais Livros Criar Agora vs. Depois?
+### Entregas
 
-| Livro Referenciado | Necessário para MVP? | Quando Criar |
-|---|:---:|---|
-| **Livro de Habilidades** | ✅ Sim | **Sprint 3** — As POCs de combate precisam das habilidades formalizadas |
-| **Livro de Itens e Equipamentos** | ✅ Sim | **Sprint 3** — O MVP precisa de itens definidos para inventário e loot |
-| **Livro de Proficiências de Vida** | ✅ Sim | **Sprint 3** — Referenciado em 4 capítulos, a coleta depende disso |
-| **Livro de Inimigos e Bestiário** | ⚠️ Parcial | **Sprint 3** — Criar versão mínima (apenas 2 inimigos do MVP) |
-| **Livro de Magias e Rituais** | ❌ Não para MVP | **Sprint 8+** — O MVP usa apenas 1 classe (Guerreiro Tribal), sem magia |
-| **Livro de Itens e Crafting (Receitas)** | ❌ Não para MVP | **Fase 2** — Crafting não está no MVP |
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 1.1 | Structs de NPC com rotinas | NPC segue agenda diária (acordar, trabalhar, comer, dormir) |
+| 1.2 | Utility AI básica | NPC escolhe ação com base em necessidades (fome, fadiga, medo) |
+| 1.3 | Ciclo dia/noite | Tick avança relógio, NPCs mudam comportamento à noite |
+| 1.4 | Sistema de Fofoca | NPCs compartilham informações sobre eventos |
+| 1.5 | StoryManager (sementes) | Arco narrativo reage a ações no mundo |
 
-### Tarefa 3.1 — Criar Livro de Habilidades (Versão MVP)
+### Referências do GDD
 
-**Por quê?** O Cap. 2 referencia um "Livro de Habilidades" mas ele não existe. As 12 classes Tier 1 já têm suas habilidades documentadas individualmente, mas não existe um índice consolidado. Para as POCs de combate (17, 18, 19), precisamos de um catálogo.
+- **Utility AI:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.4
+- **Rotinas de NPCs:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.3
+- **Fofoca:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.5
+- **StoryManager:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.7
 
-**O que fazer:**
-1. Criar `gdd/05_Livros_Auxiliares/02_Livro_de_Habilidades.md`
-2. Consolidar todas as habilidades ativas e passivas das 12 classes Tier 1
-3. Estrutura: Tabela com Habilidade | Classe | Tipo (Ativa/Passiva) | Efeito | Recarga | Alcance
-4. Incluir um schema JSON para a estrutura de dados de habilidades
+### ✅ Checklist da Fase 1
 
-**Fontes:**
-- [`gdd/02_Livro_de_Classes/2_Origem_Indigena/Guerreiro_Tribal.md`](../gdd/02_Livro_de_Classes/2_Origem_Indigena/Guerreiro_Tribal.md) (e todos os outros 11 arquivos de classe)
-
----
-
-### Tarefa 3.2 — Criar Livro de Itens e Equipamentos (Versão MVP)
-
-**Por quê?** O GDD referencia itens em diversos capítulos, mas não existe um catálogo consolidado. Os `03_Dados_Iniciais_Ato1.md` tem 5 itens mockup, mas sem um livro de referência completo.
-
-**O que fazer:**
-1. Criar `gdd/05_Livros_Auxiliares/03_Livro_de_Itens_e_Equipamentos.md`
-2. Incluir: Tabela de todos os itens do Ato 1 (armas, armaduras, itens utilitários, consumíveis)
-3. Usar a Matriz 5×5 (Qualidade × Raridade) já definida no Cap. 6
-4. Incluir os 5 itens mockup de `03_Dados_Iniciais_Ato1.md` + novos itens necessários para o MVP
-5. Mínimo: 10–15 itens cobrindo armas (melee, ranged), armaduras (leve, média), consumíveis (poção, ração), recursos (madeira, pedra, erva)
-
-**Fontes:**
-- [`gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md`](../gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
-- [`gdd/06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md`](../gdd/06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md)
+- [ ] 1.1 — Structs NPC em `world/npc.go` com rotina diária
+- [ ] 1.2 — Utility AI: Score = Peso × (1 – Necessidade Normalizada)
+- [ ] 1.3 — Ciclo dia/noite vinculado ao tick global
+- [ ] 1.4 — NPCs propagam informações entre si via fofoca
+- [ ] 1.5 — StoryManager: sementes narrativas reagem a threshold de eventos
 
 ---
 
-### Tarefa 3.3 — Criar Livro de Proficiências de Vida
+## 💻 Fase 2 — Observador
 
-**Por quê?** Referenciado nos Capítulos 2, 3, 5 e 9 do Livro de Regras. Define as atividades do mundo (Caça, Pesca, Mineração, Herbalismo, etc.) que dão XP e recursos ao personagem. Sem ele, a POC 25 (Coleta e Proficiências) não tem base.
-
-**O que fazer:**
-1. Criar `gdd/05_Livros_Auxiliares/04_Livro_de_Proficiencias_de_Vida.md`
-2. Definir:
-   - Lista de proficiências (Coleta: Caça, Pesca, Mineração, Herbalismo, Exploração; Produção: Forja, Alfaiataria, Alquimia, Culinária, Refinamento)
-   - Níveis de proficiência (1–5) com bônus de acerto e recursos extras por nível
-   - XP necessário por nível de proficiência
-   - Qual bloco/local é necessário para cada proficiência
-   - Relação com classes (bônus de XP por classe ativa)
-
-**Fontes:**
-- [`gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md`](../gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
-- As 12 classes (cada uma tem "Proficiência com Bônus de XP" definida)
-
----
-
-### Tarefa 3.4 — Criar Bestiário (Versão MVP)
-
-**Por quê?** O MVP precisa de 2 inimigos (Lobo + Espírito Menor). O `03_Dados_Iniciais_Ato1.md` já tem 3 inimigos mockup, mas sem lore ou detalhamento comportamental.
-
-**O que fazer:**
-1. Criar `gdd/05_Livros_Auxiliares/05_Bestiario_Ato1.md`
-2. Para cada inimigo: Nome, Descrição, Bloco onde aparece, Stats (PV, Defesa, Ataque, Dano), Habilidades, Tabela de Loot, Comportamento IA
-3. MVP: Lobo Cinza, Espírito Menor, Bandeirante Capanga
-4. Incluir 2–3 inimigos extras para dar variedade ao Ato 1
-
-**Fontes:**
-- [`gdd/06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md`](../gdd/06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md)
-- [`gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md`](../gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md) (para saber quais inimigos aparecem em cada bloco)
-
----
-
-### ✅ Checklist da Sprint 1
-
-**Livros Auxiliares (Epic #32):**
-- [ ] 1.1 — Criar Livro de Habilidades — consolidado das 12 classes (#33)
-- [ ] 1.2 — Criar Livro de Itens e Equipamentos — 10-15 itens MVP (#34)
-- [ ] 1.3 — Criar Livro de Proficiências de Vida (#35)
-- [ ] 1.4 — Criar Bestiário Ato 1 — 5+ inimigos (#36)
-- [ ] Atualizar `gdd/README.md` com links para os novos livros
-
-**Sistema de Diálogos (Epic #60):**
-- [ ] 1.5 — Criar Livro de Diálogos e Narrativa — Guia de Estilo (#61)
-- [ ] 1.6 — Definir Schema JSON para DialogueTree (#62)
-- [ ] 1.7 — Definir Formato de Texto Narrativo para Tela de Cena (#63)
-- [ ] 1.8 — Criar Diálogos JSON dos NPCs da Vila de São Tomé (#64)
-- [ ] 1.9 — Escrever Diálogos da mini-campanha "O Caçador que Não Voltou" (#65)
-- [ ] 1.10 — Definir Integração Quest ↔ Dialogue (#66)
-
----
-
-## 💻 Sprint 2 — Fundação Unity (13 issues)
-
-> **Objetivo:** Criar o projeto Unity e implementar as POCs de lógica pura (C# sem gráficos), schemas JSON e dados. São as POCs mais fundamentais — sem elas, nada mais funciona.
+> **Objetivo:** Um cliente web se conecta ao servidor e mostra o mundo em tempo real. O jogador ainda não interage — apenas observa.
 >
-> **Epic #37** — Setup Unity + POCs Fundação (Módulo A)
-> **Epic #67** — Schemas JSON e Dados Estruturais Faltantes
-> **Estimativa:** 3–5 dias
-> **Pré-requisito:** Sprint 0
+> **Estimativa:** 2–3 sessões
+> **Pré-requisito:** Fase 1
+
+### Entregas
+
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 2.1 | Cliente HTML/CSS/JS básico | Página conecta via WebSocket, exibe dados |
+| 2.2 | Mapa de nós (read-only) | Mapa mostra blocos com NPCs se movendo |
+| 2.3 | Log de eventos | Painel lateral com eventos do mundo em tempo real |
+| 2.4 | HUD de tempo | Relógio de ticks, ciclo dia/noite, clima |
+
+### Referências do GDD
+
+- **Mapa de Nós:** [`gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md`](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
+- **Atlas do Eco:** [`gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md`](../gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md)
+
+### ✅ Checklist da Fase 2
+
+- [ ] 2.1 — `web/index.html` conecta ao servidor e exibe JSON recebido
+- [ ] 2.2 — Mapa de nós renderizado mostrando posição de NPCs
+- [ ] 2.3 — Log de eventos em painel lateral (lista rolável)
+- [ ] 2.4 — Relógio de ticks + indicador dia/noite
+
+---
+
+## 💻 Fase 3 — Jogador (≈ MVP "O Despertar")
+
+> **Objetivo:** O jogador pode criar um personagem e jogar. Loop completo de 15–30 minutos: criar → explorar → lutar → coletar → descansar.
 >
-> **NOTA:** A Sprint 1 (Livros & Narrativa) pode ser feita em paralelo com a Sprint 2, já que uma é documentação e a outra é código.
-
-### Tarefa 2.1 — Setup do Projeto Unity
-
-> ⚠️ **Decisão:** Um único projeto Unity para todas as POCs e o jogo final. POCs são separadas por **cenas**, não por projetos. Scripts são escritos direto na estrutura de produção. Detalhes em [ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md) e [Organização do Projeto Unity](tech/organizacao-projeto-unity.md).
-
-**O que fazer:**
-1. Instalar Unity Hub + Unity LTS (versão mais recente estável)
-2. Criar projeto 2D vazio chamado `ErasDoBrasil`
-3. Configurar estrutura de pastas (projeto único — POCs e jogo):
-   ```
-   Assets/
-   ├── Scripts/
-   │   ├── Core/              (Motor de regras, D20, atributos)
-   │   ├── Data/              (ScriptableObjects, loaders)
-   │   ├── Combat/            (Combate, status, habilidades)
-   │   ├── World/             (Ticks, navegação, eventos)
-   │   ├── Economy/           (Inventário, crafting, comércio)
-   │   ├── NPC/               (IA, rotinas, fofoca)
-   │   ├── UI/                (HUD, menus, cenas)
-   │   ├── Persistence/       (Save/Load)
-   │   ├── Network/           (P2P, sincronia)
-   │   └── Narrative/         (Quests, diálogos)
-   ├── Resources/
-   │   ├── ScriptableObjects/
-   │   └── JSON/
-   ├── Scenes/
-   │   ├── POC/               (1 cena por POC — sandbox de teste)
-   │   ├── MVP/               (Cena integrada do MVP)
-   │   └── Game/              (Cenas do jogo final — fases futuras)
-   ├── Tests/
-   │   ├── EditMode/          (Testes unitários)
-   │   └── PlayMode/          (Testes com cena)
-   ├── Art/
-   │   ├── Placeholder/       (Assets temporários para POCs)
-   │   └── Final/             (Pixel art final — Fase 3+)
-   └── Prefabs/
-   ```
-4. Configurar `.gitignore` para Unity
-5. Criar cena de teste vazia (`Scenes/POC/POC_Sandbox.unity`)
-6. Configurar namespaces C# por módulo (`ErasDoBrasil.Core`, `ErasDoBrasil.Combat`, etc.)
-
-**Referências:**
-- [`pocs/README.md`](../pocs/README.md)
-- [Organização do Projeto Unity](tech/organizacao-projeto-unity.md)
-- [ADR-001](../vibe/decisions/ADR-001-organizacao-projeto-unity.md)
-
----
-
-### Tarefa 2.2 — POC 01: Fundação de Dados
-
-**O que fazer:** Implementar o pipeline ScriptableObject → JSON conforme os schemas definidos.
-
-**Critério de aceite:** Console exibe "Carregados X Itens, Y Inimigos, Z Classes"
-
-**Detalhes:** [`pocs/01-fundacao-dados/README.md`](../pocs/01-fundacao-dados/README.md)
-
-**Regra do GDD validada:** [`gdd/06_Dados_e_Assets/01_Schemas_Estruturais.md`](../gdd/06_Dados_e_Assets/01_Schemas_Estruturais.md)
-
----
-
-### Tarefa 2.3 — POC 02: Motor D20
-
-**O que fazer:** Implementar o motor de rolagem D20 com modificadores, vantagem/desvantagem, críticos.
-
-**Critério de aceite:** CLI simula 1000 testes e mostra distribuição de acertos/críticos.
-
-**Detalhes:** [`pocs/02-motor-d20/README.md`](../pocs/02-motor-d20/README.md)
-
-**Regra do GDD validada:** [`gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`](../gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md)
-
----
-
-### Tarefa 2.4 — POC 03: Atributos e Criação
-
-**O que fazer:** Implementar o sistema de point-buy (27 pontos) e cálculo de modificadores.
-
-**Critério de aceite:** Personagem criado com point-buy, modificadores calculados corretamente.
-
-**Detalhes:** [`pocs/03-atributos-criacao/README.md`](../pocs/03-atributos-criacao/README.md)
-
-**Regra do GDD validada:** [`gdd/01_Livro_de_Regras/03_Criacao_de_Personagem.md`](../gdd/01_Livro_de_Regras/03_Criacao_de_Personagem.md)
-
----
-
-### Tarefa 2.5 — POC 06: Matriz de Itens 5×5
-
-**O que fazer:** Implementar o sistema de Qualidade × Raridade para itens.
-
-**Critério de aceite:** Gerar 50 itens aleatórios, validar bônus e durabilidade.
-
-**Detalhes:** [`pocs/06-matriz-itens/README.md`](../pocs/06-matriz-itens/README.md)
-
-**Regra do GDD validada:** [`gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md`](../gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
-
----
-
-### Tarefa 2.6 — Wireframes de Baixa Fidelidade (UI/UX)
-
-> 🎨 **Por quê?** O GDD já tem specs detalhadas de UI ([UI Fase 1](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)), mas não existia uma etapa de design visual intermediária antes de implementar as POCs de UI. Wireframes reduzem retrabalho. Detalhes em [ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md).
-
-**O que fazer:**
-1. Criar wireframes de **baixa fidelidade** para as 4 telas principais do MVP:
-   - HUD Principal (barra superior)
-   - Mapa de Nós (pergaminho com nós clicáveis)
-   - Tela de Cena (split: ilustração + texto/ações)
-   - Tela de Combate Estático (sprites + hotbar + log)
-2. Usar [Excalidraw](https://excalidraw.com/) ou ferramenta similar
-3. Salvar em `docs/tech/wireframes/`
-4. Basear nos layouts de [`gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md`](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
-
-**Referências:**
-- [Workflow de UI/UX](tech/workflow-ui-ux.md)
-- [ADR-002](../vibe/decisions/ADR-002-workflow-ui-ux.md)
-
----
-
-### ✅ Checklist da Sprint 2
-
-- [ ] 2.1 — Setup do projeto Unity (projeto único, estrutura de pastas, .gitignore, namespaces) (#38)
-- [ ] 2.2 — POC 01: Fundação de Dados (#39)
-- [ ] 2.3 — POC 02: Motor D20 (#40)
-- [ ] 2.4 — POC 03: Atributos e Criação (#41)
-- [ ] 2.5 — POC 06: Matriz de Itens 5×5 (#42)
-- [ ] 2.6 — Wireframes de baixa fidelidade — HUD, Mapa, Cena, Combate (#43)
-- [ ] POC 04: Tier Scaling — Progressão por Tiers e Curvas de XP (#80)
-- [ ] POC 05: Herança de Habilidades — Dom da Revivência e Troca de Classes (#81)
-- [ ] Schemas JSON: Quest, NPC, Faction, Gossip, Skill, Proficiency, Campaign (#68)
-- [ ] NPC Agenda Data — Rotinas dos NPCs da Vila de São Tomé (#69)
-- [ ] Expandir Dados Iniciais Ato 1 — Enemy Stats, Itens e Localizações (#70)
-
----
-
-## 💻 Sprint 3 — Mundo & Combate (6 issues)
-
-> **Objetivo:** Implementar o motor de tempo (Ticks) e o sistema de combate. Estes são os dois sistemas mais importantes após a fundação.
+> **Estimativa:** 4–6 sessões
+> **Pré-requisito:** Fase 2
 >
-> **Epic #44** — POCs Mundo e Combate (Módulos B + D)
-> **Estimativa:** 5–7 dias
-> **Pré-requisito:** Sprint 2 (fundação de dados e Motor D20)
-
-### Tarefa 3.1 — POC 07: Motor de Ticks
-
-**O que fazer:** Implementar o relógio universal de Ticks, ciclo dia/noite, regeneração de PV.
-
-**Critério de aceite:** Botão "Esperar" avança Tick, relógio atualiza, PV regenera.
-
-**Detalhes:** [`pocs/07-motor-ticks/README.md`](../pocs/07-motor-ticks/README.md)
-
----
-
-### Tarefa 3.2 — POC 08: Navegação por Blocos
-
-**O que fazer:** Implementar o grafo de mundo com custo de Ticks por terreno.
-
-**Critério de aceite:** Navegar Vila→Floresta→Ruínas gastando Ticks corretos.
-
-**Detalhes:** [`pocs/08-navegacao-blocos/README.md`](../pocs/08-navegacao-blocos/README.md)
-
-**Regra do GDD validada:** [`gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md`](../gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md)
-
----
-
-### Tarefa 3.3 — POC 17: Combate Estático (Fase 1)
-
-**O que fazer:** Implementar o loop completo de combate: Iniciativa → Turnos → D20 vs Defesa → Dano → Loot.
-
-**Critério de aceite:** Combate completo com log mostrando toda a matemática.
-
-**Detalhes:** [`pocs/17-combate-estatico/README.md`](../pocs/17-combate-estatico/README.md)
-
-**Regra do GDD validada:** [`gdd/01_Livro_de_Regras/04_Sistema_de_Combate.md`](../gdd/01_Livro_de_Regras/04_Sistema_de_Combate.md)
-
----
-
-### Tarefa 3.4 — POC 18: Status e Condições
-
-**O que fazer:** Implementar condições de status (Envenenado, Atordoado, Queimando).
-
-**Critério de aceite:** Efeitos processados corretamente por turno.
-
-**Detalhes:** [`pocs/18-status-condicoes/README.md`](../pocs/18-status-condicoes/README.md)
-
----
-
-### Tarefa 3.5 — POC 19: Habilidades em Combate
-
-**O que fazer:** Implementar habilidades ativas, custo de recurso, efeitos de área.
-
-**Critério de aceite:** Usar habilidades ativas com custo, efeito e fadiga.
-
-**Detalhes:** [`pocs/19-habilidades-combate/README.md`](../pocs/19-habilidades-combate/README.md)
-
----
-
-### ✅ Checklist da Sprint 3
-
-- [ ] 3.1 — POC 07: Motor de Ticks (#45)
-- [ ] 3.2 — POC 08: Navegação por Blocos (#46)
-- [ ] 3.3 — POC 17: Combate Estático (#47)
-- [ ] 3.4 — POC 18: Status e Condições (#48)
-- [ ] 3.5 — POC 19: Habilidades em Combate (#49)
-
----
-
-## 💻 Sprint 4 — Economia & UI (5 issues)
-
-> **Objetivo:** Implementar inventário, HUD e save/load. Estes são os últimos sistemas necessários antes de integrar o MVP.
->
-> **Epic #50** — POCs Economia, UI e Persistência (Módulos E + F + G)
-> **Estimativa:** 3–5 dias
-> **Pré-requisito:** Sprint 3 (combate e mundo)
-
-### Tarefa 4.1 — POC 24: Inventário
-
-**O que fazer:** UI de inventário com equipar/desequipar, peso/capacidade.
-
-**Detalhes:** [`pocs/24-inventario/README.md`](../pocs/24-inventario/README.md)
-
----
-
-### Tarefa 4.2 — POC 28: HUD Principal
-
-**O que fazer:** Barra superior com retrato, PV/XP, recursos, moeda, relógio de Ticks.
-
-**Detalhes:** [`pocs/28-hud-principal/README.md`](../pocs/28-hud-principal/README.md)
-
-**Referência visual:** [`gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md`](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
-
----
-
-### Tarefa 4.3 — POC 33: Save/Load (JSON)
-
-**O que fazer:** Salvar e carregar estado completo do personagem em JSON.
-
-**Detalhes:** [`pocs/33-save-load/README.md`](../pocs/33-save-load/README.md)
-
----
-
-### Tarefa 4.4 — Protótipo de UI e Validação de Fluxo (UI/UX)
-
-> 🎨 **Por quê?** Antes de implementar as POCs de UI (28, 29, 30, 31), validar o fluxo visual com um protótipo navegável. Isso evita retrabalho na implementação Unity.
-
-**O que fazer:**
-1. Refinar os wireframes da Sprint 4 com aprendizados das POCs de lógica
-2. Criar protótipo navegável (Unity UI Toolkit ou Figma):
-   - Fluxo: Menu → Criação → Mapa → Cena → Combate → Inventário → Save
-3. Validar: legibilidade, hierarquia visual, feedback de ações
-4. Atualizar wireframes em `docs/tech/wireframes/`
-
-**Referências:**
-- [Workflow de UI/UX](tech/workflow-ui-ux.md)
-- [Wireframes da Sprint 2](tech/wireframes/)
-- [UI Fase 1](../gdd/04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md)
-
----
-
-### ✅ Checklist da Sprint 4
-
-- [ ] 4.1 — POC 24: Inventário (#51)
-- [ ] 4.2 — POC 28: HUD Principal (#53)
-- [ ] 4.3 — POC 33: Save/Load (#54)
-- [ ] 4.4 — Protótipo de UI e validação de fluxo (#52)
-
----
-
-## 💻 Sprint 5 — MVP "O Despertar" (6 issues)
-
-> **Objetivo:** Integrar todas as POCs anteriores em um loop jogável de 15–30 minutos.
->
-> **Epic #55** — MVP "O Despertar" (Integração + Playtest)
-> **Estimativa:** 5–7 dias
-> **Pré-requisito:** Sprints 2, 3 e 4 (todas as POCs core)
+> 📌 **Esta Fase corresponde ao MVP.** Veja a spec completa em [`docs/product/mvp-o-despertar-spec.md`](product/mvp-o-despertar-spec.md)
 
 ### O Core Loop do MVP
 
@@ -531,136 +196,200 @@ Criar Personagem (Origem Indígena → Guerreiro Tribal)
     → Rolar D20, usar habilidades, receber/causar dano
     → Coletar Loot/XP
     → Voltar à Vila (descansar, equipar)
-    → Salvar jogo
     → Repetir
 ```
 
-### Tarefa 5.1 — Integrar POCs no Projeto Principal
+### Entregas
 
-**O que fazer:**
-1. Criar cena `MVP_Main.unity`
-2. Conectar: Criação → Navegação → Combate → Inventário → Save/Load
-3. Fluxo linear: Menu → Criação → Vila → Mapa → Bloco → Combate → Vitória → Loot → Vila
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 3.1 | Criação de personagem | Escolher origem + classe, point-buy (27 pts), stats calculados |
+| 3.2 | Navegação por blocos | Gastar Ticks para se mover, custo por terreno |
+| 3.3 | Combate estático (D20 simplificado) | Iniciativa → Turnos → D20 vs Defesa → Dano → Loot |
+| 3.4 | Inventário e equipamentos | Equipar/desequipar, peso/capacidade |
+| 3.5 | HUD principal | PV, XP, recursos, relógio, posição |
+| 3.6 | Save/Load | Estado do jogador persiste entre sessões |
+
+### Escopo Exato do MVP
+
+| Elemento | Quantidade |
+|----------|-----------|
+| Classes jogáveis | 1 (Guerreiro Tribal) |
+| Blocos do mapa | 3 (Vila de São Tomé, Floresta do Norte, Ruínas Queimadas) |
+| Inimigos | 2 (Lobo Cinza, Espírito Menor) |
+| NPCs interativos | 2–3 (Vila de São Tomé) |
+| Itens | 10–15 (armas, armaduras, consumíveis, recursos) |
+| Quest | 1 ("O Caçador que Não Voltou" — simplificada) |
+
+### Referências do GDD
+
+- **Criação:** [`gdd/01_Livro_de_Regras/03_Criacao_de_Personagem.md`](../gdd/01_Livro_de_Regras/03_Criacao_de_Personagem.md)
+- **Combate:** [`gdd/01_Livro_de_Regras/04_Sistema_de_Combate.md`](../gdd/01_Livro_de_Regras/04_Sistema_de_Combate.md)
+- **Navegação:** [`gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md`](../gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md)
+- **Economia/Itens:** [`gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md`](../gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
+- **Guerreiro Tribal:** [`gdd/02_Livro_de_Classes/2_Origem_Indigena/Guerreiro_Tribal.md`](../gdd/02_Livro_de_Classes/2_Origem_Indigena/Guerreiro_Tribal.md)
+- **Dados mockup:** [`gdd/06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md`](../gdd/06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md)
+
+### ✅ Checklist da Fase 3
+
+- [ ] 3.1 — Criação de personagem (point-buy, 1 classe, stats)
+- [ ] 3.2 — Navegação por blocos (Vila→Floresta→Ruínas, custo de Ticks)
+- [ ] 3.3 — Combate estático (D20 simplificado, Iniciativa, Turnos, Loot)
+- [ ] 3.4 — Inventário (equipar, peso, capacidade)
+- [ ] 3.5 — HUD principal (PV, XP, relógio, posição)
+- [ ] 3.6 — Save/Load (JSON)
+- [ ] Playtest: jogar loop completo 3+ vezes, ajustar números
 
 ---
 
-### Tarefa 5.2 — Primeiro Playtest
+## 💻 Fase 4 — Interação
 
-**O que fazer:**
-1. Jogar o loop completo pelo menos 3 vezes
-2. Anotar bugs, desequilíbrios, problemas de flow
-3. Ajustar números (PV, dano, CD, loot)
-4. **Validação de UI/UX:** Avaliar se o HUD é compreensível, se a navegação no mapa é intuitiva, se o combate tem feedback visual suficiente, se os botões de ação são claros
-5. Documentar problemas de usabilidade para iteração pós-MVP
-
----
-
-### Tarefa 5.3 — Build Funcional
-
-**O que fazer:**
-1. Criar build exportável (Windows/Mac)
-2. Testar fora do editor Unity
-3. Documentar versão e changelog
-
----
-
-### ✅ Checklist da Sprint 5
-
-- [ ] 5.1 — Integrar POCs no projeto principal (#56)
-- [ ] Projetar Tutorial / Onboarding Flow (#72)
-- [ ] Projetar Main Menu + Pause Menu + Settings (#73)
-- [ ] 5.2 — Primeiro playtest — 3+ runs (#57)
-- [ ] 5.3 — Build funcional exportável (#58)
-
----
-
-## 📝💻 Sprint 6+ — Futuro (8 issues)
-
-> **Objetivo:** Game Feel, expansão de classes, e preparação para Ato 2.
+> **Objetivo:** O mundo reage ao jogador. Diálogos, quests, crafting e comércio.
 >
-> **Epic #71** — Game Feel: Infraestrutura de Jogo
-> **Meta-Issue #59** — Mapeamento Futuro: Tudo Além do MVP
-> **Estimativa:** Futuro (após MVP validado)
-> **Pré-requisito:** Sprint 5 (MVP funcionando)
->
-> ⚠️ **Esta Sprint só deve ser iniciada após o MVP estar jogável e validado.**
+> **Estimativa:** 4–6 sessões
+> **Pré-requisito:** Fase 3
 
-### Por que NÃO fazer o Tier 2 agora?
+### Entregas
 
-1. **O MVP usa apenas 1 classe Tier 1** (Guerreiro Tribal). Tier 2 não é necessário.
-2. **O Ato 1 foi projetado para Tier 1.** Tier 2 é desbloqueado no final do Ato 1 como recompensa.
-3. **Balancear Tier 2 sem MVP funcionando é chutar no escuro.** Primeiro valide os números do Tier 1, depois ajuste Tier 2.
-4. **O documento de Tiers já existe** (`01_Tiers_e_Evolucao.md`). A estrutura está lá, só falta detalhar as habilidades.
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 4.1 | Diálogos ramificados com NPCs | Árvore de diálogo com condições (reputação, itens) |
+| 4.2 | Sistema de Quests | Aceitar, rastrear progresso, completar, recompensa |
+| 4.3 | Crafting e coleta | Proficiências de vida, coleta de recursos, receitas |
+| 4.4 | Comércio com NPCs | Comprar/vender (server-authoritative) |
+| 4.5 | Facções e reputação | Ações afetam reputação, NPCs reagem |
+| 4.6 | Status e condições em combate | Envenenado, Atordoado, Queimando — efeitos por turno |
+| 4.7 | Mini-campanha completa | "O Caçador que Não Voltou" jogável do início ao fim |
 
-### O que entra nesta Sprint (quando chegar a hora)
+### Referências do GDD
 
-**Game Feel (Epic #71):**
-- [ ] Sistema de Áudio — Música, SFX e Ambientação (#74)
-- [ ] Mecânica de Morte do Jogador — Game Over / Respawn (#75)
-- [ ] Loading Screens com Dicas de Lore (#76)
-- [ ] Estratégia de Localização i18n (#77)
-- [ ] Accessibility Features — Fonte, Daltonismo, Controles (#78)
-- [ ] Expandir Habilidades Tier 1 + Reaction Abilities + Scaling (#79)
+- **Exploração/Mundo:** [`gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md`](../gdd/01_Livro_de_Regras/05_Exploracao_e_Mundo.md)
+- **Economia/Crafting:** [`gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md`](../gdd/01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md)
+- **Facções:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.6
+- **Mini-campanha:** [`gdd/03_Enredo_e_Mundo/1_MiniCampanhas_Indigena/`](../gdd/03_Enredo_e_Mundo/1_MiniCampanhas_Indigena/)
 
-**Tier 2 e Ato 2 (NÃO fazer agora):**
-- [ ] Detalhar habilidades de Tier 2 para as 12 classes
-- [ ] Criar Reaction Abilities (1 por classe)
-- [ ] Criar Livro de Magias e Rituais
-- [ ] Criar Livro de Receitas de Crafting
-- [ ] Esboço do Ato 2
+### ✅ Checklist da Fase 4
 
-**Referências:**
-- [Auditoria §2.2C — Reaction Abilities](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
-- [Auditoria §2.2D — Habilidades Tier 2/3](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md)
+- [ ] 4.1 — Diálogos ramificados (árvore de diálogo JSON)
+- [ ] 4.2 — Sistema de Quests (aceitar, tracker, completar)
+- [ ] 4.3 — Crafting e coleta (proficiências, recursos, receitas)
+- [ ] 4.4 — Comércio com NPCs (server-authoritative)
+- [ ] 4.5 — Facções e reputação
+- [ ] 4.6 — Status/condições em combate
+- [ ] 4.7 — Mini-campanha "O Caçador que Não Voltou" jogável
 
 ---
 
-## 🔍 Sobre as POCs — O Que Fazer vs. O Que Adiar
+## 💻 Fase 5 — D20 Completo
 
-> Resumo rápido de quais POCs fazer agora e quais adiar.
+> **Objetivo:** Sistema D20 completo com todas as classes, Tiers e grid tático.
+>
+> **Estimativa:** 4–6 sessões
+> **Pré-requisito:** Fase 4
 
-### ✅ POCs Obrigatórias para o MVP (Sprints 2–4)
+### Entregas
 
-| # | POC | Sprint |
-|---|-----|--------|
-| 01 | Fundação de Dados | Sprint 2 |
-| 02 | Motor D20 | Sprint 2 |
-| 03 | Atributos e Criação | Sprint 2 |
-| 04 | Tier Scaling | Sprint 2 |
-| 05 | Herança de Habilidades | Sprint 2 |
-| 06 | Matriz de Itens 5×5 | Sprint 2 |
-| 07 | Motor de Ticks | Sprint 3 |
-| 08 | Navegação por Blocos | Sprint 3 |
-| 17 | Combate Estático | Sprint 3 |
-| 18 | Status e Condições | Sprint 3 |
-| 19 | Habilidades em Combate | Sprint 3 |
-| 24 | Inventário | Sprint 4 |
-| 28 | HUD Principal | Sprint 4 |
-| 33 | Save/Load | Sprint 4 |
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 5.1 | Sistema D20 completo | Vantagem, desvantagem, críticos, todas as regras |
+| 5.2 | Tiers 1→2→3 | Moedas de Classe, evolução, pré-requisitos |
+| 5.3 | Herança de habilidades | Dom da Revivência: trocar classe mantendo habilidades |
+| 5.4 | Habilidades ativas em combate | Custo de recurso, efeitos de área, recarga |
+| 5.5 | 12 classes Tier 1 jogáveis | Balanceamento completo |
+| 5.6 | Grid tático (Fase 2 visual) | Combate com posicionamento e AoE |
 
-### ⏳ POCs para a Fase 2 (Pré-Alpha) — Após MVP
+### Referências do GDD
 
-| # | POC | Por quê adiar? |
-|---|-----|----------------|
-| 09 | Eventos de Mundo | MVP funciona sem eventos aleatórios |
-| 10 | Relógio da Ruptura | Ato 1 pode ser testado sem countdown |
-| 12 | Rotinas de NPCs | NPCs estáticos no MVP |
-| 16 | Diálogos Ramificados | MVP usa diálogos simples |
-| 20 | Loot e Recompensas | MVP usa loot fixo |
-| 25 | Coleta e Proficiências | MVP sem crafting |
-| 32 | Criação de Personagem (UI) | MVP pode usar criação simples |
+- **D20:** [`gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md`](../gdd/01_Livro_de_Regras/02_Mecanicas_Basicas.md)
+- **Tiers:** [`gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md`](../gdd/02_Livro_de_Classes/01_Tiers_e_Evolucao.md)
+- **Herança:** [`gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md`](../gdd/02_Livro_de_Classes/03_Heranca_de_Habilidades.md)
+- **UI Combate Tático:** [`gdd/04_Design_Visual/06_UI_Fase_2_Combate_Tatico.md`](../gdd/04_Design_Visual/06_UI_Fase_2_Combate_Tatico.md)
 
-### 🔮 POCs para fases posteriores
+### ✅ Checklist da Fase 5
 
-| # | POC | Fase |
-|---|-----|------|
-| 11 | Clima e Maré | Fase 2+ |
-| 13–15 | Utility AI, Fofoca, Facções | Fase 3 (Alpha) |
-| 21–23 | Grid Tático, Pathfinding, Combate Espacial | Fase 4 (Beta) |
-| 26–27 | Crafting, Comércio | Fase 2+ |
-| 29–31 | Mapa de Nós, Tela de Cena, Tela de Combate (visual) | Fase 3 |
-| 34–36 | P2P, Sincronia, Trade | Fase 5 (Release) |
-| 37–38 | Quests, Mini-Campanha | Fase 3+ |
+- [ ] 5.1 — D20 completo (vantagem, críticos, regras)
+- [ ] 5.2 — Tiers 1→2→3 (Moedas de Classe, evolução)
+- [ ] 5.3 — Herança de habilidades (Dom da Revivência)
+- [ ] 5.4 — Habilidades ativas em combate
+- [ ] 5.5 — 12 classes Tier 1 balanceadas
+- [ ] 5.6 — Grid tático (posicionamento, AoE)
+
+---
+
+## 💻 Fase 6+ — Multiplayer
+
+> **Objetivo:** Múltiplos jogadores no mesmo mundo persistente. Full loot, expedições competitivas, eventos globais.
+>
+> **Estimativa:** Futuro (após Fase 5 estável)
+> **Pré-requisito:** Fase 5
+>
+> ⚠️ **Esta Fase só deve ser iniciada após o jogo single-player estar jogável e balanceado.**
+
+### Entregas
+
+| # | Entrega | Critério de Aceite |
+|---|---------|-------------------|
+| 6.1 | Múltiplas conexões | 2+ jogadores no mesmo mundo simultaneamente |
+| 6.2 | Full Loot | Morte = perda de inventário (com Marca do Eco e seguro) |
+| 6.3 | Expedições na Raiz | Dungeons competitivas para grupos |
+| 6.4 | Missões competitivas | Jogadores competem pelo mesmo objetivo |
+| 6.5 | Eventos globais | Rupturas, mudanças de era, afetam todos |
+| 6.6 | Inimigos evolutivos | NPCs adaptam táticas com base em padrões dos jogadores |
+| 6.7 | Economia multiplayer | Comércio entre jogadores (server-authoritative) |
+
+### Referências do GDD
+
+- **Full Loot:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.10
+- **Missões Competitivas:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.8
+- **Eventos Globais:** [`gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md`](../gdd/01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) §8.9
+- **Eco/Raiz:** [`gdd/03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md`](../gdd/03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md) §4
+
+### ✅ Checklist da Fase 6
+
+- [ ] 6.1 — Múltiplas conexões WebSocket simultâneas
+- [ ] 6.2 — Full Loot (Marca do Eco, seguro, mitigações)
+- [ ] 6.3 — Expedições na Raiz (dungeons competitivas)
+- [ ] 6.4 — Missões competitivas entre jogadores
+- [ ] 6.5 — Eventos globais (rupturas, era shifts)
+- [ ] 6.6 — Inimigos evolutivos
+- [ ] 6.7 — Economia multiplayer server-authoritative
+
+---
+
+## 📝 Documentação Pendente (Livros Auxiliares)
+
+> Estes livros são referenciados no GDD mas ainda não foram criados. Crie-os conforme necessário em cada Fase.
+
+| Livro | Necessário na Fase | Quando Criar |
+|-------|:------------------:|-------------|
+| **Livro de Habilidades** | 3 | Consolidar habilidades das 12 classes num índice |
+| **Livro de Proficiências de Vida** | 4 | Coleta, produção, níveis, XP por proficiência |
+| **Bestiário Ato 1** | 3 | Stats, lore, loot, comportamento IA dos inimigos |
+| **Livro de Magias e Rituais** | 5 | Sistema mágico completo (Origem Folclórica e Indígena) |
+| **Livro de Receitas de Crafting** | 4 | Receitas + ingredientes + qualidade do resultado |
+
+### Livros que JÁ existem:
+- ✅ [Atlas do Eco Ato 1](../gdd/05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md) — Mapa de nós com distâncias
+- ✅ [Livro de Itens e Equipamentos](../gdd/05_Livros_Auxiliares/03_Livro_de_Itens_e_Equipamentos.md) — 15 itens MVP, Matriz 5×5
+
+---
+
+## 📝 Lore Pendente (da Auditoria)
+
+> Issues de lore identificadas na [Auditoria do GDD](../gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md). Resolva conforme surgirem durante o desenvolvimento.
+
+| # | Questão | Impacto |
+|---|---------|---------|
+| 1 | Dom da Revivência: latente ou ativo no Ato 1? | Afeta narrativa da Fase 3+ |
+| 2 | Causa da Ruptura de 1497: definir origem canônica | Lore central |
+| 3 | Motivação da facção Folclórica no Ato 1 | Afeta quests Fase 4 |
+| 4 | "Mana" referenciada sem sistema — Fadiga vs Mana | Afeta classes mágicas Fase 5 |
+| 5 | Dano Espiritual / Exaustão Espiritual não definidos | Combate Fase 5 |
+| 6 | Escala de Ticks: 500 Ticks = quanto tempo real? | Fase 0 (definir ao implementar) |
+| 7 | Guardião da Fenda: identidade e stats | Fase 4+ (boss) |
+| 8 | Sanidade/Moral: definir ou remover | Fase 4+ |
+| 9 | "Ecoera": definir ou remover | Lore |
+| 10 | 12 mini-campanhas sem impacto sinérgico no Ato 1 | Fase 4+ |
 
 ---
 
@@ -677,35 +406,38 @@ eras-do-brasil/
 ├── 📂 gdd/                         ← Game Design Document (a Bíblia)
 │   ├── 📄 README.md                ← Índice do GDD com links
 │   ├── 📄 Game_Pitch.md            ← Apresentação do jogo
-│   ├── 📄 Project Plan.md          ← Plano estratégico
+│   ├── 📄 Project Plan.md          ← Plano de projeto (MUD Moderno)
 │   │
 │   ├── 📂 01_Livro_de_Regras/      ← 9 capítulos de mecânicas
 │   ├── 📂 02_Livro_de_Classes/     ← 12 classes Tier 1 + sistema
-│   ├── 📂 03_Enredo_e_Mundo/       ← Ato 1 + 18 mini-campanhas
+│   ├── 📂 03_Enredo_e_Mundo/       ← Ato 1 + 18 mini-campanhas + Eco/Raiz
 │   ├── 📂 04_Design_Visual/        ← Pixel art, UI, HUD (specs de referência)
 │   ├── 📂 05_Livros_Auxiliares/    ← Atlas do Eco + futuros livros
 │   ├── 📂 06_Dados_e_Assets/       ← Schemas JSON, dados mockup
 │   └── 📂 99_Meta_e_Backlog/       ← Estratégia, Roadmap, Auditoria
 │
 ├── 📂 docs/                        ← Documentação oficial
-│   └── 📂 tech/                    ← Documentação técnica
-│       ├── 📄 organizacao-projeto-unity.md  ← Estrutura do projeto Unity
-│       ├── 📄 workflow-ui-ux.md             ← Processo de UI/UX
-│       └── 📂 wireframes/                   ← Wireframes das telas (Sprint 4)
+│   ├── 📂 product/                 ← MVP spec, plano de dev, perfil dev
+│   └── 📂 tech/                    ← ⚠️ Arquivados (Unity) — ver ADR-004
 │
-├── 📂 pocs/                        ← 38 POCs (protótipos Unity/C#)
-│   └── 📄 README.md                ← Índice mestre de POCs
+├── 📂 server/                      ← 🆕 Servidor Go (a ser criado)
+│   ├── main.go                     ← Entry point + tick loop
+│   ├── world/                      ← Mundo, Blocos, NPCs
+│   ├── combat/                     ← Motor D20, turnos, status
+│   ├── economy/                    ← Inventário, crafting, comércio
+│   └── data/                       ← JSONs e structs de dados
+│
+├── 📂 web/                         ← Cliente HTML/CSS/JS
 │
 ├── 📂 vibe/                        ← Contexto evolutivo do projeto
-│   ├── 📄 backlog.md               ← Tarefas priorizadas
+│   ├── 📄 backlog.md               ← Tarefas por fase
 │   ├── 📄 project-status.md        ← Snapshot do estado atual
 │   ├── 📂 decisions/               ← ADRs (decisões de arquitetura)
-│   │   ├── 📄 ADR-001-organizacao-projeto-unity.md
-│   │   └── 📄 ADR-002-workflow-ui-ux.md
+│   │   ├── 📄 ADR-003-estrategia-repositorios.md  ← Ativo
+│   │   └── 📄 ADR-004-pivot-mmorpg-servidor-go.md ← Ativo (PIVOT)
 │   └── 📂 sessions/               ← Logs de sessão
 │
-└── 📂 ia-conversations/            ← Conversas com IAs (Gemini)
-    └── 📂 gemini/                  ← Conversas 7 e 8
+└── 📂 pocs/                        ← ⚠️ Arquivo histórico (38 POCs Unity — substituídas pelas Fases)
 ```
 
 ---
@@ -713,21 +445,19 @@ eras-do-brasil/
 ## 🎯 Resumo Executivo
 
 **O que fazer AGORA:**
-1. Sprint 0 — Correções de Lore (12 issues de documentação)
-2. Sprint 1 — Livros Auxiliares + Sistema de Diálogos (paralelo com Sprint 2)
-3. Sprint 2 — Setup Unity + POCs Fundação
+1. **Fase 0 — Heartbeat:** `main.go` + tick + WebSocket
 
 **O que fazer DEPOIS:**
-4. Sprint 3 — POCs Mundo e Combate
-5. Sprint 4 — POCs Economia, UI e Persistência
-6. Sprint 5 — MVP "O Despertar"
+2. **Fase 1 — Mundo Vivo:** NPCs com rotinas e IA
+3. **Fase 2 — Observador:** Cliente web read-only
+4. **Fase 3 — Jogador (MVP):** Criar, explorar, lutar, coletar
 
 **O que NÃO fazer agora:**
-- Tier 2/3 das classes (é do Ato 2, precisa de MVP primeiro)
-- Livro de Magias (MVP não usa classes mágicas)
-- Grid tático / Pathfinding (é da Fase 4 — Beta)
-- Multiplayer P2P (é da Fase 5 — Release)
+- Tiers 2/3 das classes (Fase 5)
+- Full Loot e Multiplayer (Fase 6)
+- Livro de Magias (Fase 5)
+- Grid tático (Fase 5)
 
 ---
 
-> **Última atualização:** 2026-02-17
+> **Última atualização:** 2026-03-11

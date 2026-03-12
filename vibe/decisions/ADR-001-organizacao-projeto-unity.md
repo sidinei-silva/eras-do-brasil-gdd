@@ -2,7 +2,9 @@
 
 ## Status
 
-Aceito
+Substituído por [ADR-004](ADR-004-pivot-mmorpg-servidor-go.md)
+
+> **Nota:** O projeto migrou de Unity/C# para servidor Go + cliente web. Esta ADR não se aplica mais.
 
 ## Contexto
 

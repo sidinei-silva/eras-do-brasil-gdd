@@ -31,7 +31,7 @@ A economia do jogo também pode sofrer variações locais, influenciada por:
 - Oferta e demanda em regiões específicas
 - Presença de feiras e comerciantes itinerantes
 - Catástrofes, eventos mágicos ou escassez natural
-- Influência do progresso da história no Mundo Vivo.
+- Influência do progresso global no mundo digital persistente
 
 > 💡 **Importante:** O sistema de crafting está conectado diretamente às *Proficiências de Vida* (ver Capítulo 3.5) e ao [[📘 Livro de Itens e Crafting]], que contém as tabelas completas de receitas, materiais e efeitos.
 
@@ -328,6 +328,7 @@ Um personagem pode **melhorar um item** progressivamente ao invés de criar outr
 
 - Itens danificados são oportunidade narrativa: forjam relações com NPCs ferreiros ou místicos.
 - Falhas críticas em combate **podem** reduzir a durabilidade, mesmo sem atingir zero.
+- Em mundos digitais persistentes, **ticks** podem representar desgaste automático por uso prolongado ou condições ambientais.
 
 ---
 ## 6.5 – Comércio e Economia Regional
@@ -406,17 +407,18 @@ Alguns itens não possuem valor em UC, mas:
 
 ---
 
-### 🛡️ Protocolo de Troca Segura (P2P)
-Para evitar a duplicação de itens (exploit) em partidas cooperativas, o jogo utiliza o sistema de **"Salvamento Atômico"**:
-1.  **Troca Iniciada:** Quando um item é jogado no chão ou colocado na janela de troca, ele entra em estado "Pendente" (bloqueado para uso).
-2.  **Confirmação:** Quando o outro jogador pega o item, o jogo força um **Autosave Simultâneo** no Host e no Client.
-3.  **Liberação:** O item só é desbloqueado no inventário do receptor após a confirmação de que ambos os saves foram escritos com sucesso.
+### 🛡️ Segurança de Trocas (Servidor Autoritário)
+No modo online, todas as trocas são processadas pelo servidor:
+1.  **Troca Iniciada:** Os dois jogadores confirmam os itens na janela de troca.
+2.  **Validação:** O servidor verifica se ambos possuem os itens e se nenhum está em uso.
+3.  **Execução Atômica:** O servidor transfere os itens simultaneamente — impossível duplicar.
+4.  **Drop no Chão:** Itens dropados ficam no bloco por X ticks antes de desparecer. Qualquer jogador pode pegar.
 
 
 ### 📚 Considerações Finais
 
 - A economia é uma **ferramenta narrativa viva**, e o mestre pode usá-la para recompensar ou punir decisões de longo prazo.
-- Em campanhas digitais, o sistema pode se tornar **dinâmico** com base em ações globais dos jogadores.
+- Em mundos digitais persistentes, o sistema se torna **dinâmico** com base em ações globais dos jogadores.
 - Preços e trocas também podem ser influenciados por **reputação, afinidade com NPCs, ou origem do personagem**.
 
 ---

@@ -29,12 +29,10 @@
 
 | Componente | Tecnologia | Justificativa |
 | :--- | :--- | :--- |
-| **Engine** | **Unity (Versão LTS)** | Robustez, suporte nativo a 2D/Pixel Art, vasta documentação e assets. Aprendizado progressivo via POCs. |
-| **Linguagem** | **C# (.NET)** | Tipagem forte, excelente para regras de RPG, integração com VS Code + Copilot. |
-| **Netcode (Co-op)** | **Unity Netcode for GameObjects (NGO)** | Solução oficial da Unity para Host-Client P2P, ideal para o modelo "Eco Compartilhado". |
-| **Transporte** | **Unity Transport / Steamworks (Futuro)** | Conexão direta via IP (Dev) → Lobby Steamworks (Release). |
-| **Dados** | **ScriptableObjects + JSON** | Templates imutáveis (ScriptableObjects) + Saves serializados (JSON). Sem banco de dados externo. |
-| **UI** | **Unity UI Toolkit** | Interfaces ricas de texto, menus e HUD. |
+| **Servidor** | **Go 1.22+** | Goroutines nativas para tick loop, IA de NPCs e múltiplas conexões simultâneas. Compilação estática, deploy simples. |
+| **Cliente** | **HTML / CSS / JS (vanilla)** | Zero instalação — joga no navegador. Aproveita as skills web do dev. |
+| **Comunicação** | **WebSocket (gorilla/websocket)** | Bidirecional e em tempo real. Mensagens em JSON. |
+| **Dados** | **JSON (arquivos ou SQLite futuro)** | Templates imutáveis (definições de itens, classes, inimigos) + saves de jogadores. Sem banco externo na fase inicial. |
 | **IA (Desenvolvimento)** | **GitHub Copilot (VS Code)** | IA centralizada para código, GDD e criatividade. Minimiza pulverização de contexto entre plataformas. |
 
 ---
@@ -45,130 +43,67 @@
 
 | Camada | Tecnologia | Propósito | Exemplo |
 |---|---|---|---|
-| **Template** | ScriptableObject | Dados imutáveis do jogo | `EspadaFerro.asset` (Dano 1d6, Sprite) |
-| **Runtime** | Classe C# | Estado atual em memória | `ItemInstance.cs` (Durabilidade atual, Ref ao Template) |
-| **Persistência** | JSON | Save Game serializado | Apenas classes Runtime serializadas |
+| **Template** | JSON (somente leitura) | Dados imutáveis do jogo | `espada_ferro.json` (Dano 1d6, descrição) |
+| **Runtime** | Struct Go | Estado atual em memória | `ItemInstance{Durability, TemplateID}` |
+| **Persistência** | JSON / SQLite | Save Game serializado | Apenas dados de runtime serializados |
 
 ---
 
-## 🧪 Fase 0: POCs — Provas de Conceito
+## 🧪 Fase 0: Heartbeat — O Servidor Respira
 
-> **Objetivo:** Validar riscos técnicos isolados. Cada POC é um mini-projeto dentro da Unity que testa UMA mecânica. O código de cada POC será reutilizado nas fases seguintes.
+> **Objetivo:** Provar que o servidor Go funciona. Tick loop via goroutine, conexão WebSocket, cliente web básico.
+> **Resultado:** Servidor rodando com `time.Ticker`. Cliente conecta via WebSocket e vê "Tick 1, 2, 3..." na tela.
 
-**Filosofia:** Desenvolvimento progressivo — construir peça por peça, mecânica por mecânica. Quando você olhar para trás, terá muitas peças prontas que só precisam ser conectadas.
+### Entregas
 
-**Estrutura de pastas:** Cada POC vive em `pocs/XX-nome-da-poc/` com seu próprio `README.md`.
-
-**Legenda de Prioridade:**
-- 🟢 **Core/Crítico** — O jogo não funciona sem isso
-- 🟡 **Importante** — Necessário para a experiência completa
-- 🔵 **Polimento** — Melhoria de qualidade ou estética
-
-### Módulo A: Motor de Regras (Lógica Pura)
-
-Estas POCs validam a matemática e as regras do GDD em C# puro, sem gráficos.
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 01 | [Fundação de Dados](../../pocs/01-fundacao-dados/) | 🟢 | [Schemas Estruturais](../06_Dados_e_Assets/01_Schemas_Estruturais.md) | Console exibe "Carregados X Itens, Y Inimigos, Z Classes" |
-| 02 | [Motor D20](../../pocs/02-motor-d20/) | 🟢 | [Mecânicas Básicas](../01_Livro_de_Regras/02_Mecanicas_Basicas.md) | CLI simula 1000 testes e mostra distribuição de acertos/críticos |
-| 03 | [Atributos e Criação](../../pocs/03-atributos-criacao/) | 🟢 | [Criação de Personagem](../01_Livro_de_Regras/03_Criacao_de_Personagem.md) | Personagem criado com point-buy (27 pts), modificadores calculados corretamente |
-| 04 | [Tier Scaling](../../pocs/04-tier-scaling/) | 🟢 | [Tiers e Evolução](../02_Livro_de_Classes/01_Tiers_e_Evolucao.md) | Simular evolução Tier 1→3, validar que números não "quebram" o balanceamento |
-| 05 | [Herança de Habilidades](../../pocs/05-heranca-habilidades/) | 🟢 | [Alternância de Classes](../02_Livro_de_Classes/02_Alternancia_de_Classes.md), [Herança](../02_Livro_de_Classes/03_Heranca_de_Habilidades.md) | Trocar classe mantém ativas herdadas, passivas não; log prova a lógica |
-| 06 | [Matriz de Itens 5x5](../../pocs/06-matriz-itens/) | 🟢 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Gerar 50 itens aleatórios com Qualidade×Raridade, validar bônus e durabilidade |
-
-### Módulo B: Mundo e Tempo
-
-Estas POCs validam o sistema de ticks, navegação e simulação do mundo.
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 07 | [Motor de Ticks](../../pocs/07-motor-ticks/) | 🟢 | [Exploração e Mundo](../01_Livro_de_Regras/05_Exploracao_e_Mundo.md) | Botão "Esperar" avança Tick, relógio Dia/Noite atualiza, PV regenera |
-| 08 | [Navegação por Blocos](../../pocs/08-navegacao-blocos/) | 🟢 | [Atlas do Eco](../05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md) | Navegar Vila→Floresta→Ruínas, gastando Ticks corretos por terreno |
-| 09 | [Eventos de Mundo](../../pocs/09-eventos-mundo/) | 🟡 | [Exploração e Mundo](../01_Livro_de_Regras/05_Exploracao_e_Mundo.md) | Eventos aleatórios disparam ao entrar em bloco (texto + escolha) |
-| 10 | [Relógio da Ruptura](../../pocs/10-relogio-ruptura/) | 🟡 | [Ato 1](../03_Enredo_e_Mundo/01_Ato_1_A_Primeira_Ruptura.md) | Relógio global de 500 Ticks avança; cenário muda fase visual no Tick 100/250/400 |
-| 11 | [Clima e Maré](../../pocs/11-clima-mare/) | 🟡 | [Atlas do Eco](../05_Livros_Auxiliares/01_Atlas_do_Eco_Ato1.md) | Ciclo de maré (100 Ticks), clima influencia visibilidade e movimentação |
-
-### Módulo C: NPCs e IA
-
-Estas POCs validam o sistema de NPCs com vida própria.
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 12 | [Rotinas de NPCs](../../pocs/12-rotinas-npcs/) | 🟢 | [Mundo Vivo e NPCs](../01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) | NPC Ferreiro sai de casa (Tick 10), vai à forja (Tick 20), volta (Tick 50) |
-| 13 | [Utility AI](../../pocs/13-utility-ai/) | 🟡 | [Mundo Vivo e NPCs](../01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) | NPC com fome prioriza comer; NPC com medo foge; necessidades decaem por tick |
-| 14 | [Sistema de Fofoca](../../pocs/14-fofoca-npcs/) | 🟡 | [Mundo Vivo e NPCs](../01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) | 2 NPCs no mesmo bloco trocam informações; jogador pergunta e NPC responde o que sabe |
-| 15 | [Facções e Reputação](../../pocs/15-faccoes-reputacao/) | 🟡 | [Mundo Vivo e NPCs](../01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) | Matar inimigo de facção X altera reputação; NPC muda comportamento baseado nela |
-| 16 | [Diálogos Ramificados](../../pocs/16-dialogos/) | 🟡 | [Mundo Vivo e NPCs](../01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) | Árvore de diálogo com condições (reputação, item possuído, classe ativa) |
-
-### Módulo D: Combate
-
-Estas POCs validam o sistema de combate em suas duas fases.
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 17 | [Combate Estático (Fase 1)](../../pocs/17-combate-estatico/) | 🟢 | [Sistema de Combate](../01_Livro_de_Regras/04_Sistema_de_Combate.md) | Combate completo: Iniciativa → Turnos → D20 vs Defesa → Dano → Loot. Log com matemática. |
-| 18 | [Status e Condições](../../pocs/18-status-condicoes/) | 🟢 | [Sistema de Combate](../01_Livro_de_Regras/04_Sistema_de_Combate.md) | Aplicar Envenenado, Atordoado, Queimando etc; efeitos processados corretamente por turno |
-| 19 | [Habilidades em Combate](../../pocs/19-habilidades-combate/) | 🟢 | [Magia e Espiritualidade](../01_Livro_de_Regras/07_Magia_e_Espiritualidade.md) | Usar habilidades ativas, custo de recurso, efeitos de área, fadiga mágica |
-| 20 | [Loot e Recompensas](../../pocs/20-loot-recompensas/) | 🟡 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Tabela de loot ponderada; drops de qualidade/raridade distribuídos corretamente |
-| 21 | [Grid Tático (Fase 2)](../../pocs/21-grid-tatico/) | 🟡 | [UI Fase 2](../04_Design_Visual/06_UI_Fase_2_Combate_Tatico.md) | Tilemap isométrico, personagem anda no grid respeitando obstáculos |
-| 22 | [Pathfinding A*](../../pocs/22-pathfinding/) | 🟡 | [UI Fase 2](../04_Design_Visual/06_UI_Fase_2_Combate_Tatico.md) | Clique-e-anda com desvio de obstáculos; custo de terreno diferente por tile |
-| 23 | [Combate Espacial](../../pocs/23-combate-espacial/) | 🟡 | [Sistema de Combate](../01_Livro_de_Regras/04_Sistema_de_Combate.md) | Alcance real, AoE visual, cobertura (+2 Def), ataque de oportunidade |
-
-### Módulo E: Economia e Crafting
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 24 | [Inventário](../../pocs/24-inventario/) | 🟢 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | UI de inventário, equipar/desequipar, peso/capacidade, drag & drop |
-| 25 | [Coleta e Proficiências](../../pocs/25-coleta-proficiencias/) | 🟢 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Botão "Coletar" no bloco certo; XP de proficiência sobe; item adicionado |
-| 26 | [Crafting](../../pocs/26-crafting/) | 🟡 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Receita + recursos + local + teste D20 → item criado com qualidade variável |
-| 27 | [Comércio e NPCs](../../pocs/27-comercio/) | 🟡 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Comprar/vender com NPC; preços regionais; interface de troca |
-
-### Módulo F: UI e Visual
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 28 | [HUD Principal](../../pocs/28-hud-principal/) | 🟢 | [UI Fase 1](../04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md) | Barra superior: retrato, PV/XP, recursos, moeda, relógio de ticks |
-| 29 | [Mapa de Nós](../../pocs/29-mapa-nos/) | 🟡 | [UI Fase 1](../04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md) | Mapa pergaminho com ícones clicáveis (?, fogueira, caveira, cidade) |
-| 30 | [Tela de Cena (Split)](../../pocs/30-tela-cena/) | 🟡 | [UI Fase 1](../04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md) | Layout dividido: ilustração à esquerda, texto + botões à direita (estilo Roadwarden) |
-| 31 | [Tela de Combate Estático](../../pocs/31-tela-combate/) | 🟡 | [UI Fase 1](../04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md) | Sprites de inimigos + personagem + hotbar + log de combate com dano flutuante |
-| 32 | [Criação de Personagem](../../pocs/32-criacao-personagem/) | 🟡 | [Criação de Personagem](../01_Livro_de_Regras/03_Criacao_de_Personagem.md) | Telas em etapas: Origem → Classe → Atributos → Proficiências → Equipamento → Confirmar |
-
-### Módulo G: Persistência e Rede
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 33 | [Save/Load (JSON)](../../pocs/33-save-load/) | 🟢 | [Schemas](../06_Dados_e_Assets/01_Schemas_Estruturais.md) | Salvar estado completo do personagem; recarregar com HP/Loot/Posição intactos |
-| 34 | [Conexão P2P Básica](../../pocs/34-conexao-p2p/) | 🟡 | [Project Plan §5](../Project%20Plan.md) | Duas instâncias: Host cria, Client conecta. Console mostra "Client Connected" |
-| 35 | [Sincronia de Ticks P2P](../../pocs/35-sincronia-ticks/) | 🟡 | [Project Plan §5](../Project%20Plan.md) | Player A espera → Tick de Player B atualiza; Host autoritativo |
-| 36 | [Trade Atômico P2P](../../pocs/36-trade-atomico/) | 🟡 | [Economia e Crafting](../01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Drop + Pickup sincronizado; se conexão cair, item não duplica nem some |
-
-### Módulo H: Missões e Narrativa
-
-| # | POC | Prioridade | Regra do GDD Validada | Critério de Aceite |
-|---|---|---|---|---|
-| 37 | [Sistema de Quests](../../pocs/37-sistema-quests/) | 🟡 | [Enredo e Mundo](../03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md) | Quest com estados (Oculta→Ativa→Concluída); gatilhos por tick, bloco, item |
-| 38 | [Mini-Campanha Completa](../../pocs/38-mini-campanha/) | 🟡 | [Mini-Campanha Indígena 01](../03_Enredo_e_Mundo/1_MiniCampanhas_Indigena/Indigena_01_O_Cacador_que_Nao_Voltou.md) | "O Caçador que Não Voltou" jogável do início ao fim com todas as mecânicas |
+| # | Entrega | Critério de Aceite |
+|---|---|---|
+| 0.1 | Projeto Go inicial | `go run main.go` sobe um servidor HTTP na porta 8080 |
+| 0.2 | Tick loop (goroutine) | `time.Ticker` incrementa contador a cada X segundos. Log no terminal. |
+| 0.3 | WebSocket | Cliente HTML conecta via `ws://`. Servidor envia tick atual em JSON. |
+| 0.4 | Cliente mínimo | Página HTML exibe "Tick: N" atualizado em tempo real. |
 
 ---
 
-## 🛡️ Fase 1: MVP — "O Despertar"
+## 🛡️ Fase 1: Living World — O Mundo Existe
 
-> **Objetivo:** Um loop jogável de 15–30 minutos. Criar personagem, explorar a Vila de São Tomé, lutar contra um Lobo e voltar para descansar.
-> **Resultado:** Build funcional para validar o core loop completo.
+> **Objetivo:** Mundo com blocos, NPCs com rotina e tick global. O mundo "vive" mesmo sem jogador.
+> **Resultado:** Servidor simula 3 blocos com 2 NPCs que seguem agenda por ticks.
 
-### Pré-requisitos (POCs necessárias)
-- ✅ POC 01 (Fundação de Dados)
-- ✅ POC 02 (Motor D20)
-- ✅ POC 03 (Atributos e Criação)
-- ✅ POC 07 (Motor de Ticks)
-- ✅ POC 08 (Navegação por Blocos)
-- ✅ POC 17 (Combate Estático)
-- ✅ POC 24 (Inventário)
-- ✅ POC 28 (HUD Principal)
-- ✅ POC 33 (Save/Load)
+### Entregas
 
-### Escopo do MVP
+| # | Entrega | Critério de Aceite |
+|---|---|---|
+| 1.1 | Blocos e grafo | 3 blocos (Vila, Floresta, Ruínas) conectados. NPC pode mover entre eles. |
+| 1.2 | NPCs com Agenda | Ferreiro: casa→forja→casa. Pajé: meditação→cachoeira→aldeia. Rotina guiada por tick. |
+| 1.3 | Utility AI básica | NPC com necessidades (fome, cansaço). Ações priorizadas por utilidade. |
+| 1.4 | Dia/Noite | Ciclo de ticks mapeia manhã→tarde→noite. NPC muda rotina por período. |
+| 1.5 | Log de eventos | Servidor gera log: "Tick 42: Ferreiro chegou na Forja", "Tick 50: Pajé dormiu". |
+
+---
+
+## 👁️ Fase 2: Observer — O Jogador Observa
+
+> **Objetivo:** Cliente web mostra o estado do mundo em tempo real. O jogador "assiste" o mundo viver.
+> **Resultado:** Interface web com mapa de nós, lista de NPCs por bloco e log de acontecimentos.
+
+### Entregas
+
+| # | Entrega | Critério de Aceite |
+|---|---|---|
+| 2.1 | Mapa de nós (HTML/CSS) | 3 blocos clicáveis. Mostra nome, tipo, NPCs presentes. |
+| 2.2 | Feed de eventos | Log em tempo real: "Ferreiro está trabalhando", "Lobo apareceu na Floresta". |
+| 2.3 | Inspeção de NPC | Clicar no NPC mostra nome, localização, necessidade dominante, última ação. |
+| 2.4 | Relógio visual | Indicador de Tick atual + período (Manhã/Tarde/Noite). |
+
+---
+
+## 🎮 Fase 3: Player — O Jogador Age
+
+> **Objetivo:** Criação de personagem, movimentação, inventário, D20, combate estático, save/load.
+> **Resultado:** Loop jogável completo: criar → explorar → lutar → coletar → voltar → salvar.
+
+### Escopo
 
 | Sistema | Conteúdo |
 |---|---|
@@ -177,10 +112,10 @@ Estas POCs validam o sistema de combate em suas duas fases.
 | **Blocos** | 3 (Vila de São Tomé, Floresta do Norte, Ruínas Queimadas) |
 | **Inimigos** | 2 (Lobo, Espírito Menor) |
 | **Itens** | 5 iniciais (conforme [Dados Iniciais](../06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md)) |
-| **UI** | HUD + Mapa de Nós (texto) + Combate (texto/log) + Inventário |
-| **Save** | JSON local |
+| **UI** | Interface web: HUD + Mapa de Nós + Combate (texto/log) + Inventário |
+| **Save** | JSON no servidor (ou local para modo Eco) |
 
-### Core Loop do MVP
+### Core Loop
 ```
 Criar Personagem → Explorar Bloco (gastar Ticks)
     → Encontrar Evento/Combate (D20 + Mods)
@@ -189,109 +124,69 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
     → Repetir
 ```
 
----
-
-## ⚔️ Fase 2: Pré-Alpha — "O Mundo Vivo"
-
-> **Objetivo:** Adicionar profundidade ao MVP com NPCs, economia e o Relógio da Ruptura. O mundo começa a "respirar".
-
-### Pré-requisitos adicionais
-- ✅ POC 05 (Herança de Habilidades)
-- ✅ POC 06 (Matriz de Itens)
-- ✅ POC 09 (Eventos de Mundo)
-- ✅ POC 10 (Relógio da Ruptura)
-- ✅ POC 12 (Rotinas de NPCs)
-- ✅ POC 16 (Diálogos)
-- ✅ POC 20 (Loot e Recompensas)
-- ✅ POC 25 (Coleta e Proficiências)
-- ✅ POC 32 (Criação de Personagem UI)
-
 ### Entregas
 
-| Sprint | Foco | Entrega |
+| # | Entrega | Critério de Aceite |
 |---|---|---|
-| **2.1** | **O Relógio** | Relógio Global de 500 Ticks. Bandeirantes avançam 1 bloco/15 Ticks. Cenário muda de fase (cor do céu). |
-| **2.2** | **NPCs e Diálogos** | 3 NPCs com rotinas (Ferreiro, Pajé, Guarda). Diálogos com condições. Sistema de Fofoca básico. |
-| **2.3** | **Economia** | Coleta de 3 recursos. Crafting de 2 receitas. Venda e compra com NPC comerciante. Matriz 5x5 em itens. |
-| **2.4** | **Classes** | 3 Origens × 1 Classe cada = 3 classes jogáveis. Troca via Dom da Revivência com herança de ativa. |
-| **2.5** | **Conteúdo** | Todos os 8 blocos do Ato 1 navegáveis. Eventos em cada bloco. 1 mini-campanha completa. |
+| 3.1 | Criação de personagem | Escolher Origem + Classe + Atributos (point-buy 27 pts). Personagem salvo. |
+| 3.2 | Movimentação | Clicar em bloco adjacente → personagem move (gasta Ticks). |
+| 3.3 | Motor D20 | Rolar D20 + modificadores vs CD. Acerto/Falha/Crítico corretos. |
+| 3.4 | Combate estático | Iniciativa → Turnos → D20 vs Defesa → Dano → Loot. Log com matemática. |
+| 3.5 | Inventário | Equipar/desequipar, peso/capacidade. |
+| 3.6 | Save/Load | Salvar estado completo (HP, Loot, Posição, Tick). Recarregar corretamente. |
 
 ---
 
-## 🎨 Fase 3: Alpha — "O Jogo Ganha Vida"
+## ⚔️ Fase 4: Interaction — O Mundo Reage
 
-> **Objetivo:** Substituir placeholders por Pixel Art. O jogo passa a parecer um jogo, não uma planilha. Incluir todas as 12 classes.
-
-### Pré-requisitos adicionais
-- ✅ POC 04 (Tier Scaling)
-- ✅ POC 11 (Clima e Maré)
-- ✅ POC 13 (Utility AI)
-- ✅ POC 14 (Fofoca NPCs)
-- ✅ POC 15 (Facções)
-- ✅ POC 18 (Status/Condições)
-- ✅ POC 19 (Habilidades em Combate)
-- ✅ POC 26 (Crafting)
-- ✅ POC 27 (Comércio)
-- ✅ POC 29 (Mapa de Nós visual)
-- ✅ POC 30 (Tela de Cena Split)
-- ✅ POC 31 (Tela de Combate visual)
-- ✅ POC 37 (Sistema de Quests)
+> **Objetivo:** Diálogos, fofoca, facções, crafting, coleta e economia loop completo. O mundo ganha profundidade social e econômica.
 
 ### Entregas
 
-| Sprint | Foco | Entrega |
+| # | Entrega | Critério de Aceite |
 |---|---|---|
-| **3.1** | **Arte e Cenários** | Sprites de fundo para 8 blocos. Mapa de Nós visual (pergaminho pixel art). Ciclo Dia/Noite visual. |
-| **3.2** | **Personagens** | Sprites das 12 classes (idle + ataque). Tela de criação visual com todas as origens. |
-| **3.3** | **Combate Visual** | Sprites de 5 inimigos. Dano flutuante. Ícones de status. Animações de ataque básicas. |
-| **3.4** | **HUD Completa** | Barras animadas de PV/XP. Relógio visual (sol/lua). Molduras de madeira/corda. Estética marajoara. |
-| **3.5** | **12 Classes + Tiers** | Todas as 12 classes Tier 1 jogáveis. Evolução para Tier 2 (4 classes de teste). |
-| **3.6** | **Ato 1 Completo** | Campanha principal "A Primeira Ruptura" jogável. 6 mini-campanhas. Boss final. |
-| **3.7** | **IA Completa** | NPCs com Utility AI (necessidades). Sistema de Fofoca completo. Facções e reputação. |
+| 4.1 | Relógio da Ruptura | Relógio global de 500 Ticks. Bandeirantes avançam 1 bloco/15 Ticks. Cenário muda de fase. |
+| 4.2 | NPCs e Diálogos | 3 NPCs com rotinas. Diálogos com condições. Fofoca (knowledgeBase). |
+| 4.3 | Economia | Coleta de 3 recursos. Crafting de 2 receitas. Venda/compra com NPC. Matriz 5×5. |
+| 4.4 | Classes expandidas | 3 Origens × 1 Classe cada = 3 classes jogáveis. Troca via Dom da Revivência + herança de ativa. |
+| 4.5 | Conteúdo | 8 blocos do Ato 1 navegáveis. Eventos em cada bloco. 1 mini-campanha completa. |
+| 4.6 | Facções e Reputação | Matar inimigo de facção X altera reputação. NPC muda comportamento. |
+| 4.7 | Proficiências | Coleta + Produção. Testes D20 para crafting. XP de proficiência sobe. |
 
 ---
 
-## ♟️ Fase 4: Beta — "A Tática"
+## ♟️ Fase 5: D20 Full — O Jogo Completo
 
-> **Objetivo:** Ativar o módulo de combate tático com grid isométrico. Migração do combate estático para posicional.
-
-### Pré-requisitos adicionais
-- ✅ POC 21 (Grid Tático)
-- ✅ POC 22 (Pathfinding A*)
-- ✅ POC 23 (Combate Espacial)
-- ✅ POC 38 (Mini-Campanha Completa)
+> **Objetivo:** 12 classes, 3 Origens, Ato 1 completo, combate tático com grid.
 
 ### Entregas
 
-| Sprint | Foco | Entrega |
+| # | Entrega | Critério de Aceite |
 |---|---|---|
-| **4.1** | **O Grid** | Tilemap isométrico. Personagem anda no grid. Obstáculos e terreno diferenciado. |
-| **4.2** | **Combate Posicional** | Alcance real (melee vs ranged). Cobertura (+2 Def). Flanco. Ataque de oportunidade. |
-| **4.3** | **AoE e Habilidades** | Áreas de efeito visuais. Linha de visão. Habilidades espaciais (empurrão, terreno). |
-| **4.4** | **Balanceamento** | Ajuste fino de todas as 12 classes no grid. Curva de XP. Economia. Dificuldade do Boss. |
-| **4.5** | **18 Mini-Campanhas** | Todas as 18 mini-campanhas jogáveis e balanceadas. Regra de recompensa "2-1-3". |
+| 5.1 | 12 classes Tier 1 | Todas jogáveis com habilidades ativas e passivas. Evolução para Tier 2 (4 classes). |
+| 5.2 | Grid tático | Mapa 2D com posições. Alcance real (melee vs ranged). Cobertura. Flanco. |
+| 5.3 | Habilidades espaciais | AoE, linha de visão, empurrão, terreno. |
+| 5.4 | Ato 1 completo | Campanha "A Primeira Ruptura" jogável. Boss final. |
+| 5.5 | 6+ mini-campanhas | Jogáveis e balanceadas com recompensa "2-1-3". |
+| 5.6 | Balanceamento | Curva de XP. Economia. Dificuldade do Boss. |
 
 ---
 
-## 🌿 Fase 5: Release — "A Raiz Conecta"
+## 🌿 Fase 6: Multiplayer — A Raiz Conecta
 
-> **Objetivo:** Implementar o modo cooperativo P2P e polir para lançamento (Acesso Antecipado).
-
-### Pré-requisitos adicionais
-- ✅ POC 34 (Conexão P2P)
-- ✅ POC 35 (Sincronia de Ticks)
-- ✅ POC 36 (Trade Atômico)
+> **Objetivo:** Múltiplos jogadores simultâneos no mesmo servidor. Full loot. Missões competitivas. Eventos globais. A "Raiz" ganha vida.
 
 ### Entregas
 
-| Sprint | Foco | Entrega |
+| # | Entrega | Critério de Aceite |
 |---|---|---|
-| **5.1** | **Conexão** | Lobby (Host / Join IP). Chat in-game. Dois jogadores no mesmo mundo. |
-| **5.2** | **Sincronia de Mundo** | Ticks compartilhados. NPCs sincronizados. Eventos de mundo em ambos os clientes. |
-| **5.3** | **Combate Co-op** | Turnos multiplayer (Player A → Player B → Inimigos IA). Combos de habilidades. |
-| **5.4** | **Economia Co-op** | Trade atômico (sem duplicação). Drop/Pickup sincronizado. |
-| **5.5** | **Polimento** | Testes de QA. Balanceamento co-op. Tutorial. Steam Workshop prep. |
-| **5.6** | **Acesso Antecipado** | Build final para publicação. Integração Steamworks (transporte + achievements). |
+| 6.1 | Autenticação | Login/registro. Personagem persistido no servidor. |
+| 6.2 | Múltiplos jogadores | 2+ jogadores no mesmo mundo. Veem NPCs e uns aos outros. Chat in-game. |
+| 6.3 | Full Loot | Morrer = perder itens. Mitigações: Baú Seguro, Seguro de Facção, Timer Espiritual. |
+| 6.4 | Trade server-authoritative | Troca entre jogadores validada pelo servidor. Atomicidade garantida. |
+| 6.5 | Missões competitivas | Múltiplos aceitam, primeiro a completar vence. Expiração por ticks. |
+| 6.6 | Eventos globais | StoryManager com Cenários A/B. BountyManager. Consequências permanentes. |
+| 6.7 | Inimigos Evolutivos | Inimigos que matam jogadores ganham XP e se tornam líderes. |
 
 ---
 
@@ -301,7 +196,7 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 - [x] Livro de Regras completo (9 capítulos)
 - [x] Livro de Classes (12 classes Tier 1 + sistema de Tiers)
 - [x] Enredo e Mundo (Ato 1 + 18 mini-campanhas + linha eco-histórica)
-- [x] Design Visual (estilo, paleta, tipografia, UI Fase 1 e 2)
+- [x] Design Visual (estilo, paleta, tipografia, referências de UI)
 - [x] Atlas do Eco Ato 1 (mapa de nós com distâncias)
 - [x] Game Pitch e Project Plan
 - [x] Schemas JSON (Classe, Item, Inimigo)
@@ -312,11 +207,14 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 - [x] Dados mockup iniciais (5 itens, 3 inimigos, 1 classe)
 
 ### Desenvolvimento (Em Andamento)
-- [ ] Setup do projeto Unity
-- [ ] POCs do Módulo A (Motor de Regras)
-- [ ] POCs do Módulo B (Mundo e Tempo)
-- [ ] ...restante das POCs e fases
+- [ ] Fase 0: Heartbeat (servidor Go + WebSocket + tick)
+- [ ] Fase 1: Living World (blocos + NPCs + IA)
+- [ ] Fase 2: Observer (cliente web observa mundo)
+- [ ] Fase 3: Player (D20 + combate + inventário)
+- [ ] Fase 4: Interaction (economia + diálogos + facções)
+- [ ] Fase 5: D20 Full (12 classes + grid + Ato 1)
+- [ ] Fase 6: Multiplayer (full loot + missões + eventos)
 
 ---
 
-**Última atualização:** 2026-02-10
+**Última atualização:** 2026-03-11

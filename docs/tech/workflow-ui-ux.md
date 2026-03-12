@@ -1,8 +1,8 @@
 # 🎨 Workflow de UI/UX — Wireframes, Prototipagem e Design de Interface
 
-> **Decisão registrada em:** [ADR-002](../../vibe/decisions/ADR-002-workflow-ui-ux.md)
+> **⚠️ ARQUIVADO:** Este documento foi **substituído** pelo [ADR-004 — Pivot MMORPG Servidor Go](../../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md). O workflow de UI/UX será redefinido para HTML/CSS/JS.
 >
-> **Resumo:** Wireframes na Sprint 4, prototipagem na Sprint 6, validação na Sprint 7. Design existente no GDD serve como spec de referência.
+> **Decisão original:** [ADR-002](../../vibe/decisions/ADR-002-workflow-ui-ux.md) (status: Substituído)
 
 ---
 

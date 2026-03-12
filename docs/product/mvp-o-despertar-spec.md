@@ -61,10 +61,23 @@ Um loop jogável de **15-30 minutos** que demonstra o core do Eras do Brasil:
 | Grid tático | Combate estático é suficiente | Fase 4 |
 | NPCs com rotinas/IA | Complexidade desnecessária | Fase 2 |
 | Crafting/comércio | Economia não é core do MVP | Fase 2 |
-| Multiplayer | Muito cedo | Fase 5 |
-| Diálogos ramificados | Quest hardcoded | Fase 2 |
-| Pixel art final | Placeholders suficientes | Fase 3 |
-| Áudio | Sem impacto no gameplay | Fase 3 |
+| Multiplayer | Muito cedo | Fase 6 |
+| Diálogos ramificados | Quest hardcoded | Fase 4 |
+| Pixel art final | Texto/web suficiente | Fase 5 |
+| Áudio | Sem impacto no gameplay | Futuro |
+
+---
+
+## Stack Técnica do MVP
+
+| Componente | Tecnologia |
+|------------|------------|
+| Servidor | Go 1.22+ |
+| Cliente | HTML / CSS / JS (vanilla) |
+| Comunicação | WebSocket (gorilla/websocket) |
+| Dados | JSON (templates + saves) |
+
+> O MVP corresponde à **Fase 3 (Player)** do [Roadmap](../../gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md). As Fases 0-2 (Heartbeat, Living World, Observer) são pré-requisitos.
 
 ---
 
@@ -74,7 +87,7 @@ Um loop jogável de **15-30 minutos** que demonstra o core do Eras do Brasil:
 2. Combate resolve corretamente (D20, modificadores, dano, morte)
 3. Progressão de nível funciona (XP → level up → atributos/habilidades melhoram)
 4. Save/Load preserva estado do jogo
-5. Build exportável roda em Windows standalone
+5. Servidor Go roda e cliente web conecta via WebSocket
 6. Playtest de 3+ runs sem bugs críticos
 
 ---

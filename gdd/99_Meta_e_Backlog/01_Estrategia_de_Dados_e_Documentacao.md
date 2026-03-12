@@ -37,5 +37,5 @@ Para evitar o excesso de documentação morta ou a falta de contexto nos dados, 
 
 ## 3. Fluxo de Trabalho (Pipeline)
 1.  **Conceito:** Escrever no Markdown (Pasta 01, 02, 03).
-2.  **Estrutura:** Definir o Schema (formato do JSON) na pasta `05_Livros_Auxiliares`.
-3.  **Implementação:** Popular os JSONs reais no projeto de código (`ErasDoBrasil-Game`).
+2.  **Estrutura:** Definir o Schema (formato do JSON) na pasta `06_Dados_e_Assets`.
+3.  **Implementação:** Popular os JSONs e structs Go no servidor (`server/data/`).

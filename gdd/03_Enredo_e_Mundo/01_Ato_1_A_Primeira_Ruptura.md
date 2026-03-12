@@ -22,7 +22,7 @@ A Missão Principal não espera pelo jogador. Ela é regida por um **Relógio Gl
 ### A "Corrida contra a Sombra" (Rivalidade IA)
 * **O Rival:** O grupo de NPCs "Os Bandeirantes de Sangue" está avançando no mapa em tempo real (baseado em Ticks).
 * **Mecânica:** O progresso deles é atrelado ao Relógio Global. Se os jogadores gastarem muitos Ticks craftando ou explorando, os Bandeirantes chegarão primeiro aos objetivos-chave.
-* **Modo Co-op:** O Host e o Client trabalham juntos. Se os jogadores demorarem (gastarem muitos Ticks explorando), os Bandeirantes chegam primeiro aos objetivos, roubando itens ou fortificando o local.
+* **Modo Online (Raiz):** Múltiplos jogadores competem pelo mesmo objetivo. Se a comunidade demorar (gastar muitos Ticks explorando), os Bandeirantes chegam primeiro aos objetivos, roubando itens ou fortificando o local.
 * **Consequência:** Não é Game Over. É uma mudança de cenário. Se os rivais vencerem, o Boss final estará mais forte ("Ascendido") e a recompensa narrativa muda.
 
 

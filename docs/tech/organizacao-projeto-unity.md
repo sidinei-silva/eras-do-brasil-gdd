@@ -1,8 +1,8 @@
 # 🏗️ Organização do Projeto Unity — POCs e Jogo Final
 
-> **Decisão registrada em:** [ADR-001](../../vibe/decisions/ADR-001-organizacao-projeto-unity.md)
+> **⚠️ ARQUIVADO:** Este documento foi **substituído** pelo [ADR-004 — Pivot MMORPG Servidor Go](../../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md). O projeto migrou de Unity/C# para servidor Go + cliente web.
 >
-> **Resumo:** Um único projeto Unity para POCs e jogo final, com separação por cenas e namespaces.
+> **Decisão original:** [ADR-001](../../vibe/decisions/ADR-001-organizacao-projeto-unity.md) (status: Substituído)
 
 ---
 

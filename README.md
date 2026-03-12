@@ -1,24 +1,24 @@
 # 🌿 Eras do Brasil
 
-> RPG tático de eco-fantasia ambientado em uma versão mística do Brasil colonial (1497), onde colonizadores, povos originários e seres folclóricos coexistem em ciclos de tempo, espiritualidade e memória.
+> RPG de eco-fantasia ambientado em uma versão mística do Brasil colonial (1497), onde colonizadores, povos originários e seres folclóricos coexistem em ciclos de tempo, espiritualidade e memória.
 
 ---
 
 ## 🎮 Sobre o Projeto
 
-**Eras do Brasil** é um RPG tático por turnos com elementos de mundo aberto, sistema de classes flexível e cooperativo P2P. O jogador é um **Desperto** — alguém que carrega ecos de vidas passadas e pode acessar habilidades de diferentes eras através do **Dom da Revivência**.
+**Eras do Brasil** é um MUD Moderno — um RPG online persistente com servidor Go e cliente web via WebSocket. O jogador é um **Desperto** — alguém que carrega ecos de vidas passadas e pode acessar habilidades de diferentes eras através do **Dom da Revivência**.
 
 ### Pilares de Design
 
 - **Narrativa Profunda** — Fantasia eco-histórica com folclore brasileiro
-- **Combate Tático D20** — De estático (JRPG) a grid isométrico (Solasta)
-- **Mundo Vivo (Ticks)** — NPCs com rotinas, facções que avançam, tempo que não para
+- **Combate Tático D20** — De estático a grid tático com posicionamento
+- **Mundo Persistente (Ticks)** — NPCs com rotinas, facções que avançam, tick global 24/7
 - **Flexibilidade de Classes** — Troca livre entre 12 classes de 3 origens
-- **Co-op P2P** — Campanha compartilhada sem servidores
+- **Mundo Online (Raiz)** — Múltiplos jogadores, full loot, missões competitivas, eventos globais
 
 ### Inspirações
 
-*Stoneshard* · *Solasta* · *Baldur's Gate 3* · *Sea of Stars* · *Roadwarden* · *Orna*
+*Fallen London* · *Torn* · *Stoneshard* · *Solasta* · *Sea of Stars* · *Roadwarden* · *Kingdom of Loathing*
 
 ---
 
@@ -29,17 +29,15 @@
 │   ├── 01_Livro_de_Regras/      # Mecânicas, combate, mundo vivo
 │   ├── 02_Livro_de_Classes/     # 12 classes, tiers, herança
 │   ├── 03_Enredo_e_Mundo/       # Ato 1, mini-campanhas, lore
-│   ├── 04_Design_Visual/        # Pixel art, UI/HUD, paleta
+│   ├── 04_Design_Visual/        # Referências visuais, UI/HUD
 │   ├── 05_Livros_Auxiliares/    # Atlas do Eco (mapa)
 │   ├── 06_Dados_e_Assets/       # Schemas JSON, dados iniciais
 │   └── 99_Meta_e_Backlog/       # Roadmap e estratégia
-├── pocs/                        # 38 POCs (Provas de Conceito Unity/C#)
+├── server/                      # Servidor Go (a ser criado)
+├── web/                         # Cliente web (HTML/CSS/JS)
 ├── docs/                        # Documentação oficial
 │   ├── product/                 # Specs de produto
 │   └── tech/                    # Documentação técnica
-│       ├── organizacao-projeto-unity.md  # Estrutura do projeto Unity
-│       ├── workflow-ui-ux.md            # Processo de UI/UX
-│       └── wireframes/                  # Wireframes das telas
 ├── vibe/                        # Contexto evolutivo (Vibe Flow)
 │   ├── decisions/               # ADRs (decisões de arquitetura)
 │   ├── sessions/                # Logs de sessões
@@ -49,22 +47,15 @@
 
 ---
 
-## 🧪 POCs — Desenvolvimento Progressivo
+## 🖥️ Stack Tecnológica
 
-O projeto segue uma abordagem de **desenvolvimento progressivo**: construir peça por peça, mecânica por mecânica, através de 38 POCs organizadas em 8 módulos.
-
-| Módulo | Foco | POCs |
-|--------|------|------|
-| **A** | Motor de Regras (C# puro) | 01–06 |
-| **B** | Mundo e Tempo | 07–11 |
-| **C** | NPCs e IA | 12–16 |
-| **D** | Combate | 17–23 |
-| **E** | Economia e Crafting | 24–27 |
-| **F** | UI e Visual | 28–32 |
-| **G** | Persistência e Rede | 33–36 |
-| **H** | Missões e Narrativa | 37–38 |
-
-👉 [Ver todas as POCs](pocs/README.md)
+| Componente | Tecnologia |
+|------------|------------|
+| Servidor | Go 1.22+ |
+| Cliente | HTML / CSS / JS (vanilla) |
+| Comunicação | WebSocket (gorilla/websocket) |
+| Dados | JSON (templates + saves) |
+| IA Dev | GitHub Copilot (VS Code) |
 
 ---
 
@@ -72,27 +63,15 @@ O projeto segue uma abordagem de **desenvolvimento progressivo**: construir peç
 
 | Fase | Nome | Objetivo |
 |------|------|----------|
-| **0** | POCs | Validar riscos técnicos isolados |
-| **1** | MVP — "O Despertar" | Loop jogável de 15-30 min |
-| **2** | Pré-Alpha — "O Mundo Vivo" | NPCs, economia, Relógio da Ruptura |
-| **3** | Alpha — "O Jogo Ganha Vida" | Pixel art, 12 classes, Ato 1 completo |
-| **4** | Beta — "A Tática" | Grid isométrico, combate posicional |
-| **5** | Release — "A Raiz Conecta" | Co-op P2P, polimento, Acesso Antecipado |
+| **0** | Heartbeat | Servidor Go com tick loop + WebSocket |
+| **1** | Living World | Blocos, NPCs com IA, dia/noite |
+| **2** | Observer | Cliente web observa o mundo vivo |
+| **3** | Player | D20, combate, inventário, save/load |
+| **4** | Interaction | Economia, diálogos, facções, crafting |
+| **5** | D20 Full | 12 classes, grid tático, Ato 1 completo |
+| **6** | Multiplayer | Full loot, missões competitivas, eventos globais |
 
 👉 [Roadmap detalhado](gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md)
-
----
-
-## 🖥️ Stack Tecnológica
-
-| Componente | Tecnologia |
-|------------|------------|
-| Engine | Unity (LTS) |
-| Linguagem | C# (.NET) |
-| Netcode | Unity NGO (Host-Client P2P) |
-| Dados | ScriptableObjects + JSON |
-| UI | Unity UI Toolkit |
-| IA Dev | GitHub Copilot (VS Code) |
 
 ---
 
@@ -103,11 +82,8 @@ O projeto segue uma abordagem de **desenvolvimento progressivo**: construir peç
 | [Game Pitch](gdd/Game_Pitch.md) | Apresentação do jogo |
 | [Project Plan](gdd/Project%20Plan.md) | Plano de projeto e fases |
 | [GDD Completo](gdd/README.md) | Índice do Game Design Document |
-| [POCs](pocs/README.md) | Índice das 38 provas de conceito |
 | [Roadmap](gdd/99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Roadmap de desenvolvimento |
-| [🔴 Guia de Retomada](docs/GUIA_RETOMADA.md) | Timeline cronológica para retomar o projeto |
-| [Organização Unity](docs/tech/organizacao-projeto-unity.md) | Estrutura do projeto Unity (POCs + jogo) |
-| [Workflow UI/UX](docs/tech/workflow-ui-ux.md) | Processo de wireframes, prototipagem e design |
+| [ADR-004 — Pivot MMORPG](vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md) | Decisão de pivot para servidor Go |
 | [Auditoria do GDD](gdd/99_Meta_e_Backlog/03_Auditoria_GDD.md) | Resultado da auditoria de consistência |
 
 ---

@@ -1,5 +1,7 @@
 # 🎮 Plano de Spin-offs — Jogos Menores para Aprendizado
 
+> **⚠️ ARQUIVADO:** Este plano foi **descontinuado** após o [ADR-004 — Pivot MMORPG Servidor Go](../../vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md). O foco agora é 100% no servidor Go + cliente web. Spin-offs não fazem mais parte da estratégia.
+
 **Data:** 2026-03-07
 **Filosofia:** Usar a temática e sistemas do Eras do Brasil para criar jogos menores que:
 1. Servem como **treino** de game dev, C#, Unity e pixel art

@@ -2,7 +2,7 @@
 
 ## Status
 
-Proposto
+Aceito (atualizado em 2026-03-11 após ADR-004)
 
 ## Contexto
 
@@ -37,27 +37,14 @@ eras-do-brasil/
 │   ├── 05_Livros_Auxiliares/
 │   ├── 06_Dados_e_Assets/
 │   └── 99_Meta_e_Backlog/
-├── game/                       # 🆕 Projeto Unity (criado na Sprint 2)
-│   ├── Assets/
-│   │   ├── Scripts/
-│   │   │   ├── Core/
-│   │   │   ├── Combat/
-│   │   │   ├── World/
-│   │   │   └── ...
-│   │   ├── Scenes/
-│   │   │   ├── POC/
-│   │   │   └── Game/
-│   │   ├── Resources/
-│   │   └── Tests/
-│   ├── Packages/
-│   └── ProjectSettings/
-├── pocs/                       # Specs das POCs (READMEs, não código)
-├── spinoffs/                   # 🆕 Jogos menores para aprendizado
-│   ├── 01-card-game/
-│   ├── 02-idle-ticks/
-│   └── 03-quiz-lore/
+├── server/                     # 🆕 Servidor Go (criado na Fase 0)
+│   ├── main.go
+│   ├── world/                  # Blocos, NPCs, tick loop
+│   ├── combat/                 # Motor D20, combate
+│   ├── economy/                # Itens, crafting, comércio
+│   └── data/                   # JSONs de templates
+├── web/                        # Cliente web (HTML/CSS/JS)
 ├── vibe/                       # Vibe Flow (decisões, sessões, backlog)
-├── web/                        # Website do projeto
 ├── ROADMAP.md
 └── README.md
 ```

@@ -1,56 +1,53 @@
 # Status do Projeto — Eras do Brasil
 
-**Última atualização:** 2026-03-07
+**Última atualização:** 2026-03-11
 
 ## 🎯 Fase Atual
 
-**Fase 0: Reorganização + Sprint 0 (Lore)** — Projeto passou por reorganização profunda. Diagnóstico completo realizado. ADR-003 proposto (estratégia de repositórios). Plano de desenvolvimento realista criado (~6h/semana). Plano de spin-offs definido. Estrutura de pastas atualizada (`game/`, `spinoffs/`). MVP spec formalizado. Auditoria de documentação concluída (contradições corrigidas, duplicações consolidadas, arquivos desnecessários removidos). Pronto para resolver Sprint 0 (Correções de Lore) e iniciar primeiro spin-off.
+**Fase 0: Heartbeat (Servidor Go)** — Projeto passou por pivot completo (ADR-004): de RPG tático Unity Co-op P2P para **MUD Moderno** com servidor Go + cliente web. GDD inteiro atualizado para refletir arquitetura MMORPG server-authoritative. Stack: Go 1.22+ / HTML-CSS-JS / WebSocket / JSON. Pronto para iniciar código do servidor.
 
 > 🔴 **Retomando?** Comece pelo [Guia de Retomada](../docs/GUIA_RETOMADA.md)
-> 📋 **Plano completo:** [docs/product/plano-desenvolvimento-realista.md](../docs/product/plano-desenvolvimento-realista.md)
+> 📋 **Decisão do Pivot:** [ADR-004](decisions/ADR-004-pivot-mmorpg-servidor-go.md)
 
 ## 📊 Progresso Geral
 
 | Área | Status | Progresso |
 |------|--------|-----------|
-| **GDD (Design)** | ✅ Completo | 100% (todas correções pós-auditoria concluídas) |
+| **GDD (Design)** | ✅ Completo + Atualizado | 100% (atualizado para servidor Go pós-pivot) |
 | **Auditoria (PR #1)** | ✅ Mergeado | 10/12 correções aplicadas, 2 recomendações futuras |
-| **Decisões Técnicas** | ✅ Definidas | ADR-001 (Unity único) + ADR-002 (Workflow UI/UX) + ADR-003 (Repositórios) |
-| **Backlog GitHub** | ✅ Completo | 62 issues (#20-#81), 9 Epics, 7 Sprints (0–6+) |
+| **Decisões Técnicas** | ✅ Atualizadas | ADR-004 (pivot Go) · ADR-003 (repos, atualizado) · ADR-001/002 (substituídos) |
+| **Pivot MMORPG** | ✅ Completo | GDD, Roadmap, README, docs/product, docs/tech — tudo alinhado |
 | **Livros Auxiliares** | ⚠️ Parcial | 2/7 (Atlas do Eco + Catálogo de Itens) |
 | **Schemas e Dados** | ✅ Completo | 100% |
-| **Roadmap** | ✅ Consolidado | 100% — alinhado com Project #10 |
-| **Diagnóstico** | ✅ Completo | Análise 360° realizada em 2026-03-07 |
-| **Plano de Desenvolvimento** | ✅ Criado | Calendário mensal Mar-Dez 2026, ~6h/semana |
-| **Plano de Spin-offs** | ✅ Criado | 4 spin-offs definidos (Quiz, Card Game, Idle, Tactics) |
-| **MVP Spec** | ✅ Formalizado | 12 POCs necessárias (de 38 originais) |
-| **UI/UX** | 📝 Planejado | Specs do GDD completas, wireframes previstos Sprint 2 |
-| **POCs** | 🔲 Não iniciado | 0/38 |
-| **Spin-offs** | 🔲 Não iniciado | 0/4 |
-| **MVP** | 🔲 Aguardando POCs | 0% |
+| **Roadmap** | ✅ Atualizado | 7 fases (Heartbeat → Multiplayer) |
+| **Plano de Desenvolvimento** | ✅ Atualizado | Calendário Mar-Dez 2026, ~6h/semana |
+| **MVP Spec** | ✅ Atualizado | Corresponde à Fase 3 (Player) |
+| **Servidor Go** | 🔲 Não iniciado | Fase 0 pendente |
+| **Cliente Web** | 🔲 Não iniciado | Fase 2 pendente |
+| **MVP** | 🔲 Aguardando Fase 3 | 0% |
 
 ## 📕 Design Concluído
 
-- ✅ Livro de Regras (9 capítulos)
+- ✅ Livro de Regras (9 capítulos — atualizado para mundo persistente/servidor)
 - ✅ Livro de Classes (12 classes Tier 1 + sistema de Tiers)
-- ✅ Enredo e Mundo (Ato 1 + 18 mini-campanhas + linha eco-histórica)
+- ✅ Enredo e Mundo (Ato 1 + 18 mini-campanhas + sistema Eco/Raiz)
 - ✅ Design Visual (estilo, paleta, tipografia, UI Fase 1 e 2)
 - ✅ Atlas do Eco Ato 1 (mapa de nós com distâncias)
 - ✅ Schemas JSON (ClasseDePersonagem, Item, Inimigo)
-- ✅ Game Pitch e Project Plan
+- ✅ Game Pitch e Project Plan (atualizados para MUD Moderno)
 - ✅ Auditoria do GDD (PR #1 mergeado)
 
-## 🔥 Foco Atual — Sprints de Produção
+## 🔥 Foco Atual — Fases de Produção
 
-| Sprint | Foco | Status |
-|--------|------|--------|
-| **Sprint 0** | Correções de Lore e Enredo (12 issues) | 🔲 Pendente |
-| **Sprint 1** | Livros Auxiliares (4) + Sistema de Diálogos (7 issues) | 🔲 Pendente |
-| **Sprint 2** | Setup Unity + POCs Fundação Módulo A (13 issues) | 🔲 Pendente |
-| **Sprint 3** | POCs Mundo e Combate — Módulos B + D (6 issues) | 🔲 Pendente |
-| **Sprint 4** | POCs Economia, UI e Persistência — Módulos E + F + G (5 issues) | 🔲 Pendente |
-| **Sprint 5** | MVP "O Despertar" — Integração + Playtest (6 issues) | 🔲 Pendente |
-| **Sprint 6+** | Game Feel: Áudio, i18n, Acessibilidade (8 issues) | 🔲 Futuro |
+| Fase | Foco | Status |
+|------|------|--------|
+| **Fase 0** | Heartbeat — tick global, WebSocket, `main.go` | 🟡 Próxima |
+| **Fase 1** | Mundo Vivo — NPCs, rotinas, Utility AI, fofoca | 🔲 Pendente |
+| **Fase 2** | Observador — cliente web read-only, mapa, log | 🔲 Pendente |
+| **Fase 3** | Jogador — criação, navegação, combate, inventário (≈ MVP) | 🔲 Pendente |
+| **Fase 4** | Interação — diálogos, quests, crafting, comércio | 🔲 Pendente |
+| **Fase 5** | D20 Completo — Tiers, herança, 12 classes, grid tático | 🔲 Pendente |
+| **Fase 6** | Multiplayer — full loot, expedições, eventos globais | 🔲 Pendente |
 
 > Detalhes completos em [ROADMAP.md](../ROADMAP.md) e [Guia de Retomada](../docs/GUIA_RETOMADA.md)
 
@@ -58,46 +55,40 @@
 
 | Marco | Descrição | Dependências |
 |-------|-----------|--------------|
-| Sprint 0 completa | Correções de lore do GDD (12 issues) | Nenhuma |
-| Sprint 1 completa | 4 Livros Auxiliares + 7 issues de diálogos | Sprint 0 |
-| POC 01 concluída | Pipeline ScriptableObject → JSON funcional | Setup Unity (Sprint 2) |
-| Módulo A completo | POCs 01–06 (lógica pura em C#) | Sprint 2 |
-| MVP "O Despertar" | Loop jogável de 15-30 min | Sprint 5 |
+| Fase 0 completa | Servidor Go com tick + WebSocket | Nenhuma |
+| Fase 1 completa | Mundo vivo simulando NPCs 24/7 | Fase 0 |
+| Fase 2 completa | Cliente web observando mundo em tempo real | Fase 1 |
+| **Fase 3 = MVP** | Loop jogável: criar → explorar → lutar → coletar | Fase 2 |
 
 ## ⚠️ Bloqueios Conhecidos
 
-- Nenhum bloqueio ativo — pronto para iniciar Sprint 0
+- Nenhum bloqueio ativo — pronto para iniciar Fase 0 (código Go)
 
 ## 🎉 Conquistas Recentes
 
-- ✅ **Auditoria de documentação** — Contradições corrigidas (Defesa Base Cap. 4), duplicações consolidadas (ROADMAP/backlog), arquivos removidos (issues/, scripts utilitários, ia-conversations/)
-- ✅ **Diagnóstico completo** do projeto (análise 360° — vibe/research/diagnostico-completo-projeto.md)
-- ✅ **ADR-003** — Estratégia de Repositórios (monorepo organizado com `game/` e `spinoffs/`)
-- ✅ **Plano de Desenvolvimento Realista** — Calendário Mar-Dez 2026 calibrado para ~6h/semana
-- ✅ **Plano de Spin-offs** — 4 jogos menores para aprendizado + validação de mecânicas
-- ✅ **MVP Spec** — Escopo exato de "O Despertar" (12 POCs, 1 personagem, 3 nós, 1 quest)
-- ✅ **Perfil do Developer** documentado (skills, limitações, disponibilidade)
-- ✅ **Contexto do Repo Legado** documentado (mapa do que há no ErasDoBrasil-Historico-Legado)
-- ✅ **Estrutura de pastas** atualizada (`game/`, `spinoffs/`)
+- ✅ **Pivot MMORPG completo** — Todo o GDD, docs, roadmap e README atualizados (ADR-004, sessão 2026-03-11)
+- ✅ **Tag de segurança** `pre-pivot-mmorpg` criada antes das mudanças
+- ✅ **Cap 8 — Mundo Vivo** reescrito com seções de Mundo Persistente, Tick Comutável, StoryManager, Full Loot, Arquitetura do Motor
+- ✅ **Sistema Eco/Raiz** (offline pessoal + online persistente) formalizado nos Conceitos Centrais
+- ✅ **Full Loot** formalizado pela primeira vez (nunca tinha sido documentado)
+- ✅ **ADR-001/002** marcados como substituídos; **ADR-003** atualizado com estrutura `server/`
+- ✅ **docs/tech/** Unity docs arquivados com aviso
+- ✅ **docs/product/** plano de dev, MVP spec, perfil dev — todos atualizados para Go
+- ✅ **Plano de spin-offs** arquivado (decisão do pivot)
 - ✅ GDD completo (9+ livros, 50+ documentos)
-- ✅ 38 POCs definidas com READMEs detalhados
-- ✅ Auditoria do GDD concluída (PR #1 mergeado — 4 correções, 7 recomendações)
+- ✅ Auditoria do GDD concluída (PR #1 mergeado)
 - ✅ Correções pré-backlog concluídas (slots, Defesa Base, XP, Origem, pré-requisitos)
-- ✅ **ADR-001** — Organização do projeto Unity definida (projeto único para POCs e jogo)
-- ✅ **ADR-002** — Workflow de UI/UX definido (wireframes, prototipagem, validação)
-- ✅ **Backlog completo** — 62 issues (#20-#81) criadas, organizadas em 9 Epics e 7 Sprints
-- ✅ **GitHub Project #10** — Todos os campos preenchidos (Sprint, Prioridade, Categoria, Tipo, Esforço)
-- ✅ **ROADMAP.md** — Totalmente alinhado com as 62 issues
-- ✅ **Website** atualizado com seção de notícias (PR #82 mergeado)
-- ✅ **Pesquisa de mercado** concluída (positivo para RPG tático, lacuna brasileira, público PT-BR, diferencial co-op P2P)
+- ✅ Website atualizado com seção de notícias (PR #82 mergeado)
+- ✅ Pesquisa de mercado concluída
 
 ## 📝 Notas
 
-- Stack definida: Unity (LTS) + C# + NGO para rede P2P
-- Filosofia: desenvolvimento progressivo, peça por peça
-- IA centralizada no GitHub Copilot (VS Code)
-- Projeto Unity único para POCs e jogo (ver [ADR-001](decisions/ADR-001-organizacao-projeto-unity.md))
-- Workflow de UI/UX integrado às sprints (ver [ADR-002](decisions/ADR-002-workflow-ui-ux.md))
+- **Stack:** Go 1.22+ (servidor) + HTML/CSS/JS (cliente) + WebSocket (gorilla/websocket)
+- **Arquitetura:** Server-authoritative MMORPG, tick global proativo
+- **Filosofia:** desenvolvimento incremental por fases, peça por peça
+- **IA:** centralizada no GitHub Copilot (VS Code)
+- **Decisões ativas:** [ADR-003](decisions/ADR-003-estrategia-repositorios.md) (repos) · [ADR-004](decisions/ADR-004-pivot-mmorpg-servidor-go.md) (pivot Go)
+- **Decisões substituídas:** ADR-001 (Unity único) · ADR-002 (Workflow UI/UX Unity)
 - **Tier 2 das classes NÃO deve ser feito agora** — é do Ato 2, após MVP
 
 ---

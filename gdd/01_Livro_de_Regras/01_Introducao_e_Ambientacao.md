@@ -57,10 +57,10 @@ Existem dois modos principais de campanha em *Eras do Brasil*:
 
 ### 🧑‍💻 RPG Digital (em desenvolvimento)
 
-- Versão digital com progressão por **blocos de cenário**, movimentação por setas ou cliques (versão 1), e posteriormente, movimentação livre estilo *Stoneshard*/*Solasta*/*Wartales* (versão 2).
-- **Mundo Vivo**, com eventos reativos às ações do jogador e IA de NPCs.
-- Personagens do modo de mesa podem migrar para o modo digital.
-- Jogabilidade por turnos, com **combate tático isométrico** e **progresso narrativo guiado por escolhas**.
+- Versão digital como **MUD Moderno**: servidor Go com cliente web (browser).
+- **Mundo Persistente**, com eventos reativos e proativos, IA de NPCs e simulação contínua via tick global.
+- Mundo avança mesmo sem jogadores conectados.
+- Jogabilidade por turnos (texto), com **combate tático D20** e **progresso narrativo guiado por escolhas**.
 
 ---
 
@@ -89,9 +89,9 @@ Essa abertura apresenta:
 O universo de *Eras do Brasil* responde às ações dos personagens:
 - NPCs lembram decisões passadas.
 - Locais evoluem com o tempo (ou se degradam).
-- Rumores, feitiços e eventos criam uma **linha narrativa única para cada campanha**.
+- Rumores, feitiços e eventos criam uma **linha narrativa global**.
 
-Na versão digital, será possível realizar **campanhas cooperativas**, onde amigos visitam e influenciam o mundo do anfitrião através da Raiz, gerando histórias compartilhadas.
+Na versão digital, haverá **múltiplos jogadores simultâneos** afetando o mesmo mundo persistente — como fragmentos paralelos convivendo numa mesma raiz. A história avança com ou sem você.
 
 ---
 
