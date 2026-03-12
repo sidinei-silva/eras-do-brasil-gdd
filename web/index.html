@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eras do Brasil — RPG Tático Eco-Fantasy</title>
-  <meta name="description" content="Eras do Brasil é um RPG tático com elementos de eco-fantasia ambientado em um Brasil colonial místico. Explore eras, desbloqueie classes e molde o destino do mundo.">
+  <title>Eras do Brasil — MUD Moderno Eco-Fantasy</title>
+  <meta name="description" content="Eras do Brasil é um MUD Moderno (MMORPG de texto) com eco-fantasia ambientado em um Brasil colonial místico. Explore um mundo vivo, desbloqueie classes e molde o destino das eras.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,12 +36,12 @@
   <header class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-subtitle">RPG Tático · Eco-Fantasy · Brasil Colonial Místico</p>
+      <p class="hero-subtitle">MUD Moderno · Eco-Fantasy · Brasil Colonial Místico</p>
       <h1 class="hero-title">Eras do Brasil</h1>
       <p class="hero-tagline">"Antes da primeira palavra, havia o Sussurro. Antes do primeiro império, havia a Raiz."</p>
       <div class="hero-status">
         <span class="status-badge">🚧 Em Desenvolvimento</span>
-        <span class="status-info">Fase 0 — POCs + GDD Completo</span>
+        <span class="status-info">Fase 0 — Heartbeat (Servidor Go + WebSocket)</span>
       </div>
       <div class="hero-actions">
         <a href="#sobre" class="btn btn-primary">Descubra o Jogo</a>
@@ -62,8 +62,8 @@
       <div class="about-grid">
         <div class="about-card">
           <div class="about-icon">⚔️</div>
-          <h3>Combate Tático D20</h3>
-          <p>Combate por turnos com D20 e modificadores, evoluindo de estático para grid isométrico com posicionamento, cobertura e flanqueio.</p>
+          <h3>Combate D20</h3>
+          <p>Combate por turnos com D20 e modificadores, evoluindo de estático (texto) para grid tático com posicionamento, cobertura e flanqueio.</p>
         </div>
         <div class="about-card">
           <div class="about-icon">🌿</div>
@@ -87,8 +87,8 @@
         </div>
         <div class="about-card">
           <div class="about-icon">🤝</div>
-          <h3>Co-op P2P Narrativo</h3>
-          <p>Jogue com amigos via Sincronia Espiritual. Um é o Guardião do Tempo, o outro projeta seu espírito. Sem servidores, sem compromissos narrativos.</p>
+          <h3>Multiplayer Persistente</h3>
+          <p>Mundo compartilhado com múltiplos jogadores simultâneos. Full loot, missões competitivas, eventos globais e economia viva gerenciada pelo servidor.</p>
         </div>
       </div>
     </div>
@@ -227,18 +227,31 @@
 
         <article class="news-card news-featured">
           <div class="news-date">
-            <span class="news-day">17</span>
-            <span class="news-month">Fev 2026</span>
+            <span class="news-day">11</span>
+            <span class="news-month">Mar 2026</span>
           </div>
           <div class="news-body">
             <span class="news-tag news-tag-milestone">Marco</span>
-            <h3>Backlog Completo: 62 Issues no GitHub Projects</h3>
-            <p>O backlog do projeto foi finalizado com 62 issues organizadas em 9 Epics, cobrindo desde correções de lore até o MVP "O Despertar". Cada issue tem Sprint, Prioridade, Categoria, Tipo e Esforço definidos. O projeto está pronto para execução.</p>
+            <h3>Pivot para MUD Moderno: Servidor Go + Cliente Web</h3>
+            <p>O projeto passou por um pivot fundamental: de RPG tático Unity Co-op P2P para um <strong>MUD Moderno</strong> (MMORPG server-authoritative) com servidor Go e cliente web. Arquitetura definida com goroutines, EventBus e persistência RAM-First com SQLite. Pronto para código.</p>
             <ul class="news-highlights">
-              <li>9 Epics cobrindo Sprints 0 a 8+</li>
-              <li>38 POCs planejadas em 8 módulos Unity/C#</li>
-              <li>Sistema de diálogos e narrativa identificado como maior gap — Epic dedicada criada</li>
+              <li>ADR-004: Pivot para servidor Go 1.22+</li>
+              <li>ADR-005: Monolito + Goroutines + EventBus</li>
+              <li>ADR-006: Persistência RAM-First + SQLite WAL</li>
+              <li>7 Fases de desenvolvimento (Heartbeat → Multiplayer)</li>
             </ul>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-date">
+            <span class="news-day">11</span>
+            <span class="news-month">Mar 2026</span>
+          </div>
+          <div class="news-body">
+            <span class="news-tag news-tag-tech">Técnico</span>
+            <h3>Roadmap Reorganizado: 7 Fases + 28 Issues Reativadas</h3>
+            <p>O roadmap foi reorganizado em 7 fases progressivas. Das 62 issues antigas, 28 foram reaproveitadas e ajustadas para o novo contexto Go/MMORPG, mantendo o trabalho de design já validado.</p>
           </div>
         </article>
 
@@ -250,19 +263,7 @@
           <div class="news-body">
             <span class="news-tag news-tag-design">Design</span>
             <h3>Auditoria Profunda do GDD: 12 Inconsistências Resolvidas</h3>
-            <p>Uma auditoria completa do Game Design Document identificou e documentou 12 furos narrativos e mecânicos — desde a natureza do Dom da Revivência até a escala de Ticks e contradições de nível entre documentos. Todas geraram issues com prioridade e correção planejada.</p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-date">
-            <span class="news-day">13</span>
-            <span class="news-month">Fev 2026</span>
-          </div>
-          <div class="news-body">
-            <span class="news-tag news-tag-tech">Técnico</span>
-            <h3>ADR-001 e ADR-002: Decisões de Arquitetura Unity</h3>
-            <p>Duas decisões técnicas fundamentais foram documentadas: a organização do projeto Unity como projeto único (POCs + jogo final) e o workflow de UI/UX com wireframes antes da implementação. Ambas guiarão toda a fase de desenvolvimento.</p>
+            <p>Uma auditoria completa do Game Design Document identificou e documentou 12 furos narrativos e mecânicos — desde a natureza do Dom da Revivência até a escala de Ticks e contradições de nível entre documentos.</p>
           </div>
         </article>
 
@@ -274,19 +275,7 @@
           <div class="news-body">
             <span class="news-tag news-tag-lore">Lore</span>
             <h3>GDD Completo: 9 Livros e 18 Mini-Campanhas</h3>
-            <p>O Game Design Document atingiu sua versão completa com 9 livros de regras, 12 classes Tier 1 documentadas, o enredo do Ato 1 com 4 sessões jogáveis e 18 mini-campanhas distribuídas entre as 3 origens. O Atlas do Eco (mapa do Ato 1) também foi finalizado.</p>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-date">
-            <span class="news-day">06</span>
-            <span class="news-month">Fev 2026</span>
-          </div>
-          <div class="news-body">
-            <span class="news-tag news-tag-design">Design</span>
-            <h3>Sistema de Crafting e Economia: Matriz 5x5 Definida</h3>
-            <p>O sistema de itemização foi definido com uma matriz de Qualidade x Raridade (5x5) que governa preço, eficácia e durabilidade. O crafting exige receitas, materiais, local adequado e testes de proficiência — mantendo cada item significativo.</p>
+            <p>O Game Design Document atingiu sua versão completa com 9 livros de regras, 12 classes Tier 1 documentadas, o enredo do Ato 1 com 4 sessões jogáveis e 18 mini-campanhas distribuídas entre as 3 origens.</p>
           </div>
         </article>
 
@@ -324,7 +313,7 @@
         <div class="footer-brand">
           <span class="logo-icon">🌿</span>
           <span class="logo-text">Eras do Brasil</span>
-          <p>RPG Tático · Eco-Fantasy · Brasil Colonial Místico</p>
+          <p>MUD Moderno · Eco-Fantasy · Brasil Colonial Místico</p>
         </div>
         <div class="footer-links">
           <h4>Navegação</h4>
