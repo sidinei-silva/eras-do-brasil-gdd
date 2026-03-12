@@ -28,7 +28,8 @@ O projeto Eras do Brasil passou por 3 anos de evolução documentária sem produ
 | Servidor | **Go** | Goroutines para NPC AI concorrente, tick loops, múltiplas conexões. Sem bottleneck de event loop (Node.js) nem arquitetura request/response (PHP) |
 | Cliente | **HTML/CSS/JS** (browser) | Zero atrito de instalação, usa skills existentes do developer |
 | Protocolo | **WebSocket** | Comunicação bidirecional em tempo real |
-| Dados | **Arquivos JSON** (MVP) → PostgreSQL (futuro) | Simplicidade para começar, migração quando necessário |
+| Dados estáticos | **Arquivos JSON** no repo (versionados) | Templates de NPC, items, mapa — carregados na RAM no startup |
+| Dados dinâmicos | **SQLite** (WAL mode) via `modernc.org/sqlite` | RAM-first, snapshots async, zero ops — ver ADR-006 |
 
 ### Arquitetura
 
@@ -88,3 +89,5 @@ O projeto Eras do Brasil passou por 3 anos de evolução documentária sem produ
 - Repo legado: `sidinei-silva/ErasDoBrasil-Historico-Legado` (visão MMO original, Chats Gemini)
 - Comparativo detalhado: `vibe/scratchpad/comparativo-gdd-legado-vs-atual.md`
 - Commits de remoção MMO: `c4fff4a`, `820ad6e`, `16132ad`, `ed287af`
+- ADR-005: Arquitetura do Servidor — Monolito com Goroutines e EventBus
+- ADR-006: Persistência — RAM-First com Snapshots em SQLite
