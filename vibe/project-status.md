@@ -22,6 +22,7 @@
 | **Roadmap** | ✅ Atualizado | 7 fases (Heartbeat → Multiplayer) |
 | **Plano de Desenvolvimento** | ✅ Atualizado | Calendário Mar-Dez 2026, ~6h/semana |
 | **MVP Spec** | ✅ Atualizado | Corresponde à Fase 3 (Player) |
+| **Comandos Admin (Dev/Teste)** | 🟡 Planejado | Trilha transversal definida em ROADMAP/backlog/Guia de Retomada |
 | **Servidor Go** | 🔲 Não iniciado | Fase 0 pendente |
 | **Cliente Web** | 🔲 Não iniciado | Fase 2 pendente |
 | **MVP** | 🔲 Aguardando Fase 3 | 0% |
@@ -72,6 +73,7 @@
 - ✅ **Sistema Eco/Raiz** (offline pessoal + online persistente) formalizado nos Conceitos Centrais
 - ✅ **Full Loot** formalizado pela primeira vez (nunca tinha sido documentado)
 - ✅ **ADR-001/002** marcados como substituídos; **ADR-003** atualizado com estrutura `server/`
+- ✅ **Trilha de Comandos Admin** planejada no roadmap (arquitetura, governança e entregas por fase)
 - ✅ **docs/tech/** Unity docs arquivados com aviso
 - ✅ **docs/product/** plano de dev, MVP spec, perfil dev — todos atualizados para Go
 - ✅ **Plano de spin-offs** arquivado (decisão do pivot)

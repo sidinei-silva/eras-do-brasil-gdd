@@ -52,6 +52,41 @@ Fase 0 ──► Fase 1 ──► Fase 2 ──► Fase 3 ──► Fase 4 ─�
 
 ---
 
+## Trilha Transversal: Comandos Admin (Dev/Teste)
+
+> Objetivo: acelerar debug, validação de regras e testes de mundo sem depender de UI final.
+
+### Arquitetura Planejada (sem código)
+
+- **AdminCommandManager (goroutine dedicada):** recebe comandos administrativos, valida permissões e despacha ações para os managers do servidor.
+- **Canal de entrada por fase:**
+	- Fase 0-2: console local de desenvolvimento (prioritário)
+	- Fase 3-5: endpoint administrativo interno (WebSocket/HTTP interno)
+	- Fase 6+: opção de acesso remoto (ex.: RCON-like), somente se necessário
+- **Integração com EventBus:** comandos entram por tópico administrativo e geram eventos de resposta/resultado para observabilidade.
+- **Auditoria obrigatória:** todo comando administrativo gera log com ator, tick, parâmetros, resultado e impacto.
+- **Isolamento de segurança:** comandos destrutivos só em modo desenvolvimento/homologação, nunca habilitados por padrão em produção.
+
+### Categorias de Comandos
+
+- **Inspeção:** listar NPCs, inimigos, jogadores, blocos e estado global.
+- **Diagnóstico:** localizar entidade por ID/nome, ver estado detalhado, verificar filas/eventos.
+- **Controle de tempo:** avançar tick, pausar, retomar, ajustar ciclo dia/noite.
+- **Mutação de mundo:** mover entidade, alterar atributos, forçar spawn/despawn, reset parcial/global.
+- **Teste narrativo/econômico:** disparar eventos, ajustar reputação, injetar recursos para cenários de teste.
+
+### Entregas por Fase (Admin)
+
+- **Fase 0:** comandos read-only de heartbeat e estado global.
+- **Fase 1:** inspeção e localização de NPCs/inimigos + ciclo dia/noite.
+- **Fase 2:** integração com cliente observador para depuração visual.
+- **Fase 3:** comandos de personagem/inventário/save para QA funcional.
+- **Fase 4:** comandos de economia, diálogos, facções e quest state.
+- **Fase 5:** comandos de combate tático e balanceamento D20.
+- **Fase 6:** governança multiplayer, trilhas de auditoria e controles operacionais.
+
+---
+
 ## Decisões Técnicas
 
 | ADR | Decisão | Status |

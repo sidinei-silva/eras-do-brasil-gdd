@@ -39,11 +39,27 @@
 
 ## Tarefas por Fase
 
+### Workstream Transversal — Comandos Admin (Dev/Teste)
+
+- [ ] Definir catálogo inicial de comandos administrativos (inspeção, diagnóstico, mutação, reset)
+- [ ] Definir contrato de entrada/saída dos comandos (request/response/evento)
+- [ ] Definir modelo de autorização por ambiente (dev/homolog/prod)
+- [ ] Definir trilha de auditoria obrigatória (quem executou, quando, impacto)
+- [ ] Definir estratégia de rollback para comandos destrutivos
+
+**Arquitetura alvo (sem código):**
+- [ ] 1 goroutine dedicada para AdminCommandManager
+- [ ] integração com EventBus para despacho e resposta
+- [ ] fonte de entrada local no início (console dev)
+- [ ] endpoint administrativo interno nas fases intermediárias
+- [ ] remoto opcional (RCON-like) apenas quando houver necessidade real
+
 ### Fase 0 — Heartbeat (servidor Go)
 - [ ] `main.go` com tick global (`time.Ticker` + goroutine)
 - [ ] Struct `Mundo` com `ProcessarTick()`
 - [ ] WebSocket listener (`gorilla/websocket`)
 - [ ] Cliente HTML mínimo que conecta e recebe ticks
+- [ ] Admin v0: comandos read-only de status (tick, uptime, estado global)
 
 ### Fase 1 — Mundo Vivo
 - [ ] NPCs com rotinas diárias (Utility AI)
@@ -51,12 +67,14 @@
 - [ ] Ciclo dia/noite afetando comportamento
 - [ ] Eventos de mundo (aleatórios + sazonais)
 - [ ] StoryManager — arco narrativo dinâmico
+- [ ] Admin v1: listar/localizar NPCs e inimigos, detalhes de estado por entidade
 
 ### Fase 2 — Observador
 - [ ] Cliente web mostra estado do mundo em tempo real
 - [ ] Mapa de nós navegável (read-only)
 - [ ] Log de eventos visível
 - [ ] UI básica (HTML/CSS/JS)
+- [ ] Admin v2: painel/visão observável dos comandos de inspeção
 
 ### Fase 3 — Jogador (≈ MVP "O Despertar")
 - [ ] Criação de personagem (1 classe: Guerreiro Tribal)
@@ -65,6 +83,7 @@
 - [ ] Inventário e loot
 - [ ] HUD principal
 - [ ] Save/Load do estado do jogador
+- [ ] Admin v3: comandos de personagem/inventário/save para testes funcionais
 
 ### Fase 4 — Interação
 - [ ] Diálogos ramificados com NPCs
@@ -74,6 +93,7 @@
 - [ ] Facções e reputação
 - [ ] Status e condições em combate
 - [ ] Mini-campanha "O Caçador que Não Voltou"
+- [ ] Admin v4: comandos de facção, economia, diálogos e estado de quests
 
 ### Fase 5 — D20 Completo
 - [ ] Sistema D20 completo (vantagem, desvantagem, críticos)
@@ -82,6 +102,7 @@
 - [ ] Habilidades ativas em combate
 - [ ] Balanceamento com 12 classes Tier 1
 - [ ] Grid tático (Fase 2 visual do combate)
+- [ ] Admin v5: comandos de simulação de combate e balanceamento
 
 ### Fase 6 — Multiplayer
 - [ ] Múltiplas conexões simultâneas
@@ -91,6 +112,7 @@
 - [ ] Eventos globais (rupturas, mudanças de era)
 - [ ] Inimigos evolutivos (adaptam táticas)
 - [ ] Economia multiplayer server-authoritative
+- [ ] Admin v6: governança operacional multiplayer + auditoria avançada
 
 ---
 

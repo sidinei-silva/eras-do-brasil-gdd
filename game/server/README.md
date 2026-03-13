@@ -29,9 +29,21 @@ server/
 ├── economy/          # EconomyManager — crafting, comércio
 ├── player/           # Conexão, readPump/writePump, estado do jogador
 ├── narrative/        # StoryManager, NPCManager, diálogos
+├── admin/            # AdminCommandManager (console dev, comandos admin)
 ├── persist/          # PersistManager — SQLite snapshots
 └── data/             # JSON templates (itens, classes, inimigos)
 ```
+
+## Comandos Admin (Dev/Teste)
+
+- **Propósito:** acelerar debug e validação sem depender da interface final.
+- **Arquitetura:** `AdminCommandManager` roda em goroutine dedicada e integra com EventBus.
+- **Fluxo:** entrada de comando -> validação/permissão -> despacho para manager de domínio -> resposta -> auditoria.
+- **Entrada por fase:**
+	- Fase 0-2: console local
+	- Fase 3-5: endpoint interno administrativo
+	- Fase 6+: remoto opcional (RCON-like), se necessário
+- **Segurança:** comandos destrutivos somente em dev/homolog e com trilha de auditoria.
 
 ## Como rodar
 

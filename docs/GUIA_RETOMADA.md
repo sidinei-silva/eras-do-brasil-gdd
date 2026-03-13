@@ -70,6 +70,33 @@ Fase 0 (Heartbeat) ──► Fase 1 (Mundo Vivo) ──► Fase 2 (Observador)
 
 ---
 
+## 🛠️ Trilha Transversal — Comandos Admin (Dev/Teste)
+
+> Esta trilha acompanha todas as fases para acelerar debug, inspeção de estado e testes de regressão sem depender da UI final.
+
+### Arquitetura Planejada (sem código)
+
+- **AdminCommandManager (goroutine dedicada):** recebe comandos administrativos e coordena execução.
+- **Fluxo de comunicação:** Entrada admin -> validação/permissão -> despacho para manager de domínio -> resposta -> auditoria.
+- **Integração com EventBus:** comandos e respostas circulam como eventos administrativos.
+- **Canais por maturidade:**
+        - Fase 0-2: console local (prioritário)
+        - Fase 3-5: endpoint interno administrativo (HTTP/WS interno)
+        - Fase 6+: remoto opcional (RCON-like), somente se houver necessidade real
+- **Governança:** comando destrutivo só em dev/homolog e sempre com log de auditoria.
+
+### Entregas Admin por Fase
+
+- **Fase 0:** status global, tick atual, uptime e saúde do loop.
+- **Fase 1:** listar/localizar NPCs e inimigos, inspecionar estado por entidade.
+- **Fase 2:** observabilidade dos comandos no cliente observador.
+- **Fase 3:** inspeção de jogador, inventário e fluxo de save/load.
+- **Fase 4:** comandos de facção, economia, diálogos e estado de quests.
+- **Fase 5:** comandos de simulação para balanceamento D20 e combate.
+- **Fase 6:** governança operacional multiplayer com trilha avançada de auditoria.
+
+---
+
 ## 💻 Fase 0 — Heartbeat
 
 > **Objetivo:** Provar que o servidor Go funciona — tick global rodando, uma conexão WebSocket recebendo estado.
