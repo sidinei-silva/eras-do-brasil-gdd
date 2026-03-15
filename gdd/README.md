@@ -70,10 +70,7 @@ Pixel art, paleta, UI/HUD.
 
 | Documento | Conteúdo |
 |-----------|----------|
-| [01 — Estilo Visual Geral](04_Design_Visual/01_Estilo_Visual_Geral.md) | Pixel art moderna, paleta de cores |
-| [02 — UI, HUD e Tipografia](04_Design_Visual/02_UI_HUD_e_Tipografia.md) | Interface, fontes, ícones |
-| [03 — Assets, Ícones e Cenários](04_Design_Visual/03_Assets_Icones_e_Cenarios.md) | Art bible |
-| [04 — Diretrizes Técnicas](04_Design_Visual/04_Diretrizes_Tecnicas_e_Exportacao.md) | Specs de exportação |
+| [01 — Estilo, Arte e Técnica](04_Design_Visual/01_Estilo_Arte_e_Tecnica.md) | Direção de arte, UI, ícones, tipografia, exportação |
 | [05 — UI Fase 1 (Exploração/Combate)](04_Design_Visual/05_UI_Fase_1_Exploracao_e_Combate.md) | HUD, mapa de nós, cena split |
 | [06 — UI Fase 2 (Combate Tático)](04_Design_Visual/06_UI_Fase_2_Combate_Tatico.md) | Grid isométrico, AoE, hotbar |
 
@@ -99,6 +96,7 @@ Pixel art, paleta, UI/HUD.
 | [01 — Estratégia de Dados](99_Meta_e_Backlog/01_Estrategia_de_Dados_e_Documentacao.md) | Filosofia "Alma vs. Lógica" |
 | [02 — Roadmap de Desenvolvimento](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) | Fases (Heartbeat → Multiplayer), checklist |
 | [03 — Auditoria do GDD](99_Meta_e_Backlog/03_Auditoria_GDD.md) | Resultado da auditoria de consistência (PR #1) |
+| [BACKLOG](99_Meta_e_Backlog/BACKLOG.md) | Tarefas de design/lore pendentes por fase |
 
 ---
 
