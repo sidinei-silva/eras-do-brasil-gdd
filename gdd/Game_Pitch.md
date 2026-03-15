@@ -1,6 +1,6 @@
 # Eras do Brasil: Documento de Apresentação (Game Pitch)
 
-> **Navegação:** [GDD](README.md) · [Project Plan](Project%20Plan.md) · [Roadmap](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [POCs](../pocs/README.md) · [Projeto](../README.md)
+> **Navegação:** [GDD](README.md) · [Project Plan](Project%20Plan.md) · [Roadmap](99_Meta_e_Backlog/02_Roadmap_Desenvolvimento.md) · [Projeto](../README.md)
 >
 > **Propósito:** Documento de apresentação **externa** — para investidores, publishers, comunidade. Foco em vender a visão e diferencial do jogo.
 > **Relação:** Para a estratégia técnica e de desenvolvimento, veja o [Project Plan](Project%20Plan.md).
@@ -61,7 +61,7 @@ A filosofia de design de mundo de _Eras do Brasil_ é perfeitamente ilustrada pe
     - **Terreno:** Terra Arrasada/Pântano.
     - **Regra Principal:** Governada pela Regra de Terror, onde personagens com baixa sanidade sofrem alucinações. Os inimigos aqui são do tipo Espiritual. A zona testa não apenas o equipamento do jogador, mas sua resiliência mental, transformando a exploração em um horror psicológico.
 
-Este mundo dinâmico e reativo não é apenas um pano de fundo, but the arena where core gameplay unfolds, forging each player's legend.
+Este mundo dinâmico e reativo não é apenas um pano de fundo — é a arena onde a jogabilidade central se desenrola, forjando a lenda de cada jogador.
 
 --------------------------------------------------------------------------------
 

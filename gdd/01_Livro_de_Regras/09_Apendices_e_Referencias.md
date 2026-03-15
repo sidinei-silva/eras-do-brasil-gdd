@@ -162,13 +162,13 @@ Para garantir que o sistema de regras seja reutilizável (seja para o protótipo
 Isso significa uma separação radical entre o "Motor" (a lógica) e o "Conteúdo" (os dados).
 
 **O "Motor" (Código Reutilizável)**
-O código do jogo (seja em TypeScript, C# ou GDScript) será genérico. Ele não "sabe" o que é um "Ferreiro" ou uma "Espada de Ferro". Ele lida apenas com conceitos abstratos:
+O código do jogo (Go no servidor, HTML/CSS/JS no cliente) será genérico. Ele não "sabe" o que é um "Ferreiro" ou uma "Espada de Ferro". Ele lida apenas com conceitos abstratos:
 * O `NPCManager` lida com `NPC_Data` e uma `Agenda`.
 * O `QuestManager` lida com `Quest_Data` e `Objetivos`.
 * O `ItemManager` lida com `Item_Data` e a matriz 5x5.
 
 **O "Conteúdo" (Dados do Jogo)**
-Todo o "sabor" do *Eras do Brasil* virá de arquivos de dados externos (como `.json`, `ScriptableObjects` do Unity ou `Resources` do Godot) que alimentam o motor.
+Todo o "sabor" do *Eras do Brasil* virá de arquivos de dados externos (`.json` carregados pelo servidor Go) que alimentam o motor.
 
 **Exemplo Prático:**
 

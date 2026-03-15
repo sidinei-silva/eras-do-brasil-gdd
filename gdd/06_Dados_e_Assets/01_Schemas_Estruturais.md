@@ -2,7 +2,7 @@
 
 ## 1.0 Introdução: A Arquitetura Data-Driven
 
-Este documento técnico estabelece a estrutura de dados fundamental para o jogo _Eras do Brasil_. De acordo com a filosofia de desenvolvimento "Alma vs. Lógica" do projeto, este material foca exclusivamente na "Lógica", definindo os schemas JSON que servirão como a espinha dorsal para as entidades centrais do jogo na engine Unity. A adoção de uma arquitetura data-driven é crucial para garantir a modularidade, a escalabilidade e a facilidade de manutenção do projeto, permitindo que a equipe de design e narrativa popule o mundo do jogo de forma eficiente e consistente. A seguir, detalharemos a estrutura da primeira entidade central: a classe de personagem.
+Este documento técnico estabelece a estrutura de dados fundamental para o jogo _Eras do Brasil_. De acordo com a filosofia de desenvolvimento "Alma vs. Lógica" do projeto, este material foca exclusivamente na "Lógica", definindo os schemas JSON que servirão como a espinha dorsal para as entidades centrais do jogo no servidor Go. A adoção de uma arquitetura data-driven é crucial para garantir a modularidade, a escalabilidade e a facilidade de manutenção do projeto, permitindo que a equipe de design e narrativa popule o mundo do jogo de forma eficiente e consistente. A seguir, detalharemos a estrutura da primeira entidade central: a classe de personagem.
 
 --------------------------------------------------------------------------------
 
@@ -175,4 +175,4 @@ A criação de um schema de `Inimigo` bem estruturado é vital não apenas para 
 
 ## 5.0 Conclusão e Próximos Passos
 
-Os schemas JSON apresentados neste documento — `ClasseDePersonagem`, `Item` e `Inimigo` — formam a base lógica e estrutural para as principais entidades de _Eras do Brasil_. Ao definir rigorosamente esses contratos de dados, garantimos a consistência, a integração entre sistemas e a facilidade de implementação na engine Unity. Conforme delineado na "Estratégia de Dados e Documentação" do projeto, o próximo passo no pipeline de desenvolvimento é popular esses schemas com os dados específicos de cada classe, item e inimigo planejados para o Ato 1 da campanha, transformando a arquitetura lógica em conteúdo jogável.
+Os schemas JSON apresentados neste documento — `ClasseDePersonagem`, `Item` e `Inimigo` — formam a base lógica e estrutural para as principais entidades de _Eras do Brasil_. Ao definir rigorosamente esses contratos de dados, garantimos a consistência, a integração entre sistemas e a facilidade de implementação no servidor Go. Conforme delineado na "Estratégia de Dados e Documentação" do projeto, o próximo passo no pipeline de desenvolvimento é popular esses schemas com os dados específicos de cada classe, item e inimigo planejados para o Ato 1 da campanha, transformando a arquitetura lógica em conteúdo jogável.
