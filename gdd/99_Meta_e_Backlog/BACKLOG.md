@@ -29,8 +29,7 @@ _Resolver antes de qualquer outra coisa — inconsistências que afetam múltipl
 - [ ] **Dano Espiritual e Exaustão Espiritual** — definir como tipos mecânicos
   AC: `01_Livro_de_Regras/04_Sistema_de_Combate.md` lista esses tipos com efeito e resistência
 
-- [ ] **Escala de Ticks — 500 Ticks = quanto tempo real/narrativo?**
-  AC: `01_Livro_de_Regras/05_Exploracao_e_Mundo.md` tem tabela de conversão Tick → tempo (ex: 1 Tick = X minutos in-world)
+- [x] **~~Escala de Ticks~~** — Resolvido: Tick removido como mecânica exposta ao jogador (ADR-007). Substituído por: tempo real (segundos/minutos), relógio do jogo (Manhã/Tarde/Noite/Madrugada), turnos (combate). 1 dia do jogo ≈ 2–4h reais.
 
 - [ ] **Guardião da Fenda — identidade, backstory e stats do boss final**
   AC: Bestiário Ato 1 tem entrada do boss com lore, stats Tier 3 e mecânica especial de combate
@@ -52,7 +51,7 @@ _Resolver antes de qualquer outra coisa — inconsistências que afetam múltipl
   AC: `06_Dados_e_Assets/01_Schemas_Estruturais.md` tem exemplos funcionais de NPC (agenda, estado) e Faction (id, reputação, comportamento)
 
 - [ ] **NPC Agenda Data — Rotinas dos NPCs da Vila de São Tomé**
-  AC: Arquivo de dados em `06_Dados_e_Assets/` com agenda completa de 3+ NPCs (bloco, ação e período por tick)
+  AC: Arquivo de dados em `06_Dados_e_Assets/` com agenda completa de 3+ NPCs (bloco, ação e período do dia)
 
 ---
 
@@ -84,8 +83,7 @@ _Resolver antes de qualquer outra coisa — inconsistências que afetam múltipl
 - [ ] **Schemas JSON: Skill e Proficiency**
   AC: `06_Dados_e_Assets/01_Schemas_Estruturais.md` tem exemplos funcionais de Skill (ativa/passiva, custo, efeito) e Proficiency (tipo, XP, receita)
 
-- [ ] **Mecânica de Morte do Jogador — Game Over e Respawn**
-  AC: `01_Livro_de_Regras/02_Mecanicas_Basicas.md` documenta o que acontece ao morrer (itens, respawn, tick penalty, modo Eco vs Raiz)
+- [x] **~~Mecânica de Morte do Jogador~~** — Resolvido: Penalidade de morte definida (ADR-010). Perda de 10% XP (não perde nível) + 15% durabilidade. Sem drop de itens. Documentado em `08_Mundo_Vivo_e_NPCs.md` §8.12.
 
 ---
 
@@ -130,6 +128,29 @@ _Resolver antes de qualquer outra coisa — inconsistências que afetam múltipl
 
 - [ ] **Expandir Habilidades Tier 1 + Reaction Abilities**
   AC: Todas as 12 classes têm habilidades Tier 1 completas + 1 Reaction Ability cada no Livro de Classes
+
+---
+
+## Decisões MMORPG 2026-03-17
+_Tarefas geradas pela sessão de decisões narrativas e mecânicas._
+
+- [ ] **Schema JSON: Season e SeasonState** — definição estrutural de temporada com state machine
+  AC: `06_Dados_e_Assets/01_Schemas_Estruturais.md` tem exemplo funcional de Season (id, fase, duração, consequências)
+
+- [ ] **Schema JSON: CompetitiveQuest** — quest com múltiplos aceitantes e verificação server-side
+  AC: `06_Dados_e_Assets/01_Schemas_Estruturais.md` tem exemplo funcional de CompetitiveQuest (publicação, aceite, timeout, recompensa)
+
+- [ ] **Schema JSON: EnemyEvolution** — dados de evolução de inimigos (killCount, tier, migração)
+  AC: `06_Dados_e_Assets/01_Schemas_Estruturais.md` tem exemplo funcional expandido com regras de progressão Normal→Veterano→Alfa→Lenda
+
+- [ ] **Bestiário: Inimigos Evolutivos do Ato 1** — dados completos de inimigos com tiers evolutivos
+  AC: `05_Livros_Auxiliares/` tem entrada por inimigo com stats base + stats por tier evolutivo + regras de migração
+
+- [ ] **Balanceamento: Penalidade de Morte** — validar % XP e % durabilidade com curva de progressão
+  AC: Documento em `99_Meta_e_Backlog/` com simulação de impacto da penalidade em diferentes níveis
+
+- [ ] **Narrativa: Votação Simples** — definir UI e regras de votação para bifurcações narrativas
+  AC: `08_Mundo_Vivo_e_NPCs.md` ou `04_Design_Visual/` documenta o fluxo de votação com mockup
 
 ---
 
