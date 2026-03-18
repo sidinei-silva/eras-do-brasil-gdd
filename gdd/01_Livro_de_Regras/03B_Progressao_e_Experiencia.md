@@ -25,7 +25,7 @@ A **Experiência (XP)** é a moeda de progresso do personagem. Ao acumular XP su
 
 ### XP Compartilhado (Co-op)
 
-Em modo cooperativo, o XP é **compartilhado** entre todos os Despertos presentes:
+Em modo cooperativo, o XP é **compartilhado** entre todos os jogadores presentes:
 - Cada jogador recebe **100% do XP total** (não é dividido)
 - Viajantes (aliados visitando outro Eco) levam o XP de volta para seu próprio mundo
 - Isso incentiva a cooperação sem penalizar quem joga em grupo

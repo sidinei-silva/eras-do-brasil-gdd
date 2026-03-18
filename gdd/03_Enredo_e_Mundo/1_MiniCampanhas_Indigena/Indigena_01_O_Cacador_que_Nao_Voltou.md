@@ -10,30 +10,30 @@ Explorar a tensão da caça, o uso de proficiências de sobrevivência e o mist�
 
 ### 📝 Resumo Dinâmico
 
-Um jovem caçador (NPC: Iaguarê) não retornou de sua rotina diária. Sua agenda dizia que ele voltaria ao meio-dia (Tick 50), mas o relógio do mundo já passou disso. O jogador deve refazer os passos dele antes que a noite caia e os predadores noturnos (Espíritos da Fome) surjam.
+Um jovem caçador (NPC: Iaguarê) não retornou de sua rotina diária. Sua agenda dizia que ele voltaria ao meio-dia, mas o relógio do mundo já passou disso. O jogador deve refazer os passos dele antes que a noite caia e os predadores noturnos (Espíritos da Fome) surjam.
 
 **Gatilho de Início:**
-* **Passivo:** Falar com a mãe de Iaguarê (NPC: Jaci) após o Tick 50.
+* **Passivo:** Falar com a mãe de Iaguarê (NPC: Jaci) após o meio-dia.
 * **Ativo (Fofoca):** Qualquer NPC com a tag `observador` na vila dirá: "Estranho, Iaguarê ainda não trouxe a caça de hoje."
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Tempo)
 
 **1. A Investigação (Vila)**
 * O jogador pode usar **Rastreamento** (Proficiência) na saída da vila OU perguntar aos guardas.
-* **Guarda (IA):** Se afinidade > 10, revela: "Vi ele saindo pelo portão Norte ao amanhecer (Tick 0)."
+* **Guarda (IA):** Se afinidade > 10, revela: "Vi ele saindo pelo portão Norte ao amanhecer."
 
 **2. O Rastro (Floresta)**
 * O rastro possui uma "Durabilidade de Tempo".
-* **Se Ticks < 80:** O rastro é fresco (CD 10).
-* **Se Ticks > 80:** Começou a chover/anoitecer. O rastro é difícil (CD 15).
-* **Se Ticks > 120 (Noite):** O rastro sumiu. O jogador deve buscar refúgio ou enfrentar penalidade de escuridão.
+* **Se ainda é Tarde:** O rastro é fresco (CD 10).
+* **Se já é fim de Tarde:** Começou a chover/anoitecer. O rastro é difícil (CD 15).
+* **Se já é Noite:** O rastro sumiu. O jogador deve buscar refúgio ou enfrentar penalidade de escuridão.
 
 **3. O Encontro (A Toca da Fera)**
 * Iaguarê está encurralado por uma **Criatura Devoradora de Sonhos**.
-* **Condição de Vitória A (Rápido):** Se chegar antes do Tick 100, Iaguarê está ferido mas luta ao seu lado.
-* **Condição de Vitória B (Lento):** Se chegar após o Tick 100, Iaguarê está inconsciente (Status: *Drenado*). O jogador luta sozinho e deve carregá-lo de volta (consome dobro de Ticks).
+* **Condição de Vitória A (Rápido):** Se chegar antes do anoitecer, Iaguarê está ferido mas luta ao seu lado.
+* **Condição de Vitória B (Lento):** Se chegar após o anoitecer, Iaguarê está inconsciente (Status: *Drenado*). O jogador luta sozinho e deve carregá-lo de volta (consome o dobro do tempo).
 
 ---
 

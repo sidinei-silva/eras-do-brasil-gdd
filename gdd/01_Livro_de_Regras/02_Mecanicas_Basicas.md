@@ -151,19 +151,31 @@ A **CD** é definida pelo efeito, magia ou criatura. Se a rolagem for menor, o p
 
 ---
 
-## 2.9 – Equivalência de Tempo (Turno vs. Tick)
+## 2.9 – Tempo no Jogo
 
-Para fins de regras gerais:
-* **1 Turno (Combate)** equivale a **1 Tick (Mundo)**.
-* Habilidades que duram "10 minutos" duram **1 Tick**.
-* Habilidades que duram "1 hora" duram **5 a 6 Ticks** (dependendo da escala da região).
+O tempo em *Eras do Brasil* é medido de formas diferentes conforme o contexto:
+
+- **Turnos:** Usados exclusivamente em combate D20 (Iniciativa → Rodadas → Resolução).
+- **Tempo Real:** Durations de habilidades, prazos de quests e eventos são medidos em segundos/minutos reais.
+- **Relógio do Jogo:** O mundo possui um ciclo dia/noite com 4 períodos — **Manhã, Tarde, Noite, Madrugada**. 1 dia do jogo ≈ 2–4 horas reais. NPCs seguem rotinas baseadas nesses períodos.
+
+### Equivalências Práticas
+
+| Contexto | Unidade de Tempo | Exemplo |
+|----------|-----------------|---------|
+| Combate | Turnos | "Efeito dura 3 turnos" |
+| Habilidade fora de combate | Tempo real | "Dura 5 minutos" |
+| Rotinas de NPC | Período do dia | "O Ferreiro trabalha de Manhã a Tarde" |
+| Prazo de quest | Tempo real ou dias do jogo | "Entregue em 2 horas reais" |
+| Regeneração de recursos | Tempo do jogo | "Renasce a cada Manhã" |
+
+> **Nota técnica:** Internamente, o servidor processa o mundo em ciclos ("ticks"), mas esse detalhe não é exposto ao jogador. Ver [Capítulo 8 — Mundo Vivo](08_Mundo_Vivo_e_NPCs.md) para detalhes de implementação.
 
 ---
 
 ## 📚 Considerações Finais
 
-- Este sistema é usado tanto na versão de mesa quanto na digital.
-- Na versão digital, rolagens podem ser automatizadas (com lógica de falha/sucesso/efeito).
+- Na versão digital, rolagens são automatizadas (com lógica de falha/sucesso/efeito).
 - Habilidades, magias, condições e equipamentos podem alterar as regras aqui apresentadas.
 - Para mais detalhes, consulte os livros complementares:
 

@@ -17,10 +17,10 @@ No topo da "Pedra dos Ventos", um furacão mágico nunca para. Dizem que no olho
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Subida (O Clima)**
-* A montanha tem um ciclo climático de **50 Ticks**.
+* A montanha tem um ciclo climático que muda a cada **período do dia**.
     * 0-10: Vento Norte (Frio/Dano de Gelo).
     * 11-20: Vento Sul (Calor/Dano de Fogo).
     * Etc.

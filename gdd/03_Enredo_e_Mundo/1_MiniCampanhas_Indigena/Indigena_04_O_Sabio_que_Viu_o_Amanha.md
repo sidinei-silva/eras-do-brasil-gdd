@@ -10,23 +10,23 @@ Lidar com visões do futuro, ciclos temporais e o peso do sacrifício para alter
 
 ### 📝 Resumo Dinâmico
 
-Um xamã eremita, que vive em uma caverna de difícil acesso, deixou uma profecia: “Quem chegar ao topo da montanha antes da sombra da águia tocar o rio (Meio-dia) receberá o segredo do amanhã.” É uma corrida contra o tempo (Ticks) e contra outros NPCs rivais que também querem o prêmio.
+Um xamã eremita, que vive em uma caverna de difícil acesso, deixou uma profecia: “Quem chegar ao topo da montanha antes da sombra da águia tocar o rio (Meio-dia) receberá o segredo do amanhã.” É uma corrida contra o tempo e contra outros NPCs rivais que também querem o prêmio.
 
 **Gatilhos de Início:**
-* **Evento de Tempo:** A missão só fica disponível ao amanhecer (Tick 0 do dia).
+* **Evento de Tempo:** A missão só fica disponível ao amanhecer (início da Manhã).
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Tempo)
 
 **1. A Corrida (Escalada)**
-* O jogador tem **40 Ticks** para chegar ao topo.
-* Cada obstáculo (rio, parede de pedra, animais) consome Ticks.
-* **Escolha:** Usar atalhos perigosos (Teste de Astúcia, gasta 2 Ticks, risco de dano) ou caminho seguro (Gasta 5 Ticks).
+* O jogador tem **até o meio-dia** para chegar ao topo.
+* Cada obstáculo (rio, parede de pedra, animais) consome tempo do jogo.
+* **Escolha:** Usar atalhos perigosos (Teste de Astúcia, leva poucos minutos, risco de dano) ou caminho seguro (leva um período mais longo).
 
 **2. Os Rivais (NPCs Vivos)**
 * O guerreiro rival **Kauê** também está subindo. O jogador pode tentar atrasá-lo (armadilhas) ou focar na própria velocidade.
-* O sistema compara os Ticks gastos pelo jogador vs. os Ticks do NPC.
+* O sistema compara o tempo gasto pelo jogador vs. o tempo do NPC.
 
 **3. A Revelação**
 * Se chegar primeiro: O Xamã entrega o prêmio.

@@ -10,14 +10,14 @@ Participar de uma guerra civil entre espíritos da natureza, definindo o futuro 
 
 ### 📝 Resumo Dinâmico
 
-Dois clãs espirituais entraram em guerra aberta. Os "Espinhos" (agressivos) querem expulsar os humanos. As "Flores" (simbióticos) querem coexistir. A batalha final acontecerá no **Solstício (Tick Global X)**. O jogador deve escolher um lado e enfraquecer o outro antes da data.
+Dois clãs espirituais entraram em guerra aberta. Os "Espinhos" (agressivos) querem expulsar os humanos. As "Flores" (simbióticos) querem coexistir. A batalha final acontecerá no **Solstício (um evento global do calendário do jogo)**. O jogador deve escolher um lado e enfraquecer o outro antes da data.
 
 **Gatilhos de Início:**
 * **Evento:** Árvores começam a atacar lenhadores (Espinhos) ou curar viajantes (Flores).
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Sabotagem**
 * O jogador tem 3 dias (Ciclos) para realizar missões para um dos lados.

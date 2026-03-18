@@ -17,11 +17,11 @@ Um cobrador de impostos da Coroa desapareceu ao entrar na Vila Independente. O j
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Infiltração ou Diplomacia**
 * Entrar na vila disfarçado (Teste de Atuação) ou forçar entrada (Combate).
-* **Rotina de NPC:** O Líder Rebelde faz discursos na praça ao entardecer (Tick 80). É a chance de invadir a casa dele enquanto ele está fora.
+* **Rotina de NPC:** O Líder Rebelde faz discursos na praça ao entardecer. É a chance de invadir a casa dele enquanto ele está fora.
 
 **2. O Prisioneiro**
 * O cobrador está no porão. Ele oferece **tudo** para ser solto.

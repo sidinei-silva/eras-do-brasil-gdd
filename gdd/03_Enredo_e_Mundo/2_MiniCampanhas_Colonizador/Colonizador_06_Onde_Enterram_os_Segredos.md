@@ -10,17 +10,17 @@ Testa os limites entre fé institucional e verdades proibidas em um ambiente cla
 
 ### 📝 Resumo Dinâmico
 
-Uma cripta foi descoberta sob a capela. O Padre quer que você entre e "limpe" tudo antes da missa da manhã (Tick 0). A cripta está cheia de **Ghouls** que ficam mais fortes à medida que a noite avança.
+Uma cripta foi descoberta sob a capela. O Padre quer que você entre e "limpe" tudo antes da missa da manhã. A cripta está cheia de **Ghouls** que ficam mais fortes à medida que a noite avança.
 
 **Gatilhos de Início:**
 * **NPC:** O Padre, nervoso, aborda o jogador na taverna à noite.
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Descida**
-* Masmorra clássica. Recursos (tochas) são limitados por Ticks (uma tocha dura 50 Ticks).
+* Masmorra clássica. Recursos (tochas) são limitados pelo tempo (uma tocha dura cerca de uma hora do jogo).
 * Se a luz acabar, os monstros ganham Vantagem.
 
 **2. O Segredo**

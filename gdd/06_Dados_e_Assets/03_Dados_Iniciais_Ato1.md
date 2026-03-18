@@ -175,7 +175,7 @@ Com um inventário inicial estabelecido, torna-se essencial definir os adversár
 
 ## 2. Inimigos do Ato 1
 
-A curva de dificuldade para o Ato 1 não é estática; ela é projetada para ser um sistema dinâmico que responde ao avanço do jogador. Os inimigos a seguir não são apenas obstáculos passivos, mas componentes de um ecossistema vivo. O Espírito Menor e a Onça Pintada representam as ameaças ambientais da Mata Costeira, testando as habilidades de combate fundamentais. O Capitão Bandeirante, no entanto, é o líder da facção rival "Bandeirantes de Sangue". Este grupo não espera pelo jogador; ele avança ativamente pelo mapa a cada **"Tick"** global, criando uma "Corrida contra a Sombra" para alcançar os objetivos da trama. Este design integra os encontros de combate diretamente à mecânica central de urgência do Ato 1.
+A curva de dificuldade para o Ato 1 não é estática; ela é projetada para ser um sistema dinâmico que responde ao avanço do jogador. Os inimigos a seguir não são apenas obstáculos passivos, mas componentes de um ecossistema vivo — e participam do sistema de **Inimigos Evolutivos** (ADR-009), onde inimigos que derrotam jogadores ganham XP e evoluem de Normal → Veterano → Alfa → Lenda. O Espírito Menor e a Onça Pintada representam as ameaças ambientais da Mata Costeira, testando as habilidades de combate fundamentais. O Capitão Bandeirante é o líder da facção NPC antagonista "Bandeirantes de Sangue" — uma facção controlada pelo `StoryManager` por temporada, que avança pelo mapa conforme a temporada progride, criando tensão e urgência na campanha principal.
 
 ### 2.1. Inimigo Fácil: Espírito Menor
 

@@ -52,23 +52,23 @@ Exemplo:
 
 ---
 
-### 🧬 Injetando Vida: Usando Ticks e IA em Missões
+### 🧬 Injetando Vida: Usando o Ciclo de Tempo e IA em Missões
 
 Para que as missões funcionem no sistema de **Mundo Vivo** (Capítulo 8 do Livro de Regras), elas não podem ser estáticas. Use os seguintes gatilhos:
 
 #### 1. Gatilhos de Rotina (IA de NPC)
 Não coloque o NPC "esperando no ponto X para sempre".
 * **Errado:** "Fale com o Ferreiro na Forja."
-* **Certo:** "O Ferreiro segue sua rotina. De manhã (Ticks 0-20) ele está na Forja. À tarde (Ticks 21-40), ele vai ao Mercado vender. À noite, está na Taverna." O jogador precisa interceptá-lo.
+* **Certo:** "O Ferreiro segue sua rotina. De manhã ele está na Forja. À tarde, ele vai ao Mercado vender. À noite, está na Taverna." O jogador precisa interceptá-lo.
 
 #### 2. Pistas via "Fofoca" (KnowledgeBase)
 Se o jogador não sabe onde é a missão, ele deve perguntar.
 * Use a `knowledgeBase` dos NPCs: "Você não precisa achar as pegadas sozinho. Se perguntar ao Caçador (que tem a tag `viu_monstro`), ele marcará o local no seu mapa."
 
-#### 3. Urgência Real (Ticks)
-Missões de resgate ou caça devem ter **contadores de Ticks**.
-* "O rastro do monstro esfria em 50 Ticks."
-* Se o jogador demorar (gastar Ticks descansando ou craftando), a missão muda: em vez de "Salvar o Refém", vira "Vingar o Refém" (ele morreu).
+#### 3. Urgência Real (Tempo do Jogo)
+Missões de resgate ou caça devem ter **contadores de tempo**.
+* "O rastro do monstro esfria em 2 dias do jogo."
+* Se o jogador demorar (gastar tempo descansando ou craftando), a missão muda: em vez de "Salvar o Refém", vira "Vingar o Refém" (ele morreu).
 
 ---
 

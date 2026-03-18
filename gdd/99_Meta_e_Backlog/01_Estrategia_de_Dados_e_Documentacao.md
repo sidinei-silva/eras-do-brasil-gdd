@@ -15,7 +15,7 @@ Para evitar o excesso de documentação morta ou a falta de contexto nos dados, 
 *Documentos de leitura humana, inspiração e direção de arte.*
 * **Enredo Principal & Lore:** História, tom, diálogos.
 * **Design Visual:** Style guides, UI specs.
-* **Regras Core (Conceitos):** Explicação teórica de Ticks, Mundo Vivo.
+* **Regras Core (Conceitos):** Explicação teórica do Ciclo de Tempo, Mundo Vivo.
 
 ### Grupo B: O Híbrido (Livro Descritivo + JSON de Definição)
 *Entidades que precisam de contexto narrativo E dados rígidos.*

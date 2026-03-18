@@ -29,9 +29,9 @@ O **código do jogo** (servidor Go + cliente web) está em [eras-do-brasil-game]
 
 - **Narrativa Profunda** — Fantasia eco-histórica com folclore brasileiro
 - **Jogabilidade Tática** — Combate D20 por turnos, de estático a grid tático com posicionamento
-- **Mundo Vivo (Ticks)** — NPCs com rotinas, facções que avançam, ciclo dia/noite, tick global 24/7
+- **Mundo Vivo** — NPCs com rotinas, facções que avançam, ciclo dia/noite, servidor persistente 24/7
 - **Flexibilidade de Personagem** — Troca livre entre 12 classes de 3 origens via Dom da Revivência
-- **MUD Moderno (Online)** — Servidor persistente, full loot, missões competitivas, zero instalação
+- **MUD Moderno (Online)** — Servidor persistente, missões competitivas, inimigos evolutivos, zero instalação
 
 ## Inspirações
 

@@ -1,6 +1,6 @@
 # 6 - 🪞 Troca de Origem — O Espelho do Eco
 
-O **Espelho do Eco** é um artefato místico que permite ao Desperto transcender sua origem cultural e espiritual, ganhando acesso às classes de outra origem. Esta mecânica representa um dos momentos mais significativos da jornada do personagem.
+O **Espelho do Eco** é um artefato místico que permite ao personagem transcender sua origem cultural e espiritual, ganhando acesso às classes de outra origem. Esta mecânica representa um dos momentos mais significativos da jornada do personagem.
 
 ---
 
@@ -9,7 +9,7 @@ O **Espelho do Eco** é um artefato místico que permite ao Desperto transcender
 O Espelho do Eco é um item lendário obtido como recompensa do **Ato 1 — A Primeira Ruptura**. Ele materializa o poder do Dom da Revivência, permitindo que o personagem acesse memórias e habilidades de outras eras e culturas.
 
 > *"No reflexo do Espelho, vi não minha face, mas as faces de todos que fui — e todos que ainda posso ser."*
-> — Fragmento de diário de um Desperto
+> — Fragmento de diário de um aventureiro
 
 ---
 
@@ -112,12 +112,12 @@ Um personagem pode ter acesso a **múltiplas origens** ao longo do jogo:
 
 ## 📖 Justificativa Narrativa
 
-A troca de origem é justificada pelo **Dom da Revivência** — a capacidade do Desperto de acessar memórias e habilidades de vidas passadas em outras eras e culturas.
+A troca de origem é justificada pelo **Dom da Revivência** — a capacidade natural de acessar memórias e habilidades de vidas passadas em outras eras e culturas.
 
 O Espelho do Eco funciona como um **catalisador espiritual** que amplifica esse dom, permitindo:
 
 - **Visões ancestrais:** O personagem sonha com uma vida passada de outra origem
-- **Reencarnação parcial:** Fragmentos de uma alma antiga se fundem ao Desperto
+- **Reencarnação parcial:** Fragmentos de uma alma antiga se fundem ao personagem
 - **Pacto espiritual:** Uma entidade da nova origem concede parte de sua essência
 - **Ritual de fusão:** Um xamã ou ancião realiza um ritual de ligação
 

@@ -18,7 +18,7 @@ Inspirado em jogos de gestão (*Idle RPGs* e *Azure Dragon's Treasure*), o topo 
     1.  **Retrato do Personagem:** Rosto do personagem + Barra de PV (Vermelha) e Barra de XP (Azul/Amarela).
     2.  **Recursos de Coleta (Resumo):** Ícones pequenos de Madeira, Pedra, Ervas e Couro com seus contadores numéricos.
     3.  **Moeda:** Ícone de Ouro/UC e valor total.
-    4.  **Relógio de Ticks:** Um ícone de sol/lua que gira ou muda conforme os Ticks passam, indicando a hora do dia (Manhã, Tarde, Noite).
+    4.  **Relógio do Jogo:** Um ícone de sol/lua que gira ou muda conforme o tempo avança, indicando o período do dia (Manhã, Tarde, Noite, Madrugada).
 
 ---
 
@@ -34,7 +34,7 @@ Na Fase 1, não há um "mundo aberto" contínuo. O mundo é representado por um 
     * **Ícone de Caveira:** Combate obrigatório.
     * **Ícone de Cidade/Casa:** Vila ou NPC importante.
 * **Interação:** O jogador clica no próximo Nó disponível.
-* **Feedback de Tick:** Ao clicar, uma animação rápida do personagem (token ou miniatura) se move pela linha pontilhada, e o "Relógio de Ticks" no topo avança 1 unidade.
+* **Feedback de Movimento:** Ao clicar, uma animação rápida do personagem (token ou miniatura) se move pela linha pontilhada, e o "Relógio do Jogo" no topo avança conforme o tempo de viagem.
 
 ---
 
@@ -51,7 +51,7 @@ Quando o jogador chega em um Nó (Bloco), a tela muda para o **Modo de Cena**.
     * **Menu de Ações (Botões Grandes):** Uma lista vertical de escolhas estilo *Button Choice*.
         * `[1] Conversar com o Pajé`
         * `[2] (Sabedoria) Pedir Benção`
-        * `[3] Coletar Ervas (Gasta 1 Tick)`
+        * `[3] Coletar Ervas (~5 min)`
         * `[4] Seguir Viagem`
 
 ---

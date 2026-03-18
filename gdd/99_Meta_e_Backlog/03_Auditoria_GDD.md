@@ -115,7 +115,7 @@ O sistema de classes de *Eras do Brasil* já possui **forte alinhamento com Fina
 **Problema:** O "Espelho do Eco" é prometido como recompensa do Ato 1, permitindo trocar de Origem (ex: Colonizador → Indígena). O `00_Conceitos_Centrais_do_Mundo.md` menciona que essa troca é justificada narrativamente como "visões, reencarnações, pactos ou rituais", mas não há regras mecânicas definidas em nenhum documento. Questões em aberto:
 - O personagem perde acesso às classes da origem anterior?
 - Os atributos são resetados?
-- Há custo em ticks, itens ou missões?
+- Há custo em tempo, itens ou missões?
 - Como isso interage com o sistema de herança de habilidades?
 
 **Recomendação:** Criar uma seção dedicada no Livro de Classes ou no Livro de Regras (talvez como extensão do Cap. 3) detalhando a mecânica de troca de origem.
@@ -200,7 +200,7 @@ O sistema de Fofoca se entrelaça com o jogo das seguintes formas (todas documen
 
 ### 5.1 — Duplicação entre Cap. 5 e Cap. 8 sobre NPCs (Importante)
 
-**Problema:** O Capítulo 5 (Exploração e Mundo), seções 5.3 e 5.4, contém descrições sobre o sistema de Ticks para NPCs, conhecimento de NPCs, interação entre NPCs, e sistema de afinidade. O Capítulo 8 (Mestres, Campanhas e Mundo Vivo) também aborda esses mesmos temas com **mais profundidade e detalhamento técnico**. As informações não são contraditórias, mas são redundantes.
+**Problema:** O Capítulo 5 (Exploração e Mundo), seções 5.3 e 5.4, contém descrições sobre o ciclo de tempo para NPCs, conhecimento de NPCs, interação entre NPCs, e sistema de afinidade. O Capítulo 8 (Mestres, Campanhas e Mundo Vivo) também aborda esses mesmos temas com **mais profundidade e detalhamento técnico**. As informações não são contraditórias, mas são redundantes.
 
 **Recomendação:** Manter o Cap. 5 focado na perspectiva do jogador (como interagir com NPCs durante exploração) e o Cap. 8 como referência técnica completa (como a IA funciona). Adicionar referências cruzadas claras entre ambos para evitar confusão.
 
@@ -237,13 +237,13 @@ O sistema de Fofoca se entrelaça com o jogo das seguintes formas (todas documen
 
 É importante registrar o que está **bem feito**:
 
-1. **Coesão geral:** O GDD é notavelmente coeso para um documento desta escala. Os sistemas se conectam de forma orgânica (Ticks → NPCs → Economia → Combate → Narrativa).
+1. **Coesão geral:** O GDD é notavelmente coeso para um documento desta escala. Os sistemas se conectam de forma orgânica (Ciclo de Tempo → NPCs → Economia → Combate → Narrativa).
 2. **Escalabilidade faseada:** A divisão em Fases (Mesa → Digital Estático → Digital Tático → Multiplayer) é bem planejada e cada fase adiciona complexidade sem quebrar a anterior.
 3. **Filosofia Data-Driven:** A separação Motor/Conteúdo está bem articulada nos Schemas e no Apêndice A.
 4. **12 Classes Tier 1 completas:** Todas as classes possuem habilidades, equipamentos, PV, proficiências e descrições narrativas detalhadas.
 5. **Ato 1 bem integrado:** O Relógio da Ruptura, a rivalidade IA, e a sinergia com mini-campanhas criam uma experiência não-linear de qualidade.
 6. **Sistema de NPCs robusto:** A integração dos conceitos da Gemini 8 (Necessidades, Traits, Utility AI, Fofoca) no Cap. 8 é profissional.
-7. **Atlas do Eco:** O mapa de conexões com custos em Ticks e regras de terreno por zona é um excelente documento de referência.
+7. **Atlas do Eco:** O mapa de conexões com custos de tempo e regras de terreno por zona é um excelente documento de referência.
 
 ---
 

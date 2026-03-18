@@ -13,7 +13,7 @@ O grid não deve ser invasivo. Ele deve parecer integrado ao terreno (como em *S
 ### 🟦 Feedback de Movimento e Alcance
 Quando o jogador seleciona seu personagem ou uma habilidade, o grid se ilumina para mostrar as possibilidades:
 
-* **Tiles Azuis (Borda ou Preenchimento Leve):** Área de movimentação disponível com os Ticks/Movimento atuais.
+* **Tiles Azuis (Borda ou Preenchimento Leve):** Área de movimentação disponível com os Pontos de Movimento atuais.
 * **Tiles Vermelhos:** Alcance de ataque ou área de efeito de uma magia ofensiva.
 * **Tiles Amarelos/Laranjas:** Área de perigo (ex: terreno difícil, fogo, zona de ataque de oportunidade).
 * **Linha de Visão (LoS):** Inimigos ou áreas bloqueadas por obstáculos (árvores, muros) devem ficar escurecidos ou com silhueta (Fog of War tático).

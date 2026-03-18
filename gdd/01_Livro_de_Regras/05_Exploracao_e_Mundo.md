@@ -2,16 +2,15 @@
 
 Explorar o mundo de *Eras do Brasil* vai muito além de mover-se de um lugar para outro — é viver em um universo reativo, cíclico e dinâmico, onde cada passo tem consequências.
 
-Este capítulo apresenta o sistema de **exploração por blocos conectados**, a mecânica de **ticks**, a interação com **NPCs vivos e autônomos**, e os perigos e descobertas que aguardam os personagens fora do combate.
+Este capítulo apresenta o sistema de **exploração por blocos conectados**, o **ciclo de tempo do jogo**, a interação com **NPCs vivos e autônomos**, e os perigos e descobertas que aguardam os personagens fora do combate.
 
 > 🔎 Enquanto o Capítulo 4 trata do combate, aqui focamos no **movimento estratégico e investigativo**, no **uso do tempo como fator de jogo** e na **descoberta do mundo como experiência central** da jornada.
 
 O sistema de exploração foi projetado para:
 
-- Funcionar de forma consistente tanto no RPG de mesa quanto na versão digital (Fase 1).
 - Permitir que NPCs se movam e evoluam junto ao jogador, seguindo **rotinas vivas**.
 - Tornar cada ambiente significativo — com recursos, eventos, segredos e reações.
-- Preparar o terreno para a **simulação completa de mundo persistente**, que será o modo padrão na versão digital (servidor online).
+- Funcionar em um **mundo 100% online e persistente**, onde o tempo avança mesmo sem o jogador.
 
 ---
 
@@ -29,7 +28,7 @@ Mais do que apenas "se mover", explorar significa interagir com cenários, recur
 
 ### 🎲 Sistema de Blocos Conectados
 
-Tanto no RPG de mesa quanto na versão digital (fase 1), a movimentação pelo mundo ocorre por meio de **blocos de cenário conectados** — como se fossem **peças de mapa entrelaçadas por caminhos**.
+A movimentação pelo mundo ocorre por meio de **blocos de cenário conectados** — como se fossem **peças de mapa entrelaçadas por caminhos**.
 
 #### Conceitos:
 
@@ -41,28 +40,29 @@ Tanto no RPG de mesa quanto na versão digital (fase 1), a movimentação pelo m
 
 ---
 
-### 📌 Diferença entre Mesa e Digital
+### 📌 Modelo Digital
 
-| Aspecto                    | RPG de Mesa                     | RPG Digital (Fase 1)                 |
-|----------------------------|----------------------------------|--------------------------------------|
-| Movimento entre blocos     | Feito por escolha do jogador guiado pelo mestre | Feito por cliques ou setas direcionais |
-| Interação com NPCs e objetos| Narrado e interpretado pelo mestre | Baseado em menus, ações e caminhos |
-| Transição de cenário       | O mestre descreve ou apresenta o próximo bloco | Visual e automatizada (com eventos) |
+O jogo é **100% online** — o mundo existe no servidor e avança continuamente.
 
-> O sistema de blocos unifica a experiência, permitindo que **as mesmas campanhas sejam adaptadas facilmente** entre mesa e digital.
+| Aspecto                    | Descrição                                        |
+|----------------------------|--------------------------------------------------|
+| Movimento entre blocos     | Feito por cliques ou setas direcionais           |
+| Interação com NPCs e objetos| Baseado em menus, ações e caminhos              |
+| Transição de cenário       | Visual e automatizada (com eventos)              |
+| Passagem de tempo          | Contínua — o relógio do jogo avança mesmo sem o jogador |
 
 ---
 
-### ⏱️ Exploração por Ticks
+### ⏱️ Tempo e Exploração
 
-O tempo em *Eras do Brasil* avança de forma estruturada, chamado de **tick**.
+O tempo em *Eras do Brasil* avança continuamente no servidor, regido pelo **relógio do jogo** com 4 períodos — **Manhã, Tarde, Noite, Madrugada** (1 dia do jogo ≈ 2–4 horas reais).
 
-- Cada **tick** representa uma unidade de tempo — usada para:
-  - Atualizar a movimentação de NPCs
-  - Aplicar efeitos persistentes
-  - Controlar ciclos de dia/noite, clima, eventos programados
+- O relógio do jogo controla:
+  - Rotinas e movimentação de NPCs
+  - Efeitos persistentes e condições ambientais
+  - Ciclo dia/noite, clima e eventos programados
 
-> Um **tick** é acionado toda vez que o jogador ou grupo realiza uma ação completa de exploração (ex: mover para outro bloco, realizar interação completa com NPC ou evento).
+> O tempo avança independentemente das ações do jogador. Cada ação de exploração (mover, interagir, coletar) consome **tempo real**, e o mundo reage de forma contínua.
 
 ---
 
@@ -91,57 +91,51 @@ Explorar significa:
 ---
 ## 🚶 5.2 – Movimentação e Distância Padronizada
 
-A movimentação no mundo de *Eras do Brasil* é feita através de **blocos de exploração conectados**, mas regida pelo conceito universal de **Esforço de Viagem**.
+A movimentação no mundo de *Eras do Brasil* é feita através de **blocos de exploração conectados**, regida pelo conceito universal de **Esforço de Viagem**.
 
-Para garantir consistência entre a visualização abstrata (Blocos) e a futura movimentação livre (Grid), o custo de Ticks é calculado pela **Distância Narrativa**, não apenas pelo ato de clicar.
+O custo de deslocamento é calculado pela **Distância Narrativa**, não apenas pelo ato de clicar.
 
 ### 📏 A Regra da Distância Padrão
-* **1 Tick de Movimento** = Deslocamento significativo dentro de uma região (aprox. 15-30 minutos de caminhada ou travessia de um quadrante médio).
+* **Unidade de Viagem** = Deslocamento significativo dentro de uma região (aprox. 15-30 minutos reais de caminhada ou travessia de um quadrante médio).
 
 #### Aplicação nas Fases do Jogo:
-* **Fase 1 (Blocos):** O custo em Ticks é definido pela distância narrativa entre os nós.
-    * *Praça -> Taverna (Perto):* Custa **1 Tick**.
-    * *Vila -> Floresta Profunda (Longe):* Custa **3 Ticks**.
+* **Fase 1 (Blocos):** O custo é definido pela distância narrativa entre os nós.
+    * *Praça → Taverna (Perto):* Rápido (~5 minutos reais).
+    * *Vila → Floresta Profunda (Longe):* Longo (~15 minutos reais).
 * **Fase 2 (Movimentação Livre):** O custo é acumulativo.
     * O jogador tem uma "Barra de Viagem".
-    * Cada passo no grid enche a barra. Ao completar a distância padrão (ex: 10 passos), gasta-se **1 Tick**.
+    * Cada passo no grid enche a barra. Ao completar a distância padrão (ex: 10 passos), consome-se uma unidade de viagem.
 
 ---
 
 ### 🧭 Tipos de Movimento e Terreno
 
-No início de cada **tick narrativo**, o jogador escolhe seu destino. O custo final depende do terreno:
+O jogador escolhe seu destino. O custo final em tempo depende do terreno:
 
-| Terreno | Custo Base | Observação |
+| Terreno | Tempo de Viagem | Observação |
 | :--- | :--- | :--- |
-| **Estrada / Vila** | 1 Tick | Movimento normal e seguro. |
-| **Floresta Densa** | 2 Ticks | Terreno difícil, exige mais tempo. |
-| **Pântano / Montanha** | 3 Ticks | Terreno muito difícil, exige esforço ou teste de Vigor. |
+| **Estrada / Vila** | Rápido (~5 min reais) | Movimento normal e seguro. |
+| **Floresta Densa** | Moderado (~10 min reais) | Terreno difícil, exige mais tempo. |
+| **Pântano / Montanha** | Longo (~15 min reais) | Terreno muito difícil, exige esforço ou teste de Vigor. |
 
-> Exemplo: Ir da Vila para a Caverna (Distância Longe + Terreno Montanha) pode custar **5 Ticks** de uma só vez.
+> Exemplo: Ir da Vila para a Caverna (Distância Longe + Terreno Montanha) pode levar ~20 minutos reais.
 
 ---
 
-### 🔄 Consumo de Ticks e Eventos
+### 🔄 Passagem de Tempo e Eventos
 
-O tempo avançado durante a movimentação (seja 1 ou 5 Ticks) é processado pelo mundo:
+O tempo avançado durante a movimentação é processado pelo mundo:
 - **Eventos de Transição:** Podem ocorrer durante o trajeto (emboscadas, encontros).
-- **Reação de NPCs:** Enquanto você viaja 5 Ticks, os NPCs realizam 5 ações de suas rotinas.
+- **Reação de NPCs:** Enquanto você viaja, os NPCs continuam suas rotinas normalmente.
 
 ---
 
 ### 🧭 Representação Visual
 
-No RPG de mesa, o Mestre pode usar:
-
-- Mapas físicos ou digitais com blocos conectados
-- Tabelas de movimentação e eventos por bloco
-- Tokens ou marcadores para indicar onde estão os jogadores e NPCs
-
-Na versão digital, a movimentação será:
+A movimentação é:
 
 - **Guiada por cliques/setas**, escolhendo blocos conectados
-- Com **animações e feedback visual** representando o deslocamento e o passar do tempo (Sol/Lua girando conforme os Ticks gastos).
+- Com **animações e feedback visual** representando o deslocamento e o passar do tempo (Sol/Lua girando conforme o relógio do jogo avança).
 
 ---
 
@@ -164,59 +158,60 @@ O grupo está na "Encruzilhada dos Ventos". As opções visíveis no mapa são:
 - Ponte Quebrada (a oeste) - *Terreno Normal*
 
 Eles decidem seguir para a Floresta das Visões.
-* **Cálculo:** Distância Padrão (1) x Terreno Difícil (2) = **2 Ticks**.
+* **Cálculo:** Distância Padrão × Terreno Difícil = ~10 minutos reais de viagem.
 
-O relógio avança 2 Ticks. Os NPCs da vila realizam 2 ações de suas rotinas. O grupo chega ao destino.
+O relógio do jogo avança. Os NPCs da vila continuam suas rotinas enquanto o grupo viaja. O grupo chega ao destino.
 
 ---
 
 > 📌 *Importante:* O sistema de movimentação por blocos é compatível com o sistema de eventos, coleta de recursos, encontros e tempo. Cada bloco é um ponto de decisão — e cada decisão, uma mudança no mundo.
 
 ---
-## ⏳ 5.3 – Ticks e Avanço de Tempo
+## ⏳ 5.3 – Tempo Real e Ciclo Dia/Noite
 
-O **sistema de ticks** é a unidade fundamental de tempo em *Eras do Brasil*, controlando não apenas a passagem de horas e dias, mas também a movimentação de personagens, NPCs, eventos e mudanças no mundo.
+O tempo em *Eras do Brasil* é contínuo e regido pelo **relógio do jogo**, que divide cada dia em 4 períodos: **Manhã, Tarde, Noite e Madrugada**. Um dia completo do jogo equivale a aproximadamente **2–4 horas reais**.
 
-> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs, necessidades, rotinas, sistema de fofoca e arquitetura de ticks no servidor, consulte o [Capítulo 8 — Mundo Vivo, NPCs e Servidor](08_Mundo_Vivo_e_NPCs.md).
+> 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs, necessidades, rotinas, sistema de fofoca e arquitetura do tempo no servidor, consulte o [Capítulo 8 — Mundo Vivo, NPCs e Servidor](08_Mundo_Vivo_e_NPCs.md).
 
-Cada tick representa um **bloco de tempo narrativo**, que pode variar conforme o contexto da campanha:
+O tempo é medido de formas diferentes conforme o contexto:
 
-- Em **exploração**: 1 tick pode equivaler a 1 hora de deslocamento.
-- Em **tempo social**: 1 tick pode representar uma manhã, tarde ou noite.
-- Em **ambientes urbanos**: 1 tick pode ser uma tarefa, uma visita ou uma interação curta.
+| Contexto | Unidade de Tempo | Exemplo |
+|----------|-----------------|---------|
+| Combate | Turnos | "Efeito dura 3 turnos" |
+| Habilidade fora de combate | Tempo real | "Dura 5 minutos" |
+| Rotinas de NPC | Período do dia | "O Ferreiro trabalha de Manhã a Tarde" |
+| Prazo de quest | Tempo real ou dias do jogo | "Entregue em 2 horas reais" |
+| Regeneração de recursos | Tempo do jogo | "Renasce a cada Manhã" |
 
-> 🔄 A definição de quanto tempo um tick representa é **flexível**, mas deve ser **consistente dentro da campanha**.
+> **Nota técnica:** Internamente, o servidor processa o mundo em ciclos ("ticks"), mas esse detalhe não é exposto ao jogador. Ver [Capítulo 8](08_Mundo_Vivo_e_NPCs.md) para detalhes de implementação.
 
 ---
 
-### 🧭 O que consome Ticks?
+### 🧭 Custo de Tempo das Ações
 
-| Ação                             | Ticks Consumidos | Observações |
+| Ação                             | Tempo Aproximado | Observações |
 |----------------------------------|------------------|-------------|
-| Mover-se para outro bloco        | 1 a 3 Ticks      | Depende da Distância e Terreno |
-| Coletar recursos no bloco        | 1 Tick           | Pode exigir teste ou proficiência |
-| Interagir com NPC                | 1 Tick           | Inclui conversas, compras, missões |
-| Combate                          | 1 por Rodada     | O tempo da bolha é convertido em Ticks |
-| Descansar                        | 1 Tick (curto) / 3 Ticks (longo) | Restauração parcial ou total |
-| Realizar ritual ou magia longa   | 1 ou mais Ticks  | Conforme descrição da magia |
-| Estudar, treinar ou aprimorar    | Variável         | Definido pelo mestre ou sistema digital |
+| Mover-se para outro bloco        | 5–15 min reais   | Depende da Distância e Terreno |
+| Coletar recursos no bloco        | ~5 min reais     | Pode exigir teste ou proficiência |
+| Interagir com NPC                | ~2 min reais     | Inclui conversas, compras, missões |
+| Combate                          | Por turnos       | Tempo de combate é independente |
+| Descansar                        | 5 min (curto) / 15 min (longo) | Restauração parcial ou total |
+| Realizar ritual ou magia longa   | Variável         | Conforme descrição da magia |
+| Estudar, treinar ou aprimorar    | Variável         | Definido pelo sistema |
 
 ---
 
-### 🧠 NPCs e o Sistema de Ticks
+### 🧠 NPCs e o Ciclo do Tempo
 
-Os NPCs também se movem e agem a cada tick.
+Os NPCs seguem **rotinas baseadas no período do dia**, não em ações discretas.
 
-- Cada NPC possui uma **rotina diária** composta de ações por tick.
-- Exemplo:
-  - **Tick 1:** Acorda na cabana
-  - **Tick 2:** Caminha até o mercado
-  - **Tick 3:** Conversa com outros NPCs
-  - **Tick 4:** Retorna ao posto de guarda
+- Cada NPC possui uma **agenda diária** dividida por período:
+  - **Manhã:** Acorda, vai ao mercado
+  - **Tarde:** Trabalha na forja ou patrulha
+  - **Noite:** Retorna para casa, descansa
+  - **Madrugada:** Dorme (indisponível para interação)
 
-NPCs ganham **conhecimento** sobre rotas, locais, monstros e outros NPCs com base nas interações que ocorrem ao longo dos ticks.
-
-> 💬 Esse sistema é usado tanto na **versão de mesa** (como apoio narrativo ao mestre), quanto na **versão digital**, onde as rotinas serão processadas automaticamente.
+NPCs ganham **conhecimento** sobre rotas, locais, monstros e outros NPCs com base nas interações que ocorrem ao longo do tempo.
 
 ---
 
@@ -232,9 +227,9 @@ Quando dois NPCs se encontram:
 
 ---
 
-### 📌 Testes de Percepção em Ticks
+### 📌 Testes de Percepção
 
-Se um jogador realiza uma ação ilícita ou sigilosa, e **há um NPC em um bloco adjacente**, o Mestre (ou sistema digital) pode exigir um:
+Se um jogador realiza uma ação ilícita ou sigilosa, e **há um NPC em um bloco adjacente**, o sistema pode exigir um:
 
 - **Teste de Percepção (do NPC)** vs **Astúcia ou Furtividade (do jogador)**
 
@@ -246,39 +241,39 @@ Se o NPC for bem-sucedido:
 
 ### 📅 Avanço Global e Mundo Persistente
 
-- O tempo **avança mesmo sem os jogadores**, no modo digital persistente.
-- Eventos ocorrem com base nos ticks globais:
-  - NPCs mudam de posição
-  - Recursos se regeneram ou se esgotam
+- O tempo **avança continuamente** no servidor, 24/7. Não existe modo offline.
+- Eventos ocorrem com base no relógio do jogo:
+  - NPCs mudam de posição conforme o período do dia
+  - Recursos se regeneram em ciclos (ex: "renasce a cada Manhã")
   - Locais entram em estado de alerta
   - Facções ou criaturas agem independentemente
 
-> Em campanhas de mesa, o mestre pode simular isso com tabelas e anotações. No digital, o **servidor** processará tudo automaticamente.
+> O **servidor** processa tudo automaticamente. O mundo não espera pelo jogador.
 
 ---
 
-### 🔄 Resumo Visual – Sistema de Ticks
+### 🔄 Resumo Visual – Sistema de Tempo
 
-| Ação                            | Ticks | Observações                     |
-|---------------------------------|-------|---------------------------------|
-| Mover entre blocos              | 1+    | Variável por Terreno            |
-| Interagir com NPC               | 1     | Conversas, comércio, missões    |
-| Combate                         | 1/Rodada | Após a luta                     |
-| Descanso Curto / Longo          | 1 / 3 | Restaura PV e recargas          |
-| Coleta / Craft / Ritual         | 1+    | Depende da tarefa               |
-| NPC age (rotina)                | 1     | A cada tick, com ações definidas |
-| Evento Global                   | 1+    | Clima, fauna, facções, etc.     |
+| Ação                            | Tempo          | Observações                     |
+|---------------------------------|----------------|---------------------------------|
+| Mover entre blocos              | 5–15 min reais | Variável por Terreno            |
+| Interagir com NPC               | ~2 min reais   | Conversas, comércio, missões    |
+| Combate                         | Por turnos     | Independente do relógio         |
+| Descanso Curto / Longo          | 5 / 15 min     | Restaura PV e recargas          |
+| Coleta / Craft / Ritual         | ~5 min+        | Depende da tarefa               |
+| NPC age (rotina)                | Por período    | Manhã, Tarde, Noite, Madrugada |
+| Evento Global                   | Por temporada  | Clima, fauna, facções, etc.     |
 
 ---
 
-> ⚙️ O sistema de ticks é o **motor oculto** da simulação do mundo em *Eras do Brasil*. Ele conecta tempo, ação, rotina e consequência — criando um universo vivo e coerente.
+> ⚙️ O ciclo de tempo é o **motor** da simulação do mundo em *Eras do Brasil*. Ele conecta tempo, ação, rotina e consequência — criando um universo vivo e coerente.
 
 ---
 ## 🧑‍🤝‍🧑 5.4 – Interação com NPCs
 
 NPCs (Personagens Não Jogáveis) são figuras fundamentais no mundo de *Eras do Brasil*. Eles não são apenas figurantes: possuem **rotinas próprias, memórias, opiniões, papéis sociais e níveis de conhecimento** sobre o mundo, monstros, recursos e outros personagens.
 
-Este sistema cria uma experiência viva e reativa, tanto no RPG de mesa quanto na versão digital.
+Este sistema cria uma experiência viva e reativa no mundo persistente online.
 
 > 📖 **Referência Completa:** Para regras técnicas detalhadas sobre IA de NPCs (Utility AI), sistema de necessidades e traços, `knowledgeBase`, esquecimento de memória e sistema de fofoca, consulte o [Capítulo 8 — Mundo Vivo, NPCs e Servidor](08_Mundo_Vivo_e_NPCs.md), especialmente as seções 8.3 e 8.6.
 
@@ -301,13 +296,13 @@ Essas informações influenciam:
 - As dicas ou rumores compartilhados.
 - As atitudes tomadas em eventos ou emergências.
 
-> 🔄 O conhecimento do NPC **evolui a cada tick** em que ele se move, interage ou presencia algo.
+> 🔄 O conhecimento do NPC **evolui continuamente** conforme ele se move, interage ou presencia algo.
 
 ---
 
 ### 🔁 Interações Básicas
 
-A cada tick, um jogador pode realizar uma **ação de interação** com um NPC no mesmo bloco.
+O jogador pode realizar uma **ação de interação** com um NPC no mesmo bloco a qualquer momento.
 
 A interação pode ser:
 
@@ -332,7 +327,7 @@ NPCs se deslocam entre blocos conforme uma **rotina diária programada**, que po
 - Interações com outros NPCs durante o percurso.
 - Padrões fixos (ex: guarda que patrulha blocos) ou aleatórios com variação limitada.
 
-> Em cada tick, o NPC executa uma ação de rotina. Essa ação **pode ser interrompida por eventos ou pelo jogador**, gerando consequências.
+> Em cada período do dia, o NPC executa as ações de sua rotina. Essa rotina **pode ser interrompida por eventos ou pelo jogador**, gerando consequências.
 
 ---
 
@@ -415,16 +410,16 @@ Cada bloco possui **propriedades ambientais, recursos naturais, obstáculos e ev
 
 ### 🧱 Estrutura de Blocos
 
-O mapa do jogo, tanto na versão de mesa quanto digital, é composto por **blocos interligados**:
+O mapa do jogo é composto por **blocos interligados**:
 
 - Cada bloco representa um cenário individual: floresta, caverna, vila, ruína, estrada, etc.
-- O jogador pode mover-se entre blocos vizinhos usando setas (digital) ou escolhas guiadas (mesa).
+- O jogador pode mover-se entre blocos vizinhos usando cliques ou setas direcionais.
 - Os blocos podem:
   - Conter **recursos** para coleta
   - Abundar em **perigos ambientais**
   - Servir como **ponto de missão ou acampamento**
 
-> 💡 O mestre (na mesa) ou o sistema (no digital) pode definir quais blocos estão acessíveis, ocultos ou com eventos pendentes.
+> 💡 O sistema define quais blocos estão acessíveis, ocultos ou com eventos pendentes.
 
 ---
 
@@ -468,15 +463,15 @@ Os recursos são classificados conforme o grupo de proficiências:
 
 ### 🔄 Regeneração e Raridade
 
-Recursos possuem um **índice de raridade** e um **ciclo de regeneração** por tick:
+Recursos possuem um **índice de raridade** e um **ciclo de regeneração** baseado no relógio do jogo:
 
-| Tipo de Recurso       | Raridade | Regeneração (ticks) |
-|------------------------|---------|----------------------|
-| Madeira Comum          | Comum   | 1–2 ticks            |
-| Erva Curativa Menor    | Incomum | 3–5 ticks            |
-| Minério Espiritual     | Raro    | 6–10 ticks           |
-| Cristal Fragmentado    | Raro    | 10+ ticks            |
-| Flor do Eclipse        | Único   | Evento específico     |
+| Tipo de Recurso       | Raridade | Regeneração            |
+|------------------------|---------|------------------------|
+| Madeira Comum          | Comum   | A cada período (~30 min reais) |
+| Erva Curativa Menor    | Incomum | ~1 dia do jogo         |
+| Minério Espiritual     | Raro    | ~2 dias do jogo        |
+| Cristal Fragmentado    | Raro    | ~3 dias do jogo        |
+| Flor do Eclipse        | Único   | Evento específico       |
 
 > Alguns recursos são **limitados por era**, só podendo ser colhidos durante certos ciclos históricos ou eventos mágicos.
 
@@ -521,13 +516,13 @@ Esses locais exigem **permissão espiritual, presença de NPC-chave ou eventos g
 
 ---
 
-> 🌿 A ambientação e os recursos em *Eras do Brasil* são ferramentas vivas, moldadas pelo cenário, pelos ticks do mundo e pela interação dos personagens com o ambiente.
+> 🌿 A ambientação e os recursos em *Eras do Brasil* são ferramentas vivas, moldadas pelo cenário, pelo ciclo de tempo do mundo e pela interação dos personagens com o ambiente.
 
 ---
 ## 🎲 5.6 – Eventos Aleatórios e Roteirizados
 
 Durante a exploração do mundo de *Eras do Brasil*, os jogadores poderão encontrar **eventos dinâmicos** que alteram a narrativa, criam oportunidades ou impõem desafios inesperados.
-Esses eventos surgem como parte da **reação viva do mundo** às ações dos personagens, ao passar do tempo (ticks) ou à movimentação dos NPCs e criaturas.
+Esses eventos surgem como parte da **reação viva do mundo** às ações dos personagens, à passagem do tempo ou à movimentação dos NPCs e criaturas.
 
 ---
 
@@ -538,7 +533,7 @@ Os eventos se dividem em duas grandes categorias:
 | Tipo                  | Características                                                              |
 |-----------------------|------------------------------------------------------------------------------|
 | **Aleatórios** | Gerados por chance (rolagens, tabelas ou algoritmo digital)                  |
-| **Roteirizados** | Criados intencionalmente pelo mestre (mesa) ou equipe narrativa (digital)    |
+| **Roteirizados** | Criados intencionalmente pela equipe narrativa e gerenciados pelo servidor   |
 
 > 📌 Eventos aleatórios podem ser transformados em eventos roteirizados caso evoluam com o envolvimento do jogador.
 
@@ -555,7 +550,7 @@ Os eventos se dividem em duas grandes categorias:
 Esses eventos:
 
 - Podem surgir ao entrar em um novo bloco.
-- Podem ser acionados por ticks (ex: “a cada 3 turnos em área selvagem”).
+- Podem ser acionados por tempo (ex: “a cada período em área selvagem”).
 - Podem depender de atributos, proficiências ou decisões anteriores.
 
 ---
@@ -567,7 +562,7 @@ No RPG digital, eventos são controlados por um sistema de **gatilhos** definido
 - Presença ou movimentação do jogador em um bloco
 - Estado de NPCs (vivos, mortos, com conhecimento X)
 - Nível de influência ou reputação
-- Ticks acumulados ou hora do ciclo
+- Período do dia ou tempo acumulado
 - Probabilidade ajustada por histórico ou classe do jogador
 
 > 🔄 O sistema considera fatores como tempo de jogo, escolhas feitas e até classes desbloqueadas para personalizar a experiência.
@@ -584,17 +579,13 @@ Esses são eventos **pré-planejados**, com impacto maior no enredo:
 - Viagem entre eras (fragmentos colapsando)
 - Missões principais e ganchos de novos atos
 
-No RPG de mesa, o mestre pode:
-
-- Planejar eventos com **três níveis de impacto** (baixo, médio, alto)
-- Escolher **blocos de ativação** conforme decisões do grupo
-- Reaproveitar eventos aleatórios como base para narrativas profundas
+Eventos roteirizados possuem **três níveis de impacto** (baixo, médio, alto) e são ativados conforme decisões da comunidade.
 
 ---
 
-### 🌐 Eventos Globais (Fase Digital)
+### 🌐 Eventos Globais
 
-Na versão digital com mundo persistente, eventos podem afetar **todos os jogadores conectados**, como:
+No mundo persistente, eventos podem afetar **todos os jogadores conectados**, como:
 
 - Chegada de uma nova facção
 - Quebra de equilíbrio entre as Eras
@@ -654,7 +645,7 @@ Testes fora de combate seguem a **mesma estrutura central de rolagem**:
 
 **1D20 + Modificador de Atributo + Bônus de Proficiência (se aplicável)**
 
-O resultado é comparado com uma **Classe de Dificuldade (CD)** definida pelo mestre (mesa) ou pelo sistema (digital).
+O resultado é comparado com uma **Classe de Dificuldade (CD)** definida pelo sistema.
 
 ---
 
@@ -753,14 +744,14 @@ Causas típicas para isso:
 A exploração em *Eras do Brasil* não é apenas um pano de fundo para os combates ou um intervalo entre missões.
 Ela é o **tecido vivo** do mundo, onde decisões pequenas podem desencadear grandes eventos, encontros podem gerar vínculos duradouros, e cada desvio de caminho pode revelar um segredo esquecido pelas eras.
 
-Com o sistema de blocos conectados, rotinas de NPCs, perigos naturais e testes narrativos, este capítulo provê as fundações para campanhas mais **imersivas, estratégicas e reativas** — tanto no RPG de mesa quanto na futura adaptação digital.
+Com o sistema de blocos conectados, rotinas de NPCs, perigos naturais e testes narrativos, este capítulo provê as fundações para uma experiência **imersiva, estratégica e reativa** no mundo persistente online.
 
 ---
 
 ### 🔄 O que aprendemos neste capítulo:
 
 - Como funciona a movimentação por blocos e rotas
-- A importância da hora do dia, dos ticks e dos eventos do mundo
+- A importância do ciclo dia/noite e dos eventos do mundo
 - Como os NPCs interagem com o tempo, o espaço e os jogadores
 - A lógica de exploração de terrenos, recursos e perigos ambientais
 - A estrutura de eventos aleatórios ou roteirizados

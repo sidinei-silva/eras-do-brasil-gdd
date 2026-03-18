@@ -3,7 +3,7 @@
 > *"A terra aqui não é muda. O chão lembra de quem pisou nele. O rio sabe quem se afogou. Navegar pela Mata Costeira não é apenas ler um mapa, é ler os humores de um organismo vivo."*
 > — Diário de um Cartógrafo Desaparecido
 
-Este livro detalha a geografia, as distâncias, os perigos ambientais e a estrutura de conexões da região do Ato 1. Ele serve como referência absoluta para o Mestre (Narrativa) e para o Motor do Jogo (Cálculo de Ticks e Pathfinding).
+Este livro detalha a geografia, as distâncias, os perigos ambientais e a estrutura de conexões da região do Ato 1. Ele serve como referência absoluta para a equipe narrativa e para o Motor do Jogo (cálculo de tempo de viagem e pathfinding).
 
 ---
 
@@ -32,18 +32,18 @@ graph TD
     Ruptura[🌀 A RUPTURA - Final]:::danger
 
     %% Conexões e Custos (Ida)
-    Vila -- "Estrada Velha (4 Ticks)" --> Rio
-    Rio -- "Maré Baixa (5 Ticks)" --> Mina
-    
-    Vila -- "Mata Fechada (10 Ticks)" --> Floresta
-    Floresta -- "Rastro (5 Ticks)" --> Toca
-    Floresta -- "Trilha Oculta (8 Ticks)" --> Acampamento
-    
-    Floresta -- "Zona de Distorção (20 Ticks)" --> Ruptura
-    
-    Vila -- "Subida Íngreme (18 Ticks)" --> Pico
-    
-    Vila -- "Pântano (16 Ticks)" --> Ruinas
+    Vila -- "Estrada Velha (~10 min)" --> Rio
+    Rio -- "Maré Baixa (~12 min)" --> Mina
+
+    Vila -- "Mata Fechada (~25 min)" --> Floresta
+    Floresta -- "Rastro (~12 min)" --> Toca
+    Floresta -- "Trilha Oculta (~20 min)" --> Acampamento
+
+    Floresta -- "Zona de Distorção (~50 min)" --> Ruptura
+
+    Vila -- "Subida Íngreme (~45 min)" --> Pico
+
+    Vila -- "Pântano (~40 min)" --> Ruinas
     
     %% Conexões Secretas (Atalhos)
     Rio -. "Túnel Submerso (Requer Item)" .-> Ruptura
@@ -53,13 +53,13 @@ graph TD
 
 ## 2. Regras de Terreno e Biomas
 
-Cada zona possui modificadores globais que afetam tanto a **Exploração** (Custo de Ticks) quanto o **Combate** (Buffs/Debuffs).
+Cada zona possui modificadores globais que afetam tanto a **Exploração** (tempo de viagem) quanto o **Combate** (Buffs/Debuffs).
 
 ### 🏠 Zona Central: Vila de São Tomé
 O último bastião de "normalidade".
 * **Tipo de Terreno:** Urbano / Seguro.
-* **Custo de Movimento:** 1 Tick (Normal).
-* **Regra de Descanso:** Descanso Longo aqui custa apenas 2 Ticks (bônus de conforto) e recupera 100% de Vida/Recursos.
+* **Custo de Movimento:** Rápido (~5 min reais).
+* **Regra de Descanso:** Descanso Longo aqui leva apenas ~10 min reais (bônus de conforto) e recupera 100% de Vida/Recursos.
 * **Serviços:**
     * *Ferreiro:* Repara itens e vende armas básicas.
     * *Taverna:* Hub de "Fofoca" (Info sobre NPCs).
@@ -68,7 +68,7 @@ O último bastião de "normalidade".
 ### 🌲 Zona Norte: Floresta do Norte
 Uma mata densa, antiga e vibrante, onde a luz do sol mal toca o chão.
 * **Tipo de Terreno:** Mata Densa.
-* **Custo de Movimento:** 2 Ticks (Difícil).
+* **Custo de Movimento:** Moderado (~10 min reais).
 * **Regra de Combate (Cobertura Natural):** Todos os personagens (aliados e inimigos) ganham +1 de Defesa contra ataques à distância se estiverem a mais de 5 metros do atacante.
 * **Variável de Save (Procedural):**
     * A localização exata da *Toca da Fera* varia (Norte, Nordeste ou Noroeste da zona).
@@ -76,43 +76,43 @@ Uma mata densa, antiga e vibrante, onde a luz do sol mal toca o chão.
 ### 🌊 Zona Leste: Rio das Marés
 Um rio largo que sofre influência de marés sobrenaturais.
 * **Tipo de Terreno:** Água / Lama.
-* **Custo de Movimento:** 1 Tick (Margem) / Impossível (Água Alta).
+* **Custo de Movimento:** Rápido (Margem) / Impossível (Água Alta).
 * **Ciclo da Maré (Acesso à Mina):**
-    A maré opera em ciclos de **100 Ticks**. A Mina só é acessível na Maré Baixa.
-    * **Ticks 10-50:** Baixa (Janela Inicial).
-    * **Ticks 51-110:** Alta (Bloqueado).
-    * **Ticks 111-150:** Baixa (Segunda Chance).
-    * *(O ciclo se repete: 40 ticks aberta, 60 ticks fechada).*
+    A maré opera em ciclos baseados no relógio do jogo. A Mina só é acessível na Maré Baixa.
+    * **Manhã:** Baixa (Janela Inicial).
+    * **Tarde:** Alta (Bloqueado).
+    * **Noite:** Baixa (Segunda Chance).
+    * **Madrugada:** Alta (Bloqueado).
     * **Nota:** Tentar entrar na Maré Alta exige teste de Natação (Vigor CD 18) e causa dano de afogamento.
 
 ### 🏔️ Zona Oeste: Pico da Neblina
 Uma montanha sagrada envolta em nuvens que sussurram.
 * **Tipo de Terreno:** Montanha / Vertical.
-* **Custo de Movimento:** 3 Ticks (Subida) / 1 Tick (Descida).
-* **Regra de Exaustão:** A cada 20 Ticks passados aqui, o jogador deve fazer um teste de Vigor (CD 12) ou ganha 1 nível de Fadiga (–1 em todas as rolagens).
+* **Custo de Movimento:** Longo (~15 min reais, Subida) / Rápido (~5 min, Descida).
+* **Regra de Exaustão:** A cada período do dia passado aqui, o jogador deve fazer um teste de Vigor (CD 12) ou ganha 1 nível de Fadiga (–1 em todas as rolagens).
 * **Regra de Combate (Ventos):** Ataques à distância têm Desvantagem. Empurrões jogam o alvo 2 metros a mais.
 
 ### 🔥 Zona Sul: Ruínas Queimadas
 O local de um massacre antigo. O chão é cinza e o ar cheira a fumaça eterna.
 * **Tipo de Terreno:** Terra Arrasada / Pântano.
-* **Custo de Movimento:** 2 Ticks.
+* **Custo de Movimento:** Moderado (~10 min reais).
 * **Regra de Terror:** Inimigos aqui são do tipo *Espiritual*. Personagens com Sanidade/Moral baixa sofrem alucinações (Textos falsos na interface ou sons de passos inexistentes).
 
 ---
 
-## 3. A Rota dos Rivais (Os Bandeirantes)
+## 3. A Rota dos Bandeirantes (Facção NPC Antagonista)
 
-A facção "Bandeirantes de Sangue" não espera pelo jogador. Eles têm uma rota fixa programada no Atlas.
+Os **Bandeirantes de Sangue** são uma facção NPC controlada pelo `StoryManager` por temporada. Eles não esperam pelo jogador — avançam pelo mapa conforme a temporada progride.
 
 * **Ponto de Partida:** Acampamento Secreto (Zona Norte).
 * **Objetivo:** Chegar à Ruptura (Epicentro).
-* **Velocidade:** Eles movem 1 Bloco a cada **15 Ticks Globais**.
+* **Velocidade:** Avançam conforme a fase da temporada (ver [Ato 1](../03_Enredo_e_Mundo/01_Ato_1_A_Primeira_Ruptura.md)).
 * **Checkpoints (Momentos de Tensão):**
-    1.  **Tick 100:** Eles dominam a entrada da Floresta Norte. (Jogadores agora encontram patrulhas hostis lá).
-    2.  **Tick 250:** Eles estabelecem um posto avançado na "Fronteira da Distorção".
-    3.  **Tick 400:** Eles iniciam o ritual de abertura forçada na Ruptura. (O Boss começa a ficar "Ascendido").
+    1.  **Fase 1 (PRE_EVENT):** Dominam a entrada da Floresta Norte. (Jogadores encontram patrulhas hostis lá).
+    2.  **Fase 2 (EVENT_ACTIVE):** Estabelecem um posto avançado na "Fronteira da Distorção".
+    3.  **Fase 3 (EVENT_ACTIVE final):** Iniciam o ritual de abertura forçada na Ruptura. (O Boss começa a ficar "Ascendido").
 
-> **Sabotagem:** Se o jogador usar a ação de "Sabotagem Física" no Atlas (ex: derrubar árvore na trilha), o contador de velocidade deles sobe para **1 Bloco a cada 25 Ticks**.
+> **Interação:** Jogadores podem enfrentá-los em combate, sabotar seus postos ou tentar contorná-los (com classes como Explorador de Terras ou Arqueiro Selvagem). Sabotagem bem-sucedida atrasa o avanço dos Bandeirantes para a próxima fase.
 
 ---
 

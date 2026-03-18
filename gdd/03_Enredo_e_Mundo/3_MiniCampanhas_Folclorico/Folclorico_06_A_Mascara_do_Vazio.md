@@ -10,17 +10,17 @@ Explorar o custo do poder e a perda da humanidade. Uma missão focada em um item
 
 ### 📝 Resumo Dinâmico
 
-O jogador encontra uma máscara estranha. Ao colocá-la, ele vê o mundo espiritual, mas perde Ticks de vida (envelhece). A máscara não sai. Ele deve encontrar o criador da máscara para removê-la ou aprender a controlá-la.
+O jogador encontra uma máscara estranha. Ao colocá-la, ele vê o mundo espiritual, mas perde tempo de vida (envelhece). A máscara não sai. Ele deve encontrar o criador da máscara para removê-la ou aprender a controlá-la.
 
 **Gatilhos de Início:**
 * **Item:** A máscara aparece no inventário após derrotar um espírito sem rosto.
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Maldição (Corrida)**
-* A cada 100 Ticks com a máscara, o jogador perde 1 ponto de Carisma/Presença permanentemente (até remover).
+* A cada período do dia com a máscara, o jogador perde 1 ponto de Carisma/Presença permanentemente (até remover).
 * A máscara sussurra coordenadas de um ateliê oculto.
 
 **2. O Criador**

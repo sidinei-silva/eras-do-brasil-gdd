@@ -10,7 +10,7 @@ Explora a tensão entre justiça, poder e reputação, exigindo investigação s
 
 ### 📝 Resumo Dinâmico
 
-Um homem foi encontrado enforcado na praça da vila ao amanhecer. O Capitão da Guarda afirma que foi suicídio e ordenou a queima do corpo ao anoitecer (Tick 100). O jogador tem um dia para provar que foi assassinato.
+Um homem foi encontrado enforcado na praça da vila ao amanhecer. O Capitão da Guarda afirma que foi suicídio e ordenou a queima do corpo ao anoitecer. O jogador tem um dia para provar que foi assassinato.
 
 **Gatilhos de Início:**
 * **Visual:** O corpo está pendurado na árvore central da vila (Bloco da Praça).
@@ -18,21 +18,21 @@ Um homem foi encontrado enforcado na praça da vila ao amanhecer. O Capitão da 
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Cena do Crime (Praça)**
 * O jogador deve examinar o corpo.
-* **Fator Tempo:** Guardas impedem o acesso. Se esperar até o Tick 20 (Troca de Guarda), o acesso fica livre por 10 Ticks. Se tentar antes, exige teste de *Intimidação* ou *Furtividade*.
+* **Fator Tempo:** Guardas impedem o acesso. Se esperar até a Troca de Guarda (meio da manhã), o acesso fica livre por alguns minutos. Se tentar antes, exige teste de *Intimidação* ou *Furtividade*.
 
 **2. A Testemunha (O Bêbado)**
 * Há uma testemunha: "Velho Tobias".
 * **Rotina de NPC:**
-    * **Manhã (Ticks 0-40):** Dorme nos fundos da Taverna.
-    * **Tarde (Ticks 41-80):** Vagueia pelo porto (difícil de achar).
+    * **Manhã:** Dorme nos fundos da Taverna.
+    * **Tarde:** Vagueia pelo porto (difícil de achar).
     * **Noite:** Fica bêbado demais para falar.
 
 **3. O Confronto (Gabinete do Capitão)**
-* Com a prova (a corda ou o testemunho), o jogador confronta o Capitão antes do Tick 100.
+* Com a prova (a corda ou o testemunho), o jogador confronta o Capitão antes do anoitecer.
 * **Combate ou Diplomacia:** O Capitão invoca dois guardas corruptos se o jogador não tiver *Reputação* alta.
 
 ---
