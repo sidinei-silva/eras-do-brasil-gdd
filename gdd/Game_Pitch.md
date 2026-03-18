@@ -23,9 +23,9 @@ Nossa visão para _Eras do Brasil_ se materializa em cinco pilares de design ine
 
 - **Narrativa Profunda:** Uma história que explora a intersecção da história real brasileira com forças místicas esquecidas, onde as escolhas do jogador têm consequências duradouras.
 - **Jogabilidade Tática:** Um sistema de combate por turnos baseado em D20, projetado para evoluir de um modelo estático focado em escolhas para um complexo grid tático isométrico com posicionamento e cobertura.
-- **Mundo Vivo e Dinâmico:** Um universo que respira e reage independentemente das ações do jogador através do sistema de "Ticks". Facções rivais avançam seus objetivos, o tempo passa, e o mundo muda, criando um senso constante de urgência e vida.
+- **Mundo Vivo e Dinâmico:** Um universo que respira e reage independentemente das ações do jogador. Facções NPC avançam seus objetivos, o ciclo dia/noite rege rotinas, e o mundo muda a cada temporada, criando um senso constante de urgência e vida.
 - **Flexibilidade de Personagem:** Um sistema inovador que, através do "Dom da Revivência", permite ao jogador trocar de classe livremente fora de combate, herdando habilidades ativas e adaptando-se a qualquer desafio sem perder o progresso.
-- **Mundo Persistente Online (MUD Moderno):** Um servidor que roda 24/7, onde múltiplos jogadores coexistem no mesmo mundo. Economia de risco com full loot, missões competitivas e eventos globais que mudam o mapa para todos. Acessível via navegador — zero instalação.
+- **Mundo Persistente Online (MUD Moderno):** Um servidor que roda 24/7, onde múltiplos jogadores coexistem no mesmo mundo. Missões competitivas, inimigos evolutivos e eventos globais que mudam o mapa para todos. Acessível via navegador — zero instalação.
 
 Com esta base, convidamos você a mergulhar mais fundo no universo que criamos, um mundo onde a própria história é um personagem vivo e imprevisível.
 
@@ -35,11 +35,11 @@ Com esta base, convidamos você a mergulhar mais fundo no universo que criamos, 
 
 A ambientação de _Eras do Brasil_ é um dos nossos maiores diferenciais estratégicos. Transportamos os jogadores para um universo que é ao mesmo tempo familiar e profundamente reimaginado sob uma lente mística. Não estamos apenas contando uma história; estamos construindo um mundo que vive, respira e se lembra, um organismo vivo onde cada floresta, rio e ruína tem uma memória e um propósito.
 
-### A Raiz do Mundo e os Despertos
+### A Raiz do Mundo
 
-No coração espiritual do continente pulsa **a Raiz do Mundo**, o nexo místico que conecta todas as eras, seres e acontecimentos. Para os povos indígenas, ela é uma entidade viva, o sopro dos primeiros espíritos. Para os missionários, uma criação divina que oculta os véus do pecado e da salvação. Para os seres folclóricos, é o campo onde as histórias ganham forma e consciência. É através desta Raiz que o jogador, um ser especial, navega pela confluência do tempo.
+No coração espiritual do continente pulsa **a Raiz do Mundo**, o nexo místico que conecta todas as eras, seres e acontecimentos. Para os povos indígenas, ela é uma entidade viva, o sopro dos primeiros espíritos. Para os missionários, uma criação divina que oculta os véus do pecado e da salvação. Para os seres folclóricos, é o campo onde as histórias ganham forma e consciência. A Raiz afeta todos que vivem na região — não apenas alguns escolhidos.
 
-_"Você é um Desperto. Carrega dentro de si ecos de vidas passadas e possíveis. Suas escolhas moldarão não só seu destino, mas os caminhos das Eras."_
+_"Ninguém aqui foi escolhido. A Raiz do Mundo afeta todos que vivem nesta terra. Você se destaca pelo que faz, não pelo que é."_
 
 ### Um Exemplo Vivo: A Mata Costeira (Ato 1)
 
@@ -47,13 +47,13 @@ A filosofia de design de mundo de _Eras do Brasil_ é perfeitamente ilustrada pe
 
 - **Vila de São Tomé:**
     - **Terreno:** Urbano/Seguro.
-    - **Regra Principal:** O conforto do local otimiza o Descanso Longo, que custa apenas 2 Ticks. Isso consolida a vila como um refúgio estratégico essencial para planejar incursões mais longas e perigosas.
+    - **Regra Principal:** O conforto do local otimiza o Descanso Longo. Isso consolida a vila como um refúgio estratégico essencial para planejar incursões mais longas e perigosas.
 - **Floresta do Norte:**
     - **Terreno:** Mata Densa.
     - **Regra Principal:** Oferece Cobertura Natural em combate, concedendo +1 de Defesa contra ataques à distância se o alvo estiver a mais de 5 metros do atacante. Essa regra incentiva o combate tático e o uso inteligente do terreno para emboscadas e proteção.
 - **Rio das Marés:**
     - **Terreno:** Água/Lama.
-    - **Regra Principal:** O acesso a locais-chave, como a mina, é governado pelo Ciclo da Maré, que opera em ciclos de 100 Ticks (40 ticks aberta, 60 ticks fechada). Isso transforma o mapa em um quebra-cabeça temporal, forçando os jogadores a planejar suas expedições em torno do pulso sobrenatural do mundo.
+    - **Regra Principal:** O acesso a locais-chave, como a mina, é governado pelo Ciclo da Maré, que opera em ciclos do relógio do jogo. Isso transforma o mapa em um quebra-cabeça temporal, forçando os jogadores a planejar suas expedições em torno do pulso sobrenatural do mundo.
 - **Pico da Neblina:**
     - **Terreno:** Montanha.
     - **Regra Principal:** Impõe a Regra de Exaustão, exigindo testes de Vigor para evitar ganhar níveis de Fadiga. Em combate, ataques à distância têm Desvantagem e empurrões jogam o alvo 2 metros a mais. O Pico se torna, assim, um desafio tanto de sobrevivência contra o ambiente quanto de posicionamento tático em combate.
@@ -71,7 +71,7 @@ Além de um mundo rico e dinâmico, _Eras do Brasil_ se define por mecânicas ce
 
 ### 3.1. Sua Identidade Não é uma Prisão: O Dom da Revivência
 
-Esta é a mecânica central de progressão de personagem. O **"Dom da Revivência"** é uma habilidade narrativa e mecânica que permite aos jogadores trocar livremente entre classes e até mesmo origens (Colonizador, Indígena, Ser Folclórico) que já foram desbloqueadas. Essa troca pode ser feita fora de combate, permitindo uma adaptação estratégica a qualquer desafio. O progresso não é perdido, mas expandido; cada nova classe desbloqueada adiciona mais ferramentas ao arsenal do jogador, com transições justificadas narrativamente como visões, reencarnações ou rituais místicos.
+Esta é a mecânica central de progressão de personagem. O **"Dom da Revivência"** é uma adaptação natural que surge pela exposição à Raiz do Mundo — não um presente concedido a escolhidos. Permite aos jogadores trocar livremente entre classes e até mesmo origens (Colonizador, Indígena, Ser Folclórico) que já foram desbloqueadas. Essa troca pode ser feita fora de combate, permitindo uma adaptação estratégica a qualquer desafio. O progresso não é perdido, mas expandido; cada nova classe desbloqueada adiciona mais ferramentas ao arsenal do jogador, com transições justificadas narrativamente como visões, reencarnações ou rituais místicos.
 
 ### 3.2. Herança Estratégica: Construindo um Legado
 
@@ -84,18 +84,15 @@ Aprofundando a flexibilidade do Dom da Revivência, nosso sistema de herança pe
 |**Habilidades Passivas**|❌ Não|Garante que a identidade e o papel da classe ativa sejam preservados.|
 |**Bônus de Proficiência**|❌ Não|Incentiva o jogador a escolher a classe certa para a tarefa certa (crafting, exploração).|
 
-### 3.3. O Mundo Não Espera por Você: O Sistema de Ticks
+### 3.3. O Mundo Não Espera por Você
 
-O sistema de **"Ticks"** é o coração do nosso mundo vivo. Cada ação significativa — viajar, lutar, criar itens, descansar — consome uma quantidade específica de Ticks, que são a unidade de tempo do jogo. Isso cria um senso de urgência e consequência, pois o mundo continua a evoluir. A facção rival, os **"Bandeirantes de Sangue"**, por exemplo, avança pelo mapa a uma velocidade de 1 Bloco a cada 15 Ticks Globais. O jogador pode observar seu progresso e até mesmo realizar ações de sabotagem para atrasá-los, mas a ameaça está sempre em movimento, com ou sem a intervenção do jogador.
+O mundo vivo é o coração da experiência. O servidor simula o mundo continuamente — NPCs seguem rotinas baseadas no ciclo dia/noite (Manhã, Tarde, Noite, Madrugada), facções avançam suas agendas, e o ecossistema evolui. A facção NPC **"Bandeirantes de Sangue"**, por exemplo, é uma força antagonista ativa no mundo, controlada pelo StoryManager por temporada — avançando territórios, estabelecendo postos e ameaçando regiões. O jogador pode observar o impacto deles e lutar contra suas forças, mas a ameaça é constante, com ou sem a intervenção do jogador.
 
 ### 3.4. A Raiz Conecta: Um Mundo Persistente
 
-_Eras do Brasil_ oferece dois modos de experiência complementares, unidos pelo conceito místico de **Ecos e Raízes**.
+_Eras do Brasil_ é um mundo **100% online e persistente** — a **Raiz**, a Linha do Tempo Mestra onde múltiplos jogadores coexistem. O servidor roda 24/7, o ciclo dia/noite rege o mundo, facções guerreiam, e a comunidade molda o destino de cada temporada.
 
-- O **Eco (Offline)** é a linha do tempo pessoal do jogador. O mundo reage exclusivamente às suas escolhas, o relógio pausa quando desloga. Ideal para imersão, leitura e experimentação.
-- A **Raiz (Online)** é a Linha do Tempo Mestra — um servidor persistente onde múltiplos jogadores coexistem. O mundo avança 24/7 via tick global. Facções guerreiam, o Relógio da Ruptura transforma a geografia, e morrer significa perder seus itens (Full Loot). Recursos são finitos, missões são competitivas, e os feitos da comunidade definem as temporadas do mundo.
-
-_"Cada Eco é um sonho. A Raiz é o despertar — e na Raiz, os sonhos de todos se cruzam."_
+A história avança por **temporadas** de longa duração (4-6 meses ou mais), cada uma com seu arco narrativo (Tensão → Apogeu → Legado). Os feitos da comunidade definem o resultado de cada temporada e transformam o mundo para todos.
 
 Esses sistemas centrais são sustentados por uma base robusta de mecânicas de RPG clássicas, um servidor Go autoritativo e um cliente web acessível via navegador, garantindo uma experiência completa e sem fricção.
 
@@ -168,8 +165,8 @@ Juntos, a direção de arte e o design de interface trabalham em harmonia para c
 _Eras do Brasil_ é mais do que um jogo; é uma exploração de cultura, história e mito através das lentes de um RPG profundo e inovador. Acreditamos que ele preenche uma lacuna significativa no mercado, combinando uma temática sul-americana rica e pouco explorada com mecânicas de jogabilidade que oferecem liberdade e profundidade estratégica. Nossa proposta de valor se destaca em quatro áreas principais que nos diferenciam de qualquer outro título disponível.
 
 1. **Cenário Inovador:** Oferecemos uma fantasia histórica que mergulha na riqueza do folclore e da história do Brasil, um cenário vibrante e original que cativará jogadores em busca de novas experiências narrativas.
-2. **Sistema de Classes Flexível:** O "Dom da Revivência" é uma mecânica revolucionária que oferece uma liberdade de customização e rejogabilidade sem precedentes, permitindo que os jogadores se adaptem e experimentem sem serem punidos por suas escolhas.
-3. **Mundo Genuinamente Vivo:** O sistema de "Ticks" cria um ambiente dinâmico e reativo, onde o mundo evolui e as facções agem com propósito, com ou sem a intervenção direta do jogador, gerando uma urgência e imersão autênticas.
-4. **Cooperativo com Propósito:** Projetamos uma experiência multijogador focada na colaboração narrativa, permitindo que amigos compartilhem uma jornada profunda e significativa sem as desvantagens logísticas e narrativas de um MMO tradicional.
+2. **Sistema de Classes Flexível:** O "Dom da Revivência" é uma mecânica que oferece uma liberdade de customização e rejogabilidade sem precedentes, permitindo que os jogadores se adaptem e experimentem sem serem punidos por suas escolhas.
+3. **Mundo Genuinamente Vivo:** O ciclo dia/noite e a simulação contínua criam um ambiente dinâmico e reativo, onde o mundo evolui e as facções agem com propósito, com ou sem a intervenção direta do jogador, gerando uma urgência e imersão autênticas.
+4. **Cooperativo com Propósito:** Projetamos uma experiência multijogador focada na colaboração narrativa, permitindo que amigos compartilhem uma jornada profunda e significativa, com missões competitivas e eventos globais que recompensam a comunidade.
 
-Convidamos você a se juntar a nós para tecer este novo Eco na Raiz do Mundo, criando uma lenda cujos sussurros ecoarão através das eras.
+Convidamos você a se juntar a nós para forjar sua lenda na Raiz do Mundo, criando uma história cujos sussurros ecoarão através das eras.
