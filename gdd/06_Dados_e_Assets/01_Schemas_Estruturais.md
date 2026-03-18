@@ -117,7 +117,7 @@ Com as estruturas de classes e itens definidas, o foco se volta para as entidade
 
 ## 4.0 Schema: `Inimigo`
 
-A criação de um schema de `Inimigo` bem estruturado é vital não apenas para definir desafios de combate, mas também para alimentar o sistema de "Mundo Vivo". Esta estrutura permite que entidades hostis interajam com o ambiente, sigam rotinas programadas — como a facção rival "Bandeirantes de Sangue" — e forneçam recompensas coerentes através de tabelas de loot, integrando-as de forma orgânica à economia e ao ciclo de progressão do jogo.
+A criação de um schema de `Inimigo` bem estruturado é vital não apenas para definir desafios de combate, mas também para alimentar o sistema de "Mundo Vivo" e o sistema de **Inimigos Evolutivos**. Esta estrutura permite que entidades hostis interajam com o ambiente, sigam rotinas programadas — como a facção NPC "Bandeirantes de Sangue" — evoluam ao derrotar jogadores, e forneçam recompensas coerentes através de tabelas de loot, integrando-as de forma orgânica à economia e ao ciclo de progressão do jogo.
 
 ### 4.1 Estrutura JSON para `Inimigo`
 
@@ -154,7 +154,12 @@ A criação de um schema de `Inimigo` bem estruturado é vital não apenas para 
       "chanceDeDrop": "float" // Probabilidade de dropar o item (0.0 a 1.0)
     }
   ],
-  "xpRecompensa": "integer" // Quantidade de XP concedida ao derrotar
+  "xpRecompensa": "integer", // Quantidade de XP concedida ao derrotar
+  "evolucao": { // Sistema de Inimigos Evolutivos (ADR-009)
+    "killCount": "integer", // Jogadores derrotados por esta instância
+    "tier": "string", // "Normal", "Veterano", "Alfa", "Lenda"
+    "originMapId": "string" // Bloco de origem para migração
+  }
 }
 ```
 
@@ -170,6 +175,7 @@ A criação de um schema de `Inimigo` bem estruturado é vital não apenas para 
 |`acoesDeCombate`|**Propósito:** Um array de ações possíveis, permitindo a criação de comportamentos de IA variados. O campo `chanceDeUso` permite ponderar a frequência de cada ação. **Estrutura:** `array` de `objects`.|
 |`tabelaDeLoot`|**Propósito:** Define as recompensas em itens. A estrutura suporta múltiplos drops com probabilidades individuais, alimentando o ciclo de exploração e crafting. **Estrutura:** `array` de `objects`.|
 |`xpRecompensa`|**Propósito:** Quantidade de experiência concedida, servindo como um pilar para a progressão do jogador. **Estrutura:** `integer`.|
+|`evolucao`|**Propósito:** Objeto que rastreia o estado evolutivo da instância do inimigo. `killCount` registra jogadores derrotados, `tier` define a categoria atual (Normal → Veterano → Alfa → Lenda), e `originMapId` indica o bloco de origem para migração entre regiões. Este campo implementa o sistema de Inimigos Evolutivos (ADR-009), onde inimigos que derrotam jogadores ganham XP e evoluem, tornando-se ameaças crescentes no mundo. **Estrutura:** `object`.|
 
 --------------------------------------------------------------------------------
 

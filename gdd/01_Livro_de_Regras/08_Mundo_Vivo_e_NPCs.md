@@ -1,6 +1,8 @@
 # 🌍 Capítulo 8 – Mundo Vivo, NPCs e Servidor
 
-Este capítulo é dedicado ao sistema de "Mundo Vivo", que é o **pilar central** do jogo. Ele detalha como o servidor simula o mundo, como os NPCs pensam, como o tempo (Ticks) afeta a simulação e como múltiplos jogadores coexistem no mesmo mundo persistente.
+Este capítulo é dedicado ao sistema de "Mundo Vivo", que é o **pilar central** do jogo. Ele detalha como o servidor simula o mundo, como os NPCs pensam, como o tempo afeta a simulação e como múltiplos jogadores coexistem no mesmo mundo persistente.
+
+> **Nota sobre terminologia:** "Tick" neste documento refere-se ao ciclo interno do game loop no servidor (detalhe de implementação). Para o jogador, o tempo é medido em **tempo real** (segundos, minutos), pelo **relógio do jogo** (manhã, tarde, noite, madrugada) e por **turnos** (apenas em combate D20). 1 dia do jogo ≈ 2–4 horas reais.
 
 ---
 
@@ -10,43 +12,46 @@ Este capítulo é dedicado ao sistema de "Mundo Vivo", que é o **pilar central*
 
 - **NPCs possuem rotinas, desejos, vínculos e conhecimento próprio.**
 - **O mundo se move mesmo sem a presença dos jogadores.** Um novo jogador que entra pode encontrar o mundo em estado "Pós-Guerra", ouvindo apenas histórias sobre quem lutou na batalha.
-- **Eventos acontecem em ciclos temporais (ticks), afetando regiões, recursos, mercados, facções e relações.**
+- **Eventos acontecem em ciclos temporais do relógio do jogo, afetando regiões, recursos, mercados, facções e relações.**
 
 Os três pilares do Mundo Vivo:
-1.  **Simulação:** O servidor garante que o mundo viva e evolua a cada tick.
+1.  **Simulação:** O servidor garante que o mundo viva e evolua continuamente.
 2.  **Narrativa:** Eventos globais tecem histórias que emergem das ações coletivas dos jogadores.
 3.  **Jogabilidade:** Desafios e recompensas se calibram dinamicamente pela economia e pela IA.
 
 ---
 
-## 8.2 – Arquitetura de Ticks, Blocos e Ciclos
+## 8.2 – Arquitetura do Tempo, Blocos e Ciclos
 
-O mundo é construído sobre uma lógica de **Blocos de Cenário** (cap. 5.2) e regido por **Ticks**.
+O mundo é construído sobre uma lógica de **Blocos de Cenário** (cap. 5.2) e regido por um **relógio do jogo** com ciclo dia/noite.
 
-### Arquitetura do "Tick Comutável" (Offline vs. Online)
-O motor do mundo de *Eras do Brasil* é o "Tick". Um Tick é a unidade fundamental de avanço do tempo. Toda a arquitetura de simulação é construída sobre um "Motor" de lógica (`Mundo.ProcessarTick()`) que é **separado de seu "Gatilho"**.
+### O Relógio do Jogo
+O servidor roda um game loop contínuo que avança o tempo do mundo independentemente das ações dos jogadores. O jogador experimenta o tempo de duas formas:
 
-* **Gatilho Offline (Reativo):** Para testes locais e desenvolvimento, o mundo é reativo. O "Motor" do Tick só é disparado manualmente ou por ação do jogador. Útil para debug e validação.
-* **Gatilho Online (Proativo):** No servidor de produção, o mundo é proativo. O "Motor" do Tick é disparado por um relógio global (ex: goroutine com `time.Ticker` a cada X segundos), independentemente das ações dos jogadores. O mundo avança sozinho.
+* **Tempo Real:** Durations de ações, prazos de quests e eventos são medidos em segundos/minutos reais.
+* **Relógio do Jogo:** O mundo possui um ciclo dia/noite com 4 períodos — **Manhã, Tarde, Noite, Madrugada**. 1 dia do jogo ≈ 2–4 horas reais. NPCs seguem rotinas baseadas nesses períodos.
+
+> **Nota técnica:** Internamente, o servidor processa o mundo em "ticks" (ciclos do game loop), mas esse detalhe não é exposto ao jogador. Toda comunicação usa tempo real ou o relógio do jogo.
 
 ```
-// O "Motor" do Tick — reutilizável em ambos os modos
-Mundo.ProcessarTick():
-  TimeManager.AvancarTempo(1)
+// Game loop sequencial (detalhe interno)
+GameLoop.ProcessarCiclo():
+  TimeManager.AvancarTempo()
   NPCManager.AtualizarAgendas()
   QuestManager.VerificarPrazos()
   StoryManager.VerificarEventosAgendados()
-  Mundo.SalvarEstado()
+  PersistManager.SalvarDirty()
 ```
 
 ### Ciclos Temporais
-Ticks fazem parte de ciclos maiores, que podem ser:
-- **Ciclos Diurnos:** manhã, tarde, noite, madrugada.
-- **Ciclos Semanais:** feiras, rituais, migrações.
-- **Ciclos Sazonais:** estações que alteram recursos e clima.
-- **Ciclos Espirituais:** fases da lua, rupturas da Raiz.
 
-A cada Tick, o mundo atualiza:
+- **Ciclos Diurnos:** Manhã → Tarde → Noite → Madrugada (4 períodos por dia do jogo).
+- **Ciclos Semanais:** Feiras, rituais, migrações.
+- **Ciclos Sazonais:** Estações que alteram recursos e clima.
+- **Ciclos Espirituais:** Fases da lua, rupturas da Raiz.
+
+A cada ciclo do servidor, o mundo atualiza:
+
 - Movimentação de NPCs.
 - Regeneração ou esgotamento de recursos.
 - Ativação de eventos.
@@ -63,13 +68,14 @@ Os NPCs em *Eras do Brasil* são entidades vivas. O sistema é uma fusão de doi
 
 Cada NPC possui um `NPC_Data` com os seguintes componentes:
 
-* **`Needs` (Necessidades):** Um conjunto de estatísticas que decaem a cada Tick (ex: Fome, Sede, Energia/Sono, Social, Segurança).
+* **`Needs` (Necessidades):** Um conjunto de estatísticas que decaem periodicamente (ex: Fome, Sede, Energia/Sono, Social, Segurança).
 * **`Traits` (Traços):** Modificadores passivos que afetam o decaimento das necessidades ou a tomada de decisão (ex: Gula, Preguiçoso, Ranzinza, Valente).
 * **`Mood & Thoughts` (Humor e Memórias):** O Humor do NPC é o resultado direto de suas Necessidades não atendidas e de "Memórias" recentes (ex: "Comeu bem", "Foi insultado", "Amigo morreu").
-* **`Agenda`:** A rotina de trabalho padrão do NPC (ex: "08:00 - Ir para a Forja").
+* **`Agenda`:** A rotina de trabalho padrão do NPC baseada no relógio do jogo (ex: "Manhã — Ir para a Forja").
 
-### O Fluxo de Decisão do NPC (`OnTick` - Utility AI)
-A cada Tick Global processado, o cérebro de cada NPC roda o seguinte processo:
+### O Fluxo de Decisão do NPC (Utility AI)
+
+A cada ciclo do servidor, o cérebro de cada NPC roda o seguinte processo:
 
 1.  **Fase 1 (Passivo):** Atualiza todas as `Needs` (Fome +1, Energia -1) e recalcula o `Humor` total.
 2.  **Fase 2 (Decisão):** O NPC avalia todas as suas "Metas" (Trabalhar, Comer, Dormir, Socializar) e atribui uma prioridade a cada uma.
@@ -79,32 +85,39 @@ A cada Tick Global processado, o cérebro de cada NPC roda o seguinte processo:
     * *Exemplo:* Se a `Prioridade_Fome` (70) for maior que a `Prioridade_Trabalho` (50), o Ferreiro "quebra" sua rotina de Agenda e decide ir à taverna para comer.
 
 ### Percepção Cognitiva (`knowledgeBase`)
+
 Cada NPC possui uma "Base de Conhecimento" (`knowledgeBase`) onde armazena informações que *vê* durante suas rotinas:
+
 * **Recursos:** Onde viu minérios ou ervas.
-`{"tipo": "RECURSO", "id": "minerio_ferro_01", "local": "bloco_mina", "ultimo_visto": 12340}`
+`{"tipo": "RECURSO", "id": "minerio_ferro_01", "local": "bloco_mina", "visto_em": "2024-01-15T10:30:00Z"}`
 * **Monstros:** Onde viu perigos.
-`{"tipo": "ENTIDADE", "id": "lobo_alfa", "local": "floresta_norte", "ultimo_visto": 12300}`
+`{"tipo": "ENTIDADE", "id": "lobo_alfa", "local": "floresta_norte", "visto_em": "2024-01-15T08:00:00Z"}`
 * **Rotinas:** Onde viu outros NPCs.
 `{"tipo": "ROTINA_NPC", "id": "npc_guarda", "info": "Vai para a taverna ao meio-dia"}`
-* As informações possuem um "prazo de validade" (baseado no `ultimo_visto`) e são "esquecidas" após um tempo.
+* As informações possuem um "prazo de validade" (baseado no timestamp) e são "esquecidas" após um tempo.
 
 ### Expiração e Esquecimento da Memória
-A cada processamento de Tick Global, o `NPCManager` varre a `knowledgeBase` de cada NPC e **remove entradas expiradas**, garantindo que as informações sejam recentes e o mundo permaneça dinâmico.
 
-* **Regra:** Uma entrada é removida quando `(TickAtual - ultimo_visto) > Limite_de_Memória`.
-* **Limite padrão sugerido:** 500 Ticks (equivalente a aproximadamente 2 dias de jogo).
+O `NPCManager` varre periodicamente a `knowledgeBase` de cada NPC e **remove entradas expiradas**, garantindo que as informações sejam recentes e o mundo permaneça dinâmico.
+
+* **Regra:** Uma entrada é removida quando `(tempoAtual - visto_em) > Limite_de_Memória`.
+* **Limite padrão sugerido:** ~2 dias de tempo do jogo.
 * **Exceções:** Informações marcadas como "Importante" (ex: morte de um NPC, evento de ruptura) podem ter limite estendido ou ser permanentes.
 * **Impacto:** Isso significa que um NPC não vai falar sobre um recurso que viu há 3 dias — a informação já expirou. O jogador precisa buscar fontes recentes.
 
 ### Relacionamentos (NPC <=> NPC) e "Fofoca"
+
 NPCs rastreiam seu nível de amizade/inimizade com *outros NPCs* e com os jogadores.
 
-Quando as rotinas de dois NPCs (baseadas no Tick) fazem com que eles se encontrem no mesmo bloco (ex: Ferreiro e Guarda na Taverna), o sistema de "Fofoca" é ativado, permitindo que troquem informações de sua `knowledgeBase`.
+Quando as rotinas de dois NPCs fazem com que eles se encontrem no mesmo bloco (ex: Ferreiro e Guarda na Taverna), o sistema de "Fofoca" é ativado, permitindo que troquem informações de sua `knowledgeBase`.
+
 1.  Os NPCs trocam 1-2 itens de suas `knowledgeBase`.
 2.  Eles atualizam seus `Relacionamentos` (ex: "Falar com o Ferreiro aumentou minha amizade com ele").
 
 ### Acesso do Jogador (Interação)
+
 O jogador acessa essa rede de informação dinâmica ao conversar com o NPC. O que o NPC sabe (e se ele decide contar) depende de:
+
 1.  **Afinidade:** O NPC gosta de você?
 2.  **`knowledgeBase`:** O NPC *realmente viu* o que você está perguntando? (Ex: "Sim, eu vi minério de ferro na mina esta manhã.")
 3.  **"Fofoca":** O NPC *ouviu falar* de outro NPC? (Ex: "Eu não vi, mas o Guarda me contou que viu lobos na floresta norte.").
@@ -209,131 +222,177 @@ NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos
 
 ## 8.7 – Arquitetura do Mundo Persistente (Online)
 
-No modo online, o Tick Global proativo impulsiona todos os sistemas de simulação do servidor.
+O game loop contínuo do servidor impulsiona todos os sistemas de simulação.
 
 ### StoryManager (O Calendário de Eventos do Mundo)
-O `StoryManager` funciona como um "Calendário de Eventos do Mundo". A história principal, eventos sazonais e invasões de facções avançam com o Tick Global, não com o progresso de um jogador individual.
+
+O `StoryManager` funciona como um "Calendário de Eventos do Mundo". A história principal, eventos sazonais e invasões de facções avançam com o relógio do jogo, não com o progresso de um jogador individual.
 
 Um novo jogador que entra no servidor pode encontrar o mundo em um estado diferente do inicial — ouvindo apenas histórias sobre os jogadores que lutaram na batalha anterior.
 
 **Branching de Timeline:**
-```
-Tick Global 10.000 → Evento "Invasão" começa
-  → NPCs em pânico, novos inimigos no mapa
-  → Missão Mundial criada: "Derrote o Rei Goblin" (prazo: Tick 15.000)
 
-Cenário A: Jogadores vencem no Tick 12.500
+```text
+Dia 50 do jogo → Evento "Invasão" começa
+  → NPCs em pânico, novos inimigos no mapa
+  → Missão Mundial criada: "Derrote o Rei Goblin" (prazo: 7 dias reais)
+
+Cenário A: Jogadores vencem no dia 3
   → StoryManager avança para "Era da Reconstrução"
 
-Cenário B: Tick 15.000 chega sem resolução
+Cenário B: Prazo expira sem resolução
   → StoryManager avança para "Era da Ocupação"
   → Mapa muda para todos
 ```
 
-### Sistema de Missões "Corrida pela Recompensa"
-Para se alinhar ao mundo persistente, as missões de NPCs seguem um modelo de **competição**:
+### Sistema de Missões Competitivas
 
-1.  **Anúncio:** Um NPC anuncia um problema (ex: "Preciso de 10 Peles de Lobo").
-2.  **Múltiplos Aceites:** Vários jogadores (ou grupos) podem aceitar a missão.
-3.  **Primeiro a Concluir:** A recompensa é entregue ao *primeiro jogador* que retornar com os itens. O NPC informará aos outros que "o problema já foi resolvido por outro aventureiro".
-4.  **Expiração:** A missão tem um prazo de validade baseado no Tick Global (ex: "Preciso das peles antes de 3 dias"). Se ninguém completar, a missão falha para todos e o mundo reage (ex: o NPC fica sem estoque).
+Para se alinhar ao mundo persistente, as missões de NPCs seguem um modelo de **competição com verificação server-side**:
+
+1. **Publicação:** Um NPC publica uma quest (ex: "Preciso de 10 Peles de Lobo").
+2. **Múltiplos Aceites:** Vários jogadores podem aceitar a mesma missão.
+3. **Progresso Verificado:** Todos os jogadores precisam completar o objetivo. O servidor verifica o progresso individualmente (anti-exploit).
+4. **Primeiro a Entregar = Recompensa Total:** O primeiro jogador que retornar com os itens completos recebe a recompensa integral.
+5. **Timeout de Entrega:** Após a primeira entrega, inicia-se um período de tempo (ex: 30 minutos reais) durante o qual outros jogadores que já completaram o objetivo podem entregar por **recompensa parcial** (ex: 50% do valor).
+6. **Expiração:** Após o timeout, a missão expira. Jogadores que aceitaram mas não entregaram recebem "falha" no diário. O NPC informa: "O problema já foi resolvido."
+
+> **Anti-exploit:** O servidor valida que o jogador realmente completou o objetivo (matou os mobs, coletou os itens, etc.) antes de aceitar a entrega. Não basta possuir os itens — o progresso da quest é rastreado server-side.
 
 ### Quadro de Missões (BountyManager) — Metas Coletivas
+
 Sistema de contribuição comunitária onde jogadores contribuem individualmente para metas globais:
 
-* Uma cidade precisa de 100 couros para construir uma muralha.
-* Cada jogador contribui com até 10 couros.
-* Ao atingir thresholds (25%, 50%, 75%, 100%), recompensas são liberadas para todos que contribuíram.
-* Se o prazo expirar sem completar, a cidade sofre as consequências (invasão, escassez).
+- Uma cidade precisa de 100 couros para construir uma muralha.
+- Cada jogador contribui com até 10 couros.
+- Ao atingir thresholds (25%, 50%, 75%, 100%), recompensas são liberadas para todos que contribuíram.
+- Se o prazo expirar sem completar, a cidade sofre as consequências (invasão, escassez).
 
 ---
 
-## 8.8 – Dinâmica de Eventos Globais e Consequências (Meta-Eventos)
+## 8.8 – Sistema de Temporadas e Eventos Globais
 
-Em *Eras do Brasil*, as **Missões Principais** funcionam como gatilhos para mudanças de estado no mundo.
+O mundo de *Eras do Brasil* é organizado em **temporadas** — arcos narrativos de longa duração (4-6 meses reais ou mais) que definem o estado do mundo, os eventos disponíveis e a progressão da história.
 
-### Os 3 Estados de um Evento (Linha do Tempo)
-1.  **Tensão (Pré-Evento):** Sinais visuais e missões de preparação.
-2.  **Apogeu (O Evento):** O clímax (Batalha/Ritual).
-3.  **Legado (Pós-Evento):** O mundo transformado pela consequência (Vitória ou Derrota).
+> **Nota:** O jogo é projeto de hobby do desenvolvedor. Cada temporada traz uma feature nova. Transparência com a comunidade sobre ritmo e escopo.
+
+### State Machine de Evento de Temporada
+
+Cada temporada segue uma state machine de 3 estados:
+
+```text
+PRE_EVENT (Tensão) → EVENT_ACTIVE (Apogeu) → POST_EVENT (Legado)
+```
+
+1. **`PRE_EVENT` — Tensão:** Sinais visuais no mundo, missões de preparação, NPCs comentam sobre o que está por vir. Duração: semanas reais.
+2. **`EVENT_ACTIVE` — Apogeu:** O clímax da temporada. Jogadores contribuem coletivamente (kills, entregas de recursos, conclusão de missões). Resultado determinado por **threshold de contribuição coletiva** — sem simulação real-time de combate NPC vs NPC.
+3. **`POST_EVENT` — Legado:** O mundo é transformado pela consequência (Vitória ou Derrota). NPCs contam o que aconteceu. Placas com nomes dos participantes são colocadas no mundo.
+
+### Votação em Quests de História
+
+Quests de história com escolhas narrativas usam **votação simples**: cada jogador vota com peso igual, vence a maioria. Balanceamento de peso por facção/guild é decisão futura.
 
 ### Decisão Coletiva
+
 O desfecho é decidido pela ação (ou inação) da comunidade. Se os jogadores falharem em entregar suprimentos a tempo, a vila queima para todos na próxima temporada.
 
 ### Recompensas de Legado
-* Jogadores recebem Títulos ("Veterano da Ruptura") que são reconhecidos por NPCs em futuras temporadas.
-* Estruturas construídas ou destruídas persistem no mundo.
-* NPCs lembram e referenciam eventos passados em diálogos.
+
+- Jogadores recebem Títulos ("Veterano da Ruptura") que são reconhecidos por NPCs em futuras temporadas.
+- Placas com nomes dos participantes são erguidas em locais relevantes.
+- Estruturas construídas ou destruídas persistem no mundo.
+- NPCs lembram e referenciam eventos passados em diálogos.
+
+> **Feature futura (Temporada 3+):** *Ecos Instanciados* — jogadores que chegam depois de uma temporada poderão vivenciar conteúdo passado em modo instanciado (solo), com recompensas reduzidas. O servidor deve persistir estado de temporadas passadas desde o início para viabilizar isso.
 
 ---
 
 ## 8.9 – Sincronia de Tempo e Dinâmica Online
 
-### Tick Global Proativo
-O servidor roda um ciclo contínuo:
-* `Game_Time` avança a cada X segundos reais (ex: 1 Tick = 5 segundos).
-* Isso garante que todos os jogadores conectados vejam o sol se pôr ou o Boss atacar ao mesmo tempo.
-* NPCs seguem rotinas baseadas neste relógio global.
+### Relógio do Jogo
+
+O servidor roda um game loop contínuo:
+
+- O **relógio do jogo** avança continuamente, mapeando tempo real para tempo do jogo (1 dia do jogo ≈ 2–4 horas reais).
+- 4 períodos por dia: **Manhã → Tarde → Noite → Madrugada**.
+- Isso garante que todos os jogadores conectados vejam o sol se pôr ou o Boss atacar ao mesmo tempo.
+- NPCs seguem rotinas baseadas neste relógio.
 
 ### Turnos de Trabalho dos NPCs
-Para evitar que NPCs "sumam" quando o jogador precisa deles, utilizamos **Turnos Globais**:
 
-1.  **Ciclo Acelerado:** O servidor roda um ciclo Dia/Noite.
-2.  **Turnos de NPC:**
-    * **Dia:** O Mestre Ferreiro atende na Forja (Qualidade Alta).
-    * **Noite:** O Mestre vai para a Taverna. O **Aprendiz** assume a Forja (Qualidade Normal, Estoque Reduzido).
-    * **Resultado:** O serviço nunca fecha (evitando punição ao jogador casual), mas o mundo respira e os NPCs têm vida.
+Para evitar que NPCs "sumam" quando o jogador precisa deles, utilizamos **Turnos por Período**:
+
+1. **Ciclo Dia/Noite:** O servidor roda um ciclo contínuo de 4 períodos.
+2. **Turnos de NPC:**
+    - **Manhã/Tarde:** O Mestre Ferreiro atende na Forja (Qualidade Alta).
+    - **Noite:** O Mestre vai para a Taverna. O **Aprendiz** assume a Forja (Qualidade Normal, Estoque Reduzido).
+    - **Resultado:** O serviço nunca fecha (evitando punição ao jogador casual), mas o mundo respira e os NPCs têm vida.
 
 ### Bolha de Combate
+
 Quando um jogador entra em combate:
-* O combate é resolvido em **turnos táticos** (Iniciativa), isolado do tick global.
-* O mundo continua avançando ao redor — outros jogadores não são pausados.
-* Ao final do combate, o sistema calcula a duração da luta e aplica os ticks equivalentes ao jogador.
+
+- O combate é resolvido em **turnos táticos D20** (Iniciativa), isolado do relógio do jogo.
+- O mundo continua avançando ao redor — outros jogadores não são pausados.
+- Ao final do combate, o tempo real decorrido é aplicado ao estado do jogador no mundo.
 
 ---
 
-## 8.10 – Full Loot e Economia de Risco
+## 8.10 – Inimigos Evolutivos
 
-### Regra: Morte = Perda
-Ao morrer, o jogador **perde todos os itens equipados e no inventário**, que caem no local da morte como loot acessível a qualquer jogador ou NPC.
+> **ADR-009.** Substitui o antigo sistema de "Full Loot" (removido — ver ADR-010).
 
-### Mitigações
-* **Baú Seguro:** Cada jogador tem um baú limitado em cidades aliadas onde pode guardar itens. Esses itens são protegidos.
-* **Seguro de Facção:** Facções aliadas podem oferecer "seguro" — ao morrer, parte dos itens vai para o cofre da facção em vez de dropar.
-* **Espírito de Retorno:** Ao morrer, o jogador tem X ticks para voltar ao local e recuperar seus itens antes que outros os peguem ou que NPCs os recolham.
-* **Itens Soulbound:** Itens lendários ou de missão podem ser marcados como "vinculados à alma" — não dropam na morte.
+### Conceito
 
-### Inimigos Evolutivos
-* Inimigos que derrotam um jogador **ganham XP** e podem reaparecer como líderes mais poderosos.
-* Se um lobo mata 3 jogadores, ele se torna um "Alfa" com stats aumentados e loot melhor.
-* Isso cria uma ecologia emergente onde a morte tem consequências narrativas.
+Inimigos no mundo de *Eras do Brasil* não são estáticos. Eles ganham experiência exclusivamente por **matar jogadores**, evoluindo em poder e categoria ao longo do tempo. Isso cria uma ecologia emergente onde a morte tem consequências narrativas e mecânicas.
+
+### Regras (MVP)
+
+1. **XP por Kill:** Quando um inimigo mata um jogador, ele ganha XP. A quantidade é fixa por tipo de inimigo.
+2. **Nível e Categoria:** O nível do inimigo sobe com XP acumulado. A categoria é um label do range de nível:
+
+| Categoria | Range de Nível | Comportamento |
+|-----------|---------------|---------------|
+| **Normal** | Nível mínimo do mapa | Comportamento padrão |
+| **Veterano** | +25% do cap | Mais agressivo, loot melhor |
+| **Alfa** | +50% do cap | Lidera grupos, habilidades especiais |
+| **Lenda** | Cap do mapa | Nome único, evento de caça |
+
+3. **Spawn e Nascimento:** Inimigos sempre nascem no nível mínimo do mapa onde spawnam (categoria Normal).
+4. **Migração:** Ao atingir o cap de nível do mapa, o inimigo migra para a próxima região como Normal (reset de categoria, mantém XP). Um novo inimigo spawna na região original com cooldown.
+5. **Cap de População:** Cada região tem um limite máximo de inimigos para evitar superpopulação.
+6. **Cap de Endgame:** Nível máximo de um inimigo = nível máximo do jogador + margem pequena.
+7. **Rate Limiting:** Um inimigo só ganha XP de morte de jogador a cada N minutos (anti-farming de XP de mob).
+8. **Proteção de Quest:** Inimigos que são **target de uma quest ativa** de algum jogador NÃO evoluem nem migram enquanto a quest estiver ativa.
+
+### Integração com Fofoca
+
+Quando um inimigo evolui de categoria, o servidor dispara `OnMobEvolved`. NPCs que "presenciam" ou "ouvem sobre" o evento adicionam a informação à sua `knowledgeBase` e espalham via sistema de Fofoca:
+
+- *"Cuidado com o lobo na Floresta Norte — dizem que já matou três aventureiros. Chamam ele de 'Sombra Cinzenta'."*
+
+> **Feature futura (Temporada 2+):** Categoria separada de nível, quests emergentes de caça, Fofoca profunda, visual dinâmico por categoria. Ver ADR-009.
 
 ---
 
-## 8.11 – Relógio da Ruptura
+## 8.11 – Arquitetura do Motor (Managers)
 
-O **Relógio da Ruptura** é um ciclo de ~500 ticks que governa transições de era e rupturas temporais no mundo.
+O servidor é estruturado como um **game loop sequencial** que processa managers em ordem fixa a cada ciclo:
 
-* A cada ciclo completo, a Raiz do Mundo pulsa — eventos de ruptura podem disparar.
-* Rupturas alteram geografias, abrem portais, corrompem regiões ou trazem criaturas de outras eras.
-* NPCs sentem a aproximação da ruptura (mudanças de humor, diálogos de medo/excitação).
-* Jogadores preparados podem **influenciar o tipo de ruptura** através de rituais coletivos.
+> **Arquitetura:** Ver [ADR-005](../../decisions/ADR-005-arquitetura-servidor-monolito-goroutines.md) no repositório do game para detalhes técnicos.
 
----
-
-## 8.12 – Arquitetura do Motor (Managers)
-
-O servidor é estruturado como uma coleção de **Managers** que rodam a cada tick:
-
-```
-Motor (código reutilizável):
-  TickManager       — Controla o relógio global e dispara ProcessarTick()
+```text
+GameLoop (goroutine principal — sequencial):
+  WorldManager      — Atualiza terreno, clima, ciclo dia/noite
   NPCManager        — Atualiza agendas, needs, decisões de IA
   QuestManager      — Verifica prazos, missões competitivas, bounties
-  StoryManager      — Calendário de eventos, branching de timeline
-  InventoryManager  — Inventários, drops, full loot
+  StoryManager      — Calendário de eventos, temporadas, branching
+  EconomyManager    — Preços, escassez, regeneração de recursos
   CombatManager     — Resolve combates em turno, aplica D20
-  EventBus          — Pub/Sub desacoplado (OnItemCollected, OnNPCDied, etc.)
+  PersistManager    — Salva estado sujo (goroutine de I/O separada)
+
+EventBus (goroutine separada — notificações assíncronas apenas):
+  - Pub/Sub para notificações ao cliente, logging, métricas
+  - NÃO coordena lógica entre managers
 
 Conteúdo (dados do jogo, JSON):
   - NPCs e agendas
@@ -348,15 +407,48 @@ Cliente (interface):
   - Input do jogador (comandos de texto ou botões)
 ```
 
-### EventBus (Arquitetura Event-Driven)
-Os managers se comunicam via Pub/Sub desacoplado:
+### EventBus (Notificações Assíncronas)
 
-```
+O EventBus é usado para **notificações assíncronas** — atualizar clientes, logging, métricas — e NÃO para coordenar lógica de jogo entre managers:
+
+```text
 // Quando jogador coleta item:
 EventBus.Publish("OnItemCollected", { id: "item_minerio_ferro", qtd: 1 })
 
-// QuestManager escuta e atualiza objetivos automaticamente
-// InventoryManager escuta e atualiza inventário
-// NPCManager escuta e atualiza knowledgeBase de NPCs próximos
+// Cliente recebe atualização de inventário
+// Logger registra evento para analytics
+// NPCs próximos adicionam à knowledgeBase (processado no próximo ciclo do NPCManager)
 ```
-* **O Viajante (Aliado):** É um suporte de luxo e companheiro de armas. Ele pode interagir com lojas, coletar recursos e lutar livremente, mas em diálogos cruciais da história, ele atua como conselheiro (pode sugerir opções, mas a decisão final é do Anfitrião).
+
+---
+
+## 8.12 – Penalidade de Morte
+
+> **ADR-010.** Full Loot foi removido do MVP. A penalidade de morte é baseada em XP e durabilidade.
+
+### Morte PvE — Regras
+
+Ao morrer em combate PvE, o jogador sofre:
+
+1. **Perda de XP:** Perde **10% do XP do nível atual** (sugestão — valor de tuning). O jogador **nunca perde nível** — o XP é limitado ao mínimo do nível atual.
+2. **Perda de Durabilidade:** Todos os equipamentos equipados perdem **15% de durabilidade máxima** (sugestão — valor de tuning). Itens com 0 de durabilidade ficam inutilizáveis até serem reparados.
+3. **Sem Drop de Itens:** O jogador NÃO perde itens do inventário ao morrer.
+4. **Itens de Quest Protegidos:** Itens vinculados a quests ativas não sofrem penalidade.
+
+### Integração com Economia
+
+A penalidade de durabilidade alimenta o loop econômico:
+
+- Reparar itens exige **materiais de crafting + proficiência** (ver Cap. 6).
+- Jogadores com proficiência em Ferraria ou Coureira podem oferecer serviços de reparo a outros.
+- NPCs também oferecem reparo, mas a custo mais alto.
+
+### Integração com Inimigos Evolutivos
+
+Quando um jogador morre para um inimigo, o inimigo ganha XP (ver §8.10). Isso cria um ciclo onde mortes repetidas na mesma área geram inimigos progressivamente mais perigosos.
+
+### Respawn
+
+O jogador retorna ao último ponto de descanso seguro (vila, acampamento) com PV restaurados mas com as penalidades de XP e durabilidade aplicadas.
+
+> **PvP:** Removido do escopo do MVP. Quando implementado (futuro), terá regras de penalidade próprias. Ver ADR-012.
