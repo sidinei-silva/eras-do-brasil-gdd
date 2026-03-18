@@ -25,7 +25,7 @@ Diretrizes de direção artística, interface e exportação de assets para *Era
 ## HUD
 
 - **HUD Contextual:** Aparece por bloco, evitando poluição visual.
-- **Log:** Mini log de eventos e tempo (tick) para feedback imediato.
+- **Log:** Mini log de eventos e tempo para feedback imediato.
 - **Navegação:** Setas de movimentação com arte integrada ao ambiente.
 - **Diegese:** Componentes diegéticos sempre que possível (ex: atributos representados como pergaminho físico).
 

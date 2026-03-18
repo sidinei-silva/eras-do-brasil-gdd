@@ -10,21 +10,21 @@ Cria um elo com o tempo como força narrativa e joga com a percepção do real e
 
 ### 📝 Resumo Dinâmico
 
-Em Santa Azeitona, os relógios pararam. Mas o tempo *do jogo* (Ticks) começa a se comportar de forma estranha: **a cada 10 Ticks, o mundo "reseta" para o estado de 10 Ticks atrás**, mas o jogador mantém a memória. É um *loop* temporal local.
+Em Santa Azeitona, os relógios pararam. Mas o tempo *do jogo* começa a se comportar de forma estranha: **a cada período de tempo, o mundo "reseta" para o estado do período anterior**, mas o jogador mantém a memória. É um *loop* temporal local.
 
 **Gatilhos de Início:**
 * **Ambiental:** Ao entrar na cidade, o relógio da UI trava ou gira ao contrário.
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. O Loop**
-* O jogador tem 10 Ticks para descobrir a causa. Se falhar, volta para a entrada da cidade.
+* O jogador tem um período do dia para descobrir a causa. Se falhar, volta para a entrada da cidade.
 * Deve observar a rotina dos NPCs e prever onde o "Sabotador Temporal" vai estar.
 
 **2. A Quebra**
-* Sabendo onde o sabotador estará no Tick 5, o jogador pode interceptá-lo.
+* Sabendo onde o sabotador estará no meio do período, o jogador pode interceptá-lo.
 * O sabotador carrega um **Artefato de Cronometria** defeituoso.
 
 ---

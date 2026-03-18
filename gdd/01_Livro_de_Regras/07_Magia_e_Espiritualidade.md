@@ -67,7 +67,7 @@ O que muda é **como** acessam e com que profundidade.
 Na adaptação digital, a magia possui:
 
 - **Regras mecânicas completas**, com cooldowns, testes de sucesso e efeitos visuais.
-- **Integração com o sistema de ticks**, afetando mundo, NPCs e eventos.
+- **Integração com o ciclo de tempo do jogo**, afetando mundo, NPCs e eventos.
 - **Variação por bioma, tempo e ciclos mágicos**, onde certas magias ficam mais fortes ou mais fracas dependendo do ambiente ou da era sobreposta.
 
 ---
@@ -333,7 +333,7 @@ O sistema de magia utiliza **dois tipos de custos**, dependendo da magia:
 Magias que não são de efeito contínuo possuem **tempo de recarga**, normalmente representado em:
 
 - **Turnos** (em combate).
-- **Ticks** (na exploração do mundo digital persistente).
+- **Tempo do jogo** (na exploração do mundo digital persistente).
 - **Cenas** (no RPG de mesa, a critério do mestre).
 
 > ⚠️ Magias defensivas e buffs poderosos, por regra, não podem ser empilhadas sem encerrar a anterior ou encerrar concentração.
@@ -406,7 +406,7 @@ Se uma magia ou ritual falhar:
 Magias que não são de combate seguem as mesmas regras, mas os testes podem ser adaptados para:
 
 - **Cenas Narrativas** → Avaliar sucesso com consequências ou tempo.
-- **Exploração** → Usadas em ticks (ex.: iluminação, detecção espiritual, encantamentos temporários).
+- **Exploração** → Usadas em tempo de exploração (ex.: iluminação, detecção espiritual, encantamentos temporários).
 - **Eventos Rituais** → Impactam diretamente NPCs, ambientes, facções ou até o equilíbrio espiritual da região.
 
 ---
@@ -415,7 +415,7 @@ Magias que não são de combate seguem as mesmas regras, mas os testes podem ser
 
 | Elemento             | Aplicação                                               |
 |----------------------|---------------------------------------------------------|
-| **Custo** | Fadiga, itens rituais, concentração ou ticks           |
+| **Custo** | Fadiga, itens rituais, concentração ou tempo do jogo   |
 | **Teste de Ataque** | 1D20 + Atributo + Bônus                                 |
 | **Teste de Ritual** | 1D20 + Atributo + Proficiência                          |
 | **Resistência Alvo** | CD = 10 + Atributo do Conjurador                        |
@@ -504,14 +504,14 @@ Estes exemplos ajudam mestres e jogadores a entenderem não apenas a mecânica, 
 
 **Personagem:** Domingos, Missionário (Colonizador)
 **Magia:** *Iluminação Divina* (Ilumina um ambiente escuro)
-**Uso:** Durante a travessia de uma caverna, em tick de exploração.
+**Uso:** Durante a travessia de uma caverna, em tempo de exploração.
 
 #### 🔸 Efeito:
-- A magia ilumina uma área de até 10 metros por tick ativo.
+- A magia ilumina uma área de até 10 metros enquanto ativa.
 - Permite reduzir a dificuldade de testes de Astúcia relacionados a **Percepção** e **Exploração** em –2 enquanto ativa.
 
 #### 🔸 Observação:
-- A magia não exige teste — apenas gasto de 1 tick para ativar e manter.
+- A magia não exige teste — apenas uma ação para ativar e manter concentração.
 
 ---
 
@@ -530,7 +530,7 @@ Estes exemplos ajudam mestres e jogadores a entenderem não apenas a mecânica, 
 #### 🔸 Consequência:
 - Ao invés do Guardião da Floresta, surge um **Espírito Corrompido Hostil**.
 - A personagem sofre **dano espiritual (1D6)** e condição **Confuso** por 1 rodada.
-- A corrupção na clareira se intensifica, atraindo mais entidades negativas nos próximos ticks.
+- A corrupção na clareira se intensifica, atraindo mais entidades negativas nos próximos períodos.
 
 ---
 
@@ -538,7 +538,7 @@ Estes exemplos ajudam mestres e jogadores a entenderem não apenas a mecânica, 
 
 - A magia em *Eras do Brasil* não é apenas uma ferramenta — é um elo com a **Raiz do Mundo** e com o equilíbrio espiritual do ambiente.
 - Seus efeitos são tão mecânicos quanto narrativos, influenciando combate, exploração, progressão e as relações com NPCs e facções.
-- As regras apresentadas aqui se aplicam tanto à versão de mesa quanto à versão digital (com adaptações para ticks, ambientes e IA de NPCs).
+- As regras apresentadas aqui se aplicam tanto à versão de mesa quanto à versão digital (com adaptações para o ciclo de tempo, ambientes e IA de NPCs).
 
 > ✨ **O detalhamento completo de magias, listas, efeitos, rituais e regras específicas estão no [[📖 Livro de Magias e Rituais]]**.
 
@@ -609,7 +609,7 @@ Agora, você está pronto para avançar ao próximo pilar que sustenta *Eras do 
 
 Neste capítulo, você aprenderá:
 - Como conduzir campanhas guiadas por blocos.
-- Como funcionam os **ticks**, a movimentação do mundo, e a progressão simultânea de NPCs, ambientes e eventos.
+- Como funciona o **ciclo de tempo**, a movimentação do mundo, e a progressão simultânea de NPCs, ambientes e eventos.
 - Como narrar histórias que reagem às escolhas dos personagens e ao estado global do mundo — seja na mesa ou no jogo digital.
 
 Prepare-se para assumir o controle da narrativa — como jogador ou como mestre — em um mundo onde **tudo está conectado pela Raiz**.

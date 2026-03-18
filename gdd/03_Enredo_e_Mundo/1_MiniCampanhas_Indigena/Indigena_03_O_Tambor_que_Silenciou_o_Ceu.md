@@ -17,11 +17,11 @@ O "Tambor do Céu", roubado por saqueadores, foi visto sendo transportado por um
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Tempo)
 
 **1. A Interceptação (Emboscada)**
-* O jogador deve calcular a rota. Se tentar alcançar a caravana correndo (Gasto alto de Vigor), chega a tempo. Se for devagar (Furtivo), pode perder o alvo se gastar muitos Ticks.
-* **Tick Crítico:** No Tick 80, a caravana chega ao Forte Colonial. Se o jogador não interceptar antes, a missão muda para "Infiltração em Forte" (muito mais difícil).
+* O jogador deve calcular a rota. Se tentar alcançar a caravana correndo (Gasto alto de Vigor), chega a tempo. Se for devagar (Furtivo), pode perder o alvo se gastar tempo demais.
+* **Momento Crítico:** Ao anoitecer, a caravana chega ao Forte Colonial. Se o jogador não interceptar antes, a missão muda para "Infiltração em Forte" (muito mais difícil).
 
 **2. O Resgate**
 * Combate contra os saqueadores ou roubo furtivo do Tambor.
@@ -36,8 +36,8 @@ O "Tambor do Céu", roubado por saqueadores, foi visto sendo transportado por um
 
 - **Desbloqueio de Mentor:** O Espírito do Som.
 - **Tambor do Céu Silencioso (Item Único):**
-    * *Efeito:* Congela o Relógio da Ruptura por 20 Ticks.
-    * *Restrição:* **Cooldown Global.** Uma vez usado por qualquer jogador no Eco, a Raiz do Mundo impede que *qualquer* Tambor seja ativado novamente por 500 Ticks. (Impede o "stacking" de efeitos entre jogadores).
+    * *Efeito:* Congela o Relógio da Ruptura por um período do dia.
+    * *Restrição:* **Cooldown Global.** Uma vez usado por qualquer jogador no Eco, a Raiz do Mundo impede que *qualquer* Tambor seja ativado novamente por vários dias do jogo. (Impede o "stacking" de efeitos entre jogadores).
   
 ---
 

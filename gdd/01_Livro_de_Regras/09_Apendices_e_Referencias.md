@@ -30,7 +30,7 @@ Este glossário reúne os principais termos técnicos, narrativos e mecânicos u
 |-----------------|------------|
 | **Raiz do Mundo** | Entidade espiritual que conecta todas as eras, memórias e linhas de realidade. |
 | **Dom da Revivência** | Habilidade mística que permite acessar memórias de vidas passadas e transitar por ecos das eras. |
-| **Tick** | Unidade de tempo que sincroniza eventos, NPCs, movimentação no mundo e mudanças globais. |
+| **Relógio do Jogo** | Ciclo dia/noite (Manhã, Tarde, Noite, Madrugada) que sincroniza eventos, NPCs, movimentação e mudanças globais. 1 dia ≈ 2–4h reais. |
 | **Bloco de Exploração** | Unidade de mapa que representa um local específico. Jogadores movem-se de bloco em bloco. |
 | **Evento Global** | Acontecimento que afeta todas as regiões do mapa atual da campanha (ex.: o dia vira noite, uma estação muda). |
 
@@ -149,10 +149,10 @@ O desenvolvimento digital está planejado em fases estratégicas para gerenciar 
 **Fase 1: Protótipo (Blocos de Cenário)**
 * **Movimentação:** O jogo funciona com **blocos de cenários conectados** (ou quadrantes), onde o jogador se move por setas ou cliques.
 * **Combate:** O combate ocorre em **modo de turno estático**. Não há movimentação física em grid. Os personagens ficam posicionados abstratamente e escolhem suas ações (como um JRPG clássico ou *Sea of Stars*).
-* **Sistema de Ticks:** O tempo avança de forma reativa, com base nas ações do jogador (como mover-se entre blocos).
+* **Sistema de Tempo:** O tempo avança continuamente no servidor, regido pelo relógio do jogo (Manhã, Tarde, Noite, Madrugada).
 
 **Fase 2: Jogo Completo (Movimentação Livre e Tática)**
-* **Movimentação:** A movimentação evolui para um estilo livre (estilo *Stoneshard/Solasta/Wartales*), onde o clique ou o passo do jogador ainda consome "ticks" de tempo.
+* **Movimentação:** A movimentação evolui para um estilo livre (estilo *Stoneshard/Solasta/Wartales*), onde o clique ou o passo do jogador consome tempo do jogo.
 * **Combate:** O combate é ativado como um **módulo tático avançado**. Incluirá movimentação por grids (isométrico), alcances físicos, ataques de oportunidade e controle de terreno.
 
 ### 9.5.2 – Filosofia de Arquitetura (Motor vs. Conteúdo)

@@ -10,19 +10,19 @@ Uma história melancólica sobre esquecimento e o poder da memória como magia.
 
 ### 📝 Resumo Dinâmico
 
-O jogador encontra uma vela mágica que nunca derrete, mas sua chama está quase apagando. Um espírito sussurra: "Não me deixe esquecer". A chama diminui a cada **Tick**. O jogador deve levá-la até o "Altar do Esquecimento" antes que ela se apague (Time Trial).
+O jogador encontra uma vela mágica que nunca derrete, mas sua chama está quase apagando. Um espírito sussurra: "Não me deixe esquecer". A chama diminui a cada **minuto do jogo**. O jogador deve levá-la até o "Altar do Esquecimento" antes que ela se apague (Time Trial).
 
 **Gatilhos de Início:**
 * **Item:** Encontrar a "Vela dos Esquecidos" em uma ruína.
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Peregrinação (Time Trial)**
-* A vela tem "100 Ticks de Vida".
-* Ventos sobrenaturais tentam apagá-la (reduzem Ticks da vela). O jogador deve buscar abrigo ou usar o corpo para proteger a chama.
-* Monstros das sombras atacam a luz. O combate gasta Ticks. O jogador deve lutar rápido.
+* A vela tem "1 período do dia de Vida" (dura do início de um período até o fim).
+* Ventos sobrenaturais tentam apagá-la (reduzem o tempo restante da vela). O jogador deve buscar abrigo ou usar o corpo para proteger a chama.
+* Monstros das sombras atacam a luz. O combate consome tempo da vela. O jogador deve lutar rápido.
 
 **2. O Altar**
 * Ao colocar a vela no Altar, as memórias da Tribo Sem Nome são projetadas no céu.

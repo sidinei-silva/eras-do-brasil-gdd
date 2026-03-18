@@ -29,7 +29,7 @@
 
 | Componente | Tecnologia | Justificativa |
 | :--- | :--- | :--- |
-| **Servidor** | **Go 1.22+** | Goroutines nativas para tick loop, IA de NPCs e múltiplas conexões simultâneas. Compilação estática, deploy simples. |
+| **Servidor** | **Go 1.22+** | Goroutines nativas para game loop, IA de NPCs e múltiplas conexões simultâneas. Compilação estática, deploy simples. |
 | **Cliente** | **HTML / CSS / JS (vanilla)** | Zero instalação — joga no navegador. Aproveita as skills web do dev. |
 | **Comunicação** | **WebSocket (gorilla/websocket)** | Bidirecional e em tempo real. Mensagens em JSON. |
 | **Dados** | **JSON (arquivos ou SQLite futuro)** | Templates imutáveis (definições de itens, classes, inimigos) + saves de jogadores. Sem banco externo na fase inicial. |
@@ -51,34 +51,34 @@
 
 ## 🧪 Fase 0: Heartbeat — O Servidor Respira
 
-> **Objetivo:** Provar que o servidor Go funciona. Tick loop via goroutine, conexão WebSocket, cliente web básico.
-> **Resultado:** Servidor rodando com `time.Ticker`. Cliente conecta via WebSocket e vê "Tick 1, 2, 3..." na tela.
+> **Objetivo:** Provar que o servidor Go funciona. Game loop via goroutine, conexão WebSocket, cliente web básico.
+> **Resultado:** Servidor rodando com `time.Ticker`. Cliente conecta via WebSocket e vê o relógio do jogo avançando na tela.
 
 ### Entregas
 
 | # | Entrega | Critério de Aceite |
 |---|---|---|
 | 0.1 | Projeto Go inicial | `go run main.go` sobe um servidor HTTP na porta 8080 |
-| 0.2 | Tick loop (goroutine) | `time.Ticker` incrementa contador a cada X segundos. Log no terminal. |
-| 0.3 | WebSocket | Cliente HTML conecta via `ws://`. Servidor envia tick atual em JSON. |
-| 0.4 | Cliente mínimo | Página HTML exibe "Tick: N" atualizado em tempo real. |
+| 0.2 | Game loop (goroutine) | `time.Ticker` incrementa relógio do jogo a cada X segundos. Log no terminal. |
+| 0.3 | WebSocket | Cliente HTML conecta via `ws://`. Servidor envia estado do relógio em JSON. |
+| 0.4 | Cliente mínimo | Página HTML exibe relógio do jogo (período do dia) atualizado em tempo real. |
 
 ---
 
 ## 🛡️ Fase 1: Living World — O Mundo Existe
 
-> **Objetivo:** Mundo com blocos, NPCs com rotina e tick global. O mundo "vive" mesmo sem jogador.
-> **Resultado:** Servidor simula 3 blocos com 2 NPCs que seguem agenda por ticks.
+> **Objetivo:** Mundo com blocos, NPCs com rotina e ciclo dia/noite. O mundo "vive" mesmo sem jogador.
+> **Resultado:** Servidor simula 3 blocos com 2 NPCs que seguem agenda por período do dia.
 
 ### Entregas
 
 | # | Entrega | Critério de Aceite |
 |---|---|---|
 | 1.1 | Blocos e grafo | 3 blocos (Vila, Floresta, Ruínas) conectados. NPC pode mover entre eles. |
-| 1.2 | NPCs com Agenda | Ferreiro: casa→forja→casa. Pajé: meditação→cachoeira→aldeia. Rotina guiada por tick. |
+| 1.2 | NPCs com Agenda | Ferreiro: casa→forja→casa. Pajé: meditação→cachoeira→aldeia. Rotina guiada por período do dia. |
 | 1.3 | Utility AI básica | NPC com necessidades (fome, cansaço). Ações priorizadas por utilidade. |
-| 1.4 | Dia/Noite | Ciclo de ticks mapeia manhã→tarde→noite. NPC muda rotina por período. |
-| 1.5 | Log de eventos | Servidor gera log: "Tick 42: Ferreiro chegou na Forja", "Tick 50: Pajé dormiu". |
+| 1.4 | Dia/Noite | Relógio do jogo com 4 períodos (Manhã→Tarde→Noite→Madrugada). NPC muda rotina por período. |
+| 1.5 | Log de eventos | Servidor gera log: "Manhã: Ferreiro chegou na Forja", "Noite: Pajé dormiu". |
 
 ---
 
@@ -94,7 +94,7 @@
 | 2.1 | Mapa de nós (HTML/CSS) | 3 blocos clicáveis. Mostra nome, tipo, NPCs presentes. |
 | 2.2 | Feed de eventos | Log em tempo real: "Ferreiro está trabalhando", "Lobo apareceu na Floresta". |
 | 2.3 | Inspeção de NPC | Clicar no NPC mostra nome, localização, necessidade dominante, última ação. |
-| 2.4 | Relógio visual | Indicador de Tick atual + período (Manhã/Tarde/Noite). |
+| 2.4 | Relógio visual | Indicador de período do dia (Manhã/Tarde/Noite/Madrugada) + relógio do jogo. |
 
 ---
 
@@ -113,11 +113,11 @@
 | **Inimigos** | 2 (Lobo, Espírito Menor) |
 | **Itens** | 5 iniciais (conforme [Dados Iniciais](../06_Dados_e_Assets/03_Dados_Iniciais_Ato1.md)) |
 | **UI** | Interface web: HUD + Mapa de Nós + Combate (texto/log) + Inventário |
-| **Save** | JSON no servidor (ou local para modo Eco) |
+| **Save** | JSON no servidor |
 
 ### Core Loop
 ```
-Criar Personagem → Explorar Bloco (gastar Ticks)
+Criar Personagem → Explorar Bloco (tempo de viagem)
     → Encontrar Evento/Combate (D20 + Mods)
     → Coletar Loot/XP
     → Voltar à Vila (descansar, equipar)
@@ -129,11 +129,11 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 | # | Entrega | Critério de Aceite |
 |---|---|---|
 | 3.1 | Criação de personagem | Escolher Origem + Classe + Atributos (point-buy 27 pts). Personagem salvo. |
-| 3.2 | Movimentação | Clicar em bloco adjacente → personagem move (gasta Ticks). |
+| 3.2 | Movimentação | Clicar em bloco adjacente → personagem move (consome tempo de viagem). |
 | 3.3 | Motor D20 | Rolar D20 + modificadores vs CD. Acerto/Falha/Crítico corretos. |
 | 3.4 | Combate estático | Iniciativa → Turnos → D20 vs Defesa → Dano → Loot. Log com matemática. |
 | 3.5 | Inventário | Equipar/desequipar, peso/capacidade. |
-| 3.6 | Save/Load | Salvar estado completo (HP, Loot, Posição, Tick). Recarregar corretamente. |
+| 3.6 | Save/Load | Salvar estado completo (HP, Loot, Posição). Recarregar corretamente. |
 
 ---
 
@@ -145,7 +145,7 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 
 | # | Entrega | Critério de Aceite |
 |---|---|---|
-| 4.1 | Relógio da Ruptura | Relógio global de 500 Ticks. Bandeirantes avançam 1 bloco/15 Ticks. Cenário muda de fase. |
+| 4.1 | Sistema de Temporadas | State machine PRE_EVENT → EVENT_ACTIVE → POST_EVENT. Bandeirantes avançam por fase. Cenário muda conforme temporada. |
 | 4.2 | NPCs e Diálogos | 3 NPCs com rotinas. Diálogos com condições. Fofoca (knowledgeBase). |
 | 4.3 | Economia | Coleta de 3 recursos. Crafting de 2 receitas. Venda/compra com NPC. Matriz 5×5. |
 | 4.4 | Classes expandidas | 3 Origens × 1 Classe cada = 3 classes jogáveis. Troca via Dom da Revivência + herança de ativa. |
@@ -174,7 +174,7 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 
 ## 🌿 Fase 6: Multiplayer — A Raiz Conecta
 
-> **Objetivo:** Múltiplos jogadores simultâneos no mesmo servidor. Full loot. Missões competitivas. Eventos globais. A "Raiz" ganha vida.
+> **Objetivo:** Múltiplos jogadores simultâneos no mesmo servidor. Missões competitivas. Inimigos evolutivos. Eventos globais. A "Raiz" ganha vida.
 
 ### Entregas
 
@@ -182,11 +182,11 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 |---|---|---|
 | 6.1 | Autenticação | Login/registro. Personagem persistido no servidor. |
 | 6.2 | Múltiplos jogadores | 2+ jogadores no mesmo mundo. Veem NPCs e uns aos outros. Chat in-game. |
-| 6.3 | Full Loot | Morrer = perder itens. Mitigações: Baú Seguro, Seguro de Facção, Timer Espiritual. |
+| 6.3 | Penalidade de Morte | Morrer = perda de % XP (não perde nível) + % durabilidade nos equipamentos. Sem drop de itens. Ver ADR-010. |
 | 6.4 | Trade server-authoritative | Troca entre jogadores validada pelo servidor. Atomicidade garantida. |
-| 6.5 | Missões competitivas | Múltiplos aceitam, primeiro a completar vence. Expiração por ticks. |
+| 6.5 | Missões competitivas | Múltiplos aceitam, primeiro a completar vence. Expiração por tempo real. Ver ADR-011. |
 | 6.6 | Eventos globais | StoryManager com Cenários A/B. BountyManager. Consequências permanentes. |
-| 6.7 | Inimigos Evolutivos | Inimigos que matam jogadores ganham XP e se tornam líderes. |
+| 6.7 | Inimigos Evolutivos | Inimigos que derrotam jogadores ganham XP: Normal → Veterano → Alfa → Lenda. Ver ADR-009. |
 
 ---
 
@@ -207,13 +207,13 @@ Criar Personagem → Explorar Bloco (gastar Ticks)
 - [x] Dados mockup iniciais (5 itens, 3 inimigos, 1 classe)
 
 ### Desenvolvimento (Em Andamento)
-- [ ] Fase 0: Heartbeat (servidor Go + WebSocket + tick)
+- [ ] Fase 0: Heartbeat (servidor Go + WebSocket + ciclo de tempo)
 - [ ] Fase 1: Living World (blocos + NPCs + IA)
 - [ ] Fase 2: Observer (cliente web observa mundo)
 - [ ] Fase 3: Player (D20 + combate + inventário)
 - [ ] Fase 4: Interaction (economia + diálogos + facções)
 - [ ] Fase 5: D20 Full (12 classes + grid + Ato 1)
-- [ ] Fase 6: Multiplayer (full loot + missões + eventos)
+- [ ] Fase 6: Multiplayer (missões competitivas + inimigos evolutivos + eventos)
 
 ---
 

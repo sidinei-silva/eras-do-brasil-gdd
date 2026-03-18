@@ -17,15 +17,15 @@ A colheita da aldeia está apodrecendo devido a uma maldição que se espalha a 
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Tempo)
 
 **1. O Diagnóstico**
-* Analisar o solo exige tempo (5 Ticks) ou conhecimento (Herborismo).
+* Analisar o solo exige tempo (alguns minutos do jogo) ou conhecimento (Herborismo).
 * A pista leva a um riacho próximo.
 
 **2. A Fonte (Combate/Ritual)**
 * Um "Coração de Pedra Venenosa" foi plantado por inimigos. Ele gera **Espíritos da Podridão** a cada noite.
-* O jogador deve defender o Xamã NPC enquanto ele purifica a pedra (modo de defesa por turnos/ticks), ou destruir a pedra na força bruta.
+* O jogador deve defender o Xamã NPC enquanto ele purifica a pedra (modo de defesa por turnos), ou destruir a pedra na força bruta.
 
 ---
 

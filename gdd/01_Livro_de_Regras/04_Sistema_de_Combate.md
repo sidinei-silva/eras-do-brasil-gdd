@@ -13,7 +13,7 @@ Já está planejada uma futura **expansão de regras** ("Combate Avançado – M
 - Ataques de oportunidade.
 - Controle de terreno e posicionamento em combate.
 
-Essa expansão será ativada naturalmente no sistema conforme o jogo evoluir para a segunda fase de digitalização (movimentação livre com ticks, estilo *Stoneshard*).
+Essa expansão será ativada naturalmente no sistema conforme o jogo evoluir para a segunda fase de digitalização (movimentação livre em tempo real, estilo *Stoneshard*).
 
 ---
 
@@ -984,10 +984,10 @@ Para grupos que desejam combates mais rápidos e narrativos:
 * **Jogador Solo:** Inimigos têm **PV Padrão (100%)**.
 * **Modo Cooperativo:** Inimigos recebem **+75% de PV**. O dano não aumenta para evitar hit-kill.
 
-### ⏳ Sincronia de Ticks (Sistema de Fila)
+### ⏳ Sincronia Temporal (Sistema de Fila)
 O jogo utiliza um sistema de **Processamento Assíncrono de Ações**:
-1. **Custo da Ação:** Toda ação (viajar, craftar, lutar) tem um custo em Ticks.
-2. **O Estado de "Ocupado":** Ao realizar uma ação longa (ex: viagem de 10 Ticks), o jogador entra em estado "Ocupado" e aguarda.
-3. **Resolução:** O jogo libera o outro jogador para agir livremente até que ele também gaste 10 Ticks (ou entre em estado Ocupado).
-4. **O Combate:** Cada rodada de combate consome **1 Tick**.
-    * *Exemplo:* O Jogador A viaja (Custo 10). O Jogador B entra em combate. O Jogador B joga 10 rodadas de combate enquanto o Jogador A viaja. No 11º tick, ambos estão livres novamente.
+1. **Custo da Ação:** Toda ação (viajar, craftar, lutar) tem um custo em tempo real (segundos/minutos).
+2. **O Estado de "Ocupado":** Ao realizar uma ação longa (ex: viagem de ~10 minutos), o jogador entra em estado "Ocupado" e aguarda.
+3. **Resolução:** O jogo libera o outro jogador para agir livremente até que ele também gaste tempo equivalente (ou entre em estado Ocupado).
+4. **O Combate:** Cada rodada de combate consome tempo equivalente a uma ação simples.
+    * *Exemplo:* O Jogador A viaja (~10 min). O Jogador B entra em combate. O Jogador B joga 10 rodadas de combate enquanto o Jogador A viaja. Ao final, ambos estão livres novamente.

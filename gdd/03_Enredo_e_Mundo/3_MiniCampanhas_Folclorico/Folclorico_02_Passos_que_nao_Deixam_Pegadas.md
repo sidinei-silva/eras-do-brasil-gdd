@@ -17,12 +17,12 @@ O "Caçador Sem Sombra" é uma lenda local que está matando animais sagrados. E
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. O Padrão**
 * O jogador deve analisar 3 locais de ataque.
 * Usando **Sabedoria Ancestral**, percebe o padrão solar.
-* **Cálculo:** Se agora é Tarde (Tick 60), o próximo ataque será no Bosque Leste.
+* **Cálculo:** Se agora é Tarde, o próximo ataque será no Bosque Leste.
 
 **2. A Emboscada**
 * O jogador deve chegar ao local antes do alvo e se esconder (Teste de Furtividade).

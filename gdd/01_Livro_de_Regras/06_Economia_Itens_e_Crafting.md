@@ -181,7 +181,7 @@ O tempo para criar um item depende de:
 | Intermediária| 1 a 2 horas          |
 | Complexa     | 1 dia ou mais        |
 
-> ⚠️ Em campanhas digitais, o tempo poderá ser representado por Ticks.
+> ⚠️ Em campanhas digitais, o tempo é medido em tempo real (minutos) ou pelo relógio do jogo (períodos do dia).
 
 ---
 
@@ -328,7 +328,7 @@ Um personagem pode **melhorar um item** progressivamente ao invés de criar outr
 
 - Itens danificados são oportunidade narrativa: forjam relações com NPCs ferreiros ou místicos.
 - Falhas críticas em combate **podem** reduzir a durabilidade, mesmo sem atingir zero.
-- Em mundos digitais persistentes, **ticks** podem representar desgaste automático por uso prolongado ou condições ambientais.
+- Em mundos digitais persistentes, o **ciclo de tempo do jogo** pode representar desgaste automático por uso prolongado ou condições ambientais.
 
 ---
 ## 6.5 – Comércio e Economia Regional
@@ -412,7 +412,7 @@ No modo online, todas as trocas são processadas pelo servidor:
 1.  **Troca Iniciada:** Os dois jogadores confirmam os itens na janela de troca.
 2.  **Validação:** O servidor verifica se ambos possuem os itens e se nenhum está em uso.
 3.  **Execução Atômica:** O servidor transfere os itens simultaneamente — impossível duplicar.
-4.  **Drop no Chão:** Itens dropados ficam no bloco por X ticks antes de desparecer. Qualquer jogador pode pegar.
+4.  **Drop no Chão:** Itens dropados ficam no bloco por um período limitado antes de desparecer. Qualquer jogador pode pegar.
 
 
 ### 📚 Considerações Finais

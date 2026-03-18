@@ -13,15 +13,15 @@ Tensões políticas e dilemas de lealdade, exigindo furtividade e inteligência 
 Anciões estão sumindo. A aldeia está em "Estado de Alerta" (NPCs guardas patrulham com mais frequência, dificultando furtividade). O jogador deve descobrir o traidor interno sem ser visto, pois qualquer alarme pode fazer o traidor fugir ou matar os reféns.
 
 **Gatilhos de Início:**
-* **Ambiente:** A aldeia entra em "Lockdown" (ninguém entra ou sai) no Tick 0 da noite.
+* **Ambiente:** A aldeia entra em "Lockdown" (ninguém entra ou sai) no início da Noite.
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Tempo)
 
 **1. A Infiltração (Stealth)**
 * O jogador deve se mover pelos blocos da aldeia evitando a linha de visão dos guardas (que têm rotas fixas de patrulha).
-* **Fator Tempo:** O traidor se encontra com seu contato externo no Tick 200 (Madrugada). O jogador deve estar posicionado para ouvir.
+* **Fator Tempo:** O traidor se encontra com seu contato externo na Madrugada. O jogador deve estar posicionado para ouvir.
 
 **2. O Confronto**
 * Ao descobrir o traidor (um antigo guerreiro banido), o jogador pode confrontá-lo ou segui-lo até o esconderijo dos reféns.

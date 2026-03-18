@@ -10,21 +10,21 @@ Fé, diplomacia espiritual e tensão mística em um ambiente social.
 
 ### 📝 Resumo Dinâmico
 
-Um "milagre" (uma luz que cura) apareceu no bosque. A Igreja quer canonizar o local, os Indígenas dizem que é um espírito perigoso. O evento só ocorre ao **meio-dia (Tick 50)**. O jogador deve estar lá para testemunhar e decidir a verdade.
+Um "milagre" (uma luz que cura) apareceu no bosque. A Igreja quer canonizar o local, os Indígenas dizem que é um espírito perigoso. O evento só ocorre ao **meio-dia**. O jogador deve estar lá para testemunhar e decidir a verdade.
 
 **Gatilhos de Início:**
 * **Ativo:** O Padre convoca voluntários para uma procissão até o local.
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas no Ciclo do Dia)
 
 **1. A Procissão**
-* Acompanhar o cortejo (Lento: 20 Ticks) ou ir na frente investigar (Rápido: 5 Ticks).
+* Acompanhar o cortejo (Lento: leva a manhã toda) ou ir na frente investigar (Rápido: leva cerca de uma hora).
 * Se chegar antes: Pode falar com o Xamã local que está tentando conter a luz.
 * Se chegar com a procissão: O Padre tenta "exorcizar" a luz, o que pode causar uma explosão.
 
-**2. O Fenômeno (Tick 50)**
+**2. O Fenômeno (Meio-dia)**
 * A luz se manifesta. É uma **Ruptura Temporal**.
 * O jogador deve fazer um teste de *Conhecimento* ou *Sabedoria* para entender o que está vendo antes que a multidão reaja.
 

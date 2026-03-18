@@ -58,7 +58,7 @@ Existem dois modos principais de campanha em *Eras do Brasil*:
 ### 🧑‍💻 RPG Digital (em desenvolvimento)
 
 - Versão digital como **MUD Moderno**: servidor Go com cliente web (browser).
-- **Mundo Persistente**, com eventos reativos e proativos, IA de NPCs e simulação contínua via tick global.
+- **Mundo Persistente**, com eventos reativos e proativos, IA de NPCs e simulação contínua via ciclo dia/noite.
 - Mundo avança mesmo sem jogadores conectados.
 - Jogabilidade por turnos (texto), com **combate tático D20** e **progresso narrativo guiado por escolhas**.
 

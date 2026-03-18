@@ -10,7 +10,7 @@ Lidar com temas de luto e memória, escolhendo entre curar o passado ou usar sua
 
 ### 📝 Resumo Dinâmico
 
-Uma antiga aldeia foi queimada pelos colonizadores décadas atrás. O local é evitado por todos, mas recentemente, durante a **Lua Nova (Ciclo Espiritual)**, os espíritos dos anciãos começaram a gritar, perturbando o sono da vila vizinha. O jogador tem uma janela de oportunidade: o ritual de purificação só pode ser feito antes que a Lua Mude (100 Ticks Globais).
+Uma antiga aldeia foi queimada pelos colonizadores décadas atrás. O local é evitado por todos, mas recentemente, durante a **Lua Nova (Ciclo Espiritual)**, os espíritos dos anciãos começaram a gritar, perturbando o sono da vila vizinha. O jogador tem uma janela de oportunidade: o ritual de purificação só pode ser feito antes que a Lua Mude (cerca de 3 dias do jogo).
 
 **Gatilhos de Início:**
 * **Passivo:** Ouvir os gritos ao passar perto do bloco "Ruínas Queimadas" à noite.
@@ -18,15 +18,15 @@ Uma antiga aldeia foi queimada pelos colonizadores décadas atrás. O local é e
 
 ---
 
-### 🕵️‍♂️ Etapas da Missão (Baseadas em Ticks)
+### 🕵️‍♂️ Etapas da Missão (Baseadas em Tempo)
 
 **1. A Preparação (Coleta de Ingredientes)**
 * O jogador precisa de "Cinzas de Fogueira Antiga" e "Erva de Sonho".
-* **Rotina de NPC:** A Herborista Tainá sabe onde encontrar a erva, mas ela só atende na sua tenda pela manhã (Ticks 0-30). À tarde, ela sai para coletar (o jogador teria que rastreá-la).
+* **Rotina de NPC:** A Herborista Tainá sabe onde encontrar a erva, mas ela só atende na sua tenda pela Manhã. À Tarde, ela sai para coletar (o jogador teria que rastreá-la).
 
 **2. A Travessia (Ruínas)**
 * O local é uma zona de "Perigo Espiritual".
-* **Mecânica de Ticks:** A cada 10 Ticks dentro das ruínas sem proteção, o jogador deve fazer um teste de Resistência Espiritual ou ganhar 1 ponto de "Perturbação".
+* **Mecânica de Tempo:** A cada alguns minutos dentro das ruínas sem proteção, o jogador deve fazer um teste de Resistência Espiritual ou ganhar 1 ponto de "Perturbação".
 
 **3. O Ritual (Decisão)**
 * O jogador encontra o **Espírito do Cacique Queimado**.
