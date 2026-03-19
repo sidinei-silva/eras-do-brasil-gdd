@@ -50,7 +50,7 @@ Os **Bandeirantes de Sangue** são uma facção NPC ativa no mundo, controlada p
 - **Facções:** Três grupos bloqueiam o caminho. O jogador deve se aliar ou enganar um deles:
     1. **Indígenas:** Querem curar a ferida.
     2. **Colonizadores:** Querem extrair a energia.
-    3. **Folclóricos:** Querem acelerar o caos.
+    3. **Folclóricos (Fatalistas):** Querem usar o caos a seu favor. *(Os Restauradores podem ser encontrados como aliados em mini-campanhas.)*
 - **Progressão da Temporada:** Se o jogador demorar muito (Fase 2 da temporada), as facções entram em guerra aberta, transformando o mapa em zona de combate.
 
 ### Sessão 3 – *A Corrida Final* (O Dungeon)

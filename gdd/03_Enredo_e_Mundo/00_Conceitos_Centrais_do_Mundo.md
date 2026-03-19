@@ -36,6 +36,17 @@ A primeira grande Ruptura — o evento que desencadeou o caos temporal e atraiu 
 
 **Os Indígenas.** Já estavam em conflito entre tribos — parte confiava nos Folclóricos e foi envolvida no ritual, parte não. O colapso da Raiz intensificou esses conflitos e fragmentou alianças ancestrais.
 
+### A Divisão Folclórica no Ato 1
+
+O fracasso do ritual dividiu permanentemente os Folclóricos em duas subfacções:
+
+- **Restauradores:** Sentem-se responsáveis pelo colapso e querem consertar o que fizeram. São aliados potenciais do jogador — ajudam com conhecimento sobre a Raiz e a Ruptura. Buscam fechar a fenda e restaurar o equilíbrio.
+- **Fatalistas:** Acham que o colapso é irreversível e querem usar o caos a seu favor — absorver poder da Raiz, dominar territórios, ou simplesmente sobreviver ao que vem. São antagonistas potenciais.
+
+<!-- TODO: alinhar as 6 mini-campanhas Folclóricas com a divisão Restauradores/Fatalistas -->
+
+Essa divisão explica por que, na Sessão 2 do Ato 1, os Folclóricos aparecem como uma facção ambígua: dependendo de qual subfacção o jogador encontra, eles podem ser aliados ou inimigos.
+
 ---
 
 ## 3. Dom da Revivência
