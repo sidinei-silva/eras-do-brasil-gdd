@@ -93,8 +93,8 @@ A conclusão do Ato 1 marca a transição do personagem para o "Mid-Game".
     - *Efeito*: Um fragmento de memória pura da Raiz. Ao ser consumido, ele invoca o conhecimento de mestres ancestrais diretamente na mente do personagem.
     - *Garantia:* Todos os jogadores que completarem a missão (vencedores ou sobreviventes) recebem este item. Ninguém fica travado.
     - *Mecânica*: Permite evoluir para o Tier 2 sem a necessidade de um Mentor ou Missão de Evolução. (Representa o amadurecimento do personagem pelo contato direto com a Ruptura).
-2. **Desbloqueio do Dom da Revivência (Troca de Origem):**
-    - O contato direto com a Ruptura fortalece o Dom latente do personagem. Ele ganha o item **"Espelho do Eco"**, que permite visitar santuários para trocar de Origem (ex: jogar como Colonizador sendo Indígena).
+2. **Desbloqueio da Troca de Origem (Espelho do Eco):**
+    - O contato direto com a Ruptura amplia a conexão do personagem com a Raiz do Mundo. Ele ganha o item consumível **"Espelho do Eco"**, que permite visitar santuários para trocar de Origem (ex: acessar classes Folclóricas sendo Indígena). **Nota:** a troca de classe dentro da mesma origem já está disponível desde o início do jogo — o Espelho desbloqueia apenas a troca de *origem*.
 3. **Acesso ao Mapa Aberto (Tier 2):**
     - Novas regiões (Sertão, Costa, Montanhas) são desbloqueadas no mapa de viagem.
 
