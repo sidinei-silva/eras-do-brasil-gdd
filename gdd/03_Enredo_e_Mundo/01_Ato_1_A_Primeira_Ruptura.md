@@ -5,7 +5,7 @@
 > "Antes da chegada oficial, houve sussurros. E acima de tudo, houve algo que não podia esperar."
 
 **Contexto Global:**
-Estamos em 1497. Uma expedição secreta portuguesa e tribos locais convergem para um ponto de ruptura na floresta. O tempo está colapsando. O jogador não é o único tentando resolver isso.
+Estamos em 1497. Um ritual Folclórico fracassado causou o colapso parcial da Raiz do Mundo, abrindo portais temporais, mutando a fauna e a flora, e criando o Guardião da Fenda como resposta defensiva da Raiz. A tempestade resultante desviou a frota de Cabral para o Brasil. Colonizadores, tribos indígenas em conflito e Folclóricos divididos convergem para o epicentro da Ruptura. O jogador não é o único tentando resolver isso.
 
 ---
 
