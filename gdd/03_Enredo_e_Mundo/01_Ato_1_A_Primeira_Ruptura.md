@@ -62,11 +62,15 @@ Os **Bandeirantes de Sangue** são uma facção NPC ativa no mundo, controlada p
 
 ### Sessão 4 – *A Primeira Ruptura* (O Clímax)
 
-**Objetivo:** O Boss "Guardião da Fenda".
+**Objetivo:** Enfrentar o **Guardião da Fenda** — uma manifestação defensiva da Raiz do Mundo.
+
+O Guardião da Fenda **não é um vilão**. Ele é uma resposta imunológica da própria Raiz, criado para selar a Ruptura a qualquer custo — inclusive eliminando quem se aproximar. Ele ataca os jogadores não por malícia, mas porque qualquer presença próxima à fenda é percebida como ameaça. Derrotá-lo (ou acalmá-lo) é necessário para acessar e estabilizar a Ruptura.
+
+<!-- TODO: definir stats completos do Guardião da Fenda (PV, Defesa, ações de combate, loot) -->
 
 - **Dificuldade Dinâmica:**
-    - *Chegou cedo na temporada:* O Boss está contido (Luta padrão).
-    - *Chegou tarde (Fase 3+):* O Boss absorveu a ruptura. Ele é "Ascendido" (Ataques em área, Dano massivo).
+    - *Chegou cedo na temporada:* O Guardião está contido (Luta padrão).
+    - *Chegou tarde (Fase 3+):* O Guardião absorveu a energia da ruptura. Ele é "Ascendido" (Ataques em área, Dano Espiritual massivo).
 
 ---
 

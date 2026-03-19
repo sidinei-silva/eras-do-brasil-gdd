@@ -968,9 +968,11 @@ Esta seção indica onde os itens podem ser encontrados, comprados ou saqueados 
 
 ### 6.9 A Ruptura (Zona Final)
 
-**Tipo:** Zona de Distorção Temporal  
-**Perigos:** Guardião da Fenda (boss final), anomalias mágicas  
-**Recursos:** Nenhum (apenas narrativo)  
+**Tipo:** Zona de Distorção Temporal
+**Perigos:** Guardião da Fenda (boss final), anomalias mágicas
+**Recursos:** Nenhum (apenas narrativo)
+
+**Nota sobre o Guardião da Fenda:** O Guardião é uma manifestação defensiva da Raiz do Mundo, não um vilão. Ele foi criado automaticamente pela Raiz para selar a Ruptura e ataca qualquer criatura que se aproxime da fenda. Sua derrota (ou pacificação) é necessária para estabilizar o portal.  
 
 **Loot:**
 - Fragmento da Raiz (Lendário, quest item)
