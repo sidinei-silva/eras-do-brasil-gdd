@@ -320,11 +320,39 @@ O sistema de magia utiliza **dois tipos de custos**, dependendo da magia:
 | Tipo de Magia | Custo Padrão                    |
 |----------------|---------------------------------|
 | **Magias Simples/Comuns** | Nenhum custo material ou energético; limitado por recarga por turno ou concentração. |
-| **Magias Avançadas** | Requer **Fadiga Espiritual:** após 3 usos consecutivos, personagem faz um **Teste de Vigor (CD 12)** para não sofrer **Nível de Exaustão Espiritual**. |
+| **Magias Avançadas** | Requer **Fadiga Espiritual:** após 3 usos consecutivos, personagem faz um **Teste de Vigor (CD 12)** para não sofrer **1 Nível de Fadiga Espiritual**. |
 | **Rituais** | Consomem **Itens Rituais** específicos ou materiais (ex.: ervas, pigmentos, velas, relíquias). |
 | **Magias Épicas** | Sempre exigem **Itens Rituais + Tempo + Suporte de NPCs ou outros jogadores**. |
 
 > 💡 A tabela de custos materiais estará detalhada no [[📖 Livro de Magias e Rituais]].
+
+---
+
+### 🌫️ Fadiga Espiritual — O Limitador de Magia
+
+A **Fadiga Espiritual** é o principal recurso que limita o uso contínuo de magias avançadas. Diferente da Fadiga Física (causada por esforço corporal, marchas e combate prolongado), a Fadiga Espiritual representa o **desgaste da conexão do personagem com a Raiz do Mundo e os espíritos**.
+
+**Níveis de Fadiga Espiritual:**
+
+| Nível | Efeito |
+|-------|--------|
+| 1 | Desvantagem em testes de conjuração. |
+| 2 | CD de todas as magias do personagem aumenta em +2. |
+| 3 | O personagem não pode conjurar magias avançadas ou épicas. |
+| 4+ | O personagem fica **Incapacitado espiritualmente** — não pode usar nenhuma magia até descansar. |
+
+**Como acumular Fadiga Espiritual:**
+- Usar 3 magias avançadas consecutivas sem descanso e falhar no Teste de Vigor (CD 12).
+- Falha crítica em rituais avançados ou épicos.
+- Exposição prolongada a zonas de corrupção espiritual.
+
+**Como recuperar:**
+- **Descanso Curto (1 hora):** Remove 1 nível de Fadiga Espiritual.
+- **Descanso Longo (8 horas):** Remove toda a Fadiga Espiritual.
+- **Poção de Erva-Lua / Chá de Erva-Lua:** Remove 1 nível de Fadiga Espiritual (consumível).
+- **Ritual de Purificação em local sagrado:** Remove toda a Fadiga Espiritual.
+
+> ⚠️ Fadiga Espiritual e Fadiga Física são sistemas independentes que coexistem. Um personagem pode estar fisicamente descansado mas espiritualmente exausto, e vice-versa.
 
 ---
 

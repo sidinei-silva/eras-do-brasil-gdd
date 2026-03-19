@@ -123,7 +123,7 @@ Para garantir que o "Completionista" tenha motivos para visitar tudo, os recurso
 | Recurso | Onde Encontrar (Principal) | Uso Principal |
 | :--- | :--- | :--- |
 | **Madeira de Ferro** | Floresta do Norte | Crafting de Armas e Escudos Leves |
-| **Erva-Lua** | Rio das Marés (Noite) | Poções de Mana e Rituais |
+| **Erva-Lua** | Rio das Marés (Noite) | Poções de recuperação espiritual e Rituais |
 | **Minério de Sangue** | Pico da Neblina (Cavernas) | Melhoria de Armas (Dano +1) |
 | **Cinzas Espirituais** | Ruínas Queimadas | Itens Mágicos e Proteção contra Maldição |
 | **Comida/Suprimentos** | Vila (Compra) ou Rio (Pesca) | Recuperação de PV em descanso |

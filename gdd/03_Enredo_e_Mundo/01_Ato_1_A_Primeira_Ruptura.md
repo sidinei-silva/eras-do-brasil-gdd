@@ -104,5 +104,5 @@ A conclusão do Ato 1 marca a transição do personagem para o "Mid-Game".
 
 O **Estado do Mundo** registra o resultado da temporada:
 
-- **Vitória (Ruptura Fechada):** A floresta floresce com mana. A vila inicial prospera.
+- **Vitória (Ruptura Fechada):** A floresta floresce com energia espiritual. A vila inicial prospera.
 - **Sobrevivência (Ruptura Explodiu):** A floresta vira o "Bosque das Sombras". Monstros de Tier 2 aparecem lá. A vila inicial é evacuada.

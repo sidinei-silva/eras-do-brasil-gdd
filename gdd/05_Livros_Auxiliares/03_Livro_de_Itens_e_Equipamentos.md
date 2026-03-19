@@ -314,7 +314,7 @@ Subtipo: Poção
 Matriz: Média / Incomum
 ```
 
-**Efeito:** Restaura 2d4+2 Mana  
+**Efeito:** Reduz 1 nível de Fadiga Espiritual
 **Propriedades:**
 - Uso: Ação Principal
 - Só pode ser coletada à noite sob lua cheia
@@ -992,7 +992,7 @@ Esta seção indica onde os itens podem ser encontrados, comprados ou saqueados 
 | ITM_ARM_005 | Zarabatana Ritual | Arma | Média/Incomum | 1d4+efeito | 45 UC | 1u |
 | ITM_ARM_006 | Veste de Fibra Trançada | Armadura | Média/Comum | +1 CA | 25 UC | 5u |
 | ITM_ARM_007 | Couraça de Couro de Veado | Armadura | Alta/Incomum | +2 CA | 60 UC | 8u |
-| ITM_CNS_001 | Chá de Erva-Lua | Consumível | Média/Incomum | 2d4+2 Mana | 30 UC | 0,5u |
+| ITM_CNS_001 | Chá de Erva-Lua | Consumível | Média/Incomum | -1 Fadiga Espiritual | 30 UC | 0,5u |
 | ITM_CNS_002 | Carne Seca de Capivara | Consumível | Baixa/Comum | 1d6 PV | 5 UC | 0,5u |
 | ITM_CNS_003 | Veneno de Sapo-Cururu | Consumível | Média/Raro | Veneno 3t | 50 UC | 0,2u |
 | ITM_CNS_004 | Mel de Jataí | Consumível | Média/Incomum | 1d4 PV+buff | 20 UC | 0,3u |
