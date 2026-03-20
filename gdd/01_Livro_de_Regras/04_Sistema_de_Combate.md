@@ -494,6 +494,22 @@ O mestre (ou o sistema digital futuramente) pode, a critério da narrativa, apli
 | 1 natural  | Falha automática + Vulnerável (+2 para quem atacar até próximo turno) |
 
 ---
+## 🗡️ Tipos de Dano
+
+Todo ataque, habilidade ou efeito que causa dano possui um **tipo de dano** associado. O tipo de dano determina como a defesa e a resistência do alvo interagem com o ataque.
+
+| Tipo de Dano | Descrição | Resistência |
+|:---|:---|:---|
+| **Corte** | Lâminas, garras, objetos cortantes | Defesa Base (armadura) |
+| **Perfurante** | Flechas, lanças, mordidas, projéteis | Defesa Base (armadura) |
+| **Contundente** | Clavas, socos, quedas, impacto | Defesa Base (armadura) |
+| **Espiritual** | Ataques sobrenaturais, maldições diretas, toque de espíritos | Teste de Resistência: **Sabedoria Ancestral** |
+| **Elemental** | Fogo, gelo, raio, ácido | Teste de Resistência: varia conforme o elemento |
+| **Veneno** | Toxinas, peçonhas, gases nocivos | Teste de Resistência: **Vigor** |
+
+> ⚠️ **Dano Espiritual** ignora armadura física. A única defesa contra ele é a **Sabedoria Ancestral** do alvo em um teste de resistência. Criaturas espirituais (como o Espírito Menor) causam exclusivamente dano Espiritual.
+
+---
 ## 🛡️ Defesa, Esquiva e Resistência
 
 Além de atacar, os personagens em *Eras do Brasil* precisam se proteger de ataques físicos, mágicos ou efeitos adversos.

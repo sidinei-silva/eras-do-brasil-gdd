@@ -59,7 +59,7 @@ A filosofia de design de mundo de _Eras do Brasil_ é perfeitamente ilustrada pe
     - **Regra Principal:** Impõe a Regra de Exaustão, exigindo testes de Vigor para evitar ganhar níveis de Fadiga. Em combate, ataques à distância têm Desvantagem e empurrões jogam o alvo 2 metros a mais. O Pico se torna, assim, um desafio tanto de sobrevivência contra o ambiente quanto de posicionamento tático em combate.
 - **Ruínas Queimadas:**
     - **Terreno:** Terra Arrasada/Pântano.
-    - **Regra Principal:** Governada pela Regra de Terror, onde personagens com baixa sanidade sofrem alucinações. Os inimigos aqui são do tipo Espiritual. A zona testa não apenas o equipamento do jogador, mas sua resiliência mental, transformando a exploração em um horror psicológico.
+    - **Regra Principal:** Governada pela Regra de Terror, onde personagens que falharem em um teste de **Resistência contra Medo (Presença CD 13)** sofrem alucinações. Os inimigos aqui são do tipo Espiritual. A zona testa não apenas o equipamento do jogador, mas sua resiliência mental, transformando a exploração em um horror psicológico.
 
 Este mundo dinâmico e reativo não é apenas um pano de fundo — é a arena onde a jogabilidade central se desenrola, forjando a lenda de cada jogador.
 

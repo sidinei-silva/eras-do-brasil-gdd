@@ -125,8 +125,8 @@ _Design Note: Introduz o ciclo de jogabilidade de coleta de recursos. O bônus d
   "propriedades": [
     {
       "tipo": "efeito",
-      "nome": "Restaura Mana",
-      "valor": "2d4+2"
+      "nome": "Reduz Fadiga Espiritual",
+      "valor": "1 nível"
     },
     {
       "tipo": "uso",
@@ -134,13 +134,13 @@ _Design Note: Introduz o ciclo de jogabilidade de coleta de recursos. O bônus d
     }
   ],
   "durabilidade": null,
-  "idReceitaCrafting": "receita_alquimia_pocao_mana",
+  "idReceitaCrafting": "receita_alquimia_pocao_fadiga_espiritual",
   "empilhavel": true,
   "maxPilha": 5
 }
 ```
 
-_Design Note: Este consumível estabelece a mecânica de gerenciamento de mana e a importância da 'Alquimia'. Sua raridade 'Incomum' e o vínculo com o recurso noturno 'Erva-Lua' ensinam ao jogador que a exploração contextual (hora do dia) é recompensada._
+_Design Note: Este consumível estabelece a mecânica de gerenciamento de Fadiga Espiritual e a importância da 'Alquimia'. Sua raridade 'Incomum' e o vínculo com o recurso noturno 'Erva-Lua' ensinam ao jogador que a exploração contextual (hora do dia) é recompensada._
 
 ### 1.5. Recurso: Minério de Sangue
 

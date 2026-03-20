@@ -48,5 +48,5 @@ O Sábio revela que a profecia não era sobre o prêmio, mas sobre **quem** o pe
 
 **Expansão Possível:**
 * **O Ciclo de Sábios:** Descobrir outros "enigmistas" que guardam fragmentos do futuro em outras regiões.
-* **Viagem Temporal:** A "Moeda" pode eventualmente permitir acesso a uma "Ecoera" (futuro alternativo).
+* **Viagem Temporal:** A "Moeda" pode eventualmente permitir acesso a uma era futura alternativa através da Raiz do Mundo.
 * **O Paradoxo:** O jogador pode ser forçado a escolher entre salvar alguém ou preservar a linha do tempo correta.

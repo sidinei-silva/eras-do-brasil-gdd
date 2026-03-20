@@ -42,12 +42,12 @@ O personagem começa no **Nível 1** e pode progredir até o **Nível 15** (nív
 | 2     | 100                 | 200                  | Tier 1      |
 | 3     | 300                 | 400                  | Tier 1      |
 | 4     | 700                 | 600                  | Tier 1      |
-| 5     | 1.300               | 900                  | Tier 1      |
+| 5     | 1.300               | 900                  | Tier 2      |
 | 6     | 2.200               | 1.300                | Tier 2      |
 | 7     | 3.500               | 1.800                | Tier 2      |
 | 8     | 5.300               | 2.400                | Tier 2      |
 | 9     | 7.700               | 3.100                | Tier 2      |
-| 10    | 10.800              | 4.000                | Tier 2      |
+| 10    | 10.800              | 4.000                | Tier 3      |
 | 11    | 14.800              | 5.200                | Tier 3      |
 | 12    | 20.000              | 6.500                | Tier 3      |
 | 13    | 26.500              | 8.000                | Tier 3      |
@@ -67,7 +67,7 @@ Ao subir de nível, o personagem recebe os seguintes benefícios:
 | Benefício | Descrição |
 |-----------|-----------|
 | **+PV** | PV por nível da classe ativa + Modificador de Vigor |
-| **Desbloqueio de Tier** | Níveis 6 e 11 permitem evoluir para Tier 2 e 3 respectivamente |
+| **Desbloqueio de Tier** | Níveis 5 e 10 permitem evoluir para Tier 2 e 3 respectivamente |
 
 ### Benefícios Especiais (Níveis Específicos)
 

@@ -96,7 +96,7 @@ Uma montanha sagrada envolta em nuvens que sussurram.
 O local de um massacre antigo. O chão é cinza e o ar cheira a fumaça eterna.
 * **Tipo de Terreno:** Terra Arrasada / Pântano.
 * **Custo de Movimento:** Moderado (~10 min reais).
-* **Regra de Terror:** Inimigos aqui são do tipo *Espiritual*. Personagens com Sanidade/Moral baixa sofrem alucinações (Textos falsos na interface ou sons de passos inexistentes).
+* **Regra de Terror:** Inimigos aqui são do tipo *Espiritual*. Personagens que falharem em um teste de **Resistência contra Medo (Presença CD 13)** sofrem alucinações (Textos falsos na interface ou sons de passos inexistentes).
 
 ---
 
@@ -123,7 +123,7 @@ Para garantir que o "Completionista" tenha motivos para visitar tudo, os recurso
 | Recurso | Onde Encontrar (Principal) | Uso Principal |
 | :--- | :--- | :--- |
 | **Madeira de Ferro** | Floresta do Norte | Crafting de Armas e Escudos Leves |
-| **Erva-Lua** | Rio das Marés (Noite) | Poções de Mana e Rituais |
+| **Erva-Lua** | Rio das Marés (Noite) | Poções de recuperação espiritual e Rituais |
 | **Minério de Sangue** | Pico da Neblina (Cavernas) | Melhoria de Armas (Dano +1) |
 | **Cinzas Espirituais** | Ruínas Queimadas | Itens Mágicos e Proteção contra Maldição |
 | **Comida/Suprimentos** | Vila (Compra) ou Rio (Pesca) | Recuperação de PV em descanso |

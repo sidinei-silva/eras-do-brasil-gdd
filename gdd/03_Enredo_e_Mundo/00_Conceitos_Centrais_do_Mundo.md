@@ -22,6 +22,33 @@ Essa raiz pulsa mais forte em momentos de crise e mudança, abrindo portais natu
 
 ---
 
+## 2.1. A Causa da Ruptura de 1497
+
+A primeira grande Ruptura — o evento que desencadeou o caos temporal e atraiu os Colonizadores ao Brasil — foi causada por um **ritual Folclórico fracassado** na Raiz do Mundo.
+
+**O Presságio.** Um dos seres Folclóricos mais antigos recebeu uma visão de que algo terrível cruzaria o oceano e mudaria a terra para sempre — uma profecia da chegada dos Colonizadores. Nem todos os Folclóricos acreditaram no presságio, e isso dividiu profundamente a facção entre os que buscaram proteção e os que ignoraram o aviso.
+
+**O Ritual na Raiz.** Os Folclóricos que acreditaram no presságio tentaram usar a Raiz do Mundo para criar uma barreira protetora sobre a terra. Mas a Raiz não era para ser tocada — é uma entidade equilibrada que conecta todas as eras. O ritual fracassou. A Raiz entrou em colapso parcial, causando: portais temporais abertos, fauna e flora mutadas, distorções geográficas, e a criação do **Guardião da Fenda** — uma manifestação defensiva da própria Raiz.
+
+<!-- TODO: definir nome e identidade do Folclórico que liderou o ritual -->
+
+**A Convergência.** A tempestade causada pelo colapso da Raiz desviou a frota de Cabral — que navegava para as Índias — para o Brasil. Os Colonizadores chegaram no meio do caos. A profecia se cumpriu, mas de forma inesperada: foi o próprio ato de tentar evitá-la que a tornou realidade.
+
+**Os Indígenas.** Já estavam em conflito entre tribos — parte confiava nos Folclóricos e foi envolvida no ritual, parte não. O colapso da Raiz intensificou esses conflitos e fragmentou alianças ancestrais.
+
+### A Divisão Folclórica no Ato 1
+
+O fracasso do ritual dividiu permanentemente os Folclóricos em duas subfacções:
+
+- **Restauradores:** Sentem-se responsáveis pelo colapso e querem consertar o que fizeram. São aliados potenciais do jogador — ajudam com conhecimento sobre a Raiz e a Ruptura. Buscam fechar a fenda e restaurar o equilíbrio.
+- **Fatalistas:** Acham que o colapso é irreversível e querem usar o caos a seu favor — absorver poder da Raiz, dominar territórios, ou simplesmente sobreviver ao que vem. São antagonistas potenciais.
+
+<!-- TODO: alinhar as 6 mini-campanhas Folclóricas com a divisão Restauradores/Fatalistas -->
+
+Essa divisão explica por que, na Sessão 2 do Ato 1, os Folclóricos aparecem como uma facção ambígua: dependendo de qual subfacção o jogador encontra, eles podem ser aliados ou inimigos.
+
+---
+
 ## 3. Dom da Revivência
 
 Todos que vivem na região afetada pela Raiz do Mundo estão sujeitos ao seu poder. O **Dom da Revivência** não é um presente especial concedido a um escolhido — é uma **adaptação natural** que surge pela exposição prolongada à Raiz. Alguns desenvolvem esse Dom mais fortemente que outros, mas não há predestinação.

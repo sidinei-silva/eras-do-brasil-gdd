@@ -11,34 +11,25 @@
 ## Furos de Lore
 _Resolver antes de qualquer outra coisa — inconsistências que afetam múltiplos documentos._
 
-- [ ] **Causa da Ruptura de 1497** — definir origem canônica do evento
-  AC: `03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md` e `01_Ato_1.md` alinhados com causa, agente e consequência
+- [x] **~~Causa da Ruptura de 1497~~** — Resolvido (Furo 2): Ritual Folclórico fracassado na Raiz do Mundo causou a Ruptura. Definido em `00_Conceitos_Centrais_do_Mundo.md` §2.1.
 
-- [ ] **Dom da Revivência — latente ou ativo no Ato 1?** — definir estado inicial da mecânica de troca de classe
-  AC: `02_Livro_de_Classes/02_Alternancia_de_Classes.md` e `03_Enredo_e_Mundo/01_Ato_1.md` com a mesma resposta
+- [x] **~~Dom da Revivência — latente ou ativo no Ato 1?~~** — Resolvido (Furo 1): Troca de classe disponível desde o início; troca de origem requer Espelho do Eco (desbloqueado no fim do Ato 1). Ajustado em `01_Ato_1.md` e `03_Criacao_de_Personagem.md`.
 
-- [ ] **Motivação da Facção Folclórica no Ato 1** — por que Seres Folclóricos "aceleram o caos"?
-  AC: `03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md` documenta motivação com pelo menos 1 razão concreta
+- [x] **~~Motivação da Facção Folclórica no Ato 1~~** — Resolvido (Furo 3): Folclóricos divididos em Restauradores (querem fechar a Ruptura) e Fatalistas (querem usar o caos). Definido em `00_Conceitos_Centrais_do_Mundo.md`.
 
-- [ ] **Contradição de Nível para Tier 2/3** — resolver inconsistência entre documentos
-  AC: `02_Livro_de_Classes/01_Tiers_e_Evolucao.md` é fonte de verdade; todos os outros docs alinhados
+- [x] **~~Contradição de Nível para Tier 2/3~~** — Resolvido (Furo 6): Tabela XP em `03B_Progressao_e_Experiencia.md` alinhada com fonte de verdade (Tier 2 = Nível 5, Tier 3 = Nível 10).
 
-- [ ] **Mana vs Fadiga** — definir qual sistema o jogo usa (ou como os dois coexistem)
-  AC: `01_Livro_de_Regras/02_Mecanicas_Basicas.md` documenta o sistema único com nome, custo e recuperação
+- [x] **~~Mana vs Fadiga~~** — Resolvido (Furo 4): Mana removida. Sistema usa Fadiga Espiritual como limitador de magia (independente da Fadiga Física). Seção formal adicionada em `07_Magia_e_Espiritualidade.md`. Itens, dados JSON e atlas atualizados.
 
-- [ ] **Dano Espiritual e Exaustão Espiritual** — definir como tipos mecânicos
-  AC: `01_Livro_de_Regras/04_Sistema_de_Combate.md` lista esses tipos com efeito e resistência
+- [x] **~~Dano Espiritual e Exaustão Espiritual~~** — Resolvido (Furo 5): Dano Espiritual adicionado como tipo oficial em `04_Sistema_de_Combate.md` (resistência via Sabedoria Ancestral). "Exaustão Espiritual" padronizado para "Fadiga Espiritual".
 
 - [x] **~~Escala de Ticks~~** — Resolvido: Tick removido como mecânica exposta ao jogador (ADR-007). Substituído por: tempo real (segundos/minutos), relógio do jogo (Manhã/Tarde/Noite/Madrugada), turnos (combate). 1 dia do jogo ≈ 2–4h reais.
 
-- [ ] **Guardião da Fenda — identidade, backstory e stats do boss final**
-  AC: Bestiário Ato 1 tem entrada do boss com lore, stats Tier 3 e mecânica especial de combate
+- [x] **~~Guardião da Fenda — identidade, backstory e stats do boss final~~** — Resolvido (Furo 7): Guardião é manifestação defensiva da Raiz do Mundo (não é vilão). Identidade definida em `01_Ato_1.md` Sessão 4 e `03_Livro_de_Itens_e_Equipamentos.md`. Stats completos pendentes (TODO).
 
-- [ ] **Sanidade/Moral — definir ou remover do sistema**
-  AC: `01_Livro_de_Regras/02_Mecanicas_Basicas.md` documenta a decisão (existe com regras claras OU foi removido)
+- [x] **~~Sanidade/Moral — definir ou remover do sistema~~** — Resolvido (Furo 8): Sistema de Sanidade removido. Substituído por teste de Resistência contra Medo (Presença CD 13) nas Ruínas Queimadas. Atualizado em Atlas e Game Pitch.
 
-- [ ] **Ecoera — definir ou remover conceito**
-  AC: `03_Enredo_e_Mundo/00_Conceitos_Centrais_do_Mundo.md` documenta a decisão (definição + uso OU removido com justificativa)
+- [x] **~~Ecoera — definir ou remover conceito~~** — Resolvido (Furo 9): Conceito removido por não estar definido no lore canônico. Referência em mini-campanha substituída por "era futura alternativa através da Raiz do Mundo".
 
 - [ ] **Mini-campanhas sem impacto sinérgico no Ato 1** — definir como elas alimentam a campanha principal
   AC: `03_Enredo_e_Mundo/03_Adaptacao_Digital_e_Campanhas.md` define como ≥3 mini-campanhas têm consequência na campanha principal

@@ -5,7 +5,7 @@
 > "Antes da chegada oficial, houve sussurros. E acima de tudo, houve algo que não podia esperar."
 
 **Contexto Global:**
-Estamos em 1497. Uma expedição secreta portuguesa e tribos locais convergem para um ponto de ruptura na floresta. O tempo está colapsando. O jogador não é o único tentando resolver isso.
+Estamos em 1497. Um ritual Folclórico fracassado causou o colapso parcial da Raiz do Mundo, abrindo portais temporais, mutando a fauna e a flora, e criando o Guardião da Fenda como resposta defensiva da Raiz. A tempestade resultante desviou a frota de Cabral para o Brasil. Colonizadores, tribos indígenas em conflito e Folclóricos divididos convergem para o epicentro da Ruptura. O jogador não é o único tentando resolver isso.
 
 ---
 
@@ -50,7 +50,7 @@ Os **Bandeirantes de Sangue** são uma facção NPC ativa no mundo, controlada p
 - **Facções:** Três grupos bloqueiam o caminho. O jogador deve se aliar ou enganar um deles:
     1. **Indígenas:** Querem curar a ferida.
     2. **Colonizadores:** Querem extrair a energia.
-    3. **Folclóricos:** Querem acelerar o caos.
+    3. **Folclóricos (Fatalistas):** Querem usar o caos a seu favor. *(Os Restauradores podem ser encontrados como aliados em mini-campanhas.)*
 - **Progressão da Temporada:** Se o jogador demorar muito (Fase 2 da temporada), as facções entram em guerra aberta, transformando o mapa em zona de combate.
 
 ### Sessão 3 – *A Corrida Final* (O Dungeon)
@@ -62,11 +62,15 @@ Os **Bandeirantes de Sangue** são uma facção NPC ativa no mundo, controlada p
 
 ### Sessão 4 – *A Primeira Ruptura* (O Clímax)
 
-**Objetivo:** O Boss "Guardião da Fenda".
+**Objetivo:** Enfrentar o **Guardião da Fenda** — uma manifestação defensiva da Raiz do Mundo.
+
+O Guardião da Fenda **não é um vilão**. Ele é uma resposta imunológica da própria Raiz, criado para selar a Ruptura a qualquer custo — inclusive eliminando quem se aproximar. Ele ataca os jogadores não por malícia, mas porque qualquer presença próxima à fenda é percebida como ameaça. Derrotá-lo (ou acalmá-lo) é necessário para acessar e estabilizar a Ruptura.
+
+<!-- TODO: definir stats completos do Guardião da Fenda (PV, Defesa, ações de combate, loot) -->
 
 - **Dificuldade Dinâmica:**
-    - *Chegou cedo na temporada:* O Boss está contido (Luta padrão).
-    - *Chegou tarde (Fase 3+):* O Boss absorveu a ruptura. Ele é "Ascendido" (Ataques em área, Dano massivo).
+    - *Chegou cedo na temporada:* O Guardião está contido (Luta padrão).
+    - *Chegou tarde (Fase 3+):* O Guardião absorveu a energia da ruptura. Ele é "Ascendido" (Ataques em área, Dano Espiritual massivo).
 
 ---
 
@@ -93,8 +97,8 @@ A conclusão do Ato 1 marca a transição do personagem para o "Mid-Game".
     - *Efeito*: Um fragmento de memória pura da Raiz. Ao ser consumido, ele invoca o conhecimento de mestres ancestrais diretamente na mente do personagem.
     - *Garantia:* Todos os jogadores que completarem a missão (vencedores ou sobreviventes) recebem este item. Ninguém fica travado.
     - *Mecânica*: Permite evoluir para o Tier 2 sem a necessidade de um Mentor ou Missão de Evolução. (Representa o amadurecimento do personagem pelo contato direto com a Ruptura).
-2. **Desbloqueio do Dom da Revivência (Troca de Origem):**
-    - O contato direto com a Ruptura fortalece o Dom latente do personagem. Ele ganha o item **"Espelho do Eco"**, que permite visitar santuários para trocar de Origem (ex: jogar como Colonizador sendo Indígena).
+2. **Desbloqueio da Troca de Origem (Espelho do Eco):**
+    - O contato direto com a Ruptura amplia a conexão do personagem com a Raiz do Mundo. Ele ganha o item consumível **"Espelho do Eco"**, que permite visitar santuários para trocar de Origem (ex: acessar classes Folclóricas sendo Indígena). **Nota:** a troca de classe dentro da mesma origem já está disponível desde o início do jogo — o Espelho desbloqueia apenas a troca de *origem*.
 3. **Acesso ao Mapa Aberto (Tier 2):**
     - Novas regiões (Sertão, Costa, Montanhas) são desbloqueadas no mapa de viagem.
 
@@ -104,5 +108,5 @@ A conclusão do Ato 1 marca a transição do personagem para o "Mid-Game".
 
 O **Estado do Mundo** registra o resultado da temporada:
 
-- **Vitória (Ruptura Fechada):** A floresta floresce com mana. A vila inicial prospera.
+- **Vitória (Ruptura Fechada):** A floresta floresce com energia espiritual. A vila inicial prospera.
 - **Sobrevivência (Ruptura Explodiu):** A floresta vira o "Bosque das Sombras". Monstros de Tier 2 aparecem lá. A vila inicial é evacuada.

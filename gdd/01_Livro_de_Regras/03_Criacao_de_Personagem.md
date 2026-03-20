@@ -174,9 +174,10 @@ A ficha contém:
 
 ## 🔁 3.9 – Evolução de Classe e Alternância
 
-- O jogador pode desbloquear novas classes com:
+- **A troca de classe (dentro da mesma origem) está disponível desde o início do jogo.** A exposição natural à Raiz do Mundo justifica essa capacidade — o Dom da Revivência não é algo que se "ativa", é uma adaptação natural.
+- O jogador pode desbloquear novas classes da mesma origem com:
   - **Moeda de Classe**
-  - **Missão com NPC**
+  - **Missão com NPC Mentor**
 - Classes evoluem em **Tiers (1 a 3)**
 - Pode alternar entre classes **fora de combate**
 - Ao alternar:
