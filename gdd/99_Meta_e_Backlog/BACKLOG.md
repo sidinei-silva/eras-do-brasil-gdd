@@ -145,5 +145,11 @@ _Tarefas geradas pela sessão de decisões narrativas e mecânicas._
 
 ---
 
+## Decisões 2026-03-20 — Arquitetura do Mapa
+
+- [x] **Arquitetura do Mapa — estrutura de camadas e regiões** — Resolvido: 3 camadas (Mapa-Múndi → Regional → Local), 5 regiões planejadas, zonas de nível da Mata Costeira definidas. Ver `01_Livro_de_Regras/05B_Arquitetura_do_Mapa.md`.
+
+---
+
 ## Concluído
 _Mover itens aqui quando prontos._
