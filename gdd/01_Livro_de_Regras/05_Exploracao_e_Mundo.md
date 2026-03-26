@@ -22,6 +22,16 @@ O sistema de exploração foi projetado para:
 A exploração em *Eras do Brasil* é o elo entre narrativa, descobertas e interação com o mundo vivo.
 Mais do que apenas "se mover", explorar significa interagir com cenários, recursos, perigos, habitantes e eventos — tudo isso respeitando o ritmo do tempo no mundo e suas reações.
 
+### 🗺️ Estrutura do Mundo: Camadas de Navegação
+
+O mundo é organizado em 3 camadas de navegação:
+
+1. **Mapa-Múndi (Regiões):** Áreas geográficas grandes do Brasil (Mata Costeira, Sertão, Serra, etc.). Cada temporada abre novas regiões.
+2. **Mapa Regional (Zonas):** 8–15 zonas conectadas dentro de cada região. É o sistema de Blocos de Cenário descrito neste capítulo.
+3. **Mapa Local (Sub-locais):** Expansão futura de zonas populosas em sub-áreas. Não disponível no MVP.
+
+Para detalhes completos da estrutura de regiões e o mapa-múndi, ver [Arquitetura do Mapa](05B_Arquitetura_do_Mapa.md).
+
 > Em um mundo onde as eras se entrelaçam, cada passo pode revelar um segredo ancestral, um evento espiritual ou uma nova ameaça.
 
 ---

@@ -1,5 +1,7 @@
 # 🗺️ Atlas do Eco: A Mata Costeira (Ato 1)
 
+> **Contexto:** A Mata Costeira é a Região 1 do mundo de *Eras do Brasil* (Temporada 1, Nível 1–5). Para a visão macro de todas as regiões, ver [Arquitetura do Mapa](../01_Livro_de_Regras/05B_Arquitetura_do_Mapa.md).
+
 > *"A terra aqui não é muda. O chão lembra de quem pisou nele. O rio sabe quem se afogou. Navegar pela Mata Costeira não é apenas ler um mapa, é ler os humores de um organismo vivo."*
 > — Diário de um Cartógrafo Desaparecido
 
@@ -48,6 +50,26 @@ graph TD
     %% Conexões Secretas (Atalhos)
     Rio -. "Túnel Submerso (Requer Item)" .-> Ruptura
 ```
+
+---
+
+## 1B. Tabela de Zonas — Nível e Papel
+
+A Mata Costeira contém 9 zonas. A tabela abaixo resume o range de nível, mobs principais e papel de cada zona na experiência do jogador.
+
+| Zona | Nível | Mobs Principais | Papel |
+|------|-------|-----------------|-------|
+| Vila de São Tomé | 0 (segura) | Nenhum | Hub, serviços, descanso |
+| Rio das Marés | 1–2 | Jacarés, peixes agressivos | Recursos de água, ciclo de maré |
+| Floresta do Norte | 1–3 | Lobos, espíritos menores | Exploração principal, madeira |
+| Toca da Fera | 3–4 | Onça Pintada (mini-boss) | Desafio intermediário |
+| Mina de Ouro | 2–4 | Bandeirantes hostis | Recursos minerais |
+| Acampamento Bandeirante | 3–5 | Capitão Bandeirante (boss) | Combate de facção |
+| Pico da Neblina | 3–5 | Espíritos ancestrais | Recursos raros, fadiga |
+| Ruínas Queimadas | 4–5 | Espíritos corrompidos | Terror, dano espiritual |
+| A Ruptura | 5 (boss) | Guardião da Fenda | Clímax da temporada |
+
+> **Migração de mobs:** Mobs que atingem o cap de nível da zona migram para zonas de nível mais alto dentro da Mata Costeira. Ao atingir o cap da região (nível 5), migram para o Sertão Distorcido quando este for aberto (Temporada 2). Ver §8.10 do Cap. 8.
 
 ---
 

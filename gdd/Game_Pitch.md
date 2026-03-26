@@ -63,6 +63,8 @@ A filosofia de design de mundo de _Eras do Brasil_ é perfeitamente ilustrada pe
 
 Este mundo dinâmico e reativo não é apenas um pano de fundo — é a arena onde a jogabilidade central se desenrola, forjando a lenda de cada jogador.
 
+A Mata Costeira é apenas a primeira de cinco regiões planejadas, cada uma revelada por temporada — do litoral ao coração do continente, onde a Raiz do Mundo pulsa com força máxima.
+
 --------------------------------------------------------------------------------
 
 ## 3. A Jogabilidade Central: Forje Sua Lenda

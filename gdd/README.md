@@ -34,6 +34,7 @@ As mecânicas centrais do jogo.
 | [03B — Progressão e Experiência](01_Livro_de_Regras/03B_Progressao_e_Experiencia.md) | **NOVO** Sistema de XP, níveis 1-15, ganhos por nível |
 | [04 — Sistema de Combate](01_Livro_de_Regras/04_Sistema_de_Combate.md) | Iniciativa, turnos, ataques, dano |
 | [05 — Exploração e Mundo](01_Livro_de_Regras/05_Exploracao_e_Mundo.md) | Ciclo dia/noite, navegação por blocos, tempo real |
+| [05B — Arquitetura do Mapa](01_Livro_de_Regras/05B_Arquitetura_do_Mapa.md) | Camadas de navegação, regiões, zonas de nível, migração de mobs |
 | [06 — Economia, Itens e Crafting](01_Livro_de_Regras/06_Economia_Itens_e_Crafting.md) | Matriz 5×5, proficiências, receitas |
 | [07 — Magia e Espiritualidade](01_Livro_de_Regras/07_Magia_e_Espiritualidade.md) | Fontes de poder, fadiga mágica |
 | [08 — Mundo Vivo e NPCs](01_Livro_de_Regras/08_Mundo_Vivo_e_NPCs.md) | Utility AI, rotinas, fofoca, facções |

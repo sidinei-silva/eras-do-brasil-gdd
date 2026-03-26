@@ -359,6 +359,8 @@ Inimigos no mundo de *Eras do Brasil* não são estáticos. Eles ganham experiê
 
 3. **Spawn e Nascimento:** Inimigos sempre nascem no nível mínimo do mapa onde spawnam (categoria Normal).
 4. **Migração:** Ao atingir o cap de nível do mapa, o inimigo migra para a próxima região como Normal (reset de categoria, mantém XP). Um novo inimigo spawna na região original com cooldown.
+
+> O fluxo de migração entre regiões segue o gradiente geográfico definido na [Arquitetura do Mapa](05B_Arquitetura_do_Mapa.md): Mata Costeira → Sertão Distorcido → Serra dos Ecos → Pantanal Vivo → Coração da Raiz.
 5. **Cap de População:** Cada região tem um limite máximo de inimigos para evitar superpopulação.
 6. **Cap de Endgame:** Nível máximo de um inimigo = nível máximo do jogador + margem pequena.
 7. **Rate Limiting:** Um inimigo só ganha XP de morte de jogador a cada N minutos (anti-farming de XP de mob).
