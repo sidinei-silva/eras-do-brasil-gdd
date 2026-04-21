@@ -10,34 +10,34 @@ Fornecer aos jogadores um conjunto inicial de itens variados é uma decisão est
 
 ```json
 {
-  "idItem": "arma_espada_ferro_01",
-  "nome": "Espada de Ferro",
-  "tipo": "Arma",
-  "subtipo": "Espada Longa",
-  "descricao": "Uma espada de ferro padrão, confiável em combate. Um item comum entre os colonizadores.",
+  "itemId": "arma_espada_ferro_01",
+  "name": "Espada de Ferro",
+  "type": "Arma",
+  "subtype": "Espada Longa",
+  "description": "Uma espada de ferro padrão, confiável em combate. Um item comum entre os colonizadores.",
   "matriz": {
     "qualidade": "Média",
     "raridade": "Comum"
   },
-  "valorBaseUC": 25,
-  "propriedades": [
+  "baseUcValue": 25,
+  "properties": [
     {
-      "tipo": "dano",
-      "valor": "1d6",
-      "tipoDano": "Corte"
+      "type": "dano",
+      "value": "1d6",
+      "damageType": "Corte"
     },
     {
-      "tipo": "alcance",
-      "valor": "1 metro"
+      "type": "alcance",
+      "value": "1 metro"
     }
   ],
-  "durabilidade": {
+  "durability": {
     "atual": 12,
-    "maxima": 12
+    "max": 12
   },
-  "idReceitaCrafting": "receita_ferraria_espada_ferro",
-  "empilhavel": false,
-  "maxPilha": 1
+  "craftingRecipeId": "receita_ferraria_espada_ferro",
+  "stackable": false,
+  "maxStack": 1
 }
 ```
 
@@ -47,29 +47,29 @@ _Design Note: Esta espada serve como a linha de base para o combate corpo a corp
 
 ```json
 {
-  "idItem": "armadura_colete_couro_01",
-  "nome": "Colete de Couro",
-  "tipo": "Armadura",
-  "subtipo": "Leve",
-  "descricao": "Um colete feito de couro endurecido, oferecendo proteção básica sem restringir o movimento.",
+  "itemId": "armadura_colete_couro_01",
+  "name": "Colete de Couro",
+  "type": "Armadura",
+  "subtype": "Leve",
+  "description": "Um colete feito de couro endurecido, oferecendo proteção básica sem restringir o movimento.",
   "matriz": {
     "qualidade": "Baixa",
     "raridade": "Comum"
   },
-  "valorBaseUC": 15,
-  "propriedades": [
+  "baseUcValue": 15,
+  "properties": [
     {
-      "tipo": "defesa",
-      "valor": 1
+      "type": "defesa",
+      "value": 1
     }
   ],
-  "durabilidade": {
+  "durability": {
     "atual": 8,
-    "maxima": 8
+    "max": 8
   },
-  "idReceitaCrafting": "receita_coureira_colete_simples",
-  "empilhavel": false,
-  "maxPilha": 1
+  "craftingRecipeId": "receita_coureira_colete_simples",
+  "stackable": false,
+  "maxStack": 1
 }
 ```
 
@@ -79,30 +79,30 @@ _Design Note: A qualidade 'Baixa' e o valor mínimo de defesa são intencionais.
 
 ```json
 {
-  "idItem": "ferramenta_picareta_01",
-  "nome": "Picareta de Mineração",
-  "tipo": "Ferramenta",
-  "subtipo": "Mineração",
-  "descricao": "Uma ferramenta robusta projetada para quebrar rochas e extrair minérios.",
+  "itemId": "ferramenta_picareta_01",
+  "name": "Picareta de Mineração",
+  "type": "Ferramenta",
+  "subtype": "Mineração",
+  "description": "Uma ferramenta robusta projetada para quebrar rochas e extrair minérios.",
   "matriz": {
     "qualidade": "Média",
     "raridade": "Comum"
   },
-  "valorBaseUC": 10,
-  "propriedades": [
+  "baseUcValue": 10,
+  "properties": [
     {
-      "tipo": "bonusProficiencia",
-      "proficiencia": "Mineração",
-      "valor": 1
+      "type": "bonusProficiencia",
+      "proficiency": "Mineração",
+      "value": 1
     }
   ],
-  "durabilidade": {
+  "durability": {
     "atual": 12,
-    "maxima": 12
+    "max": 12
   },
-  "idReceitaCrafting": "receita_ferraria_picareta",
-  "empilhavel": false,
-  "maxPilha": 1
+  "craftingRecipeId": "receita_ferraria_picareta",
+  "stackable": false,
+  "maxStack": 1
 }
 ```
 
@@ -112,31 +112,31 @@ _Design Note: Introduz o ciclo de jogabilidade de coleta de recursos. O bônus d
 
 ```json
 {
-  "idItem": "consumivel_pocao_ervalua_01",
-  "nome": "Poção de Erva-Lua",
-  "tipo": "Consumível",
-  "subtipo": "Poção",
-  "descricao": "Uma poção que brilha suavemente, feita com Erva-Lua. Restaura a conexão espiritual.",
+  "itemId": "consumivel_pocao_ervalua_01",
+  "name": "Poção de Erva-Lua",
+  "type": "Consumível",
+  "subtype": "Poção",
+  "description": "Uma poção que brilha suavemente, feita com Erva-Lua. Restaura a conexão espiritual.",
   "matriz": {
     "qualidade": "Média",
     "raridade": "Incomum"
   },
-  "valorBaseUC": 30,
-  "propriedades": [
+  "baseUcValue": 30,
+  "properties": [
     {
-      "tipo": "efeito",
-      "nome": "Reduz Fadiga Espiritual",
-      "valor": "1 nível"
+      "type": "efeito",
+      "name": "Reduz Fadiga Espiritual",
+      "value": "1 nível"
     },
     {
-      "tipo": "uso",
-      "valor": "Ação Principal"
+      "type": "uso",
+      "value": "Ação Principal"
     }
   ],
-  "durabilidade": null,
-  "idReceitaCrafting": "receita_alquimia_pocao_fadiga_espiritual",
-  "empilhavel": true,
-  "maxPilha": 5
+  "durability": null,
+  "craftingRecipeId": "receita_alquimia_pocao_fadiga_espiritual",
+  "stackable": true,
+  "maxStack": 5
 }
 ```
 
@@ -146,26 +146,26 @@ _Design Note: Este consumível estabelece a mecânica de gerenciamento de Fadiga
 
 ```json
 {
-  "idItem": "recurso_minerio_sangue_01",
-  "nome": "Minério de Sangue",
-  "tipo": "Recurso",
-  "subtipo": "Minério",
-  "descricao": "Um minério raro encontrado em veios profundos, que pulsa com uma tênue luz vermelha. Usado para aprimorar armas.",
+  "itemId": "recurso_minerio_sangue_01",
+  "name": "Minério de Sangue",
+  "type": "Recurso",
+  "subtype": "Minério",
+  "description": "Um minério raro encontrado em veios profundos, que pulsa com uma tênue luz vermelha. Usado para aprimorar armas.",
   "matriz": {
     "qualidade": "N/A",
     "raridade": "Raro"
   },
-  "valorBaseUC": 50,
-  "propriedades": [
+  "baseUcValue": 50,
+  "properties": [
     {
-      "tipo": "componenteCrafting",
-      "uso": "Melhoria de Armas (Dano +1)"
+      "type": "componenteCrafting",
+      "use": "Melhoria de Armas (Dano +1)"
     }
   ],
-  "durabilidade": null,
-  "idReceitaCrafting": null,
-  "empilhavel": true,
-  "maxPilha": 10
+  "durability": null,
+  "craftingRecipeId": null,
+  "stackable": true,
+  "maxStack": 10
 }
 ```
 
@@ -181,39 +181,39 @@ A curva de dificuldade para o Ato 1 não é estática; ela é projetada para ser
 
 ```json
 {
-  "idInimigo": "inimigo_espirito_menor_01",
-  "nome": "Espírito Menor",
-  "tipo": "Espiritual",
-  "estatisticasBase": {
-    "nivel": 1,
+  "enemyId": "inimigo_espirito_menor_01",
+  "name": "Espírito Menor",
+  "type": "Espiritual",
+  "baseStats": {
+    "level": 1,
     "pv": 8,
-    "defesa": 11,
-    "atributos": {
+    "defense": 11,
+    "attributes": {
       "vigor": 2,
-      "forca": 1,
-      "astucia": 3,
-      "sabedoria": 4,
-      "conhecimento": 2,
-      "presenca": 3
+      "strength": 1,
+      "cunning": 3,
+      "wisdom": 4,
+      "knowledge": 2,
+      "presence": 3
     }
   },
-  "acoesDeCombate": [
+  "combatActions": [
     {
-      "nome": "Toque Gélido",
-      "tipo": "Ataque",
-      "dano": "1d4",
-      "tipoDano": "Espiritual",
-      "chanceDeUso": 1.0
+      "name": "Toque Gélido",
+      "type": "Ataque",
+      "damage": "1d4",
+      "damageType": "Espiritual",
+      "usageChance": 1.0
     }
   ],
-  "tabelaDeLoot": [
+  "lootTable": [
     {
-      "idItem": "recurso_cinzas_espirituais_01",
-      "quantidade": "1d2",
-      "chanceDeDrop": 0.5
+      "itemId": "recurso_cinzas_espirituais_01",
+      "quantity": "1d2",
+      "dropChance": 0.5
     }
   ],
-  "xpRecompensa": 10
+  "xpReward": 10
 }
 ```
 
@@ -221,52 +221,52 @@ A curva de dificuldade para o Ato 1 não é estática; ela é projetada para ser
 
 ```json
 {
-  "idInimigo": "inimigo_onca_pintada_01",
-  "nome": "Onça Pintada",
-  "tipo": "Besta",
-  "estatisticasBase": {
-    "nivel": 2,
+  "enemyId": "inimigo_onca_pintada_01",
+  "name": "Onça Pintada",
+  "type": "Besta",
+  "baseStats": {
+    "level": 2,
     "pv": 22,
-    "defesa": 13,
-    "atributos": {
+    "defense": 13,
+    "attributes": {
       "vigor": 4,
-      "forca": 4,
-      "astucia": 5,
-      "sabedoria": 3,
-      "conhecimento": 1,
-      "presenca": 4
+      "strength": 4,
+      "cunning": 5,
+      "wisdom": 3,
+      "knowledge": 1,
+      "presence": 4
     }
   },
-  "acoesDeCombate": [
+  "combatActions": [
     {
-      "nome": "Mordida",
-      "tipo": "Ataque",
-      "dano": "1d6+1",
-      "tipoDano": "Perfurante",
-      "chanceDeUso": 0.7
+      "name": "Mordida",
+      "type": "Ataque",
+      "damage": "1d6+1",
+      "damageType": "Perfurante",
+      "usageChance": 0.7
     },
     {
-      "nome": "Bote Veloz",
-      "tipo": "Habilidade",
-      "dano": "1d8",
-      "tipoDano": "Perfurante",
-      "descricao": "A onça avança rapidamente. O alvo deve passar em um teste de Astúcia (CD 12) ou fica Derrubado.",
-      "chanceDeUso": 0.3
+      "name": "Bote Veloz",
+      "type": "Habilidade",
+      "damage": "1d8",
+      "damageType": "Perfurante",
+      "description": "A onça avança rapidamente. O alvo deve passar em um teste de Astúcia (CD 12) ou fica Derrubado.",
+      "usageChance": 0.3
     }
   ],
-  "tabelaDeLoot": [
+  "lootTable": [
     {
-      "idItem": "recurso_pele_onca_01",
-      "quantidade": 1,
-      "chanceDeDrop": 0.6
+      "itemId": "recurso_pele_onca_01",
+      "quantity": 1,
+      "dropChance": 0.6
     },
     {
-      "idItem": "recurso_presa_onca_01",
-      "quantidade": "1d2",
-      "chanceDeDrop": 0.3
+      "itemId": "recurso_presa_onca_01",
+      "quantity": "1d2",
+      "dropChance": 0.3
     }
   ],
-  "xpRecompensa": 25
+  "xpReward": 25
 }
 ```
 
@@ -274,63 +274,63 @@ A curva de dificuldade para o Ato 1 não é estática; ela é projetada para ser
 
 ```json
 {
-  "idInimigo": "inimigo_capitao_bandeirante_01",
-  "nome": "Capitão Bandeirante",
-  "tipo": "Humanoide",
-  "estatisticasBase": {
-    "nivel": 3,
+  "enemyId": "inimigo_capitao_bandeirante_01",
+  "name": "Capitão Bandeirante",
+  "type": "Humanoide",
+  "baseStats": {
+    "level": 3,
     "pv": 45,
-    "defesa": 14,
-    "atributos": {
+    "defense": 14,
+    "attributes": {
       "vigor": 4,
-      "forca": 4,
-      "astucia": 4,
-      "sabedoria": 3,
-      "conhecimento": 3,
-      "presenca": 5
+      "strength": 4,
+      "cunning": 4,
+      "wisdom": 3,
+      "knowledge": 3,
+      "presence": 5
     }
   },
-  "acoesDeCombate": [
+  "combatActions": [
     {
-      "nome": "Golpe de Espada",
-      "tipo": "Ataque",
-      "dano": "1d8+1",
-      "tipoDano": "Corte",
-      "chanceDeUso": 0.6
+      "name": "Golpe de Espada",
+      "type": "Ataque",
+      "damage": "1d8+1",
+      "damageType": "Corte",
+      "usageChance": 0.6
     },
     {
-      "nome": "Tiro de Mosquete",
-      "tipo": "Habilidade",
-      "dano": "1d10+2",
-      "tipoDano": "Perfurante",
-      "descricao": "Requer 1 turno para recarregar após o uso.",
-      "chanceDeUso": 0.2
+      "name": "Tiro de Mosquete",
+      "type": "Habilidade",
+      "damage": "1d10+2",
+      "damageType": "Perfurante",
+      "description": "Requer 1 turno para recarregar após o uso.",
+      "usageChance": 0.2
     },
     {
-      "nome": "Ordem de Batalha",
-      "tipo": "Habilidade",
-      "descricao": "Concede +1 de dano para todos os aliados Bandeirantes por 2 turnos.",
-      "chanceDeUso": 0.2
+      "name": "Ordem de Batalha",
+      "type": "Habilidade",
+      "description": "Concede +1 de dano para todos os aliados Bandeirantes por 2 turnos.",
+      "usageChance": 0.2
     }
   ],
-  "tabelaDeLoot": [
+  "lootTable": [
     {
-      "idItem": "moeda_classe_colonizador_01",
-      "quantidade": 1,
-      "chanceDeDrop": 1.0
+      "itemId": "moeda_classe_colonizador_01",
+      "quantity": 1,
+      "dropChance": 1.0
     },
     {
-      "idItem": "arma_mosquete_enferrujado_01",
-      "quantidade": 1,
-      "chanceDeDrop": 0.25
+      "itemId": "arma_mosquete_enferrujado_01",
+      "quantity": 1,
+      "dropChance": 0.25
     },
     {
-      "idItem": "moeda_uc_pilha_media",
-      "quantidade": "1d20+10",
-      "chanceDeDrop": 1.0
+      "itemId": "moeda_uc_pilha_media",
+      "quantity": "1d20+10",
+      "dropChance": 1.0
     }
   ],
-  "xpRecompensa": 75
+  "xpReward": 75
 }
 ```
 
@@ -342,41 +342,41 @@ No ecossistema do jogo, a classe "Guerreiro Tribal" representa a linha de frente
 
 ```json
 {
-  "idClasse": "indigena_guerreiro_tribal_t1",
-  "nome": "Guerreiro Tribal",
-  "origem": "Indígena",
+  "classId": "indigena_guerreiro_tribal_t1",
+  "name": "Guerreiro Tribal",
+  "origin": "Indígena",
   "tier": 1,
-  "descricaoNarrativa": "O Guerreiro Tribal é um defensor da terra, da floresta e do seu povo. Traz a força do clã em cada golpe e o espírito ancestral em cada movimento. Forjado nas lutas contra invasores e na proteção de sua comunidade, ele é símbolo de bravura, honra e respeito à ancestralidade.",
-  "estiloDeJogo": "Tank ofensivo, agressivo e protetor da linha de frente",
-  "atributosRecomendados": [
+  "narrativeDescription": "O Guerreiro Tribal é um defensor da terra, da floresta e do seu povo. Traz a força do clã em cada golpe e o espírito ancestral em cada movimento. Forjado nas lutas contra invasores e na proteção de sua comunidade, ele é símbolo de bravura, honra e respeito à ancestralidade.",
+  "playstyle": "Tank ofensivo, agressivo e protetor da linha de frente",
+  "recommendedAttributes": [
     "Vigor",
     "Força Bruta"
   ],
-  "pvBase": 14,
-  "pvPorNivel": 7,
-  "proficienciaBonus": {
-    "proficiencia": "Caça",
-    "bonusXP": 1
+  "baseHp": 14,
+  "hpPerLevel": 7,
+  "proficiencyBonus": {
+    "proficiency": "Caça",
+    "bonusXp": 1
   },
-  "equipamentosPermitidos": {
-    "armas": [
+  "allowedEquipment": {
+    "weapons": [
       "Lança",
       "Clava"
     ],
-    "armaduras": [
+    "armors": [
       "Médias"
     ]
   },
-  "habilidadesIniciais": [
+  "startingSkills": [
     {
-      "nome": "Investida Tribal",
-      "tipo": "Ativa",
-      "descricao": "Avança até 3 metros e realiza um ataque corpo a corpo com vantagem. Recarga: 2 turnos. Condição: Requer linha reta livre e arma corpo a corpo equipada."
+      "name": "Investida Tribal",
+      "type": "Ativa",
+      "description": "Avança até 3 metros e realiza um ataque corpo a corpo com vantagem. Recarga: 2 turnos. Condição: Requer linha reta livre e arma corpo a corpo equipada."
     },
     {
-      "nome": "Espírito do Clã",
-      "tipo": "Passiva",
-      "descricao": "Se estiver com menos de 50% dos PV, recebe +1 em ataques corpo a corpo. Condição: Ativa quando os PV estão abaixo da metade."
+      "name": "Espírito do Clã",
+      "type": "Passiva",
+      "description": "Se estiver com menos de 50% dos PV, recebe +1 em ataques corpo a corpo. Condição: Ativa quando os PV estão abaixo da metade."
     }
   ]
 }

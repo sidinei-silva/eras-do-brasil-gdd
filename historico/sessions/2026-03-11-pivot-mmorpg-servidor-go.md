@@ -28,7 +28,7 @@ O desenvolvedor expressou frustração com 3 anos de documentação sem nenhuma 
 - **Go** sobre PHP: estado persistente em memória (PHP = request/response stateless)
 - **Web client** sobre Unity client: zero install, skills existentes do dev (sênior web), deploy imediato
 - **Server-authoritative**: anti-cheat by design, world state em memória
-- **Tick global proativo**: `time.Ticker` + goroutine, `Mundo.ProcessarTick()` comutável (reativo offline / proativo online)
+- **Tick global proativo**: `time.Ticker` + goroutine, `World.ProcessTick()` comutável (reativo offline / proativo online)
 
 ### Análise do Repo Legado
 - 4 commits que removeram features MMO: `c4fff4a`, `820ad6e`, `16132ad`, `ed287af`

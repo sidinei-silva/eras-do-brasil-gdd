@@ -36,10 +36,10 @@ O servidor roda um game loop contínuo que avança o tempo do mundo independente
 ```
 // Game loop sequencial (detalhe interno)
 GameLoop.ProcessarCiclo():
-  TimeManager.AvancarTempo()
+  TimeManager.AdvanceTime()
   NPCManager.AtualizarAgendas()
   QuestManager.VerificarPrazos()
-  StoryManager.VerificarEventosAgendados()
+  StoryManager.CheckScheduledEvents()
   PersistManager.SalvarDirty()
 ```
 
@@ -89,18 +89,18 @@ A cada ciclo do servidor, o cérebro de cada NPC roda o seguinte processo:
 Cada NPC possui uma "Base de Conhecimento" (`knowledgeBase`) onde armazena informações que *vê* durante suas rotinas:
 
 * **Recursos:** Onde viu minérios ou ervas.
-`{"tipo": "RECURSO", "id": "minerio_ferro_01", "local": "bloco_mina", "visto_em": "2024-01-15T10:30:00Z"}`
+`{"type": "RECURSO", "id": "minerio_ferro_01", "location": "bloco_mina", "seenAt": "2024-01-15T10:30:00Z"}`
 * **Monstros:** Onde viu perigos.
-`{"tipo": "ENTIDADE", "id": "lobo_alfa", "local": "floresta_norte", "visto_em": "2024-01-15T08:00:00Z"}`
+`{"type": "ENTIDADE", "id": "lobo_alfa", "location": "floresta_norte", "seenAt": "2024-01-15T08:00:00Z"}`
 * **Rotinas:** Onde viu outros NPCs.
-`{"tipo": "ROTINA_NPC", "id": "npc_guarda", "info": "Vai para a taverna ao meio-dia"}`
+`{"type": "ROTINA_NPC", "id": "npc_guarda", "info": "Vai para a taverna ao meio-dia"}`
 * As informações possuem um "prazo de validade" (baseado no timestamp) e são "esquecidas" após um tempo.
 
 ### Expiração e Esquecimento da Memória
 
 O `NPCManager` varre periodicamente a `knowledgeBase` de cada NPC e **remove entradas expiradas**, garantindo que as informações sejam recentes e o mundo permaneça dinâmico.
 
-* **Regra:** Uma entrada é removida quando `(tempoAtual - visto_em) > Limite_de_Memória`.
+* **Regra:** Uma entrada é removida quando `(currentTime - seenAt) > memoryLimit`.
 * **Limite padrão sugerido:** ~2 dias de tempo do jogo.
 * **Exceções:** Informações marcadas como "Importante" (ex: morte de um NPC, evento de ruptura) podem ter limite estendido ou ser permanentes.
 * **Impacto:** Isso significa que um NPC não vai falar sobre um recurso que viu há 3 dias — a informação já expirou. O jogador precisa buscar fontes recentes.
@@ -400,13 +400,13 @@ Conteúdo (dados do jogo, JSON):
   - NPCs e agendas
   - Items e receitas
   - Quests e objetivos
-  - Habilidades e magias
+  - Skills e magias
   - Mapas e blocos de cenário
 
 Cliente (interface):
   - HTML/CSS/JS via WebSocket
   - Renderiza texto e painéis de informação
-  - Input do jogador (comandos de texto ou botões)
+  - Input do player (comandos de texto ou botões)
 ```
 
 ### EventBus (Notificações Assíncronas)
@@ -414,7 +414,7 @@ Cliente (interface):
 O EventBus é usado para **notificações assíncronas** — atualizar clientes, logging, métricas — e NÃO para coordenar lógica de jogo entre managers:
 
 ```text
-// Quando jogador coleta item:
+// Quando player coleta item:
 EventBus.Publish("OnItemCollected", { id: "item_minerio_ferro", qtd: 1 })
 
 // Cliente recebe atualização de inventário

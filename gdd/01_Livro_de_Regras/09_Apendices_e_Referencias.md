@@ -174,11 +174,11 @@ Todo o "sabor" do *Eras do Brasil* virá de arquivos de dados externos (`.json` 
 
 * **Jogo: `Eras do Brasil`**
     * **Arquivo:** `ferreiro.json`
-    * **Conteúdo:** `{ "nome": "Ferreiro João", "modelo": "sprite_ferreiro.png", "agenda": [ { "hora": "08:00", "acao": "MOVER_PARA_BLOCO", "bloco": "forja" } ] }`
+    * **Conteúdo:** `{ "name": "Ferreiro João", "modelo": "sprite_ferreiro.png", "agenda": [ { "time": "08:00", "action": "MOVE_TO_BLOCK", "block": "forja" } ] }`
 
 * **Jogo (Futuro): `Neon Sprawl` (Sci-Fi)**
     * **Arquivo:** `cientista.json`
-    * **Conteúdo:** `{ "nome": "Dra. Aris", "modelo": "sprite_cientista.png", "agenda": [ { "hora": "08:00", "acao": "MOVER_PARA_BLOCO", "bloco": "laboratorio" } ] }`
+    * **Conteúdo:** `{ "name": "Dra. Aris", "modelo": "sprite_cientista.png", "agenda": [ { "time": "08:00", "action": "MOVE_TO_BLOCK", "block": "laboratorio" } ] }`
 
 O `NPCManager` (o Motor) é **exatamente o mesmo código** para os dois jogos. Esta filosofia garante modularidade, facilidade de manutenção e reutilização de sistemas.
 

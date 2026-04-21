@@ -6,7 +6,7 @@
 
 ---
 
-## §5B.1 — Sistema de Camadas
+## 5B.1 — Sistema de Camadas
 
 O mundo de *Eras do Brasil* é organizado em **3 níveis de navegação**, do macro ao micro. Cada camada representa um nível de detalhe diferente e é implementada em fases distintas do desenvolvimento.
 
@@ -21,6 +21,7 @@ Visão macro do Brasil de 1497 sob efeito da Ruptura.
 - **Navegação:** o player vê a lista de regiões acessíveis com nível recomendado. Viagem entre regiões é longa (5–10 minutos reais).
 
 **Exemplo no cliente MUD:**
+
 ```
 Você está na Mata Costeira.
 Regiões acessíveis: Sertão Distorcido (Nível 5-10, ~8 min viagem)
@@ -46,6 +47,7 @@ Cada região contém **8–15 zonas** conectadas num grafo de nós.
 Quando uma zona fica muito populosa, ela é expandida em **sub-locais** internos.
 
 **Exemplo:** "Floresta do Norte" se divide em:
+
 - Clareira Norte
 - Trilha dos Cogumelos
 - Arvoredo Antigo
@@ -59,7 +61,7 @@ Cada sub-local tem seus próprios mobs, recursos e NPCs, distribuindo players de
 
 ---
 
-## §5B.2 — Mapa-Múndi: As 5 Regiões do Brasil
+## 5B.2 — Mapa-Múndi: As 5 Regiões do Brasil
 
 ### Premissa Geográfica
 
@@ -135,9 +137,9 @@ Centro do continente. Onde a Raiz do Mundo está fisicamente. Distorção máxim
 
 ---
 
-## §5B.3 — Migração de Mobs entre Regiões
+## 5B.3 — Migração de Mobs entre Regiões
 
-> Referência cruzada com [Cap. 8 — §8.10 (Inimigos Evolutivos)](08_Mundo_Vivo_e_NPCs.md).
+> Referência cruzada com [Cap. 8 — 8.10 (Inimigos Evolutivos)](08_Mundo_Vivo_e_NPCs.md).
 
 O fluxo de migração segue o gradiente geográfico:
 
@@ -156,7 +158,7 @@ Isso garante que regiões sem expansão ainda produzam conteúdo emergente, e qu
 
 ---
 
-## §5B.4 — Representação no Cliente
+## 5B.4 — Representação no Cliente
 
 | Fase do Jogo | Mapa-Múndi | Mapa Regional | Mapa Local |
 |--------------|-----------|--------------|-----------|

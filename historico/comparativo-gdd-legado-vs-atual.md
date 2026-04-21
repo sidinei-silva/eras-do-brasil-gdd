@@ -160,19 +160,19 @@ Modelo: **"Authoritative Shared Core"** — core de regras compartilhado, servid
 
 **Fonte Legada:** Gemini Conversations 5 (L995–1014), 8, 9
 
-O conceito central é que `Mundo.ProcessarTick()` é **agnóstico à fonte de tick:**
+O conceito central é que `World.ProcessTick()` é **agnóstico à fonte de tick:**
 
 ```
 // O "Motor" do Tick — reutilizável
-Mundo.ProcessarTick():
-  TimeManager.AvancarTempo(1)
+World.ProcessTick():
+  TimeManager.AdvanceTime(1)
   NPCManager.AtualizarAgendas()
   QuestManager.VerificarPrazos()
-  StoryManager.VerificarEventosAgendados()
-  Mundo.SalvarEstado()
+  StoryManager.CheckScheduledEvents()
+  World.SaveState()
 
-// Offline: player action → GameManager.ProcessarTick() — local
-// Online: setInterval(5000ms) → Server.ProcessarTick() — global
+// Offline: player action → GameManager.ProcessTick() — location
+// Online: setInterval(5000ms) → Server.ProcessTick() — global
 // 100% reuso do core entre os dois modos
 ```
 
@@ -204,12 +204,12 @@ Um relógio global de ~500 ticks que governa transições de era e rupturas temp
 Arquitetura desacoplada via Pub/Sub:
 
 ```
-// Quando jogador coleta item:
+// Quando player coleta item:
 EventBus.Publish("OnItemCollected", { id: "item_minerio_ferro", qtd: 1 })
 
 // QuestManager escuta e atualiza objetivos automaticamente
 Quest_Template:
-  ID_da_Quest: "ferreiro_primeira_espada"
+  QUEST_ID: "ferreiro_primeira_espada"
   Objetivos: [
     { Tipo: "COLETAR_ITEM", Alvo_ID: "item_minerio_ferro",
       Quantidade_Necessaria: 5, Quantidade_Atual: 0 }
@@ -239,10 +239,10 @@ Motor (código reutilizável):
 
 Conteúdo (dados específicos do jogo):
   JSON/ScriptableObjects definindo:
-  - Todos os Itens
+  - Todos os Items
   - Todos os NPCs e agendas
   - Todas as Missões e objetivos
-  - Todas as Habilidades
+  - Todas as Skills
 
 Casca (cliente específico):
   UI, sprites, sons, input
@@ -285,7 +285,7 @@ Conceitos que existem em ambos, mas com diferenças notáveis.
 | Traits | ✅ como modificador de personalidade | ✅ como modificador de personalidade |
 | Mood & Memories | ✅ `"+5: Comeu refeição"`, `"Amigo morreu" (-40, 1 semana)` | ✅ com conceito de Thoughts/Humor, sem valores numéricos |
 | OnTick 3 fases | ✅ Passive → Decision (Utility AI) → Action | ✅ Mesma estrutura 3 fases |
-| knowledgeBase | ✅ com `tipo`, `id`, `bloco`, `ultimo_visto` | ✅ com mesma estrutura |
+| knowledgeBase | ✅ com `type`, `id`, `block`, `ultimo_visto` | ✅ com mesma estrutura |
 | Expiração de conhecimento | **5.000 ticks** | **500 ticks** (10× mais curta) |
 | Fofoca/Gossip | ✅ 2 NPCs no mesmo bloco + social alto → troca de knowledge | ✅ Mesma mecânica |
 | Facções/Reputação | Mencionado em `ideias soltas` | ✅ **5 tiers formais** (Inimigo → Aliado) |
@@ -508,7 +508,7 @@ Com apêndice dedicado (9.5) detalhando a transição.
 
 1. Documentar a **arquitetura "comutável"** (offline/online) — é elegante e já está provada conceitualmente
 2. Formalizar o **Relógio da Ruptura** no GDD (já tem POC planejada)
-3. Adicionar diagrama do **Motor de Ticks** (`ProcessarTick()` com lista de Managers) no Cap. 9
+3. Adicionar diagrama do **Motor de Ticks** (`ProcessTick()` com lista de Managers) no Cap. 9
 4. Criar **Cap. 10 ou Apêndice B** para sistemas online (StoryManager, BountyManager, Competitive Quests)
 
 ---
@@ -518,7 +518,7 @@ Com apêndice dedicado (9.5) detalhando a transição.
 ```
                           LEGADO    ATUAL    STATUS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. Economia/Itens/Crafting  ██████   ██████   ✅ Paridade
+1. Economia/Items/Crafting  ██████   ██████   ✅ Paridade
 2. Mundo Vivo/NPC AI/Ticks  ████░░   █████░   🟡 Atual mais formal, legado mais detalhado
 3. Full Loot/Drop on Death  ██░░░░   ░░░░░░   🔴 Perdido
 4. Server/Online Arch.      █████░   ░░░░░░   🔴 Perdido  

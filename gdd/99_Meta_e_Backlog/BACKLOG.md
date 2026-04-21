@@ -52,7 +52,7 @@ _Resolver antes de qualquer outra coisa — inconsistências que afetam múltipl
   AC: Arquivo em `04_Design_Visual/` com wireframes de baixa fidelidade das 4 telas principais do MUD web
 
 - [ ] **Formato de Texto Narrativo para Tela de Cena** — como descrições de local e evento são exibidas
-  AC: `04_Design_Visual/` documenta o formato (tamanho de bloco, estrutura, uso de variáveis como `[NOME_JOGADOR]`)
+  AC: `04_Design_Visual/` documenta o formato (tamanho de bloco, estrutura, uso de variáveis como `[PLAYER_NAME]`)
 
 ---
 
