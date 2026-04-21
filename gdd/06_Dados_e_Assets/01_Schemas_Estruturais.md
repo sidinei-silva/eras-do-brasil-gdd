@@ -6,6 +6,62 @@ Este documento técnico estabelece a estrutura de dados fundamental para o jogo 
 
 --------------------------------------------------------------------------------
 
+## 2.0 Schema: Blocks
+
+### 2.1 Estrutura JSON para `Block`
+
+```json
+{
+  "id": "string",                   // snake_case, ex: "vila_sao_tome" — OBRIGATÓRIO
+  "name": "string",                 // nome exibido, ex: "Vila de São Tomé" — OBRIGATÓRIO
+  "region": "string",               // região pai, ex: "mata_costeira" — OBRIGATÓRIO
+  "type": "string",                 // enum: "urban" | "dense_forest" | "mountain" | "water" | "ruins" | "wasteland" — OBRIGATÓRIO
+  "levelRange": [0, 0],             // [min, max] nível recomendado — OBRIGATÓRIO
+  "description": "string",          // descrição narrativa curta — OBRIGATÓRIO
+  "connections": [                  // arestas saindo deste bloco — OBRIGATÓRIO
+    {
+      "toBlockId": "string",
+      "travelMinutes": 10,          // custo em minutos de jogo (consumido pela 1.2)
+      "terrain": "string"           // opcional, ex: "forest_path"
+    }
+  ],
+  "services": [                     // serviços de hub, vazio se não aplicável — opcional
+    {
+      "id": "string",               // ex: "blacksmith"
+      "name": "string",
+      "actions": ["string"]
+    }
+  ],
+  "rules": [                        // regras mecânicas ativas no bloco — opcional
+    {
+      "id": "string",
+      "type": "string",             // ex: "improved_rest", "natural_cover"
+      "effect": "string"
+    }
+  ],
+  "mobTable": [                     // spawns, vazio em hubs — opcional
+    {
+      "enemyId": "string",
+      "spawnChance": 0.5,
+      "quantity": "1d2"
+    }
+  ],
+  "resources": [                    // recursos coletáveis — opcional
+    {
+      "resourceId": "string",
+      "rarity": "string",           // "common" | "uncommon" | "rare" | "epic" | "legendary"
+      "spawnChance": 0.6,
+      "quantity": "1d3"
+    }
+  ],
+  "tags": ["string"]                // categorização livre, ex: ["safe", "hub"] — opcional
+}
+```
+
+<!-- Preciso revisar daqui para baixo -->
+
+--------------------------------------------------------------------------------
+
 ## 2.0 Schema: `CharacterClass`
 
 A definição de um schema robusto para a `CharacterClass` é um passo estratégico fundamental. Esta estrutura de dados não apenas dita as capacidades mecânicas e o estilo de jogo do personagem, mas também serve como base para o balanceamento sistêmico, a criação de conteúdo futuro (como as evoluções de Tier 2 e 3) e a implementação de mecânicas complexas como a progressão de atributos e a herança de habilidades. Uma estrutura bem definida aqui garante que cada classe tenha uma identidade clara, tanto narrativa quanto funcional.
@@ -46,20 +102,19 @@ _Nota: As seguintes estruturas de dados usam literais de string como_ `_"integer
 
 ### 2.2 Análise dos Campos da Estrutura
 
-|   |   |
-|---|---|
-|Chave|Análise de Propósito e Estrutura|
-|`classId`|**Propósito:** Define um identificador único e programático para a classe, essencial para referências em outras estruturas de dados (habilidades, itens, missões). **Estrutura:** `string`.|
-|`name`|**Propósito:** Armazena o nome da classe exibido na UI. Este campo é utilizado no HUD do jogador, em logs de combate e na geração de diálogos de NPCs, exigindo considerações de localização. **Estrutura:** `string`.|
-|`origin`|**Propósito:** Vincula a classe a uma das três origens fundamentais (`Colonizador`, `Indígena`, `Ser Folclórico`), determinando o acesso inicial e temas narrativos. **Estrutura:** `string`.|
-|`tier`|**Propósito:** Representa o nível de especialização (Tier 1, 2 ou 3), controlando a progressão e o desbloqueio de habilidades avançadas. **Estrutura:** `integer`.|
-|`narrativeDescription`|**Propósito:** Contém o texto de lore que contextualiza o papel da classe no mundo, conforme detalhado no "Livro de Classes". **Estrutura:** `string`.|
-|`playstyle`|**Propósito:** Fornece um resumo tático para a UI, ajudando o jogador a entender o papel da classe (ex: "Tank", "DPS à distância"). **Estrutura:** `string`.|
-|`recommendedAttributes`|**Propósito:** Lista os atributos principais que otimizam o desempenho da classe, guiando a distribuição de pontos do jogador. **Estrutura:** `array` de `string`.|
-|`baseHp` e `hpPerLevel`|**Propósito:** Define os Pontos de Vida iniciais e a progressão, sendo um fator chave para o balanceamento de classes tank vs. classes frágeis. **Estrutura:** `integer`.|
-|`proficiencyBonus`|**Propósito:** Identifica a "Proficiência de Vida" que recebe XP bônus. Este campo implementa diretamente a regra de "Bônus em Proficiências de Vida", criando um incentivo tangível para os jogadores alternarem de classe para otimizar suas sessões de crafting e coleta, fortalecendo assim o ciclo de jogabilidade principal entre combate e exploração. **Estrutura:** `object`.|
-|`allowedEquipment`|**Propósito:** Define as restrições de equipamento, um pilar central para a identidade e balanceamento de cada classe. **Estrutura:** `object` contendo `arrays` de `string`.|
-|`startingSkills`|**Propósito:** Uma lista de objetos que define as habilidades iniciais. A distinção entre `Ativa` e `Passiva` é crucial para o sistema de "Herança de Habilidades", que permite que habilidades ativas sejam mantidas ao trocar de classe. **Estrutura:** `array` de `objects`.|
+| Chave | Propósito | Estrutura |
+| --- | --- | --- |
+| `classId` | Identificador único e programático da classe, essencial para referências em outras estruturas de dados como habilidades, itens e missões. | `string` |
+| `name` | Nome exibido na UI, usado no HUD do jogador, em logs de combate e em diálogos de NPCs. | `string` |
+| `origin` | Vincula a classe a uma das três origens fundamentais (`Colonizador`, `Indígena`, `Ser Folclórico`), determinando acesso inicial e temas narrativos. | `string` |
+| `tier` | Nível de especialização da classe, controlando a progressão e o desbloqueio de habilidades avançadas. | `integer` |
+| `narrativeDescription` | Texto de lore que contextualiza o papel da classe no mundo, conforme detalhado no "Livro de Classes". | `string` |
+| `playstyle` | Resumo tático para a UI, ajudando o jogador a entender o papel da classe, como "Tank" ou "DPS à distância". | `string` |
+| `recommendedAttributes` | Lista dos atributos principais que otimizam o desempenho da classe e orientam a distribuição de pontos do jogador. | `array` de `string` |
+| `baseHp` / `hpPerLevel` | Pontos de Vida iniciais e progressão por nível, usados no balanceamento entre classes mais resistentes e classes frágeis. | `integer` |
+| `proficiencyBonus` | Proficiência de Vida que recebe XP bônus, incentivando alternância de classe para otimizar crafting e coleta. | `object` |
+| `allowedEquipment` | Restrições de equipamento que definem a identidade e o balanceamento de cada classe. | `object` com `arrays` de `string` |
+| `startingSkills` | Lista de habilidades iniciais desbloqueadas no Tier 1; a distinção entre `Ativa` e `Passiva` é crucial para a herança de habilidades. | `array` de `objects` |
 
 As classes definem quem o jogador é, mas sua eficácia é diretamente influenciada pelos equipamentos que utilizam. A estrutura a seguir detalha como esses itens são definidos.
 
@@ -99,17 +154,16 @@ Uma estrutura de `Item` robusta é essencial para um RPG com foco em economia e 
 
 ### 3.2 Análise dos Campos da Estrutura
 
-|   |   |
-|---|---|
-|Chave|Análise de Propósito e Estrutura|
-|`itemId`|**Propósito:** Define um identificador único e programático para o item, usado em inventários, tabelas de loot e receitas. **Estrutura:** `string`.|
-|`name`|**Propósito:** Armazena o nome do item exibido na UI, logs de crafting e diálogos de NPCs, exigindo considerações de localização. **Estrutura:** `string`.|
-|`type` / `subtipo`|**Propósito:** Classifica o item para regras de sistema (ex: o que pode ser equipado, o que pode ser consumido). `type` é geral, `subtipo` é específico. **Estrutura:** `string`.|
-|`matriz`|**Propósito:** Objeto central que implementa o sistema 5x5. A `qualidade` afeta bônus em habilidades e durabilidade, enquanto a `raridade` impacta valor e desbloqueios narrativos. **Estrutura:** `object`.|
-|`valorBaseUC`|**Propósito:** Define o valor em Unidades Comerciais, servindo como input para o sistema de economia regional, que pode aplicar modificadores baseados em escassez ou eventos, conforme descrito em `06_Economia_Itens_e_Crafting.md`. **Estrutura:** `integer`.|
-|`propriedades`|**Propósito:** Um array flexível de objetos que descreve todos os efeitos mecânicos do item (dano, defesa, bônus, etc.), permitindo a criação de itens complexos e únicos. **Estrutura:** `array` de `objects`.|
-|`durabilidade`|**Propósito:** Objeto que rastreia o desgaste do item, conectando-se diretamente aos sistemas de reparo e manutenção. **Estrutura:** `object`.|
-|`craftingRecipeId`|**Propósito:** Vincula o item a uma receita de crafting, integrando-o ao sistema de Proficiências de Vida. **Estrutura:** `string`.|
+| Chave | Propósito | Estrutura |
+| --- | --- |--- |
+| `itemId` | Identificador único e programático do item, usado em inventários, tabelas de loot e receitas. | `string` |
+| `name` | Nome exibido na UI, nos logs de crafting e nos diálogos de NPCs. | `string` |
+| `type` / `subtype` | Classifica o item para regras de sistema; `type` é a categoria geral e `subtype` é a categoria específica. | `string` |
+| `matriz` | Objeto central que implementa o sistema 5x5; `qualidade` afeta bônus e durabilidade, enquanto `raridade` impacta valor e desbloqueios narrativos. | `object` |
+| `baseUcValue` | Valor em Unidades Comerciais, usado como base para o sistema de economia regional descrito em `06_Economia_Itens_e_Crafting.md`. | `integer` |
+| `properties` | Array de objetos que descreve os efeitos mecânicos do item, permitindo a criação de itens complexos e únicos. | `array` de `objects` |
+| `durability` | Objeto que rastreia o desgaste do item e se conecta aos sistemas de reparo e manutenção. | `object` |
+| `craftingRecipeId` | ID da receita necessária para criar o item, integrando-o ao sistema de Proficiências de Vida. | `string` |
 
 Com as estruturas de classes e itens definidas, o foco se volta para as entidades que o jogador enfrentará, cujos desafios e recompensas são moldados por esses mesmos sistemas.
 
@@ -165,20 +219,21 @@ A criação de um schema de `Inimigo` bem estruturado é vital não apenas para 
 
 ### 4.2 Análise dos Campos da Estrutura
 
-|   |   |
-|---|---|
-|Chave|Análise de Propósito e Estrutura|
-|`enemyId`|**Propósito:** Identificador único para uso em eventos de combate, missões e tabelas de spawn de região. **Estrutura:** `string`.|
-|`name`|**Propósito:** Nome do inimigo exibido na UI de combate e em logs, exigindo considerações de localização. **Estrutura:** `string`.|
-|`type`|**Propósito:** Define a categoria do inimigo, crucial para sistemas de dano elemental, resistências e fraquezas. **Estrutura:** `string`.|
-|`estatisticasBase`|**Propósito:** Agrupa todos os valores numéricos de combate (PV, Defesa, Atributos, etc.), centralizando os dados de balanceamento. **Estrutura:** `object`.|
-|`acoesDeCombate`|**Propósito:** Um array de ações possíveis, permitindo a criação de comportamentos de IA variados. O campo `chanceDeUso` permite ponderar a frequência de cada ação. **Estrutura:** `array` de `objects`.|
-|`lootTable`|**Propósito:** Define as recompensas em itens. A estrutura suporta múltiplos drops com probabilidades individuais, alimentando o ciclo de exploração e crafting. **Estrutura:** `array` de `objects`.|
-|`xpRecompensa`|**Propósito:** Quantidade de experiência concedida, servindo como um pilar para a progressão do jogador. **Estrutura:** `integer`.|
-|`evolucao`|**Propósito:** Objeto que rastreia o estado evolutivo da instância do inimigo. `killCount` registra jogadores derrotados, `tier` define a categoria atual (Normal → Veterano → Alfa → Lenda), e `originMapId` indica o bloco de origem para migração entre regiões. Este campo implementa o sistema de Inimigos Evolutivos (ADR-009), onde inimigos que derrotam jogadores ganham XP e evoluem, tornando-se ameaças crescentes no mundo. **Estrutura:** `object`.|
+| Chave | Propósito | Estrutura |
+| --- | --- | --- |
+| `enemyId` | Identificador único para uso em eventos de combate, missões e tabelas de spawn de região. | `string` |
+| `name` | Nome do inimigo exibido na UI de combate e em logs. | `string` |
+| `type` | Categoria do inimigo, crucial para sistemas de dano elemental, resistências e fraquezas. | `string` |
+| `baseStats` | Agrupa os valores numéricos de combate, como PV, Defesa e Atributos, centralizando o balanceamento. | `object` |
+| `baseStats.attributes` | Subobjeto com os atributos que governam as ações e resistências do inimigo. | `object` |
+| `combatActions` | Lista de ações possíveis para a IA, permitindo comportamentos variados; `usageChance` pondera a frequência de cada ação. | `array` de `objects` |
+| `lootTable` | Define as recompensas em itens com probabilidades individuais, alimentando o ciclo de exploração e crafting. | `array` de `objects` |
+| `xpReward` | Quantidade de experiência concedida ao derrotar o inimigo. | `integer` |
+| `evolution` | Objeto que rastreia o estado evolutivo da instância do inimigo, incluindo `killCount`, `tier` e `originMapId`. | `object` |
 
 --------------------------------------------------------------------------------
 
-## 5.0 Conclusão e Próximos Passos
+## 6.0 Conclusão e Próximos Passos
 
 Os schemas JSON apresentados neste documento — `CharacterClass`, `Item` e `Inimigo` — formam a base lógica e estrutural para as principais entidades de _Eras do Brasil_. Ao definir rigorosamente esses contratos de dados, garantimos a consistência, a integração entre sistemas e a facilidade de implementação no servidor Go. Conforme delineado na "Estratégia de Dados e Documentação" do projeto, o próximo passo no pipeline de desenvolvimento é popular esses schemas com os dados específicos de cada classe, item e inimigo planejados para o Ato 1 da campanha, transformando a arquitetura lógica em conteúdo jogável.
+*
